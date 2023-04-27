@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibraryManagementStudio.Views.AdminView;
 
 namespace LibraryManagementStudio.Views.AdminLogView
 {
@@ -15,6 +16,19 @@ namespace LibraryManagementStudio.Views.AdminLogView
         public Main()
         {
             InitializeComponent();
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LibraryManagementStudio.Views.AdminView.Main adminView = new AdminView.Main();
+            adminView.Show();
+            this.Hide();
+
         }
     }
 }
