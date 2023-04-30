@@ -1,3 +1,5 @@
+using LibraryManagement.App.Views.User;
+
 namespace LibraryManagementStudio
 {
     internal static class Program
@@ -11,7 +13,12 @@ namespace LibraryManagementStudio
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            
+            //Seeder
+            LibrarySeeder seeder = new LibrarySeeder();
+            seeder.SeedDatabase();
+            
+            Application.Run(new UserView());
         }
     }
 }

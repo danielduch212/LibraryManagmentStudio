@@ -1,11 +1,10 @@
-using LibraryManagementStudio.Models;
 using LibraryManagementStudio.Models.Enums;
 
-namespace LibraryManagementStudio.Dtos;
+namespace LibraryManagementStudio.Dtos.BookCopy;
 
-public class BookDto
+public class BookCopyDto
 {
-    public int BookId { get; set; }
+    public int BookCopyId { get; set; }
     
     public string Title { get; set; } = null!;
     public string Description { get; set; } = null!;
@@ -13,5 +12,4 @@ public class BookDto
     public string PublisherName { get; set; } = null!;
     public DateTime PublishDate { get; set; }
     public CategoryType Category { get; set; }
-    public int BookCopiesCount { get; set; }
 }

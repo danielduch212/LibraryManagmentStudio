@@ -18,7 +18,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Nowy folder\" />
+    <Compile Update="Views\User\UserView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\User\BookListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
 
 </Project>
