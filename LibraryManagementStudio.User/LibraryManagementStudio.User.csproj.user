@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="Views\UserAuthView\Autoryzacja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\UserAuthView\AutoryzacjaKoniec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\UserAuthView\LogowanieBank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\UserAuthView\RemindMe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\UserAuthView\UserBankChoiceView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\UserAuthView\UserBankLoginView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\UserAuthView\UserLoginView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\UserAuthView\UserRegistrationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\UserLibraryView\UserBookInfoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\UserLibraryView\UserBookListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\UserLibraryView\UserView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

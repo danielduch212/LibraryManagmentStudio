@@ -1,6 +1,6 @@
+using LibraryManagementStudio.Data;
 using LibraryManagementStudio.Data.Seeders;
 using LibraryManagementStudio.User.Views.UserAuthView;
-using LibraryManagementStudio.User.Views.UserView;
 
 namespace LibraryManagementStudio.User
 {
@@ -17,10 +17,11 @@ namespace LibraryManagementStudio.User
             ApplicationConfiguration.Initialize();
             
             //Seeder
-            LibrarySeeder seeder = new LibrarySeeder();
+            var seeder = new LibrarySeeder();
             seeder.SeedDatabase();
             
-            Application.Run(new UserRegistrationView());
+            var dbContext = new LibraryDbContext();
+            Application.Run(new UserLoginView(dbContext));
         }
     }
 }
