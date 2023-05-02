@@ -2,7 +2,7 @@ using System.ComponentModel;
 using LibraryManagementStudio.User.Dtos.Book;
 using LibraryManagementStudio.User.Services;
 
-namespace LibraryManagementStudio.User.Views.UserView
+namespace LibraryManagementStudio.User.Views.UserLibraryView
 {
     public partial class UserBookListControl : UserControl
     {

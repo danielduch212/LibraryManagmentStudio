@@ -1,7 +1,7 @@
 using LibraryManagementStudio.Data;
 using LibraryManagementStudio.User.Services;
 
-namespace LibraryManagementStudio.User.Views.UserView
+namespace LibraryManagementStudio.User.Views.UserLibraryView
 {
     public partial class UserView : Form
     {
@@ -33,7 +33,7 @@ namespace LibraryManagementStudio.User.Views.UserView
         {
             var control = new UserBookListControl(contentPanel, _userBookService);
             ViewStyleHelper.AddControlToPanel(control, contentPanel);
-            
+
             bookListButton.BackColor = Color.Gray;
             borrowedBookButton.BackColor = Color.White;
             pickupAndReturnButton.BackColor = Color.White;
