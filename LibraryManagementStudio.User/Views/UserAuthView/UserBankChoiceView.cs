@@ -5,17 +5,14 @@ namespace LibraryManagementStudio.User.Views.UserAuthView
 {
     public partial class UserBankChoiceView : Form
     {
-        private readonly LibraryDbContext _dbContext;
         private readonly CreateUserDto _userToCreateDto;
-
         private Image? _image;
         private Color? _color;
 
-        public UserBankChoiceView(LibraryDbContext dbContext, CreateUserDto userToCreateDto)
+        public UserBankChoiceView(CreateUserDto userToCreateDto)
         {
             InitializeComponent();
-
-            _dbContext = dbContext;
+            
             _userToCreateDto = userToCreateDto;
 
             ClearPanels();
@@ -108,7 +105,7 @@ namespace LibraryManagementStudio.User.Views.UserAuthView
         {
             if (_image != null && _color != null)
             {
-                var bankLoginView = new UserBankLoginView(_dbContext, _image, _color.Value, _userToCreateDto);
+                var bankLoginView = new UserBankLoginView(_image, _color.Value, _userToCreateDto);
                 bankLoginView.Show();
                 this.Hide();
             }
@@ -116,7 +113,7 @@ namespace LibraryManagementStudio.User.Views.UserAuthView
 
         private void buttonAnuluj_Click(object sender, EventArgs e)
         {
-            var loginView = new UserLoginView(_dbContext);
+            var loginView = new UserLoginView();
             loginView.Show();
             this.Hide();
         }

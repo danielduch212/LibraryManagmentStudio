@@ -1,10 +1,11 @@
 using LibraryManagementStudio.Data;
-using LibraryManagementStudio.User.Dtos.BookCopy;
+using LibraryManagementStudio.Data.Models;
+using LibraryManagementStudio.User.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace LibraryManagementStudio.User.Services;
 
-public class UserBookCopyService
+public class UserBookCopyService : IUserBookCopyService
 {
     private readonly LibraryDbContext _dbContext;
 
@@ -13,7 +14,7 @@ public class UserBookCopyService
         _dbContext = dbContext;
     }
     
-    public BookCopyDto? GetAvailableBookCopy(int bookId)
+    public BookCopy? GetAvailableBookCopy(int bookId)
     {
         var query = _dbContext.BookCopies
             .Include(x => x.Book);
@@ -28,17 +29,6 @@ public class UserBookCopyService
             return null;
         }
         
-        var bookCopyDto = new BookCopyDto()
-        {
-            BookCopyId = bookCopy.BookCopyId,
-            Title = bookCopy.Book.Title,
-            Description = bookCopy.Book.Description,
-            AuthorName = bookCopy.Book.Author.Name,
-            PublisherName = bookCopy.Book.Publisher.Name,
-            PublishDate = bookCopy.Book.PublishDate,
-            Category = bookCopy.Book.Category
-        };
-        
-        return bookCopyDto;
+        return bookCopy;
     }
 }

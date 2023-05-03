@@ -1,9 +1,10 @@
 using LibraryManagementStudio.Data;
 using LibraryManagementStudio.User.Dtos.User;
+using LibraryManagementStudio.User.Services.Interfaces;
 
 namespace LibraryManagementStudio.User.Services;
 
-public class UserAuthService
+public class UserAuthService : IUserAuthService
 {
     private readonly LibraryDbContext _dbContext;
 
@@ -19,18 +20,31 @@ public class UserAuthService
         return user != null;
     }
     
-    public bool ValidateCredentials(string emailAddress, string password)
+    public UserDto? ValidateCredentials(string emailAddress, string password)
     {
         var user = _dbContext.Users.FirstOrDefault(x => x.EmailAddress.ToLower() == emailAddress.ToLower());
         
         if (user == null)
         {
-            return false;
+            return null;
         }
 
         var verifyPassword = PasswordHelper.VerifyPassword(password, user.Password);
 
-        return verifyPassword;
+        var userDto = new UserDto()
+        {
+            UserId = user.UserId,
+            FirstName = user.FirstName,
+            LastName = user.LastName,
+            EmailAddress = user.EmailAddress,
+            DateOfBirth = user.DateOfBirth,
+            Street = user.Street,
+            PostalCode = user.PostalCode,
+            City = user.City,
+            Country = user.Country,
+        };
+
+        return userDto;
     }
     
     public void CreateUser(CreateUserDto userToCreateDto)

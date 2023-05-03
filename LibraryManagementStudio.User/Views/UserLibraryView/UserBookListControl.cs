@@ -1,21 +1,32 @@
 using System.ComponentModel;
+using Autofac;
 using LibraryManagementStudio.User.Dtos.Book;
-using LibraryManagementStudio.User.Services;
+using LibraryManagementStudio.User.Dtos.User;
+using LibraryManagementStudio.User.Services.Interfaces;
 
 namespace LibraryManagementStudio.User.Views.UserLibraryView
 {
     public partial class UserBookListControl : UserControl
     {
+        private readonly UserDto _userDto;
         private readonly Panel _contentPanel;
-        private readonly UserBookService _userBookService;
         private List<BookDto> _bookList;
+        
+        private readonly IUserBookService _userBookService;
+        private readonly IUserBookCopyService _userBookCopyService;
+        private readonly IUserBookBorrowService _userBookBorrowService;
 
-        public UserBookListControl(Panel contentPanel, UserBookService userBookService)
+        public UserBookListControl(Panel contentPanel, UserDto userDto)
         {
             InitializeComponent();
             searchBooksTextBox.KeyPress += CheckEnterKeyPress;
             _contentPanel = contentPanel;
-            _userBookService = userBookService;
+            _userDto = userDto;
+            
+            var diContainer = UserDIConfig.Configure();
+            _userBookService = diContainer.Resolve<IUserBookService>();
+            _userBookCopyService = diContainer.Resolve<IUserBookCopyService>();
+            _userBookBorrowService = diContainer.Resolve<IUserBookBorrowService>();
 
             ViewStyleHelper.MaximizeUserControl(this);
             InitializeView();
@@ -23,6 +34,7 @@ namespace LibraryManagementStudio.User.Views.UserLibraryView
 
         private void InitializeView()
         {
+            searchBooksTextBox.Text = "";
             _bookList = _userBookService.GetBooks().ToList();
             SetupGridData();
         }
@@ -78,7 +90,7 @@ namespace LibraryManagementStudio.User.Views.UserLibraryView
 
             if (selectedBook != null)
             {
-                var control = new UserBookInfoControl(_contentPanel, _userBookService, selectedBook);
+                var control = new UserBookInfoControl(_contentPanel, selectedBook, _userDto);
                 ViewStyleHelper.AddControlToPanel(control, _contentPanel);
             }
         }
@@ -117,6 +129,23 @@ namespace LibraryManagementStudio.User.Views.UserLibraryView
 
         private void BorrowBook()
         {
+            BookDto? selectedBook = null;
+            
+            if (bookListGridView.CurrentRow != null)
+            {
+                selectedBook = (BookDto)bookListGridView.CurrentRow.DataBoundItem;
+            }
+
+            if (selectedBook != null)
+            {
+                var bookCopy = _userBookCopyService.GetAvailableBookCopy(selectedBook.BookId);
+                if (bookCopy != null)
+                {
+                   _userBookBorrowService.BorrowBook(bookCopy, _userDto);
+                }
+            }
+            
+            InitializeView();
         }
 
         private void CheckEnterKeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)

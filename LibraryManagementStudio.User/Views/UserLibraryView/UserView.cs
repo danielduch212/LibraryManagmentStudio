@@ -1,25 +1,22 @@
-using LibraryManagementStudio.Data;
-using LibraryManagementStudio.User.Services;
+using LibraryManagementStudio.User.Dtos.User;
 
 namespace LibraryManagementStudio.User.Views.UserLibraryView
 {
     public partial class UserView : Form
     {
-        private readonly UserBookService _userBookService;
-
-        public UserView()
+        private readonly UserDto _userDto;
+        
+        public UserView(UserDto userDto)
         {
             InitializeComponent();
+            
+            _userDto = userDto;
 
             //Maximize current form
             ViewStyleHelper.MaximizeForm(this);
 
-            //Load books from databases
-            var dbContext = new LibraryDbContext();
-            _userBookService = new UserBookService(dbContext);
-
             //Show book list control at first
-            var control = new UserBookListControl(contentPanel, _userBookService);
+            var control = new UserBookListControl(contentPanel, userDto);
             ViewStyleHelper.AddControlToPanel(control, contentPanel);
 
             bookListButton.BackColor = Color.Gray;
@@ -31,7 +28,7 @@ namespace LibraryManagementStudio.User.Views.UserLibraryView
 
         private void bookListButton_Click(object sender, EventArgs e)
         {
-            var control = new UserBookListControl(contentPanel, _userBookService);
+            var control = new UserBookListControl(contentPanel, _userDto);
             ViewStyleHelper.AddControlToPanel(control, contentPanel);
 
             bookListButton.BackColor = Color.Gray;

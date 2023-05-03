@@ -1,11 +1,12 @@
 using LibraryManagementStudio.Data;
 using LibraryManagementStudio.Data.Models;
 using LibraryManagementStudio.User.Dtos.Book;
+using LibraryManagementStudio.User.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace LibraryManagementStudio.User.Services;
 
-public class UserBookService
+public class UserBookService : IUserBookService
 {
     private readonly LibraryDbContext _dbContext;
     

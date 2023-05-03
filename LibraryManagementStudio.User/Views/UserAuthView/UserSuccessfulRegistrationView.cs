@@ -1,20 +1,20 @@
-﻿using LibraryManagementStudio.Data;
+﻿using Autofac;
+using LibraryManagementStudio.Data;
 using LibraryManagementStudio.User.Dtos.User;
 using LibraryManagementStudio.User.Services;
+using LibraryManagementStudio.User.Services.Interfaces;
 
 namespace LibraryManagementStudio.User.Views.UserAuthView
 {
     public partial class UserSuccessfulRegistrationView : Form
     {
-        private readonly LibraryDbContext _dbContext;
-
-        public UserSuccessfulRegistrationView(LibraryDbContext dbContext, CreateUserDto userToCreateDto)
+        public UserSuccessfulRegistrationView(CreateUserDto userToCreateDto)
         {
             InitializeComponent();
             
-            var userAuthService = new UserAuthService(dbContext);
-            _dbContext = dbContext;
-            
+            var diContainer = UserDIConfig.Configure();
+            var userAuthService = diContainer.Resolve<IUserAuthService>();
+
             labelName.Text = userToCreateDto.FirstName;
             labelSurname.Text = userToCreateDto.LastName;
             labelEmail.Text = userToCreateDto.EmailAddress;
@@ -24,7 +24,7 @@ namespace LibraryManagementStudio.User.Views.UserAuthView
 
         private void button1_Click(object sender, EventArgs e)
         {
-            UserLoginView userLoginView = new UserLoginView(_dbContext);
+            UserLoginView userLoginView = new UserLoginView();
             userLoginView.Show();
             this.Hide();
         }

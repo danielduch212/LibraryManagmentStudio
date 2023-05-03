@@ -26,6 +26,9 @@
     <Compile Update="Views\UserAuthView\UserRegistrationView.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\UserAuthView\UserSuccessfulRegistrationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\UserLibraryView\UserBookInfoControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

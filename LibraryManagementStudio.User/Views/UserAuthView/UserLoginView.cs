@@ -1,22 +1,20 @@
-﻿using LibraryManagementStudio.Data;
+﻿using Autofac;
 using LibraryManagementStudio.User.Services;
+using LibraryManagementStudio.User.Services.Interfaces;
 using LibraryManagementStudio.User.Views.UserLibraryView;
-using Microsoft.EntityFrameworkCore;
 
 namespace LibraryManagementStudio.User.Views.UserAuthView
 {
     public partial class UserLoginView : Form
     {
-        private readonly LibraryDbContext _dbContext;
-        private readonly UserAuthService _userAuthService;
+        private readonly IUserAuthService _userAuthService;
 
-        public UserLoginView(LibraryDbContext dbContext)
+        public UserLoginView()
         {
             InitializeComponent();
 
-            _dbContext = dbContext;
-            _userAuthService = new UserAuthService(dbContext);
-
+            var diContainer = UserDIConfig.Configure();
+            _userAuthService = diContainer.Resolve<IUserAuthService>();
             alertLabel.Visible = false;
         }
 
@@ -29,9 +27,9 @@ namespace LibraryManagementStudio.User.Views.UserAuthView
                 var validatedCredentials = _userAuthService.ValidateCredentials(emailTextBox.Text, passwordTextBox.Text);
                 //var validatedCredentials = true;
 
-                if (validatedCredentials)
+                if (validatedCredentials != null)
                 {
-                    UserView userView = new UserView();
+                    UserView userView = new UserView(validatedCredentials);
                     userView.Show();
                     this.Hide();
                 }
@@ -48,8 +46,8 @@ namespace LibraryManagementStudio.User.Views.UserAuthView
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var registrationView = new UserRegistrationView(_dbContext);
-            registrationView.Show();
+            var userRegistrationView = new UserRegistrationView();
+            userRegistrationView.Show();
             this.Hide();
         }
     }

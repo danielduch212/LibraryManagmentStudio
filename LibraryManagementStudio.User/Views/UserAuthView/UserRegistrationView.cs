@@ -1,28 +1,26 @@
-﻿using LibraryManagementStudio.Data;
+﻿using Autofac;
 using LibraryManagementStudio.User.Dtos.User;
-using LibraryManagementStudio.User.Services;
-using Microsoft.EntityFrameworkCore;
+using LibraryManagementStudio.User.Services.Interfaces;
 
 namespace LibraryManagementStudio.User.Views.UserAuthView
 {
     public partial class UserRegistrationView : Form
     {
-        private readonly LibraryDbContext _dbContext;
-        private readonly UserAuthService _userAuthService;
+        private readonly IUserAuthService _userAuthService;
 
-        public UserRegistrationView(LibraryDbContext dbContext)
+        public UserRegistrationView()
         {
+            var diContainer = UserDIConfig.Configure();
+            _userAuthService = diContainer.Resolve<IUserAuthService>();
             InitializeComponent();
-
-            _dbContext = dbContext;
-            _userAuthService = new UserAuthService(dbContext);
 
             alertLabel.Visible = false;
         }
 
         private void backToLoginScreenButton_Click(object sender, EventArgs e)
         {
-            var loginView = new UserLoginView(_dbContext);
+            var diContainer = UserDIConfig.Configure();
+            var loginView = diContainer.Resolve<UserLoginView>();
             loginView.Show();
             this.Hide();
         }
@@ -49,9 +47,9 @@ namespace LibraryManagementStudio.User.Views.UserAuthView
                     Country = countryBox.Text,
 
                 };
-
-                UserBankChoiceView autorize = new UserBankChoiceView(_dbContext, userToCreate);
-                autorize.Show();
+                
+                var userBankChoiceView = new UserBankChoiceView(userToCreate);
+                userBankChoiceView.Show();
                 this.Hide();
             }
             else

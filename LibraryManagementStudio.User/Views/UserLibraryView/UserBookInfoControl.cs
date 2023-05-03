@@ -1,19 +1,19 @@
 ﻿using LibraryManagementStudio.User.Dtos.Book;
-using LibraryManagementStudio.User.Services;
+using LibraryManagementStudio.User.Dtos.User;
 
 namespace LibraryManagementStudio.User.Views.UserLibraryView
 {
     public partial class UserBookInfoControl : UserControl
     {
         private Panel _contentPanel;
-        private UserBookService _userBookService;
+        private UserDto _userDto;
 
-        public UserBookInfoControl(Panel contentPanel, UserBookService userBookService, BookDto bookDto)
+        public UserBookInfoControl(Panel contentPanel, BookDto bookDto, UserDto userDto)
         {
             InitializeComponent();
 
             _contentPanel = contentPanel;
-            _userBookService = userBookService;
+            _userDto = userDto;
 
             SetupView(bookDto);
             ViewStyleHelper.MaximizeUserControl(this);
@@ -31,7 +31,7 @@ namespace LibraryManagementStudio.User.Views.UserLibraryView
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            var control = new UserBookListControl(_contentPanel, _userBookService);
+            var control = new UserBookListControl(_contentPanel, _userDto);
             ViewStyleHelper.AddControlToPanel(control, _contentPanel);
         }
     }
