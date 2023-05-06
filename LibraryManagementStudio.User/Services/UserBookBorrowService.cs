@@ -1,8 +1,11 @@
 using LibraryManagementStudio.Data;
 using LibraryManagementStudio.Data.Models;
 using LibraryManagementStudio.Data.Models.Enums;
+using LibraryManagementStudio.User.Dtos.BookBorrow;
 using LibraryManagementStudio.User.Dtos.User;
 using LibraryManagementStudio.User.Services.Interfaces;
+using LibraryManagementStudio.User.Views;
+using Microsoft.EntityFrameworkCore;
 
 namespace LibraryManagementStudio.User.Services;
 
@@ -55,6 +58,45 @@ public class UserBookBorrowService : IUserBookBorrowService
         _emailService.SendCodeMessage(userDto.EmailAddress, pickupCode, returnCode, bookCopy.Book.Title);
 
         return true;
+    }
+
+    public void ReturnBook(int bookBorrowId)
+    {
+        // var bookBorrow = _dbContext.BookBorrows
+        //     .Include(x => x.BookCopy)
+        //     .ThenInclude(y => y.Book)
+        //     .FirstOrDefault(x => x.BookBorrowId == bookBorrowId);
+    }
+    
+    public List<BookBorrowDto> GetBorrowedBooks(int userId, string bookName = "")
+    {
+        var query = _dbContext.BookBorrows
+            .Include(x => x.BookCopy)
+            .ThenInclude(y => y.Book)
+            .ThenInclude(z => z.Author)
+            .Where(x => x.UserId == userId && x.IsActive && x.BookCopy.Book.Title.Contains(bookName))
+            .Select(x => new BookBorrowDto()
+            {
+                BookBorrowId = x.BookBorrowId,
+                StartDate = x.StartDate,
+                EndDate = x.EndDate,
+                Status = EnumDescriptor.GetEnumDescription(x.status),
+                Title = x.BookCopy.Book.Title,
+                Category = EnumDescriptor.GetEnumDescription(x.BookCopy.Book.Category),
+                AuthorName = x.BookCopy.Book.Author.Name,
+            });
+        
+        var bookBorrows = query.ToList();
+        
+        return bookBorrows;
+    }
+    
+    public int GetBorrowedBooksCount(int userId)
+    {
+        var count = _dbContext.BookBorrows
+            .Count(x => x.UserId == userId && x.IsActive);
+
+        return count;
     }
 
     private string ProvideUniqueBookStoreCode()
