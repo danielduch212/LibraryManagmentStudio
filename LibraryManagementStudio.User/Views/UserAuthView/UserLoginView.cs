@@ -29,6 +29,8 @@ namespace LibraryManagementStudio.User.Views.UserAuthView
 
                 if (validatedCredentials != null)
                 {
+                    //TODO: ADD CLEAR CREDENTIALS
+
                     UserView userView = new UserView(validatedCredentials);
                     userView.Show();
                     this.Hide();
@@ -46,6 +48,8 @@ namespace LibraryManagementStudio.User.Views.UserAuthView
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //TODO: ADD CLEAR CREDENTIALS
+
             var userRegistrationView = new UserRegistrationView();
             userRegistrationView.Show();
             this.Hide();

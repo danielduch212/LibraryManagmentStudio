@@ -19,8 +19,7 @@ namespace LibraryManagementStudio.User.Views.UserAuthView
 
         private void backToLoginScreenButton_Click(object sender, EventArgs e)
         {
-            var diContainer = UserDIConfig.Configure();
-            var loginView = diContainer.Resolve<UserLoginView>();
+            var loginView = new UserLoginView();
             loginView.Show();
             this.Hide();
         }
