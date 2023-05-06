@@ -31,6 +31,11 @@ public class UserAuthService : IUserAuthService
 
         var verifyPassword = PasswordHelper.VerifyPassword(password, user.Password);
 
+        if (!verifyPassword)
+        {
+            return null;
+        }
+        
         var userDto = new UserDto()
         {
             UserId = user.UserId,
@@ -42,6 +47,7 @@ public class UserAuthService : IUserAuthService
             PostalCode = user.PostalCode,
             City = user.City,
             Country = user.Country,
+            CreationDate = user.CreationDate
         };
 
         return userDto;
