@@ -10,19 +10,21 @@ namespace LibraryManagementStudio.User.Views.UserLibraryView
     {
         private readonly UserDto _userDto;
         private readonly Panel _contentPanel;
-        private List<BookDto> _bookList;
-        
+
         private readonly IUserBookService _userBookService;
         private readonly IUserBookCopyService _userBookCopyService;
         private readonly IUserBookBorrowService _userBookBorrowService;
+        
+        private List<BookDto> _bookList = null;
 
         public UserBookListControl(Panel contentPanel, UserDto userDto)
         {
             InitializeComponent();
             searchBooksTextBox.KeyPress += CheckEnterKeyPress;
+            
             _contentPanel = contentPanel;
             _userDto = userDto;
-            
+
             var diContainer = UserDIConfig.Configure();
             _userBookService = diContainer.Resolve<IUserBookService>();
             _userBookCopyService = diContainer.Resolve<IUserBookCopyService>();
@@ -82,7 +84,7 @@ namespace LibraryManagementStudio.User.Views.UserLibraryView
         private void bookInfoButton_Click(object sender, EventArgs e)
         {
             BookDto? selectedBook = null;
-            
+
             if (bookListGridView.CurrentRow != null)
             {
                 selectedBook = (BookDto)bookListGridView.CurrentRow.DataBoundItem;
@@ -107,11 +109,6 @@ namespace LibraryManagementStudio.User.Views.UserLibraryView
             }
         }
 
-        private void reserveBookButton_Click(object sender, EventArgs e)
-        {
-            ReserveBook();
-        }
-
         private void borrowBookButton_Click(object sender, EventArgs e)
         {
             BorrowBook();
@@ -123,14 +120,11 @@ namespace LibraryManagementStudio.User.Views.UserLibraryView
             InitializeView();
         }
 
-        private void ReserveBook()
-        {
-        }
-
         private void BorrowBook()
         {
             BookDto? selectedBook = null;
-            
+            var canBorrow = false;
+
             if (bookListGridView.CurrentRow != null)
             {
                 selectedBook = (BookDto)bookListGridView.CurrentRow.DataBoundItem;
@@ -141,10 +135,16 @@ namespace LibraryManagementStudio.User.Views.UserLibraryView
                 var bookCopy = _userBookCopyService.GetAvailableBookCopy(selectedBook.BookId);
                 if (bookCopy != null)
                 {
-                   _userBookBorrowService.BorrowBook(bookCopy, _userDto);
+                    canBorrow = _userBookBorrowService.BorrowBook(bookCopy, _userDto);
                 }
             }
-            
+
+            if (!canBorrow)
+            {
+                //TODO: show failed message
+                return;
+            }
+
             InitializeView();
         }
 
@@ -155,16 +155,5 @@ namespace LibraryManagementStudio.User.Views.UserLibraryView
                 SearchBooks();
             }
         }
-
-        private void searchBooksTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UserBookListControl_Load(object sender, EventArgs e)
-        {
-        }
-
-      
     }
 }

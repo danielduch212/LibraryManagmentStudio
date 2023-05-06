@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            bookInfoButton = new Button();
             clearSearchButton = new Button();
             borrowBookButton = new Button();
             searchBooksButton = new Button();
-            reserveBookButton = new Button();
             searchBooksTextBox = new TextBox();
             panel2 = new Panel();
             bookListGridView = new DataGridView();
-            bookInfoButton = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)bookListGridView).BeginInit();
@@ -49,12 +48,23 @@
             panel1.Controls.Add(clearSearchButton);
             panel1.Controls.Add(borrowBookButton);
             panel1.Controls.Add(searchBooksButton);
-            panel1.Controls.Add(reserveBookButton);
             panel1.Controls.Add(searchBooksTextBox);
             panel1.Location = new Point(3, 1);
             panel1.Name = "panel1";
             panel1.Size = new Size(1838, 44);
             panel1.TabIndex = 0;
+            // 
+            // bookInfoButton
+            // 
+            bookInfoButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            bookInfoButton.Cursor = Cursors.Hand;
+            bookInfoButton.Location = new Point(1641, 0);
+            bookInfoButton.Name = "bookInfoButton";
+            bookInfoButton.Size = new Size(94, 29);
+            bookInfoButton.TabIndex = 5;
+            bookInfoButton.Text = "Informacje";
+            bookInfoButton.UseVisualStyleBackColor = true;
+            bookInfoButton.Click += bookInfoButton_Click;
             // 
             // clearSearchButton
             // 
@@ -95,18 +105,6 @@
             searchBooksButton.UseVisualStyleBackColor = true;
             searchBooksButton.Click += searchBooksButton_Click;
             // 
-            // reserveBookButton
-            // 
-            reserveBookButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            reserveBookButton.Cursor = Cursors.Hand;
-            reserveBookButton.Location = new Point(1641, 0);
-            reserveBookButton.Name = "reserveBookButton";
-            reserveBookButton.Size = new Size(94, 29);
-            reserveBookButton.TabIndex = 1;
-            reserveBookButton.Text = "Zarezerwuj";
-            reserveBookButton.UseVisualStyleBackColor = true;
-            reserveBookButton.Click += reserveBookButton_Click;
-            // 
             // searchBooksTextBox
             // 
             searchBooksTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -115,7 +113,6 @@
             searchBooksTextBox.Name = "searchBooksTextBox";
             searchBooksTextBox.Size = new Size(1152, 27);
             searchBooksTextBox.TabIndex = 0;
-            searchBooksTextBox.TextChanged += searchBooksTextBox_TextChanged;
             // 
             // panel2
             // 
@@ -140,18 +137,6 @@
             bookListGridView.Size = new Size(1832, 879);
             bookListGridView.TabIndex = 0;
             // 
-            // bookInfoButton
-            // 
-            bookInfoButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            bookInfoButton.Cursor = Cursors.Hand;
-            bookInfoButton.Location = new Point(1541, -1);
-            bookInfoButton.Name = "bookInfoButton";
-            bookInfoButton.Size = new Size(94, 29);
-            bookInfoButton.TabIndex = 5;
-            bookInfoButton.Text = "Informacje";
-            bookInfoButton.UseVisualStyleBackColor = true;
-            bookInfoButton.Click += bookInfoButton_Click;
-            // 
             // UserBookListControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -162,7 +147,6 @@
             Controls.Add(panel1);
             Name = "UserBookListControl";
             Size = new Size(1845, 936);
-            Load += UserBookListControl_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
@@ -174,7 +158,6 @@
 
         private Panel panel1;
         private Button searchBooksButton;
-        private Button reserveBookButton;
         private TextBox searchBooksTextBox;
         private Panel panel2;
         private DataGridView bookListGridView;
