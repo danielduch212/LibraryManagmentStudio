@@ -31,8 +31,6 @@ namespace LibraryManagementStudio.User.Views.UserLibraryView
             contentPanel = new Panel();
             buttonsPanel = new Panel();
             logOutButton = new Button();
-            bookParcelButton = new Button();
-            reservedBooksButton = new Button();
             userInfoButton = new Button();
             pickupAndReturnButton = new Button();
             borrowedBookButton = new Button();
@@ -54,8 +52,6 @@ namespace LibraryManagementStudio.User.Views.UserLibraryView
             buttonsPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             buttonsPanel.BackColor = SystemColors.ButtonFace;
             buttonsPanel.Controls.Add(logOutButton);
-            buttonsPanel.Controls.Add(bookParcelButton);
-            buttonsPanel.Controls.Add(reservedBooksButton);
             buttonsPanel.Controls.Add(userInfoButton);
             buttonsPanel.Controls.Add(pickupAndReturnButton);
             buttonsPanel.Controls.Add(borrowedBookButton);
@@ -76,33 +72,12 @@ namespace LibraryManagementStudio.User.Views.UserLibraryView
             logOutButton.TabIndex = 6;
             logOutButton.Text = "Wyloguj się";
             logOutButton.UseVisualStyleBackColor = true;
-            // 
-            // bookParcelButton
-            // 
-            bookParcelButton.Cursor = Cursors.Hand;
-            bookParcelButton.Location = new Point(0, 178);
-            bookParcelButton.Name = "bookParcelButton";
-            bookParcelButton.Size = new Size(191, 29);
-            bookParcelButton.TabIndex = 5;
-            bookParcelButton.Text = "Paczkomat";
-            bookParcelButton.UseVisualStyleBackColor = true;
-            bookParcelButton.Click += bookParcelButton_Click;
-            // 
-            // reservedBooksButton
-            // 
-            reservedBooksButton.Cursor = Cursors.Hand;
-            reservedBooksButton.Location = new Point(0, 73);
-            reservedBooksButton.Name = "reservedBooksButton";
-            reservedBooksButton.Size = new Size(191, 29);
-            reservedBooksButton.TabIndex = 4;
-            reservedBooksButton.Text = "Moje rezerwacje";
-            reservedBooksButton.UseVisualStyleBackColor = true;
-            reservedBooksButton.Click += reservedBooksButton_Click;
+            logOutButton.Click += logOutButton_Click;
             // 
             // userInfoButton
             // 
             userInfoButton.Cursor = Cursors.Hand;
-            userInfoButton.Location = new Point(0, 143);
+            userInfoButton.Location = new Point(0, 107);
             userInfoButton.Name = "userInfoButton";
             userInfoButton.Size = new Size(191, 29);
             userInfoButton.TabIndex = 3;
@@ -113,7 +88,7 @@ namespace LibraryManagementStudio.User.Views.UserLibraryView
             // pickupAndReturnButton
             // 
             pickupAndReturnButton.Cursor = Cursors.Hand;
-            pickupAndReturnButton.Location = new Point(0, 108);
+            pickupAndReturnButton.Location = new Point(0, 72);
             pickupAndReturnButton.Name = "pickupAndReturnButton";
             pickupAndReturnButton.Size = new Size(191, 29);
             pickupAndReturnButton.TabIndex = 2;
@@ -165,8 +140,6 @@ namespace LibraryManagementStudio.User.Views.UserLibraryView
         private Button borrowedBookButton;
         private Button bookListButton;
         private Button userInfoButton;
-        private Button reservedBooksButton;
-        private Button bookParcelButton;
         private Button logOutButton;
     }
 }
