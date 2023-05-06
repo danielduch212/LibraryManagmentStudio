@@ -1,15 +1,16 @@
 using LibraryManagementStudio.User.Dtos.User;
+using LibraryManagementStudio.User.Views.UserAuthView;
 
 namespace LibraryManagementStudio.User.Views.UserLibraryView
 {
     public partial class UserView : Form
     {
         private readonly UserDto _userDto;
-        
+
         public UserView(UserDto userDto)
         {
             InitializeComponent();
-            
+
             _userDto = userDto;
 
             //Maximize current form
@@ -23,7 +24,6 @@ namespace LibraryManagementStudio.User.Views.UserLibraryView
             borrowedBookButton.BackColor = Color.White;
             pickupAndReturnButton.BackColor = Color.White;
             userInfoButton.BackColor = Color.White;
-            reservedBooksButton.BackColor = Color.White;
         }
 
         private void bookListButton_Click(object sender, EventArgs e)
@@ -35,50 +35,49 @@ namespace LibraryManagementStudio.User.Views.UserLibraryView
             borrowedBookButton.BackColor = Color.White;
             pickupAndReturnButton.BackColor = Color.White;
             userInfoButton.BackColor = Color.White;
-            reservedBooksButton.BackColor = Color.White;
         }
 
         private void borrowedBookButton_Click(object sender, EventArgs e)
         {
+            var control = new UserBorrowedBooksControl(_userDto);
+            ViewStyleHelper.AddControlToPanel(control, contentPanel);
+            
             bookListButton.BackColor = Color.White;
             borrowedBookButton.BackColor = Color.Gray;
             pickupAndReturnButton.BackColor = Color.White;
             userInfoButton.BackColor = Color.White;
-            reservedBooksButton.BackColor = Color.White;
         }
 
         private void pickupAndReturnButton_Click(object sender, EventArgs e)
         {
+            var control = new UserPickupAndReturnControl();
+            ViewStyleHelper.AddControlToPanel(control, contentPanel);
+
             bookListButton.BackColor = Color.White;
             borrowedBookButton.BackColor = Color.White;
             pickupAndReturnButton.BackColor = Color.Gray;
             userInfoButton.BackColor = Color.White;
-            reservedBooksButton.BackColor = Color.White;
         }
 
         private void userInfoButton_Click(object sender, EventArgs e)
         {
+            var control = new UserInfoControl(_userDto);
+            ViewStyleHelper.AddControlToPanel(control, contentPanel);
+
             bookListButton.BackColor = Color.White;
             borrowedBookButton.BackColor = Color.White;
             pickupAndReturnButton.BackColor = Color.White;
             userInfoButton.BackColor = Color.Gray;
-            reservedBooksButton.BackColor = Color.White;
         }
 
-        private void reservedBooksButton_Click(object sender, EventArgs e)
+        private void logOutButton_Click(object sender, EventArgs e)
         {
-            bookListButton.BackColor = Color.White;
-            borrowedBookButton.BackColor = Color.White;
-            pickupAndReturnButton.BackColor = Color.White;
-            userInfoButton.BackColor = Color.White;
-            reservedBooksButton.BackColor = Color.Gray;
+            var startupView = new UserLoginView();
+            startupView.Show();
+            this.Hide();
         }
 
         private void buttonsPanel_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void bookParcelButton_Click(object sender, EventArgs e)
         {
         }
     }
