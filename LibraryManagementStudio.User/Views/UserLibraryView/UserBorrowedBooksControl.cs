@@ -11,7 +11,7 @@ namespace LibraryManagementStudio.User.Views.UserLibraryView
         private readonly UserDto _userDto;
         private readonly IUserBookBorrowService _userBookBorrowService;
 
-        private List<BookBorrowDto> _bookBorrowsList = null;
+        private List<BookBorrowDto>? _bookBorrowsList = null;
 
         public UserBorrowedBooksControl(UserDto userDto)
         {
@@ -22,11 +22,6 @@ namespace LibraryManagementStudio.User.Views.UserLibraryView
             
             var diContainer = UserDIConfig.Configure();
             _userBookBorrowService = diContainer.Resolve<IUserBookBorrowService>();
-
-            // _bookService = bookService;
-            // _borrowedBookService = borrowedBookService;
-            // _user = user;
-            //RefreshBooks();
 
             ViewStyleHelper.MaximizeUserControl(this);
             InitializeView();
@@ -72,6 +67,8 @@ namespace LibraryManagementStudio.User.Views.UserLibraryView
             
             bookListGridView.Columns["EndDate"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             bookListGridView.Columns["EndDate"]!.HeaderText = "Do";
+            
+            bookListGridView.Columns["Status"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 
             bookListGridView.BackgroundColor = Color.White;
             bookListGridView.RowHeadersVisible = false;
@@ -97,45 +94,24 @@ namespace LibraryManagementStudio.User.Views.UserLibraryView
         
         private void returnBookButton_Click(object sender, EventArgs e)
         {
-            // Book selectedBook = (Book)bookListGridView.CurrentRow.DataBoundItem;
-            //
-            // if (selectedBook != null && selectedBook.Status == BookStatus.odebrana)
-            // {
-            //     _borrowedBookService.ReturnBook(selectedBook, _user.Id);
-            //     RefreshBooks();
-            //     SetupView();
-            //     MessageBox.Show("Zwrot został zaakceptowany.");
-            // }
-            // else if (selectedBook != null && selectedBook.Status == BookStatus.nieodebrana)
-            // {
-            //     MessageBox.Show("Nie można zwrócić nie odebranej książki.");
-            // }
+            if (bookListGridView.CurrentRow == null) 
+                return;
+            
+            var selectedBook = (BookBorrowDto)bookListGridView.CurrentRow.DataBoundItem;
+            
+            if (selectedBook != null && selectedBook.Status == "Odebrana")
+            {
+                _userBookBorrowService.ReturnBook(selectedBook.BookBorrowId);
+                InitializeView();
+                MessageBox.Show("Zwrot został zaakceptowany. Na twojego maila została wysłana wiadomość z kodami zwrotu.");
+            }
+            else if (selectedBook != null && selectedBook.Status != "Odebrana")
+            {
+                MessageBox.Show("Nie można zwrócić nieodebranej książki.");
+            }
         }
         
-        // private void SearchBooks()
-        // {
-        //     List<Book> booksList = _bookList.Where(b => b.Title.ToLower().Contains(searchBooksTextBox.Text.ToLower())).ToList();
-        //     var bindingList = new BindingList<Book>(booksList);
-        //     var books = new BindingSource(bindingList, null);
-        //     SetupGridViewStyle(books);
-        // }
-        //
-        // private void SetupView()
-        // {
-        //     var bindingList = new BindingList<Book>(_bookList);
-        //     var books = new BindingSource(bindingList, null);
-        //     SetupGridViewStyle(books);
-        // }
-        //
-        //
-        //
-        // private void RefreshBooks()
-        // {
-        //     var books = _bookService.GetBooks().ToList();
-        //     _bookList = books.Where(x => x.RentierId == _user.Id).ToList();
-        // }
-        //
-        private void CheckEnterKeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        private void CheckEnterKeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Return)
             {

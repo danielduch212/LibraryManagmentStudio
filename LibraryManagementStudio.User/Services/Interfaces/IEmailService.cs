@@ -2,5 +2,5 @@ namespace LibraryManagementStudio.User.Services.Interfaces;
 
 public interface IEmailService
 {
-    void SendCodeMessage(string toEmailAddress, string pickupCode, string returnCode, string bookName);
+    void SendReturnCodeMessage(string toEmailAddress, string returnCode, string bookName);
 }

@@ -1,10 +1,11 @@
 using LibraryManagementStudio.Data;
 using LibraryManagementStudio.Data.Models;
 using LibraryManagementStudio.Worker.Dtos.Book;
+using LibraryManagementStudio.Worker.Services.Intrefaces;
 
 namespace LibraryManagementStudio.Worker.Services;
 
-public class WorkerBookService
+public class WorkerBookService : IWorkerBookService
 {
     private readonly LibraryDbContext _dbContext;
 

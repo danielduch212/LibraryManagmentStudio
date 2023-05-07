@@ -1,3 +1,5 @@
+using LibraryManagementStudio.Parcel.Views;
+
 namespace LibraryManagementStudio.Parcel
 {
     internal static class Program
@@ -11,7 +13,9 @@ namespace LibraryManagementStudio.Parcel
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+
+            var parcelService = new ParcelService();
+            Application.Run(new BookParcelView(parcelService));
         }
     }
 }

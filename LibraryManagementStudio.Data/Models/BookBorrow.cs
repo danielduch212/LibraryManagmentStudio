@@ -6,10 +6,10 @@ public class BookBorrow
 {
     public int BookBorrowId { get; set; }
     
-    public DateTime StartDate { get; set; }
-    public DateTime EndDate { get; set; }
+    public DateTime? StartDate { get; set; }
+    public DateTime? EndDate { get; set; }
     public bool IsActive { get; set; }
-    public BorrowedBookStatus status { get; set; }
+    public BorrowedBookStatus Status { get; set; }
     
     //Relationships
     public int? WorkerId { get; set; }

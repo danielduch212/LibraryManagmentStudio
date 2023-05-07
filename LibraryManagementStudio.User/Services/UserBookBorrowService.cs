@@ -28,19 +28,19 @@ public class UserBookBorrowService : IUserBookBorrowService
         var bookBorrow = new BookBorrow()
         {
             BookCopyId = bookCopy.BookCopyId,
-            StartDate = DateTime.Now,
-            EndDate = DateTime.Now.AddDays(14),
-            status = BorrowedBookStatus.Requested,
+            StartDate = null,
+            EndDate = null,
+            Status = BorrowedBookStatus.Requested,
             IsActive = true,
             UserId = userDto.UserId,
             BookStoreCodes = new List<BookStoreCode>()
             {
-                new BookStoreCode()
+                new()
                 {
                     Code = pickupCode,
                     CodeType = CodeType.odbior
                 },
-                new BookStoreCode()
+                new()
                 {
                     Code = returnCode,
                     CodeType = CodeType.zwrot
@@ -54,33 +54,39 @@ public class UserBookBorrowService : IUserBookBorrowService
 
         _dbContext.BookBorrows.Add(bookBorrow);
         _dbContext.SaveChanges();
-        
-        _emailService.SendCodeMessage(userDto.EmailAddress, pickupCode, returnCode, bookCopy.Book.Title);
 
         return true;
     }
 
-    public void ReturnBook(int bookBorrowId)
+    public bool ReturnBook(int bookBorrowId)
     {
-        // var bookBorrow = _dbContext.BookBorrows
-        //     .Include(x => x.BookCopy)
-        //     .ThenInclude(y => y.Book)
-        //     .FirstOrDefault(x => x.BookBorrowId == bookBorrowId);
+        var bookBorrow = _dbContext.BookBorrows
+            .Include(x => x.User)
+            .Include(x => x.BookStoreCodes)
+            .Include(x => x.BookCopy)
+            .ThenInclude(x => x.Book)
+            .FirstOrDefault(x => x.BookBorrowId == bookBorrowId);
+        
+        if (bookBorrow == null)
+            return false;
+            
+        _emailService.SendReturnCodeMessage(bookBorrow.User.EmailAddress, bookBorrow.BookStoreCodes.First(x => x.CodeType == CodeType.zwrot).Code, bookBorrow.BookCopy.Book.Title);
+        return true;
     }
     
     public List<BookBorrowDto> GetBorrowedBooks(int userId, string bookName = "")
     {
         var query = _dbContext.BookBorrows
+            .Include(x => x.User)
             .Include(x => x.BookCopy)
             .ThenInclude(y => y.Book)
-            .ThenInclude(z => z.Author)
             .Where(x => x.UserId == userId && x.IsActive && x.BookCopy.Book.Title.Contains(bookName))
             .Select(x => new BookBorrowDto()
             {
                 BookBorrowId = x.BookBorrowId,
                 StartDate = x.StartDate,
                 EndDate = x.EndDate,
-                Status = EnumDescriptor.GetEnumDescription(x.status),
+                Status = EnumDescriptor.GetEnumDescription(x.Status),
                 Title = x.BookCopy.Book.Title,
                 Category = EnumDescriptor.GetEnumDescription(x.BookCopy.Book.Category),
                 AuthorName = x.BookCopy.Book.Author.Name,
