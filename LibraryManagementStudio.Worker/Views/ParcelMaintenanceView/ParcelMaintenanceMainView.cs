@@ -24,7 +24,7 @@
         {
             ViewStyleHelper.AddControlToPanel(new AcceptBookReturnControl(contentPanel), contentPanel);
 
-           
+
             AcceptrRequest.BackColor = Color.Gray;
             AcceptReturn.BackColor = Color.White;
         }

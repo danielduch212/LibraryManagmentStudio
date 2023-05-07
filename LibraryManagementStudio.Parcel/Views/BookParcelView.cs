@@ -29,6 +29,8 @@
             {
                 MessageBox.Show("Nie udało się odebrać książki", "Odbiór", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            codeTextBox.Text = "";
         }
 
         private void returnButton_Click(object sender, EventArgs e)
@@ -48,6 +50,8 @@
             {
                 MessageBox.Show("Nie udało się zwrócić książki", "Odbiór", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            codeTextBox.Text = "";
         }
     }
 }

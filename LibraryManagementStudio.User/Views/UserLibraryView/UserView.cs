@@ -41,7 +41,7 @@ namespace LibraryManagementStudio.User.Views.UserLibraryView
         {
             var control = new UserBorrowedBooksControl(_userDto);
             ViewStyleHelper.AddControlToPanel(control, contentPanel);
-            
+
             bookListButton.BackColor = Color.White;
             borrowedBookButton.BackColor = Color.Gray;
             pickupAndReturnButton.BackColor = Color.White;

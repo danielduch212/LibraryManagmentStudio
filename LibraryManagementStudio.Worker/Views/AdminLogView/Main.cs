@@ -1,6 +1,4 @@
-﻿using LibraryManagementStudio.Worker.Views.ParcelMaintenanceView;
-
-namespace LibraryManagementStudio.Worker.Views.AdminLogView
+﻿namespace LibraryManagementStudio.Worker.Views.AdminLogView
 {
     public partial class Main : Form
     {
@@ -18,7 +16,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminLogView
         {
             if(textboxLogin.Text == "admin" && textboxHaslo.Text == "admin")
             {
-                Worker.Views.AdminView.Main adminView = new Worker.Views.AdminView.Main();
+                var adminView = new Worker.Views.AdminView.Main();
                 adminView.Show();
                 this.Hide();
 
@@ -26,7 +24,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminLogView
             if (textboxLogin.Text == "parcel" && textboxHaslo.Text == "parcel")
             {
 
-                Worker.Views.ParcelMaintenanceView.ParcelMaintenanceMainView parcelView = new Worker.Views.ParcelMaintenanceView.ParcelMaintenanceMainView();
+                var parcelView = new ParcelMaintenanceView.ParcelMaintenanceMainView();
                 parcelView.Show();
                 this.Hide();
             }

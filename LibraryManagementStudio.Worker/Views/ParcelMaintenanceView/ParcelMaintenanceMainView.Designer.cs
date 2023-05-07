@@ -87,7 +87,7 @@
             AcceptReturn.UseVisualStyleBackColor = true;
             AcceptReturn.Click += AcceptReturn_Click;
             // 
-            // ParcelViewBasic
+            // ParcelMaintenanceMainView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -95,7 +95,6 @@
             Controls.Add(panel2);
             Controls.Add(contentPanel);
             Name = "ParcelMaintenanceMainView";
-            Text = "ParcelViewBasic";
             panel2.ResumeLayout(false);
             ResumeLayout(false);
         }

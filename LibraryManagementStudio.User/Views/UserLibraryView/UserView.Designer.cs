@@ -81,7 +81,7 @@ namespace LibraryManagementStudio.User.Views.UserLibraryView
             userInfoButton.Name = "userInfoButton";
             userInfoButton.Size = new Size(191, 29);
             userInfoButton.TabIndex = 3;
-            userInfoButton.Text = "Konto";
+            userInfoButton.Text = "Moje Konto";
             userInfoButton.UseVisualStyleBackColor = true;
             userInfoButton.Click += userInfoButton_Click;
             // 
@@ -92,7 +92,7 @@ namespace LibraryManagementStudio.User.Views.UserLibraryView
             pickupAndReturnButton.Name = "pickupAndReturnButton";
             pickupAndReturnButton.Size = new Size(191, 29);
             pickupAndReturnButton.TabIndex = 2;
-            pickupAndReturnButton.Text = "Odbiór i zwrot";
+            pickupAndReturnButton.Text = "Moje kary";
             pickupAndReturnButton.UseVisualStyleBackColor = true;
             pickupAndReturnButton.Click += pickupAndReturnButton_Click;
             // 
