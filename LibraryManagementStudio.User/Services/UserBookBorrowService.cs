@@ -109,7 +109,7 @@ public class UserBookBorrowService : IUserBookBorrowService
     {
         while (true)
         {
-            var code = Guid.NewGuid().ToString();
+            var code = Guid.NewGuid().ToString().Substring(0, 8);
             var exisitingCode = _dbContext.BookStoreCodes.FirstOrDefault(x => x.Code == code);
             
             if (exisitingCode == null)
@@ -123,7 +123,7 @@ public class UserBookBorrowService : IUserBookBorrowService
     {
         while (true)
         {
-            var code = Guid.NewGuid().ToString();
+            var code = Guid.NewGuid().ToString().Substring(0, 8);
             var exisitingCode = _dbContext.BookStoreCodes.FirstOrDefault(x => x.Code == code);
             
             if (exisitingCode == null && code != bookStoreCode)
