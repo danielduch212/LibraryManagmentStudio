@@ -10,7 +10,7 @@ public class BookCopy
     public BookCopyStatus Status { get; set; }
     
     //Relationships
-    public BookBorrow BookBorrow { get; set; }
+    public ICollection<BookBorrow> BookBorrows { get; set; }
     
     public int BookId { get; set; }
     public Book Book { get; set; }

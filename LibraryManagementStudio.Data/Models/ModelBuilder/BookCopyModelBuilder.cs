@@ -11,9 +11,9 @@ public partial class LibraryDbContext
         {
             entity.HasKey(x => x.BookCopyId);
 
-            entity.HasOne(x => x.BookBorrow)
+            entity.HasMany(x => x.BookBorrows)
                 .WithOne(x => x.BookCopy)
-                .HasForeignKey<BookBorrow>(x => x.BookCopyId)
+                .HasForeignKey(x => x.BookCopyId)
                 .OnDelete(DeleteBehavior.Restrict);
         });
     }
