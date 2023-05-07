@@ -4,8 +4,23 @@
     <Compile Update="Views\AdminLogView\Main.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\AdminView\BookStorage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\AdminView\CreateAcc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Views\AdminView\Main.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\AdminView\Penalties.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\AdminView\Raports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\AdminView\UsersList.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Views\ParcelMaintenanceView\AcceptBookBorrowControl.cs">
       <SubType>UserControl</SubType>
