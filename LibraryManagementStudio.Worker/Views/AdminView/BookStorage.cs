@@ -15,6 +15,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         public BookStorage()
         {
             InitializeComponent();
+            ViewStyleHelper.MaximizeUserControl(this);
         }
     }
 }

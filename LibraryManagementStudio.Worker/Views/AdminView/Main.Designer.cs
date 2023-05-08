@@ -29,35 +29,57 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.AddPenaltyButton = new System.Windows.Forms.Button();
+            this.PenaltiesButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.timeLabel = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.generateReportButton = new System.Windows.Forms.Button();
+            this.AddUserButton = new System.Windows.Forms.Button();
+            this.bookStorageButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
+            this.usersButton = new System.Windows.Forms.Button();
+            this.contentPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button5);
+            this.panel1.Controls.Add(this.AddPenaltyButton);
+            this.panel1.Controls.Add(this.PenaltiesButton);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.timeLabel);
             this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.generateReportButton);
+            this.panel1.Controls.Add(this.AddUserButton);
+            this.panel1.Controls.Add(this.bookStorageButton);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.usersButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(217, 581);
             this.panel1.TabIndex = 0;
+            // 
+            // AddPenaltyButton
+            // 
+            this.AddPenaltyButton.Location = new System.Drawing.Point(3, 215);
+            this.AddPenaltyButton.Name = "AddPenaltyButton";
+            this.AddPenaltyButton.Size = new System.Drawing.Size(214, 30);
+            this.AddPenaltyButton.TabIndex = 12;
+            this.AddPenaltyButton.Text = "Nałóż karę";
+            this.AddPenaltyButton.UseVisualStyleBackColor = true;
+            this.AddPenaltyButton.Click += new System.EventHandler(this.AddPenaltyButton_Click);
+            // 
+            // PenaltiesButton
+            // 
+            this.PenaltiesButton.Location = new System.Drawing.Point(0, 179);
+            this.PenaltiesButton.Name = "PenaltiesButton";
+            this.PenaltiesButton.Size = new System.Drawing.Size(214, 30);
+            this.PenaltiesButton.TabIndex = 11;
+            this.PenaltiesButton.Text = "Kary";
+            this.PenaltiesButton.UseVisualStyleBackColor = true;
+            this.PenaltiesButton.Click += new System.EventHandler(this.PenaltiesButton_Click);
             // 
             // label2
             // 
@@ -88,32 +110,35 @@
             this.button7.Text = "Wyloguj";
             this.button7.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // generateReportButton
             // 
-            this.button4.Location = new System.Drawing.Point(3, 215);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(214, 30);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Generowanie Raportów";
-            this.button4.UseVisualStyleBackColor = true;
+            this.generateReportButton.Location = new System.Drawing.Point(0, 251);
+            this.generateReportButton.Name = "generateReportButton";
+            this.generateReportButton.Size = new System.Drawing.Size(214, 30);
+            this.generateReportButton.TabIndex = 4;
+            this.generateReportButton.Text = "Generowanie Raportów";
+            this.generateReportButton.UseVisualStyleBackColor = true;
+            this.generateReportButton.Click += new System.EventHandler(this.generateReportButton_Click);
             // 
-            // button3
+            // AddUserButton
             // 
-            this.button3.Location = new System.Drawing.Point(3, 143);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(214, 30);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Dodaj Użytkownika";
-            this.button3.UseVisualStyleBackColor = true;
+            this.AddUserButton.Location = new System.Drawing.Point(3, 143);
+            this.AddUserButton.Name = "AddUserButton";
+            this.AddUserButton.Size = new System.Drawing.Size(214, 30);
+            this.AddUserButton.TabIndex = 3;
+            this.AddUserButton.Text = "Dodaj Użytkownika";
+            this.AddUserButton.UseVisualStyleBackColor = true;
+            this.AddUserButton.Click += new System.EventHandler(this.AddUserButton_Click);
             // 
-            // button2
+            // bookStorageButton
             // 
-            this.button2.Location = new System.Drawing.Point(3, 107);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(214, 30);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Magazyn książek";
-            this.button2.UseVisualStyleBackColor = true;
+            this.bookStorageButton.Location = new System.Drawing.Point(3, 107);
+            this.bookStorageButton.Name = "bookStorageButton";
+            this.bookStorageButton.Size = new System.Drawing.Size(214, 30);
+            this.bookStorageButton.TabIndex = 2;
+            this.bookStorageButton.Text = "Magazyn książek";
+            this.bookStorageButton.UseVisualStyleBackColor = true;
+            this.bookStorageButton.Click += new System.EventHandler(this.bookStorageButton_Click);
             // 
             // label1
             // 
@@ -125,31 +150,23 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Administrator";
             // 
-            // button1
+            // usersButton
             // 
-            this.button1.Location = new System.Drawing.Point(3, 71);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(214, 30);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Użytkownicy";
-            this.button1.UseVisualStyleBackColor = true;
+            this.usersButton.Location = new System.Drawing.Point(3, 71);
+            this.usersButton.Name = "usersButton";
+            this.usersButton.Size = new System.Drawing.Size(214, 30);
+            this.usersButton.TabIndex = 0;
+            this.usersButton.Text = "Użytkownicy";
+            this.usersButton.UseVisualStyleBackColor = true;
+            this.usersButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // panel2
+            // contentPanel
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(217, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(725, 581);
-            this.panel2.TabIndex = 1;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(0, 179);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(214, 30);
-            this.button5.TabIndex = 11;
-            this.button5.Text = "Kary";
-            this.button5.UseVisualStyleBackColor = true;
+            this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contentPanel.Location = new System.Drawing.Point(217, 0);
+            this.contentPanel.Name = "contentPanel";
+            this.contentPanel.Size = new System.Drawing.Size(725, 581);
+            this.contentPanel.TabIndex = 1;
             // 
             // Main
             // 
@@ -157,7 +174,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(942, 581);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.panel1);
             this.Name = "Main";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -175,12 +192,13 @@
         private Label label2;
         private Label timeLabel;
         private Button button7;
-        private Button button4;
-        private Button button3;
-        private Button button2;
+        private Button generateReportButton;
+        private Button AddUserButton;
+        private Button bookStorageButton;
         private Label label1;
-        private Button button1;
-        private Panel panel2;
-        private Button button5;
+        private Button usersButton;
+        private Panel contentPanel;
+        private Button PenaltiesButton;
+        private Button AddPenaltyButton;
     }
 }

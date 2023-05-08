@@ -4,6 +4,9 @@
     <Compile Update="Views\AdminLogView\Main.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\AdminView\AddPenalty.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Views\AdminView\BookStorage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -16,7 +19,7 @@
     <Compile Update="Views\AdminView\Penalties.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\AdminView\Raports.cs">
+    <Compile Update="Views\AdminView\Reports.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Views\AdminView\UsersList.cs">

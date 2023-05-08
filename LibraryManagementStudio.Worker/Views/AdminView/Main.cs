@@ -9,7 +9,8 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         public Main()
         {
             InitializeComponent();
-            
+            ViewStyleHelper.MaximizeForm(this);
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -22,6 +23,42 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         }
 
-       
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            var control = new UsersList();
+            ViewStyleHelper.AddControlToPanel(control, contentPanel);
+
+        }
+
+        private void bookStorageButton_Click(object sender, EventArgs e)
+        {
+            var control = new BookStorage();
+            ViewStyleHelper.AddControlToPanel(control, contentPanel);
+        }
+
+        private void AddUserButton_Click(object sender, EventArgs e)
+        {
+            var control = new CreateAcc();
+            ViewStyleHelper.AddControlToPanel(control, contentPanel);
+        }
+
+        private void PenaltiesButton_Click(object sender, EventArgs e)
+        {
+            var control = new Penalties();
+            ViewStyleHelper.AddControlToPanel(control, contentPanel);
+        }
+
+        private void AddPenaltyButton_Click(object sender, EventArgs e)
+        {
+            var control = new AddPenalty();
+            ViewStyleHelper.AddControlToPanel(control, contentPanel);
+        }
+
+        private void generateReportButton_Click(object sender, EventArgs e)
+        {
+            var control = new Reports();
+            ViewStyleHelper.AddControlToPanel(control, contentPanel);
+        }
     }
 }

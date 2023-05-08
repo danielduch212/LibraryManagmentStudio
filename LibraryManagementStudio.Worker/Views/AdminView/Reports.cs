@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace LibraryManagementStudio.Worker.Views.AdminView
 {
-    public partial class Raports : UserControl
+    public partial class Reports : UserControl
     {
-        public Raports()
+        public Reports()
         {
             InitializeComponent();
+            ViewStyleHelper.MaximizeUserControl(this);
         }
     }
 }

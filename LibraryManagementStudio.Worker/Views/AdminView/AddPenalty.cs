@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LibraryManagementStudio.Worker.Views.AdminView
 {
-    public partial class CreateAcc : UserControl
+    public partial class AddPenalty : UserControl
     {
-        public CreateAcc()
+        public AddPenalty()
         {
             InitializeComponent();
             ViewStyleHelper.MaximizeUserControl(this);

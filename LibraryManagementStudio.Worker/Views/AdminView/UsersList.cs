@@ -12,9 +12,11 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 {
     public partial class UsersList : UserControl
     {
+        
         public UsersList()
         {
             InitializeComponent();
+            ViewStyleHelper.MaximizeUserControl(this);
         }
     }
 }

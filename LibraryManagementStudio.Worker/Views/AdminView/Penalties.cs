@@ -15,6 +15,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         public Penalties()
         {
             InitializeComponent();
+            ViewStyleHelper.MaximizeUserControl(this);
         }
     }
 }

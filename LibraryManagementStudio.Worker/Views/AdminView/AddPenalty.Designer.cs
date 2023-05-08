@@ -1,6 +1,6 @@
 ﻿namespace LibraryManagementStudio.Worker.Views.AdminView
 {
-    partial class Raports
+    partial class AddPenalty
     {
         /// <summary> 
         /// Wymagana zmienna projektanta.
