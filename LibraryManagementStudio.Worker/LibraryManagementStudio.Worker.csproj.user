@@ -25,6 +25,9 @@
     <Compile Update="Views\AdminView\UsersList.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Views\AdminView\Workers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Views\ParcelMaintenanceView\AcceptBookBorrowControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

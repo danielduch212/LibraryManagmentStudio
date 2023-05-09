@@ -40,11 +40,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.usersButton = new System.Windows.Forms.Button();
             this.contentPanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.AddPenaltyButton);
             this.panel1.Controls.Add(this.PenaltiesButton);
             this.panel1.Controls.Add(this.label2);
@@ -168,6 +170,15 @@
             this.contentPanel.Size = new System.Drawing.Size(725, 581);
             this.contentPanel.TabIndex = 1;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(3, 287);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(214, 30);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Pracownicy";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -200,5 +211,6 @@
         private Panel contentPanel;
         private Button PenaltiesButton;
         private Button AddPenaltyButton;
+        private Button button1;
     }
 }
