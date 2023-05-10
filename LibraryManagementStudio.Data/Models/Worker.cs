@@ -16,4 +16,5 @@ public class Worker
     public ICollection<Book> Books { get; set; }
     public ICollection<BookBorrow> BookBorrows { get; set; }
     public ICollection<Data.Models.User> Users { get; set; }
+    public ICollection<Data.Models.Penalty> Penalties { get; set; }
 }

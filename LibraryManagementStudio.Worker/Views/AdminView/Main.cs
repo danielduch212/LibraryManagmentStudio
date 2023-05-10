@@ -1,11 +1,12 @@
-﻿using System;
+﻿using LibraryManagementStudio.Data;
+using System;
 using System.Timers;
 
 namespace LibraryManagementStudio.Worker.Views.AdminView
 {
     public partial class Main : Form
     {
-
+        LibraryDbContext dbContext = new LibraryDbContext();
         public Main()
         {
             InitializeComponent();
@@ -41,11 +42,12 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         {
             var control = new CreateAcc();
             ViewStyleHelper.AddControlToPanel(control, contentPanel);
+            
         }
 
         private void PenaltiesButton_Click(object sender, EventArgs e)
         {
-            var control = new Penalties();
+            var control = new Penalties(dbContext);
             ViewStyleHelper.AddControlToPanel(control, contentPanel);
         }
 

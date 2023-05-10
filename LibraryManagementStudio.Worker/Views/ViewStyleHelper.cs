@@ -8,10 +8,12 @@ public static class ViewStyleHelper
         form.WindowState = FormWindowState.Maximized;
     }
 
+
     public static void MaximizeUserControl(UserControl userControl)
     {
         userControl.Dock = DockStyle.Fill;
         userControl.AutoSize = default;
+        
     }
 
     public static void AddControlToPanel(UserControl userControl, Panel panel)

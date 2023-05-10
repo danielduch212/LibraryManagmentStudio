@@ -20,7 +20,7 @@ public static class WorkerDIConfig
         builder.RegisterType<WorkerBookService>().As<IWorkerBookService>();
         builder.RegisterType<WorkerBookBorrowService>().As<IWorkerBookBorrowService>();
         builder.RegisterType<EmailService>().As<IEmailService>();
-
+        
 
         return builder.Build();
     }

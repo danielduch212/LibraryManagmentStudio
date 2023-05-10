@@ -1,4 +1,7 @@
-﻿using System;
+﻿using LibraryManagementStudio.Data;
+using LibraryManagementStudio.Worker.Dtos.Penalty;
+using LibraryManagementStudio.Worker.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +15,82 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 {
     public partial class Penalties : UserControl
     {
-        public Penalties()
+        PenaltiesService service;
+
+        public Penalties(LibraryDbContext dbContext)
         {
             InitializeComponent();
             ViewStyleHelper.MaximizeUserControl(this);
+            service = new PenaltiesService(dbContext);
+            LoadNotPaidPenalties();
         }
+
+        private void LoadNotPaidPenalties()
+        {
+            var penalties = service.GetNotPaidPenalties();
+            var bindingList = new BindingList<PenaltyDto>(penalties);
+            var bindingSource = new BindingSource(bindingList, null);
+
+            penaltyGridView.DataSource = bindingSource;
+
+            penaltyGridView.Columns["PenaltyId"]!.HeaderText = "Id";
+            penaltyGridView.Columns["PenaltyId"]!.Width = 10;
+            penaltyGridView.Columns["WorkerId"]!.HeaderText = "Id Pracownika";
+            penaltyGridView.Columns["WorkerId"]!.Width = 15;
+            penaltyGridView.Columns["UserId"]!.HeaderText = "Id Użytkownika";
+            penaltyGridView.Columns["UserId"]!.Width = 15;
+            penaltyGridView.Columns["UserFirstName"]!.HeaderText = "Imie";
+            penaltyGridView.Columns["UserFirstName"]!.Width = 25;
+            penaltyGridView.Columns["UserLastName"]!.HeaderText = "Nazwisko";
+            penaltyGridView.Columns["UserLastName"]!.Width = 25;
+            penaltyGridView.Columns["BookTitle"]!.HeaderText = "Ksiazka";
+            penaltyGridView.Columns["BookTitle"]!.Width = 25;
+            penaltyGridView.Columns["Description"]!.HeaderText = "Opis";
+            penaltyGridView.Columns["Description"]!.Width = 25;
+            penaltyGridView.Columns["Price"]!.HeaderText = "Cena";
+            penaltyGridView.Columns["Price"]!.Width = 25;
+            penaltyGridView.Columns["BookBoorrowId"]!.HeaderText = "Id Wypozyczenia";
+            penaltyGridView.Columns["BookBoorrowId"]!.Width = 10;
+            penaltyGridView.Columns["IsPaid"]!.HeaderText = "Zapłacone";
+            penaltyGridView.Columns["IsPaid"]!.Width = 10;
+            penaltyGridView.BackgroundColor = Color.White;
+            penaltyGridView.RowHeadersVisible = false;
+
+        }
+
+        private void LoadPaidPenalties()
+        {
+            var penalties = service.GetPaidPenalties();
+            var bindingList = new BindingList<PenaltyDto>(penalties);
+            var bindingSource = new BindingSource(bindingList, null);
+
+            penaltyGridView.DataSource = bindingSource;
+
+            penaltyGridView.Columns["PenaltyId"]!.HeaderText = "Id";
+            penaltyGridView.Columns["PenaltyId"]!.Width = 10;
+            penaltyGridView.Columns["WorkerId"]!.HeaderText = "Id Pracownika";
+            penaltyGridView.Columns["WorkerId"]!.Width = 15;
+            penaltyGridView.Columns["UserId"]!.HeaderText = "Id Użytkownika";
+            penaltyGridView.Columns["UserId"]!.Width = 15;
+            penaltyGridView.Columns["UserFirstName"]!.HeaderText = "Imie";
+            penaltyGridView.Columns["UserFirstName"]!.Width = 25;
+            penaltyGridView.Columns["UserLastName"]!.HeaderText = "Nazwisko";
+            penaltyGridView.Columns["UserLastName"]!.Width = 25;
+            penaltyGridView.Columns["BookTitle"]!.HeaderText = "Ksiazka";
+            penaltyGridView.Columns["BookTitle"]!.Width = 25;
+            penaltyGridView.Columns["Description"]!.HeaderText = "Opis";
+            penaltyGridView.Columns["Description"]!.Width = 25;
+            penaltyGridView.Columns["Price"]!.HeaderText = "Cena";
+            penaltyGridView.Columns["Price"]!.Width = 25;
+            penaltyGridView.Columns["BookBoorrowId"]!.HeaderText = "Id Wypozyczenia";
+            penaltyGridView.Columns["BookBoorrowId"]!.Width = 10;
+            penaltyGridView.Columns["IsPaid"]!.HeaderText = "Zapłacone";
+            penaltyGridView.Columns["IsPaid"]!.Width = 10;
+            penaltyGridView.BackgroundColor = Color.White;
+            penaltyGridView.RowHeadersVisible = false;
+
+        }
+
+
     }
 }

@@ -27,6 +27,16 @@ public partial class LibraryDbContext
                 .HasForeignKey(x => x.WorkerId)
                 .IsRequired(false)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            entity.HasMany(x => x.Penalties)
+                .WithOne(x => x.Worker)
+                .HasForeignKey(x => x.PenaltyId)
+                .IsRequired(false)
+                .OnDelete(DeleteBehavior.Restrict);
+
+
         });
+
+
     }
 }
