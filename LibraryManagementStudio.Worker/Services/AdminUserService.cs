@@ -1,6 +1,7 @@
 ﻿using LibraryManagementStudio.Data;
 using LibraryManagementStudio.Data.Models;
 using LibraryManagementStudio.Data.Models.Enums;
+using LibraryManagementStudio.Worker.Dtos.User;
 using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
@@ -24,30 +25,24 @@ namespace LibraryManagementStudio.Worker.Services
 
         }
 
-        List<LibraryManagementStudio.Data.Models.User> getUsers()
+        public List<UserDto> getUsers()
         {
 
             var query = _dbContext.Users
-           .Select(x => new LibraryManagementStudio.Data.Models.User()
+           .Select(x => new UserDto()
            {
                UserId = x.UserId,
                EmailAddress = x.EmailAddress,
-               Password = x.Password,
                FirstName = x.FirstName,
                LastName = x.LastName,
-               DateOfBirth = x.DateOfBirth,
                Street = x.Street,
                PostalCode = x.PostalCode,
                City = x.City,
-               Country = x.Country,
-               CreationDate = x.CreationDate,
-               WorkerId = x.WorkerId,
-               Worker = x.Worker,
                BookBorrows = x.BookBorrows,
+               BookBorrowsCount = x.BookBorrows.Count
 
 
-
-           });
+           }) ;
 
             var users = query.ToList();
 
@@ -61,6 +56,12 @@ namespace LibraryManagementStudio.Worker.Services
             _dbContext.SaveChanges();
         }
 
+        public LibraryManagementStudio.Data.Models.User findUser(int Id)
+        {
+            var query = _dbContext.Users
+                .FirstOrDefault(x => x.UserId.Equals(Id));
+            return query;
+        }
 
 
     }

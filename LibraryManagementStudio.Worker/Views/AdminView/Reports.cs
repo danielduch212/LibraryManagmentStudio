@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryManagementStudio.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,14 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 {
     public partial class Reports : UserControl
     {
-        public Reports()
+        LibraryManagementStudio.Data.Models.Worker worker;
+        LibraryDbContext dbContext;
+        public Reports(Data.Models.Worker worker, LibraryDbContext dbContext)
         {
             InitializeComponent();
             ViewStyleHelper.MaximizeUserControl(this);
+            this.dbContext = dbContext;
+            this.worker = worker;
         }
     }
 }

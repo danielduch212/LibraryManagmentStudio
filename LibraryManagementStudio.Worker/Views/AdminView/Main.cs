@@ -6,11 +6,15 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 {
     public partial class Main : Form
     {
-        LibraryDbContext dbContext = new LibraryDbContext();
-        public Main()
+        LibraryDbContext dbContext;
+        LibraryManagementStudio.Data.Models.Worker worker;
+
+        public Main(LibraryManagementStudio.Data.Models.Worker worker, LibraryDbContext dbContext)
         {
             InitializeComponent();
             ViewStyleHelper.MaximizeForm(this);
+            this.dbContext = dbContext;
+            this.worker = worker;
 
         }
 
@@ -27,39 +31,39 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         private void button1_Click(object sender, EventArgs e)
         {
 
-            var control = new UsersList();
+            var control = new UsersList(dbContext, worker);
             ViewStyleHelper.AddControlToPanel(control, contentPanel);
 
         }
 
         private void bookStorageButton_Click(object sender, EventArgs e)
         {
-            var control = new BookStorage();
+            var control = new BookStorage(dbContext, worker);
             ViewStyleHelper.AddControlToPanel(control, contentPanel);
         }
 
         private void AddUserButton_Click(object sender, EventArgs e)
         {
-            var control = new CreateAcc();
+            var control = new CreateAcc(worker, dbContext);
             ViewStyleHelper.AddControlToPanel(control, contentPanel);
             
         }
 
         private void PenaltiesButton_Click(object sender, EventArgs e)
         {
-            var control = new Penalties(dbContext);
+            var control = new Penalties(dbContext, worker);
             ViewStyleHelper.AddControlToPanel(control, contentPanel);
         }
 
         private void AddPenaltyButton_Click(object sender, EventArgs e)
         {
-            var control = new AddPenalty();
+            var control = new AddPenalty(worker, dbContext);
             ViewStyleHelper.AddControlToPanel(control, contentPanel);
         }
 
         private void generateReportButton_Click(object sender, EventArgs e)
         {
-            var control = new Reports();
+            var control = new Reports(worker, dbContext);
             ViewStyleHelper.AddControlToPanel(control, contentPanel);
         }
     }

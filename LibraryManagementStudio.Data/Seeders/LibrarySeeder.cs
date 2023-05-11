@@ -1,4 +1,6 @@
+using LibraryManagementStudio.Data.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Net.Mail;
 
 namespace LibraryManagementStudio.Data.Seeders;
 
@@ -82,6 +84,19 @@ public class LibrarySeeder
     private void SeedWorkers()
     {
         var workers = DummyDataProvider.GetDummyWorkers();
+
+        
+        LibraryManagementStudio.Data.Models.Worker worker = new LibraryManagementStudio.Data.Models.Worker
+        {
+            Type = Models.Enums.WorkerType.bibliotekarz,
+            FirstName = "admin",
+            LastName = "admin",
+            EmailAddress = "admin",
+            Password = "admin",
+            
+
+
+        };
 
         _dbContext.Workers.AddRange(workers);
         _dbContext.SaveChanges();

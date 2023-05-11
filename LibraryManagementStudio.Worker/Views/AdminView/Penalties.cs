@@ -16,13 +16,14 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
     public partial class Penalties : UserControl
     {
         PenaltiesService service;
-
-        public Penalties(LibraryDbContext dbContext)
+        LibraryManagementStudio.Data.Models.Worker worker;
+        public Penalties(LibraryDbContext dbContext, Data.Models.Worker worker)
         {
             InitializeComponent();
             ViewStyleHelper.MaximizeUserControl(this);
             service = new PenaltiesService(dbContext);
             LoadNotPaidPenalties();
+            this.worker = worker;
         }
 
         private void LoadNotPaidPenalties()

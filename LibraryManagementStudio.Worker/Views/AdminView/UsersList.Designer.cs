@@ -36,10 +36,10 @@
             this.clearSearchButton = new System.Windows.Forms.Button();
             this.searchBooksTextBox = new System.Windows.Forms.TextBox();
             this.searchBooksButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.usersDataGridView = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -140,30 +140,30 @@
             this.searchBooksButton.Text = "Szukaj";
             this.searchBooksButton.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // usersDataGridView
             // 
-            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 66);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1069, 464);
-            this.dataGridView1.TabIndex = 0;
+            this.usersDataGridView.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.usersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.usersDataGridView.Location = new System.Drawing.Point(0, 66);
+            this.usersDataGridView.Name = "usersDataGridView";
+            this.usersDataGridView.ReadOnly = true;
+            this.usersDataGridView.RowTemplate.Height = 25;
+            this.usersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.usersDataGridView.Size = new System.Drawing.Size(1069, 464);
+            this.usersDataGridView.TabIndex = 0;
             // 
             // UsersList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.usersDataGridView);
             this.Controls.Add(this.panel2);
             this.Name = "UsersList";
             this.Size = new System.Drawing.Size(1069, 530);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -178,6 +178,6 @@
         private Button clearSearchButton;
         private TextBox searchBooksTextBox;
         private Button searchBooksButton;
-        private DataGridView dataGridView1;
+        private DataGridView usersDataGridView;
     }
 }

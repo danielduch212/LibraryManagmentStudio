@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -37,37 +36,21 @@
             this.clearSearchButton = new System.Windows.Forms.Button();
             this.searchBooksTextBox = new System.Windows.Forms.TextBox();
             this.searchBooksButton = new System.Windows.Forms.Button();
+            this.bookDataGridView = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bookDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel1);
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.bookDataGridView);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1098, 527);
             this.panel2.TabIndex = 2;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 66);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1098, 461);
-            this.dataGridView1.TabIndex = 0;
             // 
             // panel1
             // 
@@ -149,6 +132,23 @@
             this.searchBooksButton.Text = "Szukaj";
             this.searchBooksButton.UseVisualStyleBackColor = true;
             // 
+            // bookDataGridView
+            // 
+            this.bookDataGridView.AllowUserToAddRows = false;
+            this.bookDataGridView.AllowUserToDeleteRows = false;
+            this.bookDataGridView.AllowUserToResizeColumns = false;
+            this.bookDataGridView.AllowUserToResizeRows = false;
+            this.bookDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.bookDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bookDataGridView.Location = new System.Drawing.Point(0, 66);
+            this.bookDataGridView.MultiSelect = false;
+            this.bookDataGridView.Name = "bookDataGridView";
+            this.bookDataGridView.ReadOnly = true;
+            this.bookDataGridView.RowTemplate.Height = 25;
+            this.bookDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.bookDataGridView.Size = new System.Drawing.Size(1098, 461);
+            this.bookDataGridView.TabIndex = 0;
+            // 
             // BookStorage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -157,9 +157,9 @@
             this.Name = "BookStorage";
             this.Size = new System.Drawing.Size(1098, 527);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bookDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -174,6 +174,6 @@
         private Button clearSearchButton;
         private TextBox searchBooksTextBox;
         private Button searchBooksButton;
-        private DataGridView dataGridView1;
+        private DataGridView bookDataGridView;
     }
 }

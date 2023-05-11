@@ -41,7 +41,7 @@ public class WorkerBookService : IWorkerBookService
         return true;
     }
 
-    public IEnumerable<BookDto> GetBooks()
+    public List<BookDto> GetBooks()
     {
         var query = _dbContext.Books
             .Include(x => x.Author)

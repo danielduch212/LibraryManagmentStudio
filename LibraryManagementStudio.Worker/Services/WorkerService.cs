@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace LibraryManagementStudio.Worker.Services
 {
-    internal class WorkerService
+    public class WorkerService
     {
         private readonly LibraryDbContext _dbContext;
 
-        WorkerService(LibraryDbContext dbContext)
+        public WorkerService(LibraryDbContext dbContext)
         {
             this._dbContext = dbContext;
 
@@ -44,6 +44,14 @@ namespace LibraryManagementStudio.Worker.Services
 
             return workers;
 
+
+        }
+
+        public LibraryManagementStudio.Data.Models.Worker getWorker(string login)
+        {
+            var query = _dbContext.Workers
+               .FirstOrDefault(x => x.EmailAddress.Equals(login));
+            return query;
 
         }
     }
