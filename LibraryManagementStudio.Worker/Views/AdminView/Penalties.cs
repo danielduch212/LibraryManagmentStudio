@@ -50,8 +50,8 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             penaltyGridView.Columns["Description"]!.Width = 25;
             penaltyGridView.Columns["Price"]!.HeaderText = "Cena";
             penaltyGridView.Columns["Price"]!.Width = 25;
-            penaltyGridView.Columns["BookBoorrowId"]!.HeaderText = "Id Wypozyczenia";
-            penaltyGridView.Columns["BookBoorrowId"]!.Width = 10;
+            penaltyGridView.Columns["BookBorrowId"]!.HeaderText = "Id Wypozyczenia";
+            penaltyGridView.Columns["BookBorrowId"]!.Width = 10;
             penaltyGridView.Columns["IsPaid"]!.HeaderText = "Zapłacone";
             penaltyGridView.Columns["IsPaid"]!.Width = 10;
             penaltyGridView.BackgroundColor = Color.White;
@@ -83,8 +83,8 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             penaltyGridView.Columns["Description"]!.Width = 25;
             penaltyGridView.Columns["Price"]!.HeaderText = "Cena";
             penaltyGridView.Columns["Price"]!.Width = 25;
-            penaltyGridView.Columns["BookBoorrowId"]!.HeaderText = "Id Wypozyczenia";
-            penaltyGridView.Columns["BookBoorrowId"]!.Width = 10;
+            penaltyGridView.Columns["BookBorrowId"]!.HeaderText = "Id Wypozyczenia";
+            penaltyGridView.Columns["BookBorrowId"]!.Width = 10;
             penaltyGridView.Columns["IsPaid"]!.HeaderText = "Zapłacone";
             penaltyGridView.Columns["IsPaid"]!.Width = 10;
             penaltyGridView.BackgroundColor = Color.White;

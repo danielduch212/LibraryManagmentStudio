@@ -6,6 +6,7 @@ public class Penalty
 
     public string Description { get; set; }
     public double Price { get; set; }
+    public DateTime ImpositionDate { get; set; }
     public bool IsPaid { get; set; }
     
     //Relationships
