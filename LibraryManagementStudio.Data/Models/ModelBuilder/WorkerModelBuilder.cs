@@ -30,11 +30,9 @@ public partial class LibraryDbContext
 
             entity.HasMany(x => x.Penalties)
                 .WithOne(x => x.Worker)
-                .HasForeignKey(x => x.PenaltyId)
+                .HasForeignKey(x => x.WorkerId)
                 .IsRequired(false)
                 .OnDelete(DeleteBehavior.Restrict);
-
-
         });
 
 

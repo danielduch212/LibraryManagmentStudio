@@ -23,13 +23,7 @@ namespace LibraryManagementStudio.Worker.Services
         public List<PenaltyDto> GetNotPaidPenalties()
         {
             var query = _dbContext.Penalties
-                .Include(x => x.BookBorrow);
-            query.ThenInclude(x => x.User);
-            query.ThenInclude(x => x.BookCopy)
-                .ThenInclude(x => x.Book)
-                .Select(x => x.IsPaid == false);
-                
-                
+                .Where(x => x.IsPaid == false);
 
             var penalties = query.Select(x => new PenaltyDto()
             {
@@ -52,14 +46,8 @@ namespace LibraryManagementStudio.Worker.Services
         public List<PenaltyDto> GetPaidPenalties()
         {
             var query = _dbContext.Penalties
-                .Include(x => x.BookBorrow);
-            query.ThenInclude(x => x.User);
-            query.ThenInclude(x => x.BookCopy)
-                .ThenInclude(x => x.Book)
-                .Select(x => x.IsPaid == true);
-
-
-
+                .Where(x => x.IsPaid == true);
+            
             var penalties = query.Select(x => new PenaltyDto()
             {
                 PenaltyId = x.PenaltyId,

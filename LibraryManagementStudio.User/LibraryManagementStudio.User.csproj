@@ -25,6 +25,9 @@
     <Compile Update="Views\User\BookListControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Views\UserLibraryView\UserPenaltyInfoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

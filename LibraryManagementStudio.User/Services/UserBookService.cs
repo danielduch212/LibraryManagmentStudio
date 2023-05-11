@@ -17,10 +17,7 @@ public class UserBookService : IUserBookService
 
     public IEnumerable<BookDto> GetBooks()
     {
-        var query = _dbContext.Books
-            .Include(x => x.Author)
-            .Include(x => x.Publisher)
-            .Include(x => x.BookCopies);
+        var query = _dbContext.Books;
 
         var books = query.Select(x => new BookDto()
         {
@@ -40,11 +37,9 @@ public class UserBookService : IUserBookService
     public IEnumerable<BookDto> GetBooks(string title)
     {
         var query = _dbContext.Books
-            .Include(x => x.Author)
-            .Include(x => x.Publisher)
-            .Include(x => x.BookCopies);
+            .Where(x => x.Title.ToLower().Contains(title.ToLower()));
 
-        var books = query.Where(x => x.Title.ToLower().Contains(title.ToLower())).Select(x => new BookDto()
+        var books = query.Select(x => new BookDto()
         {
             BookId = x.BookId,
             Title = x.Title,

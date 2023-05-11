@@ -21,6 +21,7 @@ public static class UserDIConfig
         builder.RegisterType<UserBookService>().As<IUserBookService>();
         builder.RegisterType<UserBookCopyService>().As<IUserBookCopyService>();
         builder.RegisterType<UserBookBorrowService>().As<IUserBookBorrowService>();
+        builder.RegisterType<UserPenaltyService>().As<IUserPenaltyService>();
         builder.RegisterType<EmailService>().As<IEmailService>();
 
         return builder.Build();

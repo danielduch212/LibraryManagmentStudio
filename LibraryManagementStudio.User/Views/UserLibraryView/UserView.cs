@@ -50,7 +50,7 @@ namespace LibraryManagementStudio.User.Views.UserLibraryView
 
         private void pickupAndReturnButton_Click(object sender, EventArgs e)
         {
-            var control = new UserPickupAndReturnControl();
+            var control = new UserPenaltiesControl(_userDto);
             ViewStyleHelper.AddControlToPanel(control, contentPanel);
 
             bookListButton.BackColor = Color.White;
