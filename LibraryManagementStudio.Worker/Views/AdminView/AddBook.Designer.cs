@@ -36,6 +36,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.buttonAddNew = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.textBoxCopies = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.panelAuthor = new System.Windows.Forms.Panel();
             this.cancelNewAuthor = new System.Windows.Forms.Button();
             this.panelNewPublisher = new System.Windows.Forms.Panel();
@@ -65,8 +67,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textTitle = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBoxCopies = new System.Windows.Forms.TextBox();
             anotherAuthorButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelContent.SuspendLayout();
@@ -146,7 +146,6 @@
             // 
             this.panelContent.Controls.Add(this.textBoxCopies);
             this.panelContent.Controls.Add(this.label12);
-            this.panelContent.Controls.Add(this.panelAuthor);
             this.panelContent.Controls.Add(this.alertLabel1);
             this.panelContent.Controls.Add(this.btnAddBook);
             this.panelContent.Controls.Add(this.anotherPublisherButton);
@@ -168,10 +167,26 @@
             this.panelContent.Size = new System.Drawing.Size(811, 483);
             this.panelContent.TabIndex = 2;
             // 
+            // textBoxCopies
+            // 
+            this.textBoxCopies.Location = new System.Drawing.Point(385, 354);
+            this.textBoxCopies.Name = "textBoxCopies";
+            this.textBoxCopies.Size = new System.Drawing.Size(39, 23);
+            this.textBoxCopies.TabIndex = 23;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(175, 352);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(105, 21);
+            this.label12.TabIndex = 22;
+            this.label12.Text = "Liczba kopii:";
+            // 
             // panelAuthor
             // 
             this.panelAuthor.Controls.Add(this.cancelNewAuthor);
-            this.panelAuthor.Controls.Add(this.panelNewPublisher);
             this.panelAuthor.Controls.Add(this.alertLabelAuthor);
             this.panelAuthor.Controls.Add(this.buttonNewAuthor);
             this.panelAuthor.Controls.Add(this.textBoxNewAuthor);
@@ -446,27 +461,12 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Tytul:";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(175, 352);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(105, 21);
-            this.label12.TabIndex = 22;
-            this.label12.Text = "Liczba kopii:";
-            // 
-            // textBoxCopies
-            // 
-            this.textBoxCopies.Location = new System.Drawing.Point(385, 354);
-            this.textBoxCopies.Name = "textBoxCopies";
-            this.textBoxCopies.Size = new System.Drawing.Size(39, 23);
-            this.textBoxCopies.TabIndex = 23;
-            // 
             // AddBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panelAuthor);
+            this.Controls.Add(this.panelNewPublisher);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panel1);
             this.Name = "AddBook";
