@@ -1,56 +1,44 @@
-﻿namespace LibraryManagementStudio.Worker.Views.ParcelMaintenanceView
+﻿using Autofac;
+using LibraryManagementStudio.Worker.Dtos.BookBorrow;
+using LibraryManagementStudio.Worker.Dtos.Penalty;
+using LibraryManagementStudio.Worker.Services.Intrefaces;
+
+namespace LibraryManagementStudio.Worker.Views.ParcelMaintenanceView
 {
     public partial class AddPenaltyControl : UserControl
     {
-
-        // private LibraryDbContext Dodaniezgloszenia;
-        // private BorrowedBookService BookService ;
-        // private UserService NewService;
-        // private LibraryManagement.App.Models.User user;
-
-
+        private readonly IWorkerPenaltyService _workerPenaltyService;
         private readonly Panel _contentPanel;
+        private readonly BookBorrowDto _bookBorrowDto;
 
-        public AddPenaltyControl(Panel contentPanel)
+        public AddPenaltyControl(Panel contentPanel, BookBorrowDto bookBorrowDto)
         {
             InitializeComponent();
 
             _contentPanel = contentPanel;
+            _bookBorrowDto = bookBorrowDto;
+            
+            UserCodeTB.Text = _bookBorrowDto.UserEmailAddress;
+            bookCodeTB.Text = $@"#{_bookBorrowDto.BookCopyId} - {_bookBorrowDto.BookTitle}";
+
+            var diContainer = WorkerDIConfig.Configure();
+            _workerPenaltyService = diContainer.Resolve<IWorkerPenaltyService>();
 
             ViewStyleHelper.MaximizeUserControl(this);
-
-            // Dodaniezgloszenia = new LibraryDbContext();
-            // BookService = new BorrowedBookService(Dodaniezgloszenia);
-            // NewService = new UserService(Dodaniezgloszenia);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Old penalty logic
+            var createPenaltyDto = new CreatePenaltyDto()
+            {
+                BookBorrowId = _bookBorrowDto.BookBorrowId,
+                IsPaid = false,
+                Description = descriptionTB.Text,
+                Price = double.Parse(priceTB.Text),
+                WorkerId = 1
+            };
 
-            // if (OpisUszkodzenia.Text != "" && KodKsiazki.Text != "" && RentierCode.Text != "")
-            // {
-            //
-            //
-            //     var zgloszenie = new LibraryManagement.App.Models.BrokenBookRegistration();
-            //     zgloszenie.Description = OpisUszkodzenia.Text;
-            //     zgloszenie.Code = KodKsiazki.Text;
-            //     user = NewService.FindUser(Int32.Parse(RentierCode.Text));
-            //     zgloszenie.UserId = user.Id;
-            //     zgloszenie.userName = user.Name;
-            //     zgloszenie.userSurname = user.Surname;
-            //     Dodaniezgloszenia.RegistrationOfbrokenBooks.Add(zgloszenie);
-            //     Dodaniezgloszenia.SaveChanges();
-            //     MessageBox.Show("Zgłoszenie zostało dodane");
-            //     KodKsiazki.Text = "";
-            //     OpisUszkodzenia.Text = "";
-            //     RentierCode.Text = "";
-            // }
-            // else {
-            //
-            //     MessageBox.Show("Pole nie może być puste");
-            // }
-
+            _workerPenaltyService.CreatePenalty(createPenaltyDto);
 
             ViewStyleHelper.AddControlToPanel(new AcceptBookReturnControl(_contentPanel), _contentPanel);
         }
