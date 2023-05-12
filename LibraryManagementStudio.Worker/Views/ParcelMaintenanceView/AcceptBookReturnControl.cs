@@ -59,7 +59,12 @@ namespace LibraryManagementStudio.Worker.Views.ParcelMaintenanceView
 
         private void addPenaltyButton_Click(object sender, EventArgs e)
         {
-            ViewStyleHelper.AddControlToPanel(new AddPenaltyControl(_contentPanel), _contentPanel);
+            if (bookListGridView.CurrentRow == null)
+                return;
+
+            var selectedBook = (BookBorrowDto)bookListGridView.CurrentRow.DataBoundItem;
+            
+            ViewStyleHelper.AddControlToPanel(new AddPenaltyControl(_contentPanel, selectedBook), _contentPanel);
         }
     }
 }
