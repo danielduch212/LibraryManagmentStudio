@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.AddPenaltyButton = new System.Windows.Forms.Button();
             this.PenaltiesButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,12 +41,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.usersButton = new System.Windows.Forms.Button();
             this.contentPanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.AddBook = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.AddBook);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.AddPenaltyButton);
             this.panel1.Controls.Add(this.PenaltiesButton);
@@ -63,9 +65,18 @@
             this.panel1.Size = new System.Drawing.Size(217, 581);
             this.panel1.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 323);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(214, 30);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Pracownicy";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // AddPenaltyButton
             // 
-            this.AddPenaltyButton.Location = new System.Drawing.Point(3, 215);
+            this.AddPenaltyButton.Location = new System.Drawing.Point(6, 251);
             this.AddPenaltyButton.Name = "AddPenaltyButton";
             this.AddPenaltyButton.Size = new System.Drawing.Size(214, 30);
             this.AddPenaltyButton.TabIndex = 12;
@@ -75,7 +86,7 @@
             // 
             // PenaltiesButton
             // 
-            this.PenaltiesButton.Location = new System.Drawing.Point(0, 179);
+            this.PenaltiesButton.Location = new System.Drawing.Point(3, 215);
             this.PenaltiesButton.Name = "PenaltiesButton";
             this.PenaltiesButton.Size = new System.Drawing.Size(214, 30);
             this.PenaltiesButton.TabIndex = 11;
@@ -114,7 +125,7 @@
             // 
             // generateReportButton
             // 
-            this.generateReportButton.Location = new System.Drawing.Point(0, 251);
+            this.generateReportButton.Location = new System.Drawing.Point(3, 287);
             this.generateReportButton.Name = "generateReportButton";
             this.generateReportButton.Size = new System.Drawing.Size(214, 30);
             this.generateReportButton.TabIndex = 4;
@@ -154,7 +165,7 @@
             // 
             // usersButton
             // 
-            this.usersButton.Location = new System.Drawing.Point(3, 71);
+            this.usersButton.Location = new System.Drawing.Point(3, 72);
             this.usersButton.Name = "usersButton";
             this.usersButton.Size = new System.Drawing.Size(214, 30);
             this.usersButton.TabIndex = 0;
@@ -170,14 +181,15 @@
             this.contentPanel.Size = new System.Drawing.Size(725, 581);
             this.contentPanel.TabIndex = 1;
             // 
-            // button1
+            // AddBook
             // 
-            this.button1.Location = new System.Drawing.Point(3, 287);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(214, 30);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Pracownicy";
-            this.button1.UseVisualStyleBackColor = true;
+            this.AddBook.Location = new System.Drawing.Point(3, 179);
+            this.AddBook.Name = "AddBook";
+            this.AddBook.Size = new System.Drawing.Size(214, 30);
+            this.AddBook.TabIndex = 14;
+            this.AddBook.Text = "Dodaj Ksiazke";
+            this.AddBook.UseVisualStyleBackColor = true;
+            this.AddBook.Click += new System.EventHandler(this.AddBook_Click);
             // 
             // Main
             // 
@@ -212,5 +224,6 @@
         private Button PenaltiesButton;
         private Button AddPenaltyButton;
         private Button button1;
+        private Button AddBook;
     }
 }

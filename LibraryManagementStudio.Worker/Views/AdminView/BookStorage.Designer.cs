@@ -37,6 +37,7 @@
             this.searchBooksTextBox = new System.Windows.Forms.TextBox();
             this.searchBooksButton = new System.Windows.Forms.Button();
             this.bookDataGridView = new System.Windows.Forms.DataGridView();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bookDataGridView)).BeginInit();
@@ -54,6 +55,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
@@ -68,7 +70,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(731, 32);
+            this.button3.Location = new System.Drawing.Point(874, 22);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(132, 23);
             this.button3.TabIndex = 15;
@@ -77,11 +79,11 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(731, 3);
+            this.button2.Location = new System.Drawing.Point(736, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(132, 23);
             this.button2.TabIndex = 14;
-            this.button2.Text = "Dodaj książkę";
+            this.button2.Text = "Dodaj liczbe kopii";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
@@ -149,6 +151,15 @@
             this.bookDataGridView.Size = new System.Drawing.Size(1098, 461);
             this.bookDataGridView.TabIndex = 0;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(736, 37);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(132, 23);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "Usuń kopie";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // BookStorage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -175,5 +186,6 @@
         private TextBox searchBooksTextBox;
         private Button searchBooksButton;
         private DataGridView bookDataGridView;
+        private Button button4;
     }
 }

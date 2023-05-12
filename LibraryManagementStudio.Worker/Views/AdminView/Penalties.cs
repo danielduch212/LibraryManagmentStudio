@@ -22,6 +22,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             InitializeComponent();
             ViewStyleHelper.MaximizeUserControl(this);
             service = new PenaltiesService(dbContext);
+            labelStatus.Text = "Aktualne";
             LoadNotPaidPenalties();
             this.worker = worker;
         }
@@ -92,6 +93,16 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            labelStatus.Text = "Aktualne";
+            LoadNotPaidPenalties();
+        }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            labelStatus.Text = "Zaplacone";
+            LoadPaidPenalties();
+        }
     }
 }
