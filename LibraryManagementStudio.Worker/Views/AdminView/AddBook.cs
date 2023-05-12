@@ -59,6 +59,12 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 if (comboBoxCategory.Text == "Thriller")
                     categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.Thriller;
 
+
+                int copyCounts = Int32.Parse(textBoxCopies.Text);
+                ICollection<BookCopy> bookCopies= new List<BookCopy>();
+
+        
+
                 Book book = new Book()
                 {
                     Title = textTitle.Text,
@@ -70,10 +76,24 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                     Worker = worker,
                     WorkerId = worker.WorkerId,
 
-                    for()
 
+
+
+                };
+                for (int i = 0; i < copyCounts; i++)
+                {
+                    BookCopy bookCopy = new BookCopy()
+                    {
+                        IsAvailable = true,
+                        Status = Data.Models.Enums.BookCopyStatus.dobry,
+                        BookBorrows = new List<BookBorrow>(),
+                        Book = book,
+                        BookId = book.BookId,
+
+                    };
 
                 }
+                book.BookCopies = bookCopies;
 
             } 
         }
