@@ -114,5 +114,24 @@ public class WorkerBookService : IWorkerBookService
         _dbContext.SaveChanges();
 
     }
+    public void AddBookCopies(Book book,int howMany)
+    {
+        for(int i=0; i<howMany; i++) 
+        {
+            BookCopy bookCopy = new BookCopy()
+            {
+                IsAvailable = true,
+                Status = Data.Models.Enums.BookCopyStatus.dobry,
+                BookBorrows = new List<BookBorrow>(),
+                Book = book,
+                BookId = book.BookId,
+
+            };
+            book.BookCopies.Add(bookCopy);
+
+        }
+        
+
+    }
 
 }

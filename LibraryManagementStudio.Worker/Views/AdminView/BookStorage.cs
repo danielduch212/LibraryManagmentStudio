@@ -28,6 +28,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             service = new WorkerBookService(dbContext);
             userService = new AdminUserService(dbContext);
             panelBorrowBook.Visible = false;
+            panelAddCopies.Visible = false;
             books = service.GetBooks();
             SetupBooksView();
             this.worker = worker;
@@ -106,6 +107,34 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             SetupBooksView();
             panelBorrowBook.Visible = false;
 
+        }
+
+        private void AddBookCopies_Click(object sender, EventArgs e)
+        {
+            if (bookDataGridView.SelectedRows.Count > 0)
+            {
+                book = service.getBookFromString(bookDataGridView.SelectedRows.ToString());
+                AddCopiesBookTitle.Text = book.Title;
+                
+                panelAddCopies.Visible = true;
+            }
+            
+            
+        }
+
+        private void cancelButtonCopies_Click(object sender, EventArgs e)
+        {
+            panelAddCopies.Visible = false;
+
+        }
+
+        private void okButtonCopies_Click(object sender, EventArgs e)
+        {
+            var howManyCopies = Int32.Parse(textBoxCopiesAdd.Text);
+            service.AddBookCopies(book,howManyCopies);
+            books = service.GetBooks();
+            SetupBooksView();
+            panelAddCopies.Visible = false;
         }
     }
 }
