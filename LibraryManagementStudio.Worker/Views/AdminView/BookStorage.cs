@@ -1,4 +1,5 @@
 ﻿using LibraryManagementStudio.Data;
+using LibraryManagementStudio.Data.Models;
 using LibraryManagementStudio.Worker.Dtos.Book;
 using LibraryManagementStudio.Worker.Services;
 using System;
@@ -15,20 +16,25 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 {
     public partial class BookStorage : UserControl
     {
+        List<BookDto> books;
         private WorkerBookService service;
+        private AdminUserService userService;
         LibraryManagementStudio.Data.Models.Worker worker;
+        LibraryManagementStudio.Data.Models.Book book;
         public BookStorage(LibraryDbContext dbContext, Data.Models.Worker worker)
         {
             InitializeComponent();
             ViewStyleHelper.MaximizeUserControl(this);
             service = new WorkerBookService(dbContext);
-            LoadBooks();
+            userService = new AdminUserService(dbContext);
+            panelBorrowBook.Visible = false;
+            books = service.GetBooks();
+            SetupBooksView();
             this.worker = worker;
         }
 
-        private void LoadBooks()
+        private void SetupBooksView()
         {
-            var books = service.GetBooks();
             var bindingList = new BindingList<BookDto>(books);
             var bindingSource = new BindingSource(bindingList, null);
 
@@ -57,7 +63,49 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         }
 
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            
+            books = service.GetBookByTitle(searchBooksTextBox.Text).ToList();
+            SetupBooksView();
+        }
 
+        private void borrowBook_Click(object sender, EventArgs e)
+        {
+            if(bookDataGridView.SelectedRows.Count > 0)
+            {
+                book = service.getBookFromString(bookDataGridView.SelectedRows.ToString());
+                labelBookTitle.Text = book.Title;
+                panelBorrowBook.Visible = true;
 
+            }
+            
+        }
+
+        private void buttonCancelBorrow_Click(object sender, EventArgs e)
+        {
+            panelBorrowBook.Visible = false;
+        }
+
+        private void buttonOk_Click(object sender, EventArgs e)
+        {
+            
+            BookBorrow bookBorrow = new BookBorrow()
+            {
+                StartDate = DateTime.Today,
+                EndDate = DateTime.Today.AddDays(7), //wypozycza na 7 dni
+                IsActive = true,
+                Status = Data.Models.Enums.BorrowedBookStatus.Received,
+                Worker = worker,
+                User = userService.getUserByEmail(textBoxUserEmail.Text),
+                BookCopy = service.getAvailibleCopy(book.Title),
+
+            };
+            service.CreateNewBookBorrow(bookBorrow);
+            books = service.GetBooks();
+            SetupBooksView();
+            panelBorrowBook.Visible = false;
+
+        }
     }
 }

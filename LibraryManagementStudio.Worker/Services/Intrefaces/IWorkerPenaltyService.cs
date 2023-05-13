@@ -4,8 +4,10 @@ namespace LibraryManagementStudio.Worker.Services.Intrefaces;
 
 public interface IWorkerPenaltyService
 {
-    List<PenaltyDto> GetNotPaidPenalties();
-    List<PenaltyDto> GetPaidPenalties();
+    List<PenaltyDto> GetPenalties(bool status);
+    List<PenaltyDto> GetPenaltyByEmail(string email,bool status);
     void ErasePenalty(int penaltyId);
     void CreatePenalty(CreatePenaltyDto penaltyDto);
+
+
 }

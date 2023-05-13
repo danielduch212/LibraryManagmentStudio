@@ -6,32 +6,7 @@ namespace LibraryManagementStudio.Data.Seeders;
 public static class DummyDataProvider
 {
 
-    public static IEnumerable<User> GetDummyUsers()
-    {
-        var workers = new List<User>
-        {
-            new()
-            {
-                WorkerId = 1,
-                FirstName = "Adam",
-                LastName = "Nelson",
-                EmailAddress = "bibliotekarz@gmail.com",
-                Password = "1234",
-                Type = WorkerType.bibliotekarz
-            },
-            new()
-            {
-                WorkerId = 2,
-                FirstName = "John",
-                LastName = "Nelson",
-                EmailAddress = "obsluga@gmail.com",
-                Password = "1234",
-                Type = WorkerType.obsługa
-            }
-        };
-
-        return workers;
-    }
+    
     public static IEnumerable<Worker> GetDummyWorkers()
     {
         var workers = new List<Worker>

@@ -2,6 +2,7 @@
 using LibraryManagementStudio.Worker.Dtos.Penalty;
 using LibraryManagementStudio.Data.Models;
 using LibraryManagementStudio.Worker.Services.Intrefaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace LibraryManagementStudio.Worker.Services
 {
@@ -15,10 +16,10 @@ namespace LibraryManagementStudio.Worker.Services
 
         }
 
-        public List<PenaltyDto> GetNotPaidPenalties()
+        public List<PenaltyDto> GetPenalties(bool status)
         {
             var query = _dbContext.Penalties
-                .Where(x => x.IsPaid == false);
+                .Where(x => x.IsPaid == status);
 
             var penalties = query.Select(x => new PenaltyDto()
             {
@@ -38,28 +39,6 @@ namespace LibraryManagementStudio.Worker.Services
             return penalties.ToList();
         }
 
-        public List<PenaltyDto> GetPaidPenalties()
-        {
-            var query = _dbContext.Penalties
-                .Where(x => x.IsPaid == true);
-            
-            var penalties = query.Select(x => new PenaltyDto()
-            {
-                PenaltyId = x.PenaltyId,
-                Description = x.Description,
-                Price = x.Price,
-                IsPaid = x.IsPaid,
-                BookBorrowId = x.BookBorrowId,
-                WorkerId = x.WorkerId,
-                UserId = x.BookBorrow.UserId,
-                BookCopyId = x.BookBorrow.BookCopyId,
-                UserFirstName = x.BookBorrow.User.FirstName,
-                UserLastName = x.BookBorrow.User.LastName,
-                BookTitle = x.BookBorrow.BookCopy.Book.Title
-            });
-
-            return penalties.ToList();
-        }
         
         public void ErasePenalty(int penaltyId)
         {
@@ -67,6 +46,11 @@ namespace LibraryManagementStudio.Worker.Services
                 .FirstOrDefault(x => x.PenaltyId.Equals(penaltyId));
 
             query.IsPaid = true;
+        }
+
+        public void ErasePenalty(Penalty penalty)
+        {
+            penalty.IsPaid = true;
         }
 
         public void CreatePenalty(CreatePenaltyDto penaltyDto)
@@ -82,6 +66,41 @@ namespace LibraryManagementStudio.Worker.Services
 
             _dbContext.Penalties.Add(penalty);
             _dbContext.SaveChanges();
+        }
+        public List<PenaltyDto> GetPenaltyByEmail(string email, bool statusOfPayment)
+        {
+            var query = _dbContext.Penalties
+                .Where(x => x.IsPaid == statusOfPayment && x.BookBorrow.User.EmailAddress.Contains(email));
+
+            var penalties = query.Select(x => new PenaltyDto()
+            {
+                PenaltyId = x.PenaltyId,
+                Description = x.Description,
+                Price = x.Price,
+                IsPaid = x.IsPaid,
+                BookBorrowId = x.BookBorrowId,
+                WorkerId = x.WorkerId,
+                UserId = x.BookBorrow.UserId,
+                BookCopyId = x.BookBorrow.BookCopyId,
+                UserFirstName = x.BookBorrow.User.FirstName,
+                UserLastName = x.BookBorrow.User.LastName,
+                BookTitle = x.BookBorrow.BookCopy.Book.Title
+            });
+
+            return penalties.ToList();
+
+
+        }
+
+        public Penalty getPenaltyFromString(string stringFromRow)
+        {
+            string[] parts = stringFromRow.Split("/t");
+            var id = parts[0];
+            var query = _dbContext.Penalties
+                .FirstOrDefault(x => x.PenaltyId.Equals(id));
+            return query;
+            
+
         }
     }
 }

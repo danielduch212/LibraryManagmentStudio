@@ -63,6 +63,12 @@ namespace LibraryManagementStudio.Worker.Services
             return query;
         }
 
+        public LibraryManagementStudio.Data.Models.User getUserByEmail(string email)
+        {
+            var query = _dbContext.Users
+                .FirstOrDefault(x => x.EmailAddress.Equals(email));
+            return query;
+        }
 
     }
 }

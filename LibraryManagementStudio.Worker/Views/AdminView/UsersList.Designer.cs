@@ -37,6 +37,7 @@
             this.searchBooksTextBox = new System.Windows.Forms.TextBox();
             this.searchBooksButton = new System.Windows.Forms.Button();
             this.usersDataGridView = new System.Windows.Forms.DataGridView();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).BeginInit();
@@ -54,6 +55,7 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button1);
@@ -94,7 +96,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(758, 25);
+            this.button1.Location = new System.Drawing.Point(842, 23);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(155, 23);
             this.button1.TabIndex = 13;
@@ -152,6 +154,15 @@
             this.usersDataGridView.Size = new System.Drawing.Size(1069, 464);
             this.usersDataGridView.TabIndex = 0;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(671, 24);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(155, 23);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "Pokaz";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // UsersList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -179,5 +190,6 @@
         private TextBox searchBooksTextBox;
         private Button searchBooksButton;
         private DataGridView usersDataGridView;
+        private Button button4;
     }
 }

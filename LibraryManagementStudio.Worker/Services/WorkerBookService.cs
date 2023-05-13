@@ -64,7 +64,55 @@ public class WorkerBookService : IWorkerBookService
         
         return books.ToList();
     }
-    
+    public List<BookDto> GetBookByTitle(string bookname)
+    {
+        var query = _dbContext.Books
+            .Include(x => x.Author)
+            .Include(x => x.Publisher)
+            .Include(x => x.BookCopies)
+            .Where(x => x.Title.Contains(bookname))
+            .Select(x => new BookDto()
+            {
+                BookId = x.BookId,
+                Title = x.Title,
+                Description = x.Description,
+                AuthorName = x.Author.Name,
+                PublisherName = x.Publisher.Name,
+                PublishDate = x.PublishDate,
+                Category = x.Category,
+                BookCopiesCount = x.BookCopies.Count(),
+                AvailibleBookCopiesCount = x.BookCopies.Count(y => y.IsAvailable)
+            });
 
+        return query.ToList();
+
+        
+    }
+    public Book getBookFromString(string stringFromRow)
+    {
+        string[] parts = stringFromRow.Split("/t");
+        var id = parts[0];
+        var query = _dbContext.Books
+            .FirstOrDefault(x => x.BookId.Equals(id));
+        return query;
+
+
+    }
+
+    public BookCopy getAvailibleCopy(string title)
+    {
+        var query = _dbContext.BookCopies
+            .FirstOrDefault(x => x.Book.Title == title);
+        
+        return query;
+
+
+    }
+    public void CreateNewBookBorrow(BookBorrow bookBorrow)
+    {
+        _dbContext.BookBorrows.Add(bookBorrow);
+        _dbContext.SaveChanges();
+
+    }
 
 }

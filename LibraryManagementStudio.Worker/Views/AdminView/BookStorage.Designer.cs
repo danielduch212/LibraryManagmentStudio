@@ -29,22 +29,32 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panelBorrowBook = new System.Windows.Forms.Panel();
+            this.textBoxUserEmail = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelBookTitle = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.SearchButton = new System.Windows.Forms.Button();
+            this.EraseCopy = new System.Windows.Forms.Button();
+            this.EraseBook = new System.Windows.Forms.Button();
+            this.AddBookCopies = new System.Windows.Forms.Button();
+            this.borrowBook = new System.Windows.Forms.Button();
             this.clearSearchButton = new System.Windows.Forms.Button();
             this.searchBooksTextBox = new System.Windows.Forms.TextBox();
             this.searchBooksButton = new System.Windows.Forms.Button();
             this.bookDataGridView = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
+            this.buttonOk = new System.Windows.Forms.Button();
+            this.buttonCancelBorrow = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
+            this.panelBorrowBook.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bookDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.panelBorrowBook);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.bookDataGridView);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -53,12 +63,63 @@
             this.panel2.Size = new System.Drawing.Size(1098, 527);
             this.panel2.TabIndex = 2;
             // 
+            // panelBorrowBook
+            // 
+            this.panelBorrowBook.Controls.Add(this.buttonCancelBorrow);
+            this.panelBorrowBook.Controls.Add(this.buttonOk);
+            this.panelBorrowBook.Controls.Add(this.textBoxUserEmail);
+            this.panelBorrowBook.Controls.Add(this.label2);
+            this.panelBorrowBook.Controls.Add(this.labelBookTitle);
+            this.panelBorrowBook.Controls.Add(this.label1);
+            this.panelBorrowBook.Location = new System.Drawing.Point(355, 157);
+            this.panelBorrowBook.Name = "panelBorrowBook";
+            this.panelBorrowBook.Size = new System.Drawing.Size(391, 196);
+            this.panelBorrowBook.TabIndex = 18;
+            // 
+            // textBoxUserEmail
+            // 
+            this.textBoxUserEmail.Location = new System.Drawing.Point(50, 136);
+            this.textBoxUserEmail.Name = "textBoxUserEmail";
+            this.textBoxUserEmail.Size = new System.Drawing.Size(309, 23);
+            this.textBoxUserEmail.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(12, 89);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(188, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Podaj email Uzytkownika:";
+            // 
+            // labelBookTitle
+            // 
+            this.labelBookTitle.AutoSize = true;
+            this.labelBookTitle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelBookTitle.Location = new System.Drawing.Point(146, 18);
+            this.labelBookTitle.Name = "labelBookTitle";
+            this.labelBookTitle.Size = new System.Drawing.Size(82, 25);
+            this.labelBookTitle.TabIndex = 1;
+            this.labelBookTitle.Text = "Ksiazka:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(23, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Ksiazka:";
+            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.SearchButton);
+            this.panel1.Controls.Add(this.EraseCopy);
+            this.panel1.Controls.Add(this.EraseBook);
+            this.panel1.Controls.Add(this.AddBookCopies);
+            this.panel1.Controls.Add(this.borrowBook);
             this.panel1.Controls.Add(this.clearSearchButton);
             this.panel1.Controls.Add(this.searchBooksTextBox);
             this.panel1.Controls.Add(this.searchBooksButton);
@@ -68,32 +129,52 @@
             this.panel1.Size = new System.Drawing.Size(1098, 66);
             this.panel1.TabIndex = 1;
             // 
-            // button3
+            // SearchButton
             // 
-            this.button3.Location = new System.Drawing.Point(874, 22);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(132, 23);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Usuń książkę";
-            this.button3.UseVisualStyleBackColor = true;
+            this.SearchButton.Location = new System.Drawing.Point(405, 22);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(132, 23);
+            this.SearchButton.TabIndex = 17;
+            this.SearchButton.Text = "Znajdz";
+            this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
-            // button2
+            // EraseCopy
             // 
-            this.button2.Location = new System.Drawing.Point(736, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(132, 23);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Dodaj liczbe kopii";
-            this.button2.UseVisualStyleBackColor = true;
+            this.EraseCopy.Location = new System.Drawing.Point(736, 37);
+            this.EraseCopy.Name = "EraseCopy";
+            this.EraseCopy.Size = new System.Drawing.Size(132, 23);
+            this.EraseCopy.TabIndex = 16;
+            this.EraseCopy.Text = "Usuń kopie";
+            this.EraseCopy.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // EraseBook
             // 
-            this.button1.Location = new System.Drawing.Point(582, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(132, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Wypożycz Książkę";
-            this.button1.UseVisualStyleBackColor = true;
+            this.EraseBook.Location = new System.Drawing.Point(886, 19);
+            this.EraseBook.Name = "EraseBook";
+            this.EraseBook.Size = new System.Drawing.Size(132, 23);
+            this.EraseBook.TabIndex = 15;
+            this.EraseBook.Text = "Usuń książkę";
+            this.EraseBook.UseVisualStyleBackColor = true;
+            // 
+            // AddBookCopies
+            // 
+            this.AddBookCopies.Location = new System.Drawing.Point(736, 8);
+            this.AddBookCopies.Name = "AddBookCopies";
+            this.AddBookCopies.Size = new System.Drawing.Size(132, 23);
+            this.AddBookCopies.TabIndex = 14;
+            this.AddBookCopies.Text = "Dodaj liczbe kopii";
+            this.AddBookCopies.UseVisualStyleBackColor = true;
+            // 
+            // borrowBook
+            // 
+            this.borrowBook.Location = new System.Drawing.Point(582, 22);
+            this.borrowBook.Name = "borrowBook";
+            this.borrowBook.Size = new System.Drawing.Size(132, 23);
+            this.borrowBook.TabIndex = 13;
+            this.borrowBook.Text = "Wypożycz Książkę";
+            this.borrowBook.UseVisualStyleBackColor = true;
+            this.borrowBook.Click += new System.EventHandler(this.borrowBook_Click);
             // 
             // clearSearchButton
             // 
@@ -115,7 +196,7 @@
             this.searchBooksTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.searchBooksTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.searchBooksTextBox.Location = new System.Drawing.Point(12, 20);
+            this.searchBooksTextBox.Location = new System.Drawing.Point(13, 22);
             this.searchBooksTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchBooksTextBox.MaximumSize = new System.Drawing.Size(376, 23);
             this.searchBooksTextBox.Name = "searchBooksTextBox";
@@ -141,7 +222,6 @@
             this.bookDataGridView.AllowUserToResizeColumns = false;
             this.bookDataGridView.AllowUserToResizeRows = false;
             this.bookDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bookDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bookDataGridView.Location = new System.Drawing.Point(0, 66);
             this.bookDataGridView.MultiSelect = false;
             this.bookDataGridView.Name = "bookDataGridView";
@@ -151,14 +231,25 @@
             this.bookDataGridView.Size = new System.Drawing.Size(1098, 461);
             this.bookDataGridView.TabIndex = 0;
             // 
-            // button4
+            // buttonOk
             // 
-            this.button4.Location = new System.Drawing.Point(736, 37);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(132, 23);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "Usuń kopie";
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonOk.Location = new System.Drawing.Point(178, 165);
+            this.buttonOk.Name = "buttonOk";
+            this.buttonOk.Size = new System.Drawing.Size(75, 23);
+            this.buttonOk.TabIndex = 4;
+            this.buttonOk.Text = "Ok";
+            this.buttonOk.UseVisualStyleBackColor = true;
+            this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
+            // 
+            // buttonCancelBorrow
+            // 
+            this.buttonCancelBorrow.Location = new System.Drawing.Point(50, 165);
+            this.buttonCancelBorrow.Name = "buttonCancelBorrow";
+            this.buttonCancelBorrow.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancelBorrow.TabIndex = 5;
+            this.buttonCancelBorrow.Text = "Cancel";
+            this.buttonCancelBorrow.UseVisualStyleBackColor = true;
+            this.buttonCancelBorrow.Click += new System.EventHandler(this.buttonCancelBorrow_Click);
             // 
             // BookStorage
             // 
@@ -168,6 +259,8 @@
             this.Name = "BookStorage";
             this.Size = new System.Drawing.Size(1098, 527);
             this.panel2.ResumeLayout(false);
+            this.panelBorrowBook.ResumeLayout(false);
+            this.panelBorrowBook.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bookDataGridView)).EndInit();
@@ -179,13 +272,21 @@
 
         private Panel panel2;
         private Panel panel1;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private Button EraseBook;
+        private Button AddBookCopies;
+        private Button borrowBook;
         private Button clearSearchButton;
         private TextBox searchBooksTextBox;
         private Button searchBooksButton;
         private DataGridView bookDataGridView;
-        private Button button4;
+        private Button EraseCopy;
+        private Button SearchButton;
+        private Panel panelBorrowBook;
+        private TextBox textBoxUserEmail;
+        private Label label2;
+        private Label labelBookTitle;
+        private Label label1;
+        private Button buttonCancelBorrow;
+        private Button buttonOk;
     }
 }

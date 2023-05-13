@@ -29,92 +29,60 @@
         private void InitializeComponent()
         {
             this.panelTop = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panelDataGridView = new System.Windows.Forms.Panel();
-            this.penaltyGridView = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.labelStatus = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.searchBooksTextBox = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.labelStatus = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panelDataGridView = new System.Windows.Forms.Panel();
+            this.panelErasePenalty = new System.Windows.Forms.Panel();
+            this.eraseYes = new System.Windows.Forms.Button();
+            this.eraseNo = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.penaltyGridView = new System.Windows.Forms.DataGridView();
             this.panelTop.SuspendLayout();
             this.panelDataGridView.SuspendLayout();
+            this.panelErasePenalty.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.penaltyGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTop
             // 
             this.panelTop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelTop.Controls.Add(this.button5);
+            this.panelTop.Controls.Add(this.searchBooksTextBox);
             this.panelTop.Controls.Add(this.button4);
             this.panelTop.Controls.Add(this.labelStatus);
             this.panelTop.Controls.Add(this.button3);
             this.panelTop.Controls.Add(this.button2);
-            this.panelTop.Controls.Add(this.button1);
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(1250, 66);
             this.panelTop.TabIndex = 2;
             // 
-            // button2
+            // button5
             // 
-            this.button2.AutoSize = true;
-            this.button2.Location = new System.Drawing.Point(574, 18);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(108, 25);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Usuń karę";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button5.AutoSize = true;
+            this.button5.Location = new System.Drawing.Point(391, 21);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(108, 25);
+            this.button5.TabIndex = 18;
+            this.button5.Text = "Znajdz";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button1
+            // searchBooksTextBox
             // 
-            this.button1.AutoSize = true;
-            this.button1.Location = new System.Drawing.Point(388, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 25);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Dodaj karę";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // panelDataGridView
-            // 
-            this.panelDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.searchBooksTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelDataGridView.Controls.Add(this.penaltyGridView);
-            this.panelDataGridView.Location = new System.Drawing.Point(0, 62);
-            this.panelDataGridView.Name = "panelDataGridView";
-            this.panelDataGridView.Size = new System.Drawing.Size(1250, 654);
-            this.panelDataGridView.TabIndex = 3;
-            // 
-            // penaltyGridView
-            // 
-            this.penaltyGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.penaltyGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.penaltyGridView.Location = new System.Drawing.Point(0, 0);
-            this.penaltyGridView.Name = "penaltyGridView";
-            this.penaltyGridView.RowTemplate.Height = 25;
-            this.penaltyGridView.Size = new System.Drawing.Size(1250, 654);
-            this.penaltyGridView.TabIndex = 0;
-            // 
-            // button3
-            // 
-            this.button3.AutoSize = true;
-            this.button3.Location = new System.Drawing.Point(1116, 18);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(108, 25);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "Pokaz Historie";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // labelStatus
-            // 
-            this.labelStatus.AutoSize = true;
-            this.labelStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelStatus.Location = new System.Drawing.Point(835, 23);
-            this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(57, 21);
-            this.labelStatus.TabIndex = 15;
-            this.labelStatus.Text = "label1";
+            this.searchBooksTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchBooksTextBox.Location = new System.Drawing.Point(45, 21);
+            this.searchBooksTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.searchBooksTextBox.MaximumSize = new System.Drawing.Size(376, 23);
+            this.searchBooksTextBox.Name = "searchBooksTextBox";
+            this.searchBooksTextBox.Size = new System.Drawing.Size(331, 23);
+            this.searchBooksTextBox.TabIndex = 6;
             // 
             // button4
             // 
@@ -127,6 +95,104 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // labelStatus
+            // 
+            this.labelStatus.AutoSize = true;
+            this.labelStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelStatus.Location = new System.Drawing.Point(835, 23);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(57, 21);
+            this.labelStatus.TabIndex = 15;
+            this.labelStatus.Text = "label1";
+            // 
+            // button3
+            // 
+            this.button3.AutoSize = true;
+            this.button3.Location = new System.Drawing.Point(1116, 18);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(108, 25);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "Pokaz Historie";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.AutoSize = true;
+            this.button2.Location = new System.Drawing.Point(570, 21);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(108, 25);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Usuń karę";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // panelDataGridView
+            // 
+            this.panelDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelDataGridView.Controls.Add(this.panelErasePenalty);
+            this.panelDataGridView.Controls.Add(this.penaltyGridView);
+            this.panelDataGridView.Location = new System.Drawing.Point(0, 62);
+            this.panelDataGridView.Name = "panelDataGridView";
+            this.panelDataGridView.Size = new System.Drawing.Size(1250, 654);
+            this.panelDataGridView.TabIndex = 3;
+            // 
+            // panelErasePenalty
+            // 
+            this.panelErasePenalty.Controls.Add(this.eraseYes);
+            this.panelErasePenalty.Controls.Add(this.eraseNo);
+            this.panelErasePenalty.Controls.Add(this.label1);
+            this.panelErasePenalty.Location = new System.Drawing.Point(443, 140);
+            this.panelErasePenalty.Name = "panelErasePenalty";
+            this.panelErasePenalty.Size = new System.Drawing.Size(334, 203);
+            this.panelErasePenalty.TabIndex = 19;
+            // 
+            // eraseYes
+            // 
+            this.eraseYes.BackColor = System.Drawing.Color.Silver;
+            this.eraseYes.Location = new System.Drawing.Point(194, 114);
+            this.eraseYes.Name = "eraseYes";
+            this.eraseYes.Size = new System.Drawing.Size(75, 23);
+            this.eraseYes.TabIndex = 2;
+            this.eraseYes.Text = "TAK";
+            this.eraseYes.UseVisualStyleBackColor = false;
+            this.eraseYes.Click += new System.EventHandler(this.eraseYes_Click);
+            // 
+            // eraseNo
+            // 
+            this.eraseNo.BackColor = System.Drawing.Color.Lime;
+            this.eraseNo.Location = new System.Drawing.Point(56, 114);
+            this.eraseNo.Name = "eraseNo";
+            this.eraseNo.Size = new System.Drawing.Size(75, 23);
+            this.eraseNo.TabIndex = 1;
+            this.eraseNo.Text = "NIE";
+            this.eraseNo.UseVisualStyleBackColor = false;
+            this.eraseNo.Click += new System.EventHandler(this.eraseNo_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(70, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(210, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Czy usunac zaznaczona kare?";
+            // 
+            // penaltyGridView
+            // 
+            this.penaltyGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.penaltyGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.penaltyGridView.Location = new System.Drawing.Point(0, 0);
+            this.penaltyGridView.MultiSelect = false;
+            this.penaltyGridView.Name = "penaltyGridView";
+            this.penaltyGridView.RowTemplate.Height = 25;
+            this.penaltyGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect;
+            this.penaltyGridView.Size = new System.Drawing.Size(1250, 654);
+            this.penaltyGridView.TabIndex = 0;
+            // 
             // Penalties
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -137,6 +203,8 @@
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
             this.panelDataGridView.ResumeLayout(false);
+            this.panelErasePenalty.ResumeLayout(false);
+            this.panelErasePenalty.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.penaltyGridView)).EndInit();
             this.ResumeLayout(false);
 
@@ -146,11 +214,16 @@
 
         private Panel panelTop;
         private Button button2;
-        private Button button1;
         private Panel panelDataGridView;
         private DataGridView penaltyGridView;
         private Button button3;
         private Button button4;
         private Label labelStatus;
+        private Button button5;
+        private TextBox searchBooksTextBox;
+        private Panel panelErasePenalty;
+        private Button eraseYes;
+        private Button eraseNo;
+        private Label label1;
     }
 }
