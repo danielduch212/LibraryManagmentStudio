@@ -1,6 +1,7 @@
 using LibraryManagementStudio.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Net.Mail;
+using static System.Reflection.Metadata.BlobBuilder;
 
 namespace LibraryManagementStudio.Data.Seeders;
 
@@ -102,6 +103,13 @@ public class LibrarySeeder
         _dbContext.SaveChanges();
     }
 
+    private void SeedUsers()
+    {
+        var users = DummyDataProvider.GetDummyUsers();
+        _dbContext.Users.AddRange(users);
+        _dbContext.SaveChanges();
+
+    }
     private void SeedBooks()
     {
         var books = DummyDataProvider.GetDummyBooks();
