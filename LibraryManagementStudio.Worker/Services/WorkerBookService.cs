@@ -134,4 +134,11 @@ public class WorkerBookService : IWorkerBookService
 
     }
 
+    public void EraseCopy(int id)
+    {
+        var query = _dbContext.BookCopies
+           .FirstOrDefault(x => x.BookCopyId == id);
+        //dodac to pozniej 
+
+    }
 }

@@ -100,12 +100,16 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void anotherAuthorButton_Click(object sender, EventArgs e)
         {
+            SetPanelLocation(panelAuthor);
             panelAuthor.Visible = true;
+            
         }
 
         private void anotherPublisherButton_Click(object sender, EventArgs e)
         {
+            SetPanelLocation(panelNewPublisher);
             panelNewPublisher.Visible = true;
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -137,6 +141,17 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         private void cancelNewAuthor_Click(object sender, EventArgs e)
         {
             panelAuthor.Visible = false;
+        }
+        private void SetPanelLocation(Panel panelToSetLocation)
+        {
+            int formWidth = this.ClientSize.Width;
+            int formHeight = this.ClientSize.Height;
+            int panelWidth = panelToSetLocation.Width;
+            int panelHeight = panelToSetLocation.Height;
+
+            // Ustaw położenie panelu na środku formularza
+            panelToSetLocation.Location = new Point((formWidth - panelWidth) / 2, (formHeight - panelHeight) / 2);
+
         }
     }
 }

@@ -29,6 +29,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             userService = new AdminUserService(dbContext);
             panelBorrowBook.Visible = false;
             panelAddCopies.Visible = false;
+            panelEraseCopy.Visible = false;
             books = service.GetBooks();
             SetupBooksView();
             this.worker = worker;
@@ -77,6 +78,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             {
                 book = service.getBookFromString(bookDataGridView.SelectedRows.ToString());
                 labelBookTitle.Text = book.Title;
+                SetPanelLocation(panelBorrowBook);
                 panelBorrowBook.Visible = true;
 
             }
@@ -115,7 +117,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             {
                 book = service.getBookFromString(bookDataGridView.SelectedRows.ToString());
                 AddCopiesBookTitle.Text = book.Title;
-                
+                SetPanelLocation(panelAddCopies);
                 panelAddCopies.Visible = true;
             }
             
@@ -135,6 +137,40 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             books = service.GetBooks();
             SetupBooksView();
             panelAddCopies.Visible = false;
+        }
+
+        private void EraseCopy_Click(object sender, EventArgs e)
+        {
+            SetPanelLocation(panelEraseCopy);
+            panelEraseCopy.Visible = true;
+
+        }
+
+        private void cancelEraseCopyButton_Click(object sender, EventArgs e)
+        {
+            panelEraseCopy.Visible = false;
+        }
+
+        private void eraseCopyButton_Click(object sender, EventArgs e)
+        {
+            var id = Int32.Parse(textBoxCopyIDToErase.Text);
+
+        }
+
+        private void EraseBook_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void SetPanelLocation(Panel panelToSetLocation)
+        {
+            int formWidth = this.ClientSize.Width;
+            int formHeight = this.ClientSize.Height;
+            int panelWidth = panelToSetLocation.Width;
+            int panelHeight = panelToSetLocation.Height;
+
+            // Ustaw położenie panelu na środku formularza
+            panelToSetLocation.Location = new Point((formWidth - panelWidth) / 2, (formHeight - panelHeight) / 2);
+
         }
     }
 }

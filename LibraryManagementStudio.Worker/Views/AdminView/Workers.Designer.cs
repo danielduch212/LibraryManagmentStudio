@@ -36,6 +36,7 @@
             this.clearSearchButton = new System.Windows.Forms.Button();
             this.searchBooksTextBox = new System.Windows.Forms.TextBox();
             this.searchBooksButton = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.workersDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +56,7 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button1);
@@ -95,11 +97,12 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(758, 25);
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(735, 24);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(155, 23);
             this.button1.TabIndex = 13;
-            this.button1.Text = "Usuń Użytkownika";
+            this.button1.Text = "Usun pracownika";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // clearSearchButton
@@ -141,6 +144,16 @@
             this.searchBooksButton.Text = "Szukaj";
             this.searchBooksButton.UseVisualStyleBackColor = true;
             // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button4.Location = new System.Drawing.Point(415, 24);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(155, 23);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "Znajdz";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // Workers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -166,5 +179,6 @@
         private Button clearSearchButton;
         private TextBox searchBooksTextBox;
         private Button searchBooksButton;
+        private Button button4;
     }
 }

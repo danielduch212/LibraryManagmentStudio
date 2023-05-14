@@ -29,6 +29,18 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panelAddCopies = new System.Windows.Forms.Panel();
+            this.panelEraseCopy = new System.Windows.Forms.Panel();
+            this.cancelEraseCopyButton = new System.Windows.Forms.Button();
+            this.eraseCopyButton = new System.Windows.Forms.Button();
+            this.textBoxCopyIDToErase = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cancelButtonCopies = new System.Windows.Forms.Button();
+            this.okButtonCopies = new System.Windows.Forms.Button();
+            this.textBoxCopiesAdd = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.AddCopiesBookTitle = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panelBorrowBook = new System.Windows.Forms.Panel();
             this.buttonCancelBorrow = new System.Windows.Forms.Button();
             this.buttonOk = new System.Windows.Forms.Button();
@@ -46,31 +58,142 @@
             this.searchBooksTextBox = new System.Windows.Forms.TextBox();
             this.searchBooksButton = new System.Windows.Forms.Button();
             this.bookDataGridView = new System.Windows.Forms.DataGridView();
-            this.panelAddCopies = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.AddCopiesBookTitle = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxCopiesAdd = new System.Windows.Forms.TextBox();
-            this.okButtonCopies = new System.Windows.Forms.Button();
-            this.cancelButtonCopies = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
+            this.panelAddCopies.SuspendLayout();
+            this.panelEraseCopy.SuspendLayout();
             this.panelBorrowBook.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bookDataGridView)).BeginInit();
-            this.panelAddCopies.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.panelAddCopies);
-            this.panel2.Controls.Add(this.panelBorrowBook);
-            this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.bookDataGridView);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1098, 527);
             this.panel2.TabIndex = 2;
+            // 
+            // panelAddCopies
+            // 
+            this.panelAddCopies.Controls.Add(this.cancelButtonCopies);
+            this.panelAddCopies.Controls.Add(this.okButtonCopies);
+            this.panelAddCopies.Controls.Add(this.textBoxCopiesAdd);
+            this.panelAddCopies.Controls.Add(this.label4);
+            this.panelAddCopies.Controls.Add(this.AddCopiesBookTitle);
+            this.panelAddCopies.Controls.Add(this.label3);
+            this.panelAddCopies.Location = new System.Drawing.Point(355, 157);
+            this.panelAddCopies.Name = "panelAddCopies";
+            this.panelAddCopies.Size = new System.Drawing.Size(391, 196);
+            this.panelAddCopies.TabIndex = 6;
+            // 
+            // panelEraseCopy
+            // 
+            this.panelEraseCopy.Controls.Add(this.cancelEraseCopyButton);
+            this.panelEraseCopy.Controls.Add(this.eraseCopyButton);
+            this.panelEraseCopy.Controls.Add(this.textBoxCopyIDToErase);
+            this.panelEraseCopy.Controls.Add(this.label5);
+            this.panelEraseCopy.Location = new System.Drawing.Point(0, 0);
+            this.panelEraseCopy.Name = "panelEraseCopy";
+            this.panelEraseCopy.Size = new System.Drawing.Size(391, 196);
+            this.panelEraseCopy.TabIndex = 6;
+            // 
+            // cancelEraseCopyButton
+            // 
+            this.cancelEraseCopyButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cancelEraseCopyButton.Location = new System.Drawing.Point(89, 147);
+            this.cancelEraseCopyButton.Name = "cancelEraseCopyButton";
+            this.cancelEraseCopyButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelEraseCopyButton.TabIndex = 3;
+            this.cancelEraseCopyButton.Text = "Cancel";
+            this.cancelEraseCopyButton.UseVisualStyleBackColor = true;
+            this.cancelEraseCopyButton.Click += new System.EventHandler(this.cancelEraseCopyButton_Click);
+            // 
+            // eraseCopyButton
+            // 
+            this.eraseCopyButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.eraseCopyButton.Location = new System.Drawing.Point(195, 147);
+            this.eraseCopyButton.Name = "eraseCopyButton";
+            this.eraseCopyButton.Size = new System.Drawing.Size(75, 23);
+            this.eraseCopyButton.TabIndex = 2;
+            this.eraseCopyButton.Text = "Usun";
+            this.eraseCopyButton.UseVisualStyleBackColor = true;
+            this.eraseCopyButton.Click += new System.EventHandler(this.eraseCopyButton_Click);
+            // 
+            // textBoxCopyIDToErase
+            // 
+            this.textBoxCopyIDToErase.Location = new System.Drawing.Point(146, 86);
+            this.textBoxCopyIDToErase.Name = "textBoxCopyIDToErase";
+            this.textBoxCopyIDToErase.Size = new System.Drawing.Size(100, 23);
+            this.textBoxCopyIDToErase.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(89, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(218, 21);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Podaj Id Kopii do usunięcia";
+            // 
+            // cancelButtonCopies
+            // 
+            this.cancelButtonCopies.Location = new System.Drawing.Point(39, 147);
+            this.cancelButtonCopies.Name = "cancelButtonCopies";
+            this.cancelButtonCopies.Size = new System.Drawing.Size(75, 23);
+            this.cancelButtonCopies.TabIndex = 5;
+            this.cancelButtonCopies.Text = "Anuluj";
+            this.cancelButtonCopies.UseVisualStyleBackColor = true;
+            this.cancelButtonCopies.Click += new System.EventHandler(this.cancelButtonCopies_Click);
+            // 
+            // okButtonCopies
+            // 
+            this.okButtonCopies.Location = new System.Drawing.Point(153, 147);
+            this.okButtonCopies.Name = "okButtonCopies";
+            this.okButtonCopies.Size = new System.Drawing.Size(75, 23);
+            this.okButtonCopies.TabIndex = 4;
+            this.okButtonCopies.Text = "Ok";
+            this.okButtonCopies.UseVisualStyleBackColor = true;
+            this.okButtonCopies.Click += new System.EventHandler(this.okButtonCopies_Click);
+            // 
+            // textBoxCopiesAdd
+            // 
+            this.textBoxCopiesAdd.Location = new System.Drawing.Point(212, 90);
+            this.textBoxCopiesAdd.Name = "textBoxCopiesAdd";
+            this.textBoxCopiesAdd.Size = new System.Drawing.Size(100, 23);
+            this.textBoxCopiesAdd.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(12, 89);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(154, 21);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Podaj Liczbe Kopii:";
+            // 
+            // AddCopiesBookTitle
+            // 
+            this.AddCopiesBookTitle.AutoSize = true;
+            this.AddCopiesBookTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.AddCopiesBookTitle.Location = new System.Drawing.Point(146, 28);
+            this.AddCopiesBookTitle.Name = "AddCopiesBookTitle";
+            this.AddCopiesBookTitle.Size = new System.Drawing.Size(71, 21);
+            this.AddCopiesBookTitle.TabIndex = 1;
+            this.AddCopiesBookTitle.Text = "Ksiazka:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(12, 28);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 21);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Ksiazka:";
             // 
             // panelBorrowBook
             // 
@@ -176,6 +299,7 @@
             this.EraseCopy.TabIndex = 16;
             this.EraseCopy.Text = "Usuń kopie";
             this.EraseCopy.UseVisualStyleBackColor = true;
+            this.EraseCopy.Click += new System.EventHandler(this.EraseCopy_Click);
             // 
             // EraseBook
             // 
@@ -185,6 +309,7 @@
             this.EraseBook.TabIndex = 15;
             this.EraseBook.Text = "Usuń książkę";
             this.EraseBook.UseVisualStyleBackColor = true;
+            this.EraseBook.Click += new System.EventHandler(this.EraseBook_Click);
             // 
             // AddBookCopies
             // 
@@ -261,91 +386,27 @@
             this.bookDataGridView.Size = new System.Drawing.Size(1098, 461);
             this.bookDataGridView.TabIndex = 0;
             // 
-            // panelAddCopies
-            // 
-            this.panelAddCopies.Controls.Add(this.cancelButtonCopies);
-            this.panelAddCopies.Controls.Add(this.okButtonCopies);
-            this.panelAddCopies.Controls.Add(this.textBoxCopiesAdd);
-            this.panelAddCopies.Controls.Add(this.label4);
-            this.panelAddCopies.Controls.Add(this.AddCopiesBookTitle);
-            this.panelAddCopies.Controls.Add(this.label3);
-            this.panelAddCopies.Location = new System.Drawing.Point(355, 157);
-            this.panelAddCopies.Name = "panelAddCopies";
-            this.panelAddCopies.Size = new System.Drawing.Size(391, 196);
-            this.panelAddCopies.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(12, 28);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 21);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Ksiazka:";
-            // 
-            // AddCopiesBookTitle
-            // 
-            this.AddCopiesBookTitle.AutoSize = true;
-            this.AddCopiesBookTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.AddCopiesBookTitle.Location = new System.Drawing.Point(146, 28);
-            this.AddCopiesBookTitle.Name = "AddCopiesBookTitle";
-            this.AddCopiesBookTitle.Size = new System.Drawing.Size(71, 21);
-            this.AddCopiesBookTitle.TabIndex = 1;
-            this.AddCopiesBookTitle.Text = "Ksiazka:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(12, 89);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(154, 21);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Podaj Liczbe Kopii:";
-            // 
-            // textBoxCopiesAdd
-            // 
-            this.textBoxCopiesAdd.Location = new System.Drawing.Point(212, 90);
-            this.textBoxCopiesAdd.Name = "textBoxCopiesAdd";
-            this.textBoxCopiesAdd.Size = new System.Drawing.Size(100, 23);
-            this.textBoxCopiesAdd.TabIndex = 3;
-            // 
-            // okButtonCopies
-            // 
-            this.okButtonCopies.Location = new System.Drawing.Point(153, 147);
-            this.okButtonCopies.Name = "okButtonCopies";
-            this.okButtonCopies.Size = new System.Drawing.Size(75, 23);
-            this.okButtonCopies.TabIndex = 4;
-            this.okButtonCopies.Text = "Ok";
-            this.okButtonCopies.UseVisualStyleBackColor = true;
-            this.okButtonCopies.Click += new System.EventHandler(this.okButtonCopies_Click);
-            // 
-            // cancelButtonCopies
-            // 
-            this.cancelButtonCopies.Location = new System.Drawing.Point(39, 147);
-            this.cancelButtonCopies.Name = "cancelButtonCopies";
-            this.cancelButtonCopies.Size = new System.Drawing.Size(75, 23);
-            this.cancelButtonCopies.TabIndex = 5;
-            this.cancelButtonCopies.Text = "Anuluj";
-            this.cancelButtonCopies.UseVisualStyleBackColor = true;
-            this.cancelButtonCopies.Click += new System.EventHandler(this.cancelButtonCopies_Click);
-            // 
             // BookStorage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelBorrowBook);
+            this.Controls.Add(this.panelAddCopies);
+            this.Controls.Add(this.panelEraseCopy);
             this.Controls.Add(this.panel2);
             this.Name = "BookStorage";
             this.Size = new System.Drawing.Size(1098, 527);
             this.panel2.ResumeLayout(false);
+            this.panelAddCopies.ResumeLayout(false);
+            this.panelAddCopies.PerformLayout();
+            this.panelEraseCopy.ResumeLayout(false);
+            this.panelEraseCopy.PerformLayout();
             this.panelBorrowBook.ResumeLayout(false);
             this.panelBorrowBook.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bookDataGridView)).EndInit();
-            this.panelAddCopies.ResumeLayout(false);
-            this.panelAddCopies.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -377,5 +438,10 @@
         private Button okButtonCopies;
         private TextBox textBoxCopiesAdd;
         private Label label4;
+        private Panel panelEraseCopy;
+        private Button cancelEraseCopyButton;
+        private Button eraseCopyButton;
+        private TextBox textBoxCopyIDToErase;
+        private Label label5;
     }
 }

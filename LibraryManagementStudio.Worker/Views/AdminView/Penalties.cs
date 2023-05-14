@@ -94,6 +94,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         {
             if(penaltyGridView.SelectedRows.Count > 0)
             {
+                SetPanelLocation(panelErasePenalty);
                 panelErasePenalty.Visible = true;
             }
         }
@@ -110,6 +111,18 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             panelErasePenalty.Visible = false;
             penalties = service.GetPenalties(statusOfPayment);
             LoadView();
+        }
+
+        private void SetPanelLocation(Panel panelToSetLocation)
+        {
+            int formWidth = this.ClientSize.Width;
+            int formHeight = this.ClientSize.Height;
+            int panelWidth = panelToSetLocation.Width;
+            int panelHeight = panelToSetLocation.Height;
+
+            // Ustaw położenie panelu na środku formularza
+            panelToSetLocation.Location = new Point((formWidth - panelWidth) / 2, (formHeight - panelHeight) / 2);
+
         }
     }
 }
