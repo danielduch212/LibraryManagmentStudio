@@ -17,17 +17,19 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
     {
         WorkerService service;
         LibraryManagementStudio.Data.Models.Worker worker;
+        List<LibraryManagementStudio.Data.Models.Worker> workers;
         public Workers(LibraryDbContext dbContext, Data.Models.Worker worker)
         {
             InitializeComponent();
             service = new WorkerService(dbContext);
+            workers = service.getWorkers();
             LoadWorkers();
             this.worker = worker;
         }
 
         private void LoadWorkers()
         {
-            var workers = service.getWorkers();
+            
             var bindingList = new BindingList<LibraryManagementStudio.Data.Models.Worker>(workers);
             var bindingSource = new BindingSource(bindingList, null);
 
@@ -51,6 +53,18 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             workersDataGridView.BackgroundColor = Color.White;
             workersDataGridView.RowHeadersVisible = false;
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            workers = service.searchWorkers(searchBooksTextBox.Text);
+            LoadWorkers();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string data = workersDataGridView.SelectedRows.ToString();
+            //tutaj zmieniac na nie jest aktywne 
         }
     }
 }

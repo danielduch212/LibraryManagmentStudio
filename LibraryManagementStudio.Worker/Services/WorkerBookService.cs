@@ -141,4 +141,25 @@ public class WorkerBookService : IWorkerBookService
         //dodac to pozniej 
 
     }
+
+    public List<BookBorrow> GetAllUserBorrows(LibraryManagementStudio.Data.Models.User user)
+    {
+        var query = _dbContext.BookBorrows
+            .Where(x => x.User == user);
+        return query.ToList();
+    }
+
+    public void returnBookBorrow(string data)
+    {
+        string[] parts = data.Split("/t");
+        var id = parts[0];
+        var query = _dbContext.BookBorrows
+            .FirstOrDefault(x => x.BookBorrowId.Equals(id));
+        query.IsActive = false;
+        // data oddania ksiazki
+        
+        query.Status = Data.Models.Enums.BorrowedBookStatus.Returned;
+        query.BookCopy.IsAvailable = true;
+        
+    }
 }

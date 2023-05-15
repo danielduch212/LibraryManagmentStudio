@@ -54,5 +54,29 @@ namespace LibraryManagementStudio.Worker.Services
             return query;
 
         }
+
+        public List<LibraryManagementStudio.Data.Models.Worker> searchWorkers(string email)
+        {
+            var query = _dbContext.Workers
+            .Where(x => x.EmailAddress.Contains(email));
+            var users = query.Select(x => new LibraryManagementStudio.Data.Models.Worker()
+            {
+
+
+                WorkerId = x.WorkerId,
+                Type = x.Type,
+                FirstName = x.FirstName,
+                LastName = x.LastName,
+                EmailAddress = x.EmailAddress,
+                Password = x.Password,
+                Books = x.Books,
+                BookBorrows = x.BookBorrows,
+                Users = x.Users,
+
+            });
+
+            return users.ToList();
+
+        }
     }
 }

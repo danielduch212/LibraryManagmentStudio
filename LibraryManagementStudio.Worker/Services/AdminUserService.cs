@@ -70,5 +70,40 @@ namespace LibraryManagementStudio.Worker.Services
             return query;
         }
 
+        public  List<UserDto> searchUser(string email)
+        {
+            var query = _dbContext.Users
+            .Where(x => x.EmailAddress.Contains(email));
+            var users = query.Select(x => new UserDto()
+            { 
+            
+
+                UserId = x.UserId,
+                EmailAddress = x.EmailAddress,
+                FirstName = x.FirstName,
+                LastName = x.LastName,
+                Street = x.Street,
+                PostalCode = x.PostalCode,
+                City = x.City,
+                BookBorrows = x.BookBorrows,
+                BookBorrowsCount = x.BookBorrows.Count,
+
+            });
+
+            return users.ToList();
+            
+
+        }
+
+        public LibraryManagementStudio.Data.Models.User findUserRow(string data)
+        {
+            string[] parts = data.Split("/t");
+            var id = parts[0];
+            var query = _dbContext.Users
+                .FirstOrDefault(x => x.UserId.Equals(id));
+            return query;
+
+        }
+
     }
 }
