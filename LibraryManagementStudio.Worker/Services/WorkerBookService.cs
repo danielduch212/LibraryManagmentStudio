@@ -162,4 +162,22 @@ public class WorkerBookService : IWorkerBookService
         query.BookCopy.IsAvailable = true;
         
     }
+    public List<Worker.Dtos.BookBorrow.BookBorrowToShow> GetUsersBorrowedBooks(User user)
+    {
+        var query = _dbContext.BookBorrows
+           .Where(x => x.User == user)//jeszcze tu powinno byc czy jest aktywne
+           .Select(x => new Worker.Dtos.BookBorrow.BookBorrowToShow()
+            {
+                BookBorrowId = x.BookBorrowId,
+                bookTitle = x.BookCopy.Book.Title,
+                StartDate = x.StartDate,
+                EndDate = x.EndDate,
+                Status = x.Status,
+                WorkerId = x.WorkerId,
+                UserId = x.UserId,
+                BookCopyId = x.BookCopyId,
+            });
+        return query.ToList();
+
+    }
 }

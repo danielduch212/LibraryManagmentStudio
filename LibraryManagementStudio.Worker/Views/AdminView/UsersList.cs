@@ -20,7 +20,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         AdminUserService service;
         LibraryManagementStudio.Data.Models.Worker worker;
         List<UserDto> users;
-        List<LibraryManagementStudio.Data.Models.BookBorrow> userBorrows;
+        List<Worker.Dtos.BookBorrow.BookBorrowToShow> userBorrows;
         public UsersList(LibraryDbContext dbContext, Data.Models.Worker worker)
         {
             InitializeComponent();
@@ -92,7 +92,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             {
                 var stringData = usersDataGridView.SelectedRows.ToString();
                 var user = service.findUserRow(stringData);
-                userBorrows = bookService.GetAllUserBorrows(user);
+                userBorrows = bookService.GetUsersBorrowedBooks(user);
                 labelUserName.Text = user.FirstName;
                 labelSurname.Text = user.LastName;
                 labelEmail.Text = user.EmailAddress;
@@ -109,7 +109,38 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         private void SetUserDataView()
         {
 
+            var bindingList = new BindingList<Worker.Dtos.BookBorrow.BookBorrowToShow>(userBorrows);
+            var bindingSource = new BindingSource(bindingList, null);
 
+            showUserDataGridView.DataSource = bindingSource;
+
+            showUserDataGridView.Columns["BookBorrowId"]!.HeaderText = "Id";
+            showUserDataGridView.Columns["BookBorrowId"]!.Width = 10;
+            showUserDataGridView.Columns["bookTitle"]!.HeaderText = "Tytul";
+            showUserDataGridView.Columns["bookTitle"]!.Width = 25;
+            showUserDataGridView.Columns["StartDate"]!.HeaderText = "Data wypozyczenie";
+            showUserDataGridView.Columns["StartDate"]!.Width = 25;
+
+            showUserDataGridView.Columns["EndDate"]!.HeaderText = "Data konca wypozyczenia";
+            showUserDataGridView.Columns["EndDate"]!.Width = 25;
+            showUserDataGridView.Columns["Status"]!.HeaderText = "Status";
+            showUserDataGridView.Columns["Status"]!.Width = 25;
+            showUserDataGridView.Columns["WorkerId"]!.HeaderText = "Id pracownika";
+            showUserDataGridView.Columns["WorkerId"]!.Width = 10;
+            
+
+            showUserDataGridView.Columns["UserId"]!.HeaderText = "Id";
+            showUserDataGridView.Columns["UserId"]!.Width = 10;
+            
+            showUserDataGridView.Columns["BookCopyId"]!.HeaderText = "BookCopyID";
+            showUserDataGridView.Columns["Street"]!.Width = 15;
+            showUserDataGridView.Columns["PostalCode"]!.HeaderText = "Kod Pocztowy";
+            showUserDataGridView.Columns["PostalCode"]!.Width = 10;
+            showUserDataGridView.Columns["BookBorrowsCount"]!.HeaderText = "Liczba Ksiazek";
+            showUserDataGridView.Columns["BookBorrowsCount"]!.Width = 10;
+            showUserDataGridView.Columns["BookBorrows"]!.Visible = false;
+            showUserDataGridView.BackgroundColor = Color.White;
+            showUserDataGridView.RowHeadersVisible = false;
 
         }
     }
