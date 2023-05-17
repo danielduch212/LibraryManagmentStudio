@@ -17,6 +17,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
     {
         LibraryDbContext dbContext;
         LibraryManagementStudio.Data.Models.Worker worker;
+        WorkerPenaltyService penaltyService;
         WorkerBookService service;
 
         public AddPenalty(Data.Models.Worker worker, LibraryDbContext dbContext)
@@ -24,6 +25,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             InitializeComponent();
             ViewStyleHelper.MaximizeUserControl(this);
             this.service = new WorkerBookService(dbContext);
+            penaltyService = new WorkerPenaltyService(dbContext);
             this.dbContext = dbContext;
             this.worker = worker;
         }
@@ -42,10 +44,22 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
                 Penalty newPenalty = new Penalty()
                 {
-
+                    Description = textBoxDescription.Text,
+                    Price = Int32.Parse(textBoxPrice.Text),
+                    ImpositionDate = DateTime.Today,
+                    IsPaid = false,
+                    BookBorrowId = bookBorrow.BookBorrowId,
+                    BookBorrow = bookBorrow,
+                    WorkerId = worker.WorkerId,
+                    Worker = worker,
 
 
                 };
+                penaltyService.AddPenalty(newPenalty);
+                penaltyService.AddPenaltyToBookBorrow(newPenalty, bookBorrow);
+                textBoxDescription.Text = "";
+                textBoxPrice.Text = "";
+                textBoxBookBorrowId.Text = "";
             }
         }
 

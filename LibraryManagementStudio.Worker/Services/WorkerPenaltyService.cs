@@ -103,6 +103,16 @@ namespace LibraryManagementStudio.Worker.Services
 
         }
 
+        public void AddPenalty(Penalty penalty)
+        {
+            _dbContext.Penalties.Add(penalty);
+
+        }
+
+        public void AddPenaltyToBookBorrow(Penalty penalty, BookBorrow bookBorrow)
+        {
+            bookBorrow.Penalty = penalty;
+        }
         
     }
 }
