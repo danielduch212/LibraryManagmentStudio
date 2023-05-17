@@ -123,7 +123,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(108, 25);
             this.button2.TabIndex = 13;
-            this.button2.Text = "Usuń karę";
+            this.button2.Text = "Oplac Kare";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 

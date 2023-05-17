@@ -74,6 +74,8 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         private void cancelShowDataButton_Click(object sender, EventArgs e)
         {
             showUserPanel.Visible = false;
+            users = service.getUsers();
+            LoadUsers();
         }
 
         private void ReturnBook_Click(object sender, EventArgs e)
@@ -82,6 +84,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             {
                 var bookData = showUserDataGridView.SelectedRows.ToString();
                 bookService.returnBookBorrow(bookData);
+
                 SetUserDataView();
             }
         }
@@ -133,12 +136,8 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             showUserDataGridView.Columns["UserId"]!.Width = 10;
             
             showUserDataGridView.Columns["BookCopyId"]!.HeaderText = "BookCopyID";
-            showUserDataGridView.Columns["Street"]!.Width = 15;
+            showUserDataGridView.Columns["BookCopyId"]!.Width = 10;
             showUserDataGridView.Columns["PostalCode"]!.HeaderText = "Kod Pocztowy";
-            showUserDataGridView.Columns["PostalCode"]!.Width = 10;
-            showUserDataGridView.Columns["BookBorrowsCount"]!.HeaderText = "Liczba Ksiazek";
-            showUserDataGridView.Columns["BookBorrowsCount"]!.Width = 10;
-            showUserDataGridView.Columns["BookBorrows"]!.Visible = false;
             showUserDataGridView.BackgroundColor = Color.White;
             showUserDataGridView.RowHeadersVisible = false;
 
