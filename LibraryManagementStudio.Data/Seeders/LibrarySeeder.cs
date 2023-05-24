@@ -112,11 +112,20 @@ public class LibrarySeeder
         _dbContext.SaveChanges();
     }
     
+    
     private void SeedBookCopies()
     {
         var bookCopies = DummyDataProvider.GetDummyBookCopies();
 
         _dbContext.BookCopies.AddRange(bookCopies);
+        _dbContext.SaveChanges();
+    }
+
+    private void SeedUsers()
+    {
+        var users = DummyDataProvider.GetDummyUsers();
+
+        _dbContext.Users.AddRange(users);
         _dbContext.SaveChanges();
     }
 }
