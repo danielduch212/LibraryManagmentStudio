@@ -36,15 +36,15 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             workersDataGridView.DataSource = bindingSource;
 
             workersDataGridView.Columns["WorkerId"]!.HeaderText = "Id";
-            workersDataGridView.Columns["WorkerId"]!.Width = 10;
+            
             workersDataGridView.Columns["Type"]!.HeaderText = "Typ";
-            workersDataGridView.Columns["Type"]!.Width = 15;
+            
             workersDataGridView.Columns["FirstName"]!.HeaderText = "Imie";
-            workersDataGridView.Columns["FirstName"]!.Width = 25;
+            
             workersDataGridView.Columns["LastName"]!.HeaderText = "Nazwisko";
-            workersDataGridView.Columns["LastName"]!.Width = 25;
+            
             workersDataGridView.Columns["EmailAddress"]!.HeaderText = "Email";
-            workersDataGridView.Columns["EmailAddress"]!.Width = 30;
+            
             workersDataGridView.Columns["Password"]!.Visible = false;
             workersDataGridView.Columns["Books"]!.Visible = false;
             workersDataGridView.Columns["BookBorrows"]!.Visible = false;

@@ -25,6 +25,8 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             bookService = new WorkerBookService(dbContext);
             publisherAuthorService = new PublisherAuthorService(dbContext);
             this.worker= worker;
+            panelNewPublisher.Visible = false;
+            panelAuthor.Visible = false;
             SetData();
             panelContent.Visible = true;
 
@@ -33,10 +35,18 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void SetData()
         {
-            var queryAuthors = publisherAuthorService.GetAuthors();
-            var queryPublishers = publisherAuthorService.GetPublishers();
-            comboBoxAuthor.Items.Add(queryAuthors);
-            comboBoxPublisher.Items.Add(queryPublishers);
+            var queryAuthors = publisherAuthorService.getAuthorsNames();
+            var queryPublishers = publisherAuthorService.getPublishersNames();
+            foreach (string author in queryAuthors)
+            {
+                comboBoxAuthor.Items.Add(author);
+            }
+            foreach (string publisher in queryPublishers)
+            {
+                comboBoxPublisher.Items.Add(publisher);
+            }
+
+
             comboBoxCategory.Items.Add(LibraryManagementStudio.Data.Models.Enums.CategoryType.Romance);
             comboBoxCategory.Items.Add(LibraryManagementStudio.Data.Models.Enums.CategoryType.Fantasy);
             comboBoxCategory.Items.Add(LibraryManagementStudio.Data.Models.Enums.CategoryType.Bibliography);

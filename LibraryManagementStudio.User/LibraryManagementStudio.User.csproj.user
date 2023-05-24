@@ -32,9 +32,6 @@
     <Compile Update="Views\UserLibraryView\UserPenaltiesControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\UserLibraryView\UserPickupAndReturnControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="Views\UserLibraryView\UserView.cs">
       <SubType>Form</SubType>
     </Compile>

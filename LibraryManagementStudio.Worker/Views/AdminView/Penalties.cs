@@ -42,25 +42,25 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             penaltyGridView.DataSource = bindingSource;
 
             penaltyGridView.Columns["PenaltyId"]!.HeaderText = "Id";
-            penaltyGridView.Columns["PenaltyId"]!.Width = 10;
+            //penaltyGridView.Columns["PenaltyId"]!.Width = 10;
             penaltyGridView.Columns["WorkerId"]!.HeaderText = "Id Pracownika";
-            penaltyGridView.Columns["WorkerId"]!.Width = 15;
+            //penaltyGridView.Columns["WorkerId"]!.Width = 15;
             penaltyGridView.Columns["UserId"]!.HeaderText = "Id Użytkownika";
-            penaltyGridView.Columns["UserId"]!.Width = 15;
+            //penaltyGridView.Columns["UserId"]!.Width = 15;
             penaltyGridView.Columns["UserFirstName"]!.HeaderText = "Imie";
-            penaltyGridView.Columns["UserFirstName"]!.Width = 25;
+            //penaltyGridView.Columns["UserFirstName"]!.Width = 25;
             penaltyGridView.Columns["UserLastName"]!.HeaderText = "Nazwisko";
-            penaltyGridView.Columns["UserLastName"]!.Width = 25;
+            //penaltyGridView.Columns["UserLastName"]!.Width = 25;
             penaltyGridView.Columns["BookTitle"]!.HeaderText = "Ksiazka";
-            penaltyGridView.Columns["BookTitle"]!.Width = 25;
+            //penaltyGridView.Columns["BookTitle"]!.Width = 25;
             penaltyGridView.Columns["Description"]!.HeaderText = "Opis";
-            penaltyGridView.Columns["Description"]!.Width = 25;
+            //penaltyGridView.Columns["Description"]!.Width = 25;
             penaltyGridView.Columns["Price"]!.HeaderText = "Cena";
-            penaltyGridView.Columns["Price"]!.Width = 25;
+            //penaltyGridView.Columns["Price"]!.Width = 25;
             penaltyGridView.Columns["BookBorrowId"]!.HeaderText = "Id Wypozyczenia";
-            penaltyGridView.Columns["BookBorrowId"]!.Width = 10;
+            //penaltyGridView.Columns["BookBorrowId"]!.Width = 10;
             penaltyGridView.Columns["IsPaid"]!.HeaderText = "Zapłacone";
-            penaltyGridView.Columns["IsPaid"]!.Width = 10;
+            //penaltyGridView.Columns["IsPaid"]!.Width = 10;
             penaltyGridView.BackgroundColor = Color.White;
             penaltyGridView.RowHeadersVisible = false;
 

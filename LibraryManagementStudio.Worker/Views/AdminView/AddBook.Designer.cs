@@ -31,27 +31,9 @@
             System.Windows.Forms.Button anotherAuthorButton;
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.buttonAddNew = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
             this.textBoxCopies = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.panelAuthor = new System.Windows.Forms.Panel();
-            this.cancelNewAuthor = new System.Windows.Forms.Button();
-            this.panelNewPublisher = new System.Windows.Forms.Panel();
-            this.cancelNewPublisher = new System.Windows.Forms.Button();
-            this.alertLabelPublisher = new System.Windows.Forms.Label();
-            this.buttonNewPublisher = new System.Windows.Forms.Button();
-            this.textBoxNewPublisher = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.alertLabelAuthor = new System.Windows.Forms.Label();
-            this.buttonNewAuthor = new System.Windows.Forms.Button();
-            this.textBoxNewAuthor = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.alertLabel1 = new System.Windows.Forms.Label();
             this.btnAddBook = new System.Windows.Forms.Button();
             this.anotherPublisherButton = new System.Windows.Forms.Button();
@@ -67,6 +49,20 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textTitle = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.panelAuthor = new System.Windows.Forms.Panel();
+            this.cancelNewAuthor = new System.Windows.Forms.Button();
+            this.alertLabelAuthor = new System.Windows.Forms.Label();
+            this.buttonNewAuthor = new System.Windows.Forms.Button();
+            this.textBoxNewAuthor = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panelNewPublisher = new System.Windows.Forms.Panel();
+            this.cancelNewPublisher = new System.Windows.Forms.Button();
+            this.alertLabelPublisher = new System.Windows.Forms.Label();
+            this.buttonNewPublisher = new System.Windows.Forms.Button();
+            this.textBoxNewPublisher = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             anotherAuthorButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelContent.SuspendLayout();
@@ -96,51 +92,11 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.buttonAddNew);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(3, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(814, 92);
             this.panel1.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(454, 63);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(535, 69);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 17);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Dodaj kopie";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(227, 69);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Dodaj nowa ksiazke";
-            // 
-            // buttonAddNew
-            // 
-            this.buttonAddNew.Location = new System.Drawing.Point(146, 63);
-            this.buttonAddNew.Name = "buttonAddNew";
-            this.buttonAddNew.Size = new System.Drawing.Size(75, 23);
-            this.buttonAddNew.TabIndex = 2;
-            this.buttonAddNew.UseVisualStyleBackColor = true;
             // 
             // panelContent
             // 
@@ -183,146 +139,6 @@
             this.label12.Size = new System.Drawing.Size(105, 21);
             this.label12.TabIndex = 22;
             this.label12.Text = "Liczba kopii:";
-            // 
-            // panelAuthor
-            // 
-            this.panelAuthor.Controls.Add(this.cancelNewAuthor);
-            this.panelAuthor.Controls.Add(this.alertLabelAuthor);
-            this.panelAuthor.Controls.Add(this.buttonNewAuthor);
-            this.panelAuthor.Controls.Add(this.textBoxNewAuthor);
-            this.panelAuthor.Controls.Add(this.label11);
-            this.panelAuthor.Controls.Add(this.label10);
-            this.panelAuthor.Location = new System.Drawing.Point(269, 120);
-            this.panelAuthor.Name = "panelAuthor";
-            this.panelAuthor.Size = new System.Drawing.Size(334, 185);
-            this.panelAuthor.TabIndex = 21;
-            // 
-            // cancelNewAuthor
-            // 
-            this.cancelNewAuthor.Location = new System.Drawing.Point(89, 130);
-            this.cancelNewAuthor.Name = "cancelNewAuthor";
-            this.cancelNewAuthor.Size = new System.Drawing.Size(75, 23);
-            this.cancelNewAuthor.TabIndex = 23;
-            this.cancelNewAuthor.Text = "Anuluj";
-            this.cancelNewAuthor.UseVisualStyleBackColor = true;
-            this.cancelNewAuthor.Click += new System.EventHandler(this.cancelNewAuthor_Click);
-            // 
-            // panelNewPublisher
-            // 
-            this.panelNewPublisher.Controls.Add(this.cancelNewPublisher);
-            this.panelNewPublisher.Controls.Add(this.alertLabelPublisher);
-            this.panelNewPublisher.Controls.Add(this.buttonNewPublisher);
-            this.panelNewPublisher.Controls.Add(this.textBoxNewPublisher);
-            this.panelNewPublisher.Controls.Add(this.label13);
-            this.panelNewPublisher.Controls.Add(this.label14);
-            this.panelNewPublisher.Location = new System.Drawing.Point(0, 0);
-            this.panelNewPublisher.Name = "panelNewPublisher";
-            this.panelNewPublisher.Size = new System.Drawing.Size(334, 185);
-            this.panelNewPublisher.TabIndex = 22;
-            // 
-            // cancelNewPublisher
-            // 
-            this.cancelNewPublisher.Location = new System.Drawing.Point(69, 130);
-            this.cancelNewPublisher.Name = "cancelNewPublisher";
-            this.cancelNewPublisher.Size = new System.Drawing.Size(75, 23);
-            this.cancelNewPublisher.TabIndex = 5;
-            this.cancelNewPublisher.Text = "Anuluj";
-            this.cancelNewPublisher.UseVisualStyleBackColor = true;
-            this.cancelNewPublisher.Click += new System.EventHandler(this.cancelNewPublisher_Click);
-            // 
-            // alertLabelPublisher
-            // 
-            this.alertLabelPublisher.AutoSize = true;
-            this.alertLabelPublisher.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.alertLabelPublisher.Location = new System.Drawing.Point(138, 55);
-            this.alertLabelPublisher.Name = "alertLabelPublisher";
-            this.alertLabelPublisher.Size = new System.Drawing.Size(52, 17);
-            this.alertLabelPublisher.TabIndex = 4;
-            this.alertLabelPublisher.Text = "Nazwa:";
-            // 
-            // buttonNewPublisher
-            // 
-            this.buttonNewPublisher.Location = new System.Drawing.Point(182, 130);
-            this.buttonNewPublisher.Name = "buttonNewPublisher";
-            this.buttonNewPublisher.Size = new System.Drawing.Size(75, 23);
-            this.buttonNewPublisher.TabIndex = 3;
-            this.buttonNewPublisher.Text = "Zatwierdz";
-            this.buttonNewPublisher.UseVisualStyleBackColor = true;
-            this.buttonNewPublisher.Click += new System.EventHandler(this.buttonNewPublisher_Click);
-            // 
-            // textBoxNewPublisher
-            // 
-            this.textBoxNewPublisher.Location = new System.Drawing.Point(67, 79);
-            this.textBoxNewPublisher.Name = "textBoxNewPublisher";
-            this.textBoxNewPublisher.Size = new System.Drawing.Size(251, 23);
-            this.textBoxNewPublisher.TabIndex = 2;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(9, 78);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(52, 17);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "Nazwa:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(84, 28);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(181, 20);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Dodaj nowego Wydawce";
-            // 
-            // alertLabelAuthor
-            // 
-            this.alertLabelAuthor.AutoSize = true;
-            this.alertLabelAuthor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.alertLabelAuthor.Location = new System.Drawing.Point(138, 55);
-            this.alertLabelAuthor.Name = "alertLabelAuthor";
-            this.alertLabelAuthor.Size = new System.Drawing.Size(52, 17);
-            this.alertLabelAuthor.TabIndex = 4;
-            this.alertLabelAuthor.Text = "Nazwa:";
-            // 
-            // buttonNewAuthor
-            // 
-            this.buttonNewAuthor.Location = new System.Drawing.Point(185, 130);
-            this.buttonNewAuthor.Name = "buttonNewAuthor";
-            this.buttonNewAuthor.Size = new System.Drawing.Size(75, 23);
-            this.buttonNewAuthor.TabIndex = 3;
-            this.buttonNewAuthor.Text = "Zatwierdz";
-            this.buttonNewAuthor.UseVisualStyleBackColor = true;
-            this.buttonNewAuthor.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // textBoxNewAuthor
-            // 
-            this.textBoxNewAuthor.Location = new System.Drawing.Point(67, 79);
-            this.textBoxNewAuthor.Name = "textBoxNewAuthor";
-            this.textBoxNewAuthor.Size = new System.Drawing.Size(251, 23);
-            this.textBoxNewAuthor.TabIndex = 2;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(9, 78);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(52, 17);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Nazwa:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(84, 28);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(160, 20);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Dodaj nowego autora";
             // 
             // alertLabel1
             // 
@@ -461,16 +277,156 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Tytul:";
             // 
+            // panelAuthor
+            // 
+            this.panelAuthor.Controls.Add(this.cancelNewAuthor);
+            this.panelAuthor.Controls.Add(this.alertLabelAuthor);
+            this.panelAuthor.Controls.Add(this.buttonNewAuthor);
+            this.panelAuthor.Controls.Add(this.textBoxNewAuthor);
+            this.panelAuthor.Controls.Add(this.label11);
+            this.panelAuthor.Controls.Add(this.label10);
+            this.panelAuthor.Location = new System.Drawing.Point(269, 120);
+            this.panelAuthor.Name = "panelAuthor";
+            this.panelAuthor.Size = new System.Drawing.Size(334, 185);
+            this.panelAuthor.TabIndex = 21;
+            // 
+            // cancelNewAuthor
+            // 
+            this.cancelNewAuthor.Location = new System.Drawing.Point(89, 130);
+            this.cancelNewAuthor.Name = "cancelNewAuthor";
+            this.cancelNewAuthor.Size = new System.Drawing.Size(75, 23);
+            this.cancelNewAuthor.TabIndex = 23;
+            this.cancelNewAuthor.Text = "Anuluj";
+            this.cancelNewAuthor.UseVisualStyleBackColor = true;
+            this.cancelNewAuthor.Click += new System.EventHandler(this.cancelNewAuthor_Click);
+            // 
+            // alertLabelAuthor
+            // 
+            this.alertLabelAuthor.AutoSize = true;
+            this.alertLabelAuthor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.alertLabelAuthor.Location = new System.Drawing.Point(138, 55);
+            this.alertLabelAuthor.Name = "alertLabelAuthor";
+            this.alertLabelAuthor.Size = new System.Drawing.Size(52, 17);
+            this.alertLabelAuthor.TabIndex = 4;
+            this.alertLabelAuthor.Text = "Nazwa:";
+            // 
+            // buttonNewAuthor
+            // 
+            this.buttonNewAuthor.Location = new System.Drawing.Point(185, 130);
+            this.buttonNewAuthor.Name = "buttonNewAuthor";
+            this.buttonNewAuthor.Size = new System.Drawing.Size(75, 23);
+            this.buttonNewAuthor.TabIndex = 3;
+            this.buttonNewAuthor.Text = "Zatwierdz";
+            this.buttonNewAuthor.UseVisualStyleBackColor = true;
+            this.buttonNewAuthor.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // textBoxNewAuthor
+            // 
+            this.textBoxNewAuthor.Location = new System.Drawing.Point(67, 79);
+            this.textBoxNewAuthor.Name = "textBoxNewAuthor";
+            this.textBoxNewAuthor.Size = new System.Drawing.Size(251, 23);
+            this.textBoxNewAuthor.TabIndex = 2;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(9, 78);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(52, 17);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Nazwa:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(84, 28);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(160, 20);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Dodaj nowego autora";
+            // 
+            // panelNewPublisher
+            // 
+            this.panelNewPublisher.Controls.Add(this.cancelNewPublisher);
+            this.panelNewPublisher.Controls.Add(this.alertLabelPublisher);
+            this.panelNewPublisher.Controls.Add(this.buttonNewPublisher);
+            this.panelNewPublisher.Controls.Add(this.textBoxNewPublisher);
+            this.panelNewPublisher.Controls.Add(this.label13);
+            this.panelNewPublisher.Controls.Add(this.label14);
+            this.panelNewPublisher.Location = new System.Drawing.Point(0, 0);
+            this.panelNewPublisher.Name = "panelNewPublisher";
+            this.panelNewPublisher.Size = new System.Drawing.Size(334, 185);
+            this.panelNewPublisher.TabIndex = 22;
+            // 
+            // cancelNewPublisher
+            // 
+            this.cancelNewPublisher.Location = new System.Drawing.Point(69, 130);
+            this.cancelNewPublisher.Name = "cancelNewPublisher";
+            this.cancelNewPublisher.Size = new System.Drawing.Size(75, 23);
+            this.cancelNewPublisher.TabIndex = 5;
+            this.cancelNewPublisher.Text = "Anuluj";
+            this.cancelNewPublisher.UseVisualStyleBackColor = true;
+            this.cancelNewPublisher.Click += new System.EventHandler(this.cancelNewPublisher_Click);
+            // 
+            // alertLabelPublisher
+            // 
+            this.alertLabelPublisher.AutoSize = true;
+            this.alertLabelPublisher.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.alertLabelPublisher.Location = new System.Drawing.Point(138, 55);
+            this.alertLabelPublisher.Name = "alertLabelPublisher";
+            this.alertLabelPublisher.Size = new System.Drawing.Size(52, 17);
+            this.alertLabelPublisher.TabIndex = 4;
+            this.alertLabelPublisher.Text = "Nazwa:";
+            // 
+            // buttonNewPublisher
+            // 
+            this.buttonNewPublisher.Location = new System.Drawing.Point(182, 130);
+            this.buttonNewPublisher.Name = "buttonNewPublisher";
+            this.buttonNewPublisher.Size = new System.Drawing.Size(75, 23);
+            this.buttonNewPublisher.TabIndex = 3;
+            this.buttonNewPublisher.Text = "Zatwierdz";
+            this.buttonNewPublisher.UseVisualStyleBackColor = true;
+            this.buttonNewPublisher.Click += new System.EventHandler(this.buttonNewPublisher_Click);
+            // 
+            // textBoxNewPublisher
+            // 
+            this.textBoxNewPublisher.Location = new System.Drawing.Point(67, 79);
+            this.textBoxNewPublisher.Name = "textBoxNewPublisher";
+            this.textBoxNewPublisher.Size = new System.Drawing.Size(251, 23);
+            this.textBoxNewPublisher.TabIndex = 2;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(9, 78);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(52, 17);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Nazwa:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label14.Location = new System.Drawing.Point(84, 28);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(181, 20);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Dodaj nowego Wydawce";
+            // 
             // AddBook
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSize = true;
             this.Controls.Add(this.panelAuthor);
             this.Controls.Add(this.panelNewPublisher);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panel1);
             this.Name = "AddBook";
-            this.Size = new System.Drawing.Size(817, 578);
+            this.Size = new System.Drawing.Size(820, 578);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelContent.ResumeLayout(false);
@@ -487,10 +443,6 @@
 
         private Label label1;
         private Panel panel1;
-        private Button button1;
-        private Label label3;
-        private Label label2;
-        private Button buttonAddNew;
         private Panel panelContent;
         private Label label4;
         private TextBox textTitle;

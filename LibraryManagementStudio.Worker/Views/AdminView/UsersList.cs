@@ -27,6 +27,8 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             ViewStyleHelper.MaximizeUserControl(this);
             service = new AdminUserService(dbContext);
             bookService = new WorkerBookService(dbContext);
+            usersDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            showUserDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             showUserPanel.Visible = false;
             users = service.getUsers();
             LoadUsers();
@@ -38,25 +40,19 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             
             var bindingList = new BindingList<UserDto>(users);
             var bindingSource = new BindingSource(bindingList, null);
+            
 
             usersDataGridView.DataSource = bindingSource;
 
             usersDataGridView.Columns["UserId"]!.HeaderText = "Id";
-            usersDataGridView.Columns["UserId"]!.Width = 10;
+            
             usersDataGridView.Columns["FirstName"]!.HeaderText = "Imie";
-            usersDataGridView.Columns["FirstName"]!.Width = 25;
             usersDataGridView.Columns["LastName"]!.HeaderText = "Nazwisko";
-            usersDataGridView.Columns["LastName"]!.Width = 25;
             usersDataGridView.Columns["EmailAddress"]!.HeaderText = "Email";
-            usersDataGridView.Columns["EmailAddress"]!.Width = 25;
             usersDataGridView.Columns["City"]!.HeaderText = "20";
-            usersDataGridView.Columns["City"]!.Width = 30;
             usersDataGridView.Columns["Street"]!.HeaderText = "Ulica";
-            usersDataGridView.Columns["Street"]!.Width = 15;
             usersDataGridView.Columns["PostalCode"]!.HeaderText = "Kod Pocztowy";
-            usersDataGridView.Columns["PostalCode"]!.Width = 10;
             usersDataGridView.Columns["BookBorrowsCount"]!.HeaderText = "Liczba Ksiazek";
-            usersDataGridView.Columns["BookBorrowsCount"]!.Width = 10;
             usersDataGridView.Columns["BookBorrows"]!.Visible = false;
             usersDataGridView.BackgroundColor = Color.White;
             usersDataGridView.RowHeadersVisible = false;
@@ -118,25 +114,17 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             showUserDataGridView.DataSource = bindingSource;
 
             showUserDataGridView.Columns["BookBorrowId"]!.HeaderText = "Id";
-            showUserDataGridView.Columns["BookBorrowId"]!.Width = 10;
             showUserDataGridView.Columns["bookTitle"]!.HeaderText = "Tytul";
-            showUserDataGridView.Columns["bookTitle"]!.Width = 25;
             showUserDataGridView.Columns["StartDate"]!.HeaderText = "Data wypozyczenie";
-            showUserDataGridView.Columns["StartDate"]!.Width = 25;
 
             showUserDataGridView.Columns["EndDate"]!.HeaderText = "Data konca wypozyczenia";
-            showUserDataGridView.Columns["EndDate"]!.Width = 25;
             showUserDataGridView.Columns["Status"]!.HeaderText = "Status";
-            showUserDataGridView.Columns["Status"]!.Width = 25;
             showUserDataGridView.Columns["WorkerId"]!.HeaderText = "Id pracownika";
-            showUserDataGridView.Columns["WorkerId"]!.Width = 10;
             
 
             showUserDataGridView.Columns["UserId"]!.HeaderText = "Id";
-            showUserDataGridView.Columns["UserId"]!.Width = 10;
             
             showUserDataGridView.Columns["BookCopyId"]!.HeaderText = "BookCopyID";
-            showUserDataGridView.Columns["BookCopyId"]!.Width = 10;
             showUserDataGridView.Columns["PostalCode"]!.HeaderText = "Kod Pocztowy";
             showUserDataGridView.BackgroundColor = Color.White;
             showUserDataGridView.RowHeadersVisible = false;

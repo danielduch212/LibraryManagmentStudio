@@ -1,4 +1,5 @@
 ﻿using LibraryManagementStudio.Data;
+using LibraryManagementStudio.Worker.Views.AdminView;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic.Logging;
 using System;
@@ -36,7 +37,7 @@ namespace LibraryManagementStudio.Worker.Services
         public IEnumerable<LibraryManagementStudio.Data.Models.Author> GetAuthors()
         {
 
-            var query = _dbContext.Publishers
+            var query = _dbContext.Authors
            .Select(x => new LibraryManagementStudio.Data.Models.Author()
            {
                Name = x.Name,
@@ -83,6 +84,28 @@ namespace LibraryManagementStudio.Worker.Services
                .FirstOrDefault(x => x.Name.Equals(name));
             return query;
 
+        }
+
+        public IEnumerable<string> getAuthorsNames()
+        {
+            var authors = GetAuthors();
+            List<string> authorsNames = new List<string>();
+            foreach (LibraryManagementStudio.Data.Models.Author author in authors)
+            {
+                authorsNames.Add(author.Name);
+            }
+            return authorsNames;
+        }
+
+        public IEnumerable<string> getPublishersNames()
+        {
+            var publishers = GetPublishers();
+            List<string> publishersNames = new List<string>();
+            foreach (LibraryManagementStudio.Data.Models.Publisher publisher in publishers)
+            {
+                publishersNames.Add(publisher.Name);
+            }
+            return publishersNames;
         }
     }
 }

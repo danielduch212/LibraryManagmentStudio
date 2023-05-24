@@ -43,23 +43,23 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             bookDataGridView.DataSource = bindingSource;
 
             bookDataGridView.Columns["BookId"]!.HeaderText = "Id";
-            bookDataGridView.Columns["BookId"]!.Width = 10;
+            
             bookDataGridView.Columns["Title"]!.HeaderText = "Tytul";
-            bookDataGridView.Columns["Title"]!.Width = 25;
+            
             bookDataGridView.Columns["AuthorName"]!.HeaderText = "Autor";
-            bookDataGridView.Columns["AuthorName"]!.Width = 20;
+            
             bookDataGridView.Columns["PublisherName"]!.HeaderText = "Wydawnictwo";
-            bookDataGridView.Columns["PublisherName"]!.Width = 25;
+            
             bookDataGridView.Columns["Description"]!.HeaderText = "Opis";
-            bookDataGridView.Columns["Description"]!.Width = 30;
+            
             bookDataGridView.Columns["Category"]!.HeaderText = "Kategoria";
-            bookDataGridView.Columns["Category"]!.Width = 15;
+            
             bookDataGridView.Columns["PublishDate"]!.HeaderText = "Data wydania";
-            bookDataGridView.Columns["PublishDate"]!.Width = 10;
+            
             bookDataGridView.Columns["BookCopiesCount"]!.HeaderText = "Liczba kopii";
-            bookDataGridView.Columns["BookCopiesCount"]!.Width = 10;
+            
             bookDataGridView.Columns["AvailibleBookCopiesCount"]!.HeaderText = "Dostepne kopie";
-            bookDataGridView.Columns["AvailibleBookCopiesCount"]!.Width = 10;
+            
             bookDataGridView.BackgroundColor = Color.White;
             bookDataGridView.RowHeadersVisible = false;
 

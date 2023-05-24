@@ -184,12 +184,13 @@
             // 
             this.penaltyGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.penaltyGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.penaltyGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.penaltyGridView.Location = new System.Drawing.Point(0, 0);
             this.penaltyGridView.MultiSelect = false;
             this.penaltyGridView.Name = "penaltyGridView";
             this.penaltyGridView.RowTemplate.Height = 25;
-            this.penaltyGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect;
+            this.penaltyGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.penaltyGridView.Size = new System.Drawing.Size(1250, 654);
             this.penaltyGridView.TabIndex = 0;
             // 

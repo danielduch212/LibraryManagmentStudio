@@ -69,6 +69,8 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void AddBook_Click(object sender, EventArgs e)
         {
+            var control = new AddBook(dbContext, worker);
+            ViewStyleHelper.AddControlToPanel(control, contentPanel);
 
         }
     }
