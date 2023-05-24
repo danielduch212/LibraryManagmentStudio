@@ -1,12 +1,52 @@
 using LibraryManagementStudio.Data.Models;
 using LibraryManagementStudio.Data.Models.Enums;
+using System.Diagnostics.Metrics;
+using System.IO;
 
 namespace LibraryManagementStudio.Data.Seeders;
 
 public static class DummyDataProvider
 {
 
-    
+    public static IEnumerable<User> GetDummyUsers()
+    {
+
+        var users = new List<User>
+        {
+            new()
+            {
+                UserId = 1,
+                EmailAddress = "andziaks@gmail.com",
+                FirstName = "Angelika",
+                LastName = "Angelika",
+                DateOfBirth = new DateTime(2004, 1, 1),
+                Street = "Hybrydowa",
+                PostalCode = "43-300",
+                City = "Bielsko",
+                Country = "Polska",
+                CreationDate = DateTime.Now,
+            },
+            new()
+            {
+
+
+            }
+
+
+
+
+
+
+
+
+
+
+        };
+
+        return users;
+    }
+
+
     public static IEnumerable<Worker> GetDummyWorkers()
     {
         var workers = new List<Worker>
@@ -190,6 +230,7 @@ public static class DummyDataProvider
                 Status = BookCopyStatus.uszkodzony,
                 BookId = 2
             },
+
         };
 
         return bookCopies;
