@@ -55,6 +55,26 @@ namespace LibraryManagementStudio.Worker.Services
 
         }
 
+        public LibraryManagementStudio.Data.Models.Worker checkLoginData(string login, string password)
+        {
+
+            var query = _dbContext.Workers
+               .FirstOrDefault(x => x.EmailAddress == login);
+            if(query != null)
+            {
+                if (query.Password == password)
+                {
+                    return query;
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            return null;
+            
+        }
         public List<LibraryManagementStudio.Data.Models.Worker> searchWorkers(string email)
         {
             var query = _dbContext.Workers

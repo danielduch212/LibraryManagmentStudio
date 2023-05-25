@@ -104,7 +104,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
                 }
                 book.BookCopies = bookCopies;
-
+                bookService.AddBook(book);
             } 
         }
 

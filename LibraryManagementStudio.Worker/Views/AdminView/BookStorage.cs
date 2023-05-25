@@ -76,7 +76,9 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         {
             if(bookDataGridView.SelectedRows.Count > 0)
             {
-                book = service.getBookFromString(bookDataGridView.SelectedRows.ToString());
+                int selectedRowIndex = bookDataGridView.SelectedCells[0].RowIndex; 
+                DataGridViewRow selectedRow = bookDataGridView.Rows[selectedRowIndex]; 
+                book = service.getBookFromString(selectedRow.Cells[0].Value.ToString());
                 labelBookTitle.Text = book.Title;
                 SetPanelLocation(panelBorrowBook);
                 panelBorrowBook.Visible = true;
@@ -115,7 +117,9 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         {
             if (bookDataGridView.SelectedRows.Count > 0)
             {
-                book = service.getBookFromString(bookDataGridView.SelectedRows.ToString());
+                int selectedRowIndex = bookDataGridView.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = bookDataGridView.Rows[selectedRowIndex];
+                book = service.getBookFromString(selectedRow.Cells[0].Value.ToString());
                 AddCopiesBookTitle.Text = book.Title;
                 SetPanelLocation(panelAddCopies);
                 panelAddCopies.Visible = true;

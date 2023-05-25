@@ -73,5 +73,12 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             ViewStyleHelper.AddControlToPanel(control, contentPanel);
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            var control = new Workers(dbContext, worker);
+            ViewStyleHelper.AddControlToPanel(control, contentPanel);
+
+        }
     }
 }

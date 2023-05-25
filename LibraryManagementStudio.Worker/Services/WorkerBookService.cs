@@ -15,6 +15,11 @@ public class WorkerBookService : IWorkerBookService
         _dbContext = dbContext;
     }
     
+    public void AddBook(Book book)
+    {
+        _dbContext.Books.Add(book);
+        _dbContext.SaveChanges();
+    }
     public bool CreateBook(CreateBookDto bookDto)
     {
         var author = _dbContext.Authors.FirstOrDefault(x => x.AuthorId == bookDto.AuthorId);
@@ -88,12 +93,12 @@ public class WorkerBookService : IWorkerBookService
 
         
     }
-    public Book getBookFromString(string stringFromRow)
+    public Book getBookFromString(string idFromCell)
     {
-        string[] parts = stringFromRow.Split("/t");
-        var id = parts[0];
+        
+        
         var query = _dbContext.Books
-            .FirstOrDefault(x => x.BookId.Equals(id));
+            .FirstOrDefault(x => x.BookId == Int32.Parse(idFromCell));
         return query;
 
 
@@ -114,12 +119,15 @@ public class WorkerBookService : IWorkerBookService
         _dbContext.SaveChanges();
 
     }
+
+    
     public void AddBookCopies(Book book,int howMany)
     {
         for(int i=0; i<howMany; i++) 
         {
             BookCopy bookCopy = new BookCopy()
             {
+                
                 IsAvailable = true,
                 Status = Data.Models.Enums.BookCopyStatus.dobry,
                 BookBorrows = new List<BookBorrow>(),
@@ -127,7 +135,8 @@ public class WorkerBookService : IWorkerBookService
                 BookId = book.BookId,
 
             };
-            book.BookCopies.Add(bookCopy);
+            _dbContext.BookCopies.Add(bookCopy);
+            _dbContext.SaveChanges();
 
         }
         

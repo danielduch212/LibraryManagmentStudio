@@ -22,12 +22,16 @@ namespace LibraryManagementStudio.Worker.Views.AdminLogView
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(textboxLogin.Text == "admin" && textboxHaslo.Text == "admin")
+            if(textboxLogin.Text != "" && textboxHaslo.Text != "")
             {
-                var worker = service.getWorker("admin");
-                var adminView = new Worker.Views.AdminView.Main(worker, dbContext);
-                adminView.Show();
-                this.Hide();
+                var worker = service.checkLoginData(textboxLogin.Text, textboxHaslo.Text);
+                if(worker != null)
+                {
+                    var adminView = new Worker.Views.AdminView.Main(worker, dbContext);
+                    adminView.Show();
+                    this.Hide();
+                }
+                
 
             }
             if (textboxLogin.Text == "parcel" && textboxHaslo.Text == "parcel")

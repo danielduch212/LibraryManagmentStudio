@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.AddBook = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.AddPenaltyButton = new System.Windows.Forms.Button();
             this.PenaltiesButton = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.usersButton = new System.Windows.Forms.Button();
             this.contentPanel = new System.Windows.Forms.Panel();
-            this.AddBook = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +65,16 @@
             this.panel1.Size = new System.Drawing.Size(217, 581);
             this.panel1.TabIndex = 0;
             // 
+            // AddBook
+            // 
+            this.AddBook.Location = new System.Drawing.Point(3, 179);
+            this.AddBook.Name = "AddBook";
+            this.AddBook.Size = new System.Drawing.Size(214, 30);
+            this.AddBook.TabIndex = 14;
+            this.AddBook.Text = "Dodaj Ksiazke";
+            this.AddBook.UseVisualStyleBackColor = true;
+            this.AddBook.Click += new System.EventHandler(this.AddBook_Click);
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(6, 323);
@@ -73,6 +83,7 @@
             this.button1.TabIndex = 13;
             this.button1.Text = "Pracownicy";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // AddPenaltyButton
             // 
@@ -180,16 +191,6 @@
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Size = new System.Drawing.Size(725, 581);
             this.contentPanel.TabIndex = 1;
-            // 
-            // AddBook
-            // 
-            this.AddBook.Location = new System.Drawing.Point(3, 179);
-            this.AddBook.Name = "AddBook";
-            this.AddBook.Size = new System.Drawing.Size(214, 30);
-            this.AddBook.TabIndex = 14;
-            this.AddBook.Text = "Dodaj Ksiazke";
-            this.AddBook.UseVisualStyleBackColor = true;
-            this.AddBook.Click += new System.EventHandler(this.AddBook_Click);
             // 
             // Main
             // 

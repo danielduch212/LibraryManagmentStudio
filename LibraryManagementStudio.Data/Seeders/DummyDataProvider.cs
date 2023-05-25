@@ -68,6 +68,15 @@ public static class DummyDataProvider
                 EmailAddress = "obsluga@gmail.com",
                 Password = "1234",
                 Type = WorkerType.obsługa
+            },
+            new()
+            {
+                WorkerId = 3,
+                FirstName = "admin",
+                LastName = "admin",
+                EmailAddress = "admin",
+                Password = "admin",
+                Type = WorkerType.bibliotekarz
             }
         };
 
