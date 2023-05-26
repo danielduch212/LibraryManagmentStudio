@@ -87,17 +87,7 @@ public class LibrarySeeder
         var workers = DummyDataProvider.GetDummyWorkers();
 
         
-        LibraryManagementStudio.Data.Models.Worker worker = new LibraryManagementStudio.Data.Models.Worker
-        {
-            Type = Models.Enums.WorkerType.bibliotekarz,
-            FirstName = "admin",
-            LastName = "admin",
-            EmailAddress = "admin",
-            Password = "admin",
-            
-
-
-        };
+        
 
         _dbContext.Workers.AddRange(workers);
         _dbContext.SaveChanges();
