@@ -64,8 +64,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.showUserPanel);
-            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Controls.Add(this.usersDataGridView);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -90,7 +89,7 @@
             this.showUserPanel.Controls.Add(this.cancelShowDataButton);
             this.showUserPanel.Controls.Add(this.label1);
             this.showUserPanel.Controls.Add(this.showUserDataGridView);
-            this.showUserPanel.Location = new System.Drawing.Point(3, 2);
+            this.showUserPanel.Location = new System.Drawing.Point(0, 0);
             this.showUserPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.showUserPanel.Name = "showUserPanel";
             this.showUserPanel.Size = new System.Drawing.Size(1067, 507);
@@ -266,7 +265,6 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.usersDataGridView);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button1);
@@ -292,7 +290,7 @@
             // 
             this.usersDataGridView.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.usersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.usersDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.usersDataGridView.Location = new System.Drawing.Point(3, 63);
             this.usersDataGridView.Name = "usersDataGridView";
             this.usersDataGridView.ReadOnly = true;
             this.usersDataGridView.RowHeadersWidth = 51;
@@ -381,6 +379,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.showUserPanel);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "UsersList";
             this.Size = new System.Drawing.Size(1069, 530);

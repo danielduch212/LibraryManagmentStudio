@@ -28,9 +28,18 @@ public static class DummyDataProvider
             },
             new()
             {
+                UserId = 2,
+                EmailAddress = "daniel@gmail.com",
+                FirstName = "Daniel",
+                LastName = "Cebulowy",
+                DateOfBirth = new DateTime(2004, 1, 1),
+                Street = "Niegrozna",
+                PostalCode = "40-907",
+                City = "Bytom",
+                Country = "Polska",
+                CreationDate = DateTime.Now,
 
-
-            }
+            },
 
 
 
