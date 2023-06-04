@@ -48,10 +48,10 @@ public class WorkerBookService : IWorkerBookService
 
     public List<BookDto> GetBooks()
     {
-        var query = _dbContext.Books
-            .Include(x => x.Author)
-            .Include(x => x.Publisher)
-            .Include(x => x.BookCopies);
+        var query = _dbContext.Books;
+            // .Include(x => x.Author)
+            // .Include(x => x.Publisher)
+            // .Include(x => x.BookCopies);
 
         var books = query.Select(x => new BookDto()
         {
