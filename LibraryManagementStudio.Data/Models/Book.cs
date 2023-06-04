@@ -11,6 +11,8 @@ public class Book
     public DateTime PublishDate { get; set; }
     public CategoryType Category { get; set; }
 
+    public bool IsActive { get; set; }
+
     //Relationships
     public int AuthorId { get; set; }
     public Author Author { get; set; }

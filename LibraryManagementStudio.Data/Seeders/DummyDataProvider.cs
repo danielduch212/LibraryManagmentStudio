@@ -162,6 +162,7 @@ public static class DummyDataProvider
                 Description = "Książka opisuje zachodnie przedstawienie Mongołów jako dzikusów, którzy zniszczyli cywilizację i sugeruje, że było to błędne. Autor książek, dla których ważne było panowanie mongolskie, np.: lżejsze podatki, tolerancja dla lokalnych zwyczajów i religii.",
                 PublishDate = new DateTime(2004, 1, 1),
                 Category = CategoryType.History,
+                IsActive = true,
                 AuthorId = 1,
                 PublisherId = 1,
                 WorkerId = 1,
@@ -173,14 +174,11 @@ public static class DummyDataProvider
                 Description = "W wieku 21 lat John Nash opublikował pracę doktorską, w której sformułował \"teorię równowagi Nasha\" - nowe rewolucyjne podejście do kluczowego problemu teorii gier niezespołowych, opisujące mechanizmy racjonalnego zachowania człowieka. Kilkanaście lat później jego wynik dokonał przewrotu we współczesnej ekonomii, co doceniono przyznając matematykowi Nagrodę Nobla w 1994 roku.",
                 PublishDate = new DateTime(2002, 1, 1),
                 Category = CategoryType.History,
+                IsActive = true,
                 AuthorId = 1,
                 PublisherId = 1,
                 WorkerId = 1,
             },
-
-
-
-
         };
 
         return books;
@@ -194,6 +192,7 @@ public static class DummyDataProvider
             {
                 BookCopyId = 1,
                 IsAvailable = true,
+                IsActive = true,
                 Status = BookCopyStatus.dobry,
                 BookId = 1
             },
@@ -201,6 +200,7 @@ public static class DummyDataProvider
             {
                 BookCopyId = 2,
                 IsAvailable = true,
+                IsActive = true,
                 Status = BookCopyStatus.dobry,
                 BookId = 1
             },
@@ -208,6 +208,7 @@ public static class DummyDataProvider
             {
                 BookCopyId = 3,
                 IsAvailable = true,
+                IsActive = true,
                 Status = BookCopyStatus.dobry,
                 BookId = 1
             },
@@ -215,6 +216,7 @@ public static class DummyDataProvider
             {
                 BookCopyId = 4,
                 IsAvailable = true,
+                IsActive = true,
                 Status = BookCopyStatus.uszkodzony,
                 BookId = 1
             },
@@ -222,6 +224,7 @@ public static class DummyDataProvider
             {
                 BookCopyId = 5,
                 IsAvailable = true,
+                IsActive = true,
                 Status = BookCopyStatus.uszkodzony,
                 BookId = 1
             },
@@ -229,6 +232,7 @@ public static class DummyDataProvider
             {
                 BookCopyId = 6,
                 IsAvailable = true,
+                IsActive = true,
                 Status = BookCopyStatus.dobry,
                 BookId = 2
             },
@@ -236,6 +240,7 @@ public static class DummyDataProvider
             {
                 BookCopyId = 7,
                 IsAvailable = true,
+                IsActive = true,
                 Status = BookCopyStatus.uszkodzony,
                 BookId = 2
             },

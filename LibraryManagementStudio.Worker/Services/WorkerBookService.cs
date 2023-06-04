@@ -127,7 +127,7 @@ public class WorkerBookService : IWorkerBookService
         {
             BookCopy bookCopy = new BookCopy()
             {
-                
+                IsActive = true,
                 IsAvailable = true,
                 Status = Data.Models.Enums.BookCopyStatus.dobry,
                 BookBorrows = new List<BookBorrow>(),

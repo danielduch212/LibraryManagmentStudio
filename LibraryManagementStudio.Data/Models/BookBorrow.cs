@@ -8,6 +8,7 @@ public class BookBorrow
     
     public DateTime? StartDate { get; set; }
     public DateTime? EndDate { get; set; }
+    public DateTime? ReturnDate { get; set; }
     public bool IsActive { get; set; }
     public BorrowedBookStatus Status { get; set; }
     
