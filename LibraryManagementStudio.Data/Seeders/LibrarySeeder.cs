@@ -59,6 +59,10 @@ public class LibrarySeeder
             _dbContext.Database.ExecuteSqlRaw(IdentityInsertCommands.BookCopiesIdentityInsertEnabled);
             SeedBookCopies();
             _dbContext.Database.ExecuteSqlRaw(IdentityInsertCommands.BookCopiesIdentityInsertDisabled);
+            
+            _dbContext.Database.ExecuteSqlRaw(IdentityInsertCommands.UsersIdentityInsertEnabled);
+            SeedUsers();
+            _dbContext.Database.ExecuteSqlRaw(IdentityInsertCommands.UsersIdentityInsertDisabled);
         }
         finally
         {

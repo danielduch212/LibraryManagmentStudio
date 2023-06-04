@@ -10,13 +10,13 @@ public static class DummyDataProvider
 
     public static IEnumerable<User> GetDummyUsers()
     {
-
         var users = new List<User>
         {
             new()
             {
                 UserId = 1,
                 EmailAddress = "andziaks@gmail.com",
+                Password = PasswordHelper.HashPassword("1234"),
                 FirstName = "Angelika",
                 LastName = "Angelika",
                 DateOfBirth = new DateTime(2004, 1, 1),
@@ -30,6 +30,7 @@ public static class DummyDataProvider
             {
                 UserId = 2,
                 EmailAddress = "daniel@gmail.com",
+                Password = PasswordHelper.HashPassword("1234"),
                 FirstName = "Daniel",
                 LastName = "Cebulowy",
                 DateOfBirth = new DateTime(2004, 1, 1),
@@ -40,16 +41,6 @@ public static class DummyDataProvider
                 CreationDate = DateTime.Now,
 
             },
-
-
-
-
-
-
-
-
-
-
         };
 
         return users;

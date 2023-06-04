@@ -13,8 +13,8 @@ public class EmailService : IEmailService
     {
 	    _smtpClient = new SmtpClient("sandbox.smtp.mailtrap.io", 2525)
         {
-            Credentials = new NetworkCredential("d10a9774b781ba", "3d03da2278e58c"),
-            EnableSsl = true
+	        Credentials = new NetworkCredential("8e7ba0efe55a04", "33fd41a9fcfce2"),
+	        EnableSsl = true
         };
     }
     

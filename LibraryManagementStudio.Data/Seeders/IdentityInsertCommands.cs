@@ -21,4 +21,8 @@ public class IdentityInsertCommands
     //BookCopies
     public const string BookCopiesIdentityInsertEnabled = "SET IDENTITY_INSERT dbo.BookCopies ON";
     public const string BookCopiesIdentityInsertDisabled = "SET IDENTITY_INSERT dbo.BookCopies OFF";
+    
+    //Users
+    public const string UsersIdentityInsertEnabled = "SET IDENTITY_INSERT dbo.Users ON";
+    public const string UsersIdentityInsertDisabled = "SET IDENTITY_INSERT dbo.Users OFF";
 }
