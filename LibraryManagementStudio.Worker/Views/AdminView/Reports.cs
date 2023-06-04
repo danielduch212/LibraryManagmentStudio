@@ -21,6 +21,34 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             ViewStyleHelper.MaximizeUserControl(this);
             this.dbContext = dbContext;
             this.worker = worker;
+            panelSelect1.Visible = false;
+            panelSelect2.Visible = false;
+            dataGridView.Visible = false;
+        }
+
+        private void buttonRaport1_Click(object sender, EventArgs e)
+        {
+            panelSelect1.Visible = true;
+            panelSelect2.Visible = false;
+            dataGridView.Visible = false;
+
+        }
+
+        private void buttonRaport2_Click(object sender, EventArgs e)
+        {
+            panelSelect2.Visible = true;
+            panelSelect1.Visible = false;
+            dataGridView.Visible = false;
+        }
+
+        private void buttonGenerate1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonGenerate2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
