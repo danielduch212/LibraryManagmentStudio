@@ -95,13 +95,15 @@ namespace LibraryManagementStudio.Worker.Services
 
         }
 
-        public LibraryManagementStudio.Data.Models.User findUserRow(string data)
+
+        public LibraryManagementStudio.Data.Models.User findUserRow(string idFromCell)
         {
-            string[] parts = data.Split("/t");
-            var id = parts[0];
+
+
             var query = _dbContext.Users
-                .FirstOrDefault(x => x.UserId.Equals(id));
+                .FirstOrDefault(x => x.UserId == Int32.Parse(idFromCell));
             return query;
+
 
         }
 

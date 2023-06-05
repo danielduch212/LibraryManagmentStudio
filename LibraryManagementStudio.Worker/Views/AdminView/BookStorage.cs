@@ -20,7 +20,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         private WorkerBookService service;
         private AdminUserService userService;
         LibraryManagementStudio.Data.Models.Worker worker;
-        LibraryManagementStudio.Data.Models.Book book;
+        LibraryManagementStudio.Data.Models.Book? book;
         public BookStorage(LibraryDbContext dbContext, Data.Models.Worker worker)
         {
             InitializeComponent();
@@ -99,7 +99,11 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void buttonOk_Click(object sender, EventArgs e)
         {
-            
+            if(textBoxUserEmail.Text == "" || textBoxUserEmail.Text == null)
+            {
+                MessageBox.Show("Podaj Email", "Ostrzezenie");
+                return;
+            }
             BookBorrow bookBorrow = new BookBorrow()
             {
                 StartDate = DateTime.Today,

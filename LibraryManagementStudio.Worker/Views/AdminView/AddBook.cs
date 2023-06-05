@@ -23,9 +23,11 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         public AddBook(LibraryDbContext dbContext, LibraryManagementStudio.Data.Models.Worker worker)
         {
             InitializeComponent();
+            ViewStyleHelper.MaximizeUserControl(this);
             bookService = new WorkerBookService(dbContext);
             publisherAuthorService = new PublisherAuthorService(dbContext);
             this.worker= worker;
+            
             panelNewPublisher.Visible = false;
             panelAuthor.Visible = false;
             SetData();
@@ -105,6 +107,9 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 comboBoxAuthor.SelectedIndex = -1;
                 comboBoxPublisher.SelectedIndex = -1;
                 textTitle.Text = "";
+                textBoxCopies.Text = "";
+                descriptionTextBox.Text = "";
+                comboBoxCategory.SelectedIndex = -1;
 
                 MessageBox.Show("Dodano ksiazke", "Informacja");
             }

@@ -28,9 +28,10 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         public Reports(Data.Models.Worker worker, LibraryDbContext dbContext)
         {
             InitializeComponent();
+            ViewStyleHelper.MaximizeUserControl(this);
             this.publisherAuthorService = new PublisherAuthorService(dbContext);
             reportService = new ReportService(dbContext);
-            ViewStyleHelper.MaximizeUserControl(this);
+            
             this.dbContext = dbContext;
             this.worker = worker;
             panelSelect1.Visible = false;
@@ -58,7 +59,10 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         private void buttonGenerate1_Click(object sender, EventArgs e)
         {
             reportData1 = reportService.returnData(Int32.Parse(textBoxUserId.Text), dataTimePickerFrom.Value, dataTimePickerTo.Value);
-
+            if(reportData1 == null)
+            {
+                return;
+            }
             var bindingList = new BindingList<ReportData1>(reportData1);
             var bindingSource = new BindingSource(bindingList, null);
 
@@ -84,6 +88,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         {
             if(comboBoxAvailibility.SelectedIndex != -1 &&comboBoxCategory.SelectedIndex != -1 && comboBoxAuthor.SelectedIndex!= -1 && comboBoxPublisher.SelectedIndex != -1)
             {
+                
                 Author author;
                 Publisher publisher;
                 if (comboBoxCategory.Text == "Romance")
@@ -104,7 +109,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 {
                     availibility = false;
                 }
-                availibility = bool.Parse(comboBoxAvailibility.Text);
+                
                 author = reportService.findAuthor(comboBoxAuthor.Text);
                 if (author == null)
                 {
@@ -114,7 +119,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 publisher = reportService.findPublisher(comboBoxPublisher.Text);
                 if (publisher == null) { return; }
                 reportData2 = reportService.returnData(author, publisher, availibility, categoryType);
-
+                if(reportData2 == null) { return; }
                 var bindingList = new BindingList<ReportData2>(reportData2);
                 var bindingSource = new BindingSource(bindingList, null);
 

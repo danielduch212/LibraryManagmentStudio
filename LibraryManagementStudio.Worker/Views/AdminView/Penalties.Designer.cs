@@ -36,15 +36,15 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panelDataGridView = new System.Windows.Forms.Panel();
+            this.penaltyGridView = new System.Windows.Forms.DataGridView();
             this.panelErasePenalty = new System.Windows.Forms.Panel();
             this.eraseYes = new System.Windows.Forms.Button();
             this.eraseNo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.penaltyGridView = new System.Windows.Forms.DataGridView();
             this.panelTop.SuspendLayout();
             this.panelDataGridView.SuspendLayout();
-            this.panelErasePenalty.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.penaltyGridView)).BeginInit();
+            this.panelErasePenalty.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTop
@@ -144,6 +144,22 @@
             this.panelDataGridView.Size = new System.Drawing.Size(1250, 654);
             this.panelDataGridView.TabIndex = 3;
             // 
+            // penaltyGridView
+            // 
+            this.penaltyGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.penaltyGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.penaltyGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.penaltyGridView.Location = new System.Drawing.Point(3, 0);
+            this.penaltyGridView.MultiSelect = false;
+            this.penaltyGridView.Name = "penaltyGridView";
+            this.penaltyGridView.ReadOnly = true;
+            this.penaltyGridView.RowTemplate.Height = 25;
+            this.penaltyGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.penaltyGridView.Size = new System.Drawing.Size(1244, 651);
+            this.penaltyGridView.TabIndex = 0;
+            // 
             // panelErasePenalty
             // 
             this.panelErasePenalty.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -181,28 +197,12 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(70, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(210, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Czy usunac zaznaczona kare?";
-            // 
-            // penaltyGridView
-            // 
-            this.penaltyGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.penaltyGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.penaltyGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.penaltyGridView.Location = new System.Drawing.Point(0, 0);
-            this.penaltyGridView.MultiSelect = false;
-            this.penaltyGridView.Name = "penaltyGridView";
-            this.penaltyGridView.RowTemplate.Height = 25;
-            this.penaltyGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.penaltyGridView.Size = new System.Drawing.Size(1250, 654);
-            this.penaltyGridView.TabIndex = 0;
             // 
             // Penalties
             // 
@@ -215,9 +215,8 @@
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
             this.panelDataGridView.ResumeLayout(false);
-            this.panelErasePenalty.ResumeLayout(false);
-            this.panelErasePenalty.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.penaltyGridView)).EndInit();
+            this.panelErasePenalty.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

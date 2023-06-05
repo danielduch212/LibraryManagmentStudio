@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.usersDataGridView = new System.Windows.Forms.DataGridView();
             this.showUserPanel = new System.Windows.Forms.Panel();
             this.labelAllBorrows = new System.Windows.Forms.Label();
             this.labelCUrrentBorrwedBooks = new System.Windows.Forms.Label();
@@ -46,19 +47,17 @@
             this.cancelShowDataButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.showUserDataGridView = new System.Windows.Forms.DataGridView();
-            this.usersDataGridView = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.clearSearchButton = new System.Windows.Forms.Button();
             this.searchBooksTextBox = new System.Windows.Forms.TextBox();
             this.searchBooksButton = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).BeginInit();
             this.showUserPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.showUserDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,6 +71,22 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1410, 581);
             this.panel2.TabIndex = 6;
+            // 
+            // usersDataGridView
+            // 
+            this.usersDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.usersDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.usersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.usersDataGridView.Location = new System.Drawing.Point(3, 0);
+            this.usersDataGridView.Name = "usersDataGridView";
+            this.usersDataGridView.ReadOnly = true;
+            this.usersDataGridView.RowHeadersWidth = 51;
+            this.usersDataGridView.RowTemplate.Height = 25;
+            this.usersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.usersDataGridView.Size = new System.Drawing.Size(1405, 581);
+            this.usersDataGridView.TabIndex = 0;
             // 
             // showUserPanel
             // 
@@ -94,10 +109,10 @@
             this.showUserPanel.Controls.Add(this.cancelShowDataButton);
             this.showUserPanel.Controls.Add(this.label1);
             this.showUserPanel.Controls.Add(this.showUserDataGridView);
-            this.showUserPanel.Location = new System.Drawing.Point(0, 0);
+            this.showUserPanel.Location = new System.Drawing.Point(3, 66);
             this.showUserPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.showUserPanel.Name = "showUserPanel";
-            this.showUserPanel.Size = new System.Drawing.Size(1408, 669);
+            this.showUserPanel.Size = new System.Drawing.Size(1408, 603);
             this.showUserPanel.TabIndex = 17;
             // 
             // labelAllBorrows
@@ -269,32 +284,17 @@
             this.showUserDataGridView.Name = "showUserDataGridView";
             this.showUserDataGridView.RowHeadersWidth = 51;
             this.showUserDataGridView.RowTemplate.Height = 29;
-            this.showUserDataGridView.Size = new System.Drawing.Size(1408, 303);
+            this.showUserDataGridView.Size = new System.Drawing.Size(1408, 237);
             this.showUserDataGridView.TabIndex = 5;
-            // 
-            // usersDataGridView
-            // 
-            this.usersDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.usersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.usersDataGridView.Location = new System.Drawing.Point(0, 3);
-            this.usersDataGridView.Name = "usersDataGridView";
-            this.usersDataGridView.ReadOnly = true;
-            this.usersDataGridView.RowHeadersWidth = 51;
-            this.usersDataGridView.RowTemplate.Height = 25;
-            this.usersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.usersDataGridView.Size = new System.Drawing.Size(1413, 594);
-            this.usersDataGridView.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.showUserPanel);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.clearSearchButton);
             this.panel1.Controls.Add(this.searchBooksTextBox);
             this.panel1.Controls.Add(this.searchBooksButton);
@@ -306,7 +306,7 @@
             // button4
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Location = new System.Drawing.Point(1012, 24);
+            this.button4.Location = new System.Drawing.Point(1042, 23);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(155, 23);
             this.button4.TabIndex = 16;
@@ -341,16 +341,6 @@
             this.button3.Text = "Szukaj";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(1183, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Usuń Użytkownika";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // clearSearchButton
             // 
@@ -395,16 +385,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.showUserPanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "UsersList";
             this.Size = new System.Drawing.Size(1410, 672);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).EndInit();
             this.showUserPanel.ResumeLayout(false);
             this.showUserPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.showUserDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -417,7 +406,6 @@
         private Panel panel1;
         private Button button2;
         private Button button3;
-        private Button button1;
         private Button clearSearchButton;
         private TextBox searchBooksTextBox;
         private Button searchBooksButton;

@@ -108,10 +108,15 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         {
             if(penaltyGridView.SelectedRows.Count > 0)
             {
-                if (penaltyGridView.SelectedRows.ToString() == null) { return; }
-                string data = penaltyGridView.SelectedRows.ToString();
-                if (data == null) { return; }
-                service.ErasePenalty(service.getPenaltyFromString(data));
+                var stringData = penaltyGridView.SelectedRows.ToString();
+                int selectedRowIndex = penaltyGridView.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = penaltyGridView.Rows[selectedRowIndex];
+                var penalty = service.getPenaltyFromId(selectedRow.Cells[0].Value.ToString());
+                if(penalty == null)
+                {
+                    return;
+                }
+                service.ErasePenalty(penalty);
                 panelErasePenalty.Visible = false;
                 penalties = service.GetPenalties(statusOfPayment);
                 LoadView();

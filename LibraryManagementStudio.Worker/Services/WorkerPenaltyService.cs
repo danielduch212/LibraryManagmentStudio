@@ -92,17 +92,8 @@ namespace LibraryManagementStudio.Worker.Services
 
         }
 
-        public Penalty getPenaltyFromString(string stringFromRow)
-        {
-            string[] parts = stringFromRow.Split("/t");
-            var id = parts[0];
-            var query = _dbContext.Penalties
-                .FirstOrDefault(x => x.PenaltyId.Equals(id));
-            
-            return query;
-            
-
-        }
+        
+        
 
         public void AddPenalty(Penalty penalty)
         {
@@ -115,6 +106,14 @@ namespace LibraryManagementStudio.Worker.Services
         {
             bookBorrow.Penalty = penalty;
         }
+        
+        public Penalty getPenaltyFromId(string id)
+        {
+            var query = _dbContext.Penalties
+                .FirstOrDefault(x => x.PenaltyId == Int32.Parse(id));
+            return query;
+        }
+
         
     }
 }

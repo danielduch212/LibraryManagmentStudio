@@ -98,5 +98,15 @@ namespace LibraryManagementStudio.Worker.Services
             return users.ToList();
 
         }
+        public LibraryManagementStudio.Data.Models.Worker findWorkerRow(string idFromCell)
+        {
+
+
+            var query = _dbContext.Workers
+                .FirstOrDefault(x => x.WorkerId == Int32.Parse(idFromCell));
+            return query;
+
+
+        }
     }
 }

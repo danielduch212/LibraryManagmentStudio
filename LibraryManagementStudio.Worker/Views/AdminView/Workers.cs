@@ -21,6 +21,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         public Workers(LibraryDbContext dbContext, Data.Models.Worker worker)
         {
             InitializeComponent();
+            ViewStyleHelper.MaximizeUserControl(this);
             service = new WorkerService(dbContext);
             workers = service.getWorkers();
             LoadWorkers();
@@ -63,8 +64,11 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string data = workersDataGridView.SelectedRows.ToString();
-            //tutaj zmieniac na nie jest aktywne 
+            var stringData = workersDataGridView.SelectedRows.ToString();
+            int selectedRowIndex = workersDataGridView.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = workersDataGridView.Rows[selectedRowIndex];
+            var worker = service.findWorkerRow(selectedRow.Cells[0].Value.ToString());
+
         }
     }
 }

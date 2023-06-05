@@ -1,5 +1,6 @@
 ﻿using Autofac.Core;
 using LibraryManagementStudio.Data;
+using LibraryManagementStudio.Data.Models;
 using LibraryManagementStudio.Worker.Dtos.User;
 using LibraryManagementStudio.Worker.Services;
 using System;
@@ -97,12 +98,19 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             if(usersDataGridView.SelectedRows.Count > 0)
             {
                 var stringData = usersDataGridView.SelectedRows.ToString();
-                if(stringData == null)
+                int selectedRowIndex = usersDataGridView.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = usersDataGridView.Rows[selectedRowIndex];
+                var user = service.findUserRow(selectedRow.Cells[0].Value.ToString());
+                if (user == null)
                 {
                     return;
                 }
-                var user = service.findUserRow(stringData);
+                
                 userBorrows = bookService.GetUsersBorrowedBooks(user);
+                if (userBorrows == null)
+                {
+                    return;
+                }
                 labelUserName.Text = user.FirstName;
                 labelSurname.Text = user.LastName;
                 labelEmail.Text = user.EmailAddress;
@@ -139,6 +147,11 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             showUserDataGridView.Columns["PostalCode"]!.HeaderText = "Kod Pocztowy";
             showUserDataGridView.BackgroundColor = Color.White;
             showUserDataGridView.RowHeadersVisible = false;
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
 
         }
     }
