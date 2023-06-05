@@ -35,6 +35,7 @@ public class WorkerBookService : IWorkerBookService
             Title = bookDto.Title,
             Description = bookDto.Description,
             AuthorId = author.AuthorId,
+            IsActive = true,
             PublisherId = publisher.PublisherId,
             PublishDate = bookDto.PublishDate,
             Category = bookDto.Category
@@ -48,11 +49,13 @@ public class WorkerBookService : IWorkerBookService
 
     public List<BookDto> GetBooks()
     {
-        var query = _dbContext.Books;
+        var query = _dbContext.Books
+            .Where(x => x.IsActive == true);
+
             // .Include(x => x.Author)
             // .Include(x => x.Publisher)
             // .Include(x => x.BookCopies);
-
+            
         var books = query.Select(x => new BookDto()
         {
             BookId = x.BookId,
@@ -75,7 +78,7 @@ public class WorkerBookService : IWorkerBookService
             .Include(x => x.Author)
             .Include(x => x.Publisher)
             .Include(x => x.BookCopies)
-            .Where(x => x.Title.Contains(bookname))
+            .Where(x => x.Title.Contains(bookname) && x.IsActive == true)
             .Select(x => new BookDto()
             {
                 BookId = x.BookId,
@@ -98,7 +101,7 @@ public class WorkerBookService : IWorkerBookService
         
         
         var query = _dbContext.Books
-            .FirstOrDefault(x => x.BookId == Int32.Parse(idFromCell));
+            .FirstOrDefault(x => x.BookId == Int32.Parse(idFromCell) && x.IsActive ==true);
         return query;
 
 
@@ -107,7 +110,7 @@ public class WorkerBookService : IWorkerBookService
     public BookCopy getAvailibleCopy(string title)
     {
         var query = _dbContext.BookCopies
-            .FirstOrDefault(x => x.Book.Title == title);
+            .FirstOrDefault(x => x.Book.Title == title && x.IsAvailable == true && x.IsActive == true);
         
         return query;
 
@@ -120,7 +123,11 @@ public class WorkerBookService : IWorkerBookService
 
     }
 
-    
+    public void AddBookCopy(BookCopy bookCopy)
+    {
+        _dbContext.BookCopies.Add(bookCopy);
+        _dbContext.SaveChanges();
+    }
     public void AddBookCopies(Book book,int howMany)
     {
         for(int i=0; i<howMany; i++) 
@@ -147,14 +154,14 @@ public class WorkerBookService : IWorkerBookService
     {
         var query = _dbContext.BookCopies
            .FirstOrDefault(x => x.BookCopyId == id);
-        //dodac to pozniej 
+        query.IsActive = false;
 
     }
 
     public List<BookBorrow> GetAllUserBorrows(LibraryManagementStudio.Data.Models.User user)
     {
         var query = _dbContext.BookBorrows
-            .Where(x => x.User == user);
+            .Where(x => x.User == user && x.IsActive == true);
         return query.ToList();
     }
 
@@ -174,7 +181,7 @@ public class WorkerBookService : IWorkerBookService
     public List<Worker.Dtos.BookBorrow.BookBorrowToShow> GetUsersBorrowedBooks(User user)
     {
         var query = _dbContext.BookBorrows
-           .Where(x => x.User == user && x.IsActive ==true)//jeszcze tu powinno byc czy jest aktywne
+           .Where(x => x.User == user && x.IsActive == true)
            .Select(x => new Worker.Dtos.BookBorrow.BookBorrowToShow()
             {
                 BookBorrowId = x.BookBorrowId,
@@ -197,5 +204,10 @@ public class WorkerBookService : IWorkerBookService
         return query;
          
 
+    }
+
+    public void EraseBook(Book book)
+    {
+        book.IsActive = false;
     }
 }

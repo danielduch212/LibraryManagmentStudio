@@ -106,11 +106,17 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void eraseYes_Click(object sender, EventArgs e)
         {
-            string data = penaltyGridView.SelectedRows.ToString();
-            service.ErasePenalty(service.getPenaltyFromString(data));
-            panelErasePenalty.Visible = false;
-            penalties = service.GetPenalties(statusOfPayment);
-            LoadView();
+            if(penaltyGridView.SelectedRows.Count > 0)
+            {
+                if (penaltyGridView.SelectedRows.ToString() == null) { return; }
+                string data = penaltyGridView.SelectedRows.ToString();
+                if (data == null) { return; }
+                service.ErasePenalty(service.getPenaltyFromString(data));
+                panelErasePenalty.Visible = false;
+                penalties = service.GetPenalties(statusOfPayment);
+                LoadView();
+            }
+            
         }
 
         private void SetPanelLocation(Panel panelToSetLocation)

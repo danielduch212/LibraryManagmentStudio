@@ -98,6 +98,7 @@ namespace LibraryManagementStudio.Worker.Services
             var id = parts[0];
             var query = _dbContext.Penalties
                 .FirstOrDefault(x => x.PenaltyId.Equals(id));
+            
             return query;
             
 
@@ -106,6 +107,7 @@ namespace LibraryManagementStudio.Worker.Services
         public void AddPenalty(Penalty penalty)
         {
             _dbContext.Penalties.Add(penalty);
+            _dbContext.SaveChanges();
 
         }
 

@@ -115,7 +115,8 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.buttonRaport1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
@@ -128,8 +129,7 @@
             // 
             // panelSelect1
             // 
-            this.panelSelect1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panelSelect1.Controls.Add(this.panelSelect2);
+            this.panelSelect1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panelSelect1.Controls.Add(this.buttonGenerate1);
             this.panelSelect1.Controls.Add(this.dataTimePickerTo);
             this.panelSelect1.Controls.Add(this.label6);
@@ -144,7 +144,7 @@
             // 
             // panelSelect2
             // 
-            this.panelSelect2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panelSelect2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panelSelect2.Controls.Add(this.comboBoxAvailibility);
             this.panelSelect2.Controls.Add(this.label10);
             this.panelSelect2.Controls.Add(this.comboBoxCategory);
@@ -154,7 +154,7 @@
             this.panelSelect2.Controls.Add(this.comboBoxAuthor);
             this.panelSelect2.Controls.Add(this.label8);
             this.panelSelect2.Controls.Add(this.buttonGenerate2);
-            this.panelSelect2.Location = new System.Drawing.Point(0, 0);
+            this.panelSelect2.Location = new System.Drawing.Point(0, 129);
             this.panelSelect2.Name = "panelSelect2";
             this.panelSelect2.Size = new System.Drawing.Size(1250, 128);
             this.panelSelect2.TabIndex = 8;
@@ -308,7 +308,9 @@
             // 
             // dataGridView
             // 
-            this.dataGridView.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(0, 266);
@@ -323,9 +325,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panelSelect2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.panelSelect1);
-            this.Controls.Add(this.panel1);
             this.Name = "Reports";
             this.Size = new System.Drawing.Size(1250, 716);
             this.panel1.ResumeLayout(false);

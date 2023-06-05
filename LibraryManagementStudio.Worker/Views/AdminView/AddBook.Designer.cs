@@ -34,7 +34,6 @@
             this.panelContent = new System.Windows.Forms.Panel();
             this.textBoxCopies = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.alertLabel1 = new System.Windows.Forms.Label();
             this.btnAddBook = new System.Windows.Forms.Button();
             this.anotherPublisherButton = new System.Windows.Forms.Button();
             this.comboBoxPublisher = new System.Windows.Forms.ComboBox();
@@ -72,6 +71,7 @@
             // 
             // anotherAuthorButton
             // 
+            anotherAuthorButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             anotherAuthorButton.Location = new System.Drawing.Point(686, 267);
             anotherAuthorButton.Name = "anotherAuthorButton";
             anotherAuthorButton.Size = new System.Drawing.Size(105, 23);
@@ -92,6 +92,8 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(3, 0);
             this.panel1.Name = "panel1";
@@ -100,9 +102,13 @@
             // 
             // panelContent
             // 
+            this.panelContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelContent.Controls.Add(this.panelNewPublisher);
+            this.panelContent.Controls.Add(this.panelAuthor);
             this.panelContent.Controls.Add(this.textBoxCopies);
             this.panelContent.Controls.Add(this.label12);
-            this.panelContent.Controls.Add(this.alertLabel1);
             this.panelContent.Controls.Add(this.btnAddBook);
             this.panelContent.Controls.Add(this.anotherPublisherButton);
             this.panelContent.Controls.Add(this.comboBoxPublisher);
@@ -125,6 +131,7 @@
             // 
             // textBoxCopies
             // 
+            this.textBoxCopies.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxCopies.Location = new System.Drawing.Point(385, 354);
             this.textBoxCopies.Name = "textBoxCopies";
             this.textBoxCopies.Size = new System.Drawing.Size(39, 23);
@@ -132,6 +139,7 @@
             // 
             // label12
             // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label12.Location = new System.Drawing.Point(175, 352);
@@ -140,18 +148,9 @@
             this.label12.TabIndex = 22;
             this.label12.Text = "Liczba kopii:";
             // 
-            // alertLabel1
-            // 
-            this.alertLabel1.AutoSize = true;
-            this.alertLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.alertLabel1.Location = new System.Drawing.Point(372, 443);
-            this.alertLabel1.Name = "alertLabel1";
-            this.alertLabel1.Size = new System.Drawing.Size(66, 21);
-            this.alertLabel1.TabIndex = 20;
-            this.alertLabel1.Text = "label10";
-            // 
             // btnAddBook
             // 
+            this.btnAddBook.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddBook.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAddBook.Location = new System.Drawing.Point(283, 402);
             this.btnAddBook.Name = "btnAddBook";
@@ -163,6 +162,7 @@
             // 
             // anotherPublisherButton
             // 
+            this.anotherPublisherButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.anotherPublisherButton.Location = new System.Drawing.Point(686, 313);
             this.anotherPublisherButton.Name = "anotherPublisherButton";
             this.anotherPublisherButton.Size = new System.Drawing.Size(105, 23);
@@ -173,6 +173,7 @@
             // 
             // comboBoxPublisher
             // 
+            this.comboBoxPublisher.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxPublisher.FormattingEnabled = true;
             this.comboBoxPublisher.Location = new System.Drawing.Point(385, 311);
             this.comboBoxPublisher.Name = "comboBoxPublisher";
@@ -181,6 +182,7 @@
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.Location = new System.Drawing.Point(175, 313);
@@ -191,6 +193,7 @@
             // 
             // comboBoxAuthor
             // 
+            this.comboBoxAuthor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxAuthor.FormattingEnabled = true;
             this.comboBoxAuthor.Location = new System.Drawing.Point(385, 267);
             this.comboBoxAuthor.Name = "comboBoxAuthor";
@@ -199,6 +202,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.Location = new System.Drawing.Point(175, 265);
@@ -209,6 +213,7 @@
             // 
             // comboBoxCategory
             // 
+            this.comboBoxCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxCategory.FormattingEnabled = true;
             this.comboBoxCategory.Location = new System.Drawing.Point(385, 221);
             this.comboBoxCategory.Name = "comboBoxCategory";
@@ -217,6 +222,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.Location = new System.Drawing.Point(175, 219);
@@ -227,6 +233,7 @@
             // 
             // dataTimePicker
             // 
+            this.dataTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dataTimePicker.Location = new System.Drawing.Point(385, 171);
             this.dataTimePicker.Name = "dataTimePicker";
             this.dataTimePicker.Size = new System.Drawing.Size(272, 23);
@@ -234,6 +241,8 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.Location = new System.Drawing.Point(175, 169);
@@ -244,6 +253,7 @@
             // 
             // descriptionTextBox
             // 
+            this.descriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.descriptionTextBox.Location = new System.Drawing.Point(390, 57);
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(267, 96);
@@ -262,6 +272,7 @@
             // 
             // textTitle
             // 
+            this.textTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textTitle.Location = new System.Drawing.Point(390, 23);
             this.textTitle.Name = "textTitle";
             this.textTitle.Size = new System.Drawing.Size(267, 23);
@@ -279,13 +290,16 @@
             // 
             // panelAuthor
             // 
+            this.panelAuthor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelAuthor.Controls.Add(this.cancelNewAuthor);
             this.panelAuthor.Controls.Add(this.alertLabelAuthor);
             this.panelAuthor.Controls.Add(this.buttonNewAuthor);
             this.panelAuthor.Controls.Add(this.textBoxNewAuthor);
             this.panelAuthor.Controls.Add(this.label11);
             this.panelAuthor.Controls.Add(this.label10);
-            this.panelAuthor.Location = new System.Drawing.Point(269, 120);
+            this.panelAuthor.Location = new System.Drawing.Point(0, 0);
             this.panelAuthor.Name = "panelAuthor";
             this.panelAuthor.Size = new System.Drawing.Size(334, 185);
             this.panelAuthor.TabIndex = 21;
@@ -349,6 +363,9 @@
             // 
             // panelNewPublisher
             // 
+            this.panelNewPublisher.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelNewPublisher.Controls.Add(this.cancelNewPublisher);
             this.panelNewPublisher.Controls.Add(this.alertLabelPublisher);
             this.panelNewPublisher.Controls.Add(this.buttonNewPublisher);
@@ -421,8 +438,6 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
-            this.Controls.Add(this.panelAuthor);
-            this.Controls.Add(this.panelNewPublisher);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panel1);
             this.Name = "AddBook";
@@ -458,7 +473,6 @@
         private Label label8;
         private Button anotherPublisherButton;
         private ComboBox comboBoxPublisher;
-        private Label alertLabel1;
         private Button btnAddBook;
         private Panel panelAuthor;
         private Label alertLabelAuthor;

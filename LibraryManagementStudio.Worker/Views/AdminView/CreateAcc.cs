@@ -17,7 +17,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
     {
         LibraryManagementStudio.Data.Models.Worker worker;
         LibraryDbContext dbContext;
-        LibraryManagementStudio.Data.Models.User user;
+        LibraryManagementStudio.Data.Models.User? user;
         AdminUserService service;
         public CreateAcc(Data.Models.Worker worker, LibraryDbContext dbContext)
         {

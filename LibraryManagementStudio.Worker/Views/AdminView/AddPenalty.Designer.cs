@@ -43,7 +43,9 @@
             // 
             // panel4
             // 
-            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.MistyRose;
             this.panel4.Controls.Add(this.textBoxPrice);
             this.panel4.Controls.Add(this.label4);
@@ -62,6 +64,8 @@
             // 
             // textBoxPrice
             // 
+            this.textBoxPrice.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPrice.Location = new System.Drawing.Point(31, 338);
             this.textBoxPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPrice.Name = "textBoxPrice";
@@ -70,6 +74,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(19, 316);
@@ -90,6 +95,7 @@
             // 
             // backButton
             // 
+            this.backButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.backButton.Location = new System.Drawing.Point(31, 395);
             this.backButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.backButton.Name = "backButton";
@@ -101,6 +107,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(19, 82);
@@ -112,6 +119,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(19, 178);
@@ -122,6 +130,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Location = new System.Drawing.Point(519, 395);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
@@ -133,6 +142,8 @@
             // 
             // textBoxDescription
             // 
+            this.textBoxDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxDescription.Location = new System.Drawing.Point(19, 198);
             this.textBoxDescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxDescription.Multiline = true;
@@ -142,11 +153,11 @@
             // 
             // textBoxBookBorrowId
             // 
+            this.textBoxBookBorrowId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxBookBorrowId.Location = new System.Drawing.Point(19, 104);
             this.textBoxBookBorrowId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxBookBorrowId.Name = "textBoxBookBorrowId";
-            this.textBoxBookBorrowId.ReadOnly = true;
-            this.textBoxBookBorrowId.Size = new System.Drawing.Size(658, 23);
+            this.textBoxBookBorrowId.Size = new System.Drawing.Size(170, 23);
             this.textBoxBookBorrowId.TabIndex = 27;
             this.textBoxBookBorrowId.TextChanged += new System.EventHandler(this.bookCodeTB_TextChanged);
             // 

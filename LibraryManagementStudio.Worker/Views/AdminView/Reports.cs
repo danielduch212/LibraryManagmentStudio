@@ -1,4 +1,5 @@
 ﻿using LibraryManagementStudio.Data;
+using LibraryManagementStudio.Data.Models;
 using LibraryManagementStudio.Data.Models.Enums;
 using LibraryManagementStudio.Worker.Dtos.ReportData;
 using LibraryManagementStudio.Worker.Services;
@@ -16,16 +17,18 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 {
     public partial class Reports : UserControl
     {
+        PublisherAuthorService publisherAuthorService;
         LibraryManagementStudio.Data.Models.Worker worker;
         ReportService reportService;
         LibraryDbContext dbContext;
-        List<ReportData1> reportData1;
-        List<ReportData2> reportData2;
+        List<ReportData1>? reportData1;
+        List<ReportData2>? reportData2;
         LibraryManagementStudio.Data.Models.Enums.CategoryType categoryType;
         bool availibility;
         public Reports(Data.Models.Worker worker, LibraryDbContext dbContext)
         {
             InitializeComponent();
+            this.publisherAuthorService = new PublisherAuthorService(dbContext);
             reportService = new ReportService(dbContext);
             ViewStyleHelper.MaximizeUserControl(this);
             this.dbContext = dbContext;
@@ -33,26 +36,29 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             panelSelect1.Visible = false;
             panelSelect2.Visible = false;
             dataGridView.Visible = false;
+            SetData();
         }
 
         private void buttonRaport1_Click(object sender, EventArgs e)
         {
-            panelSelect1.Visible = true;
+            
             panelSelect2.Visible = false;
             dataGridView.Visible = false;
-
+            panelSelect1.Visible = true;
         }
 
         private void buttonRaport2_Click(object sender, EventArgs e)
         {
-            panelSelect2.Visible = true;
+            
             panelSelect1.Visible = false;
             dataGridView.Visible = false;
+            panelSelect2.Visible = true;
         }
 
         private void buttonGenerate1_Click(object sender, EventArgs e)
         {
             reportData1 = reportService.returnData(Int32.Parse(textBoxUserId.Text), dataTimePickerFrom.Value, dataTimePickerTo.Value);
+
             var bindingList = new BindingList<ReportData1>(reportData1);
             var bindingSource = new BindingSource(bindingList, null);
 
@@ -76,36 +82,82 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void buttonGenerate2_Click(object sender, EventArgs e)
         {
-            if (comboBoxCategory.Text == "Romance")
-                categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.Romance;
-            if (comboBoxCategory.Text == "Fantasy")
-                categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.Fantasy;
-            if (comboBoxCategory.Text == "Bibliography")
-                categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.Bibliography;
-            if (comboBoxCategory.Text == "History")
-                categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.History;
-            if (comboBoxCategory.Text == "Thriller")
-                categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.Thriller;
-            availibility = bool.Parse(comboBoxAvailibility.Text);
-            reportData2 = reportService.returnData(reportService.findAuthor(comboBoxAuthor.Text), reportService.findPublisher(comboBoxPublisher.Text), availibility, categoryType);
+            if(comboBoxAvailibility.SelectedIndex != -1 &&comboBoxCategory.SelectedIndex != -1 && comboBoxAuthor.SelectedIndex!= -1 && comboBoxPublisher.SelectedIndex != -1)
+            {
+                Author author;
+                Publisher publisher;
+                if (comboBoxCategory.Text == "Romance")
+                    categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.Romance;
+                if (comboBoxCategory.Text == "Fantasy")
+                    categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.Fantasy;
+                if (comboBoxCategory.Text == "Bibliography")
+                    categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.Bibliography;
+                if (comboBoxCategory.Text == "History")
+                    categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.History;
+                if (comboBoxCategory.Text == "Thriller")
+                    categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.Thriller;
+                if (comboBoxAvailibility.Text == "aktywne")
+                {
+                    availibility = true;
+                }
+                if (comboBoxAvailibility.Text == "nieaktywne")
+                {
+                    availibility = false;
+                }
+                availibility = bool.Parse(comboBoxAvailibility.Text);
+                author = reportService.findAuthor(comboBoxAuthor.Text);
+                if (author == null)
+                {
+                    return;
+                }
 
-            var bindingList = new BindingList<ReportData2>(reportData2);
-            var bindingSource = new BindingSource(bindingList, null);
+                publisher = reportService.findPublisher(comboBoxPublisher.Text);
+                if (publisher == null) { return; }
+                reportData2 = reportService.returnData(author, publisher, availibility, categoryType);
 
-            dataGridView.DataSource = bindingSource;
+                var bindingList = new BindingList<ReportData2>(reportData2);
+                var bindingSource = new BindingSource(bindingList, null);
 
-            dataGridView.Columns["BookId"]!.HeaderText = "Id Ksiazki";
-            dataGridView.Columns["Title"]!.HeaderText = "Tytul";
-            dataGridView.Columns["Description"]!.HeaderText = "Opis";
-            dataGridView.Columns["AllTimeBookBorrowsCount"]!.HeaderText = "Wszystkie wypozyczenia";
+                dataGridView.DataSource = bindingSource;
 
-            dataGridView.BackgroundColor = Color.White;
-            dataGridView.RowHeadersVisible = false;
-            dataGridView.Visible = true;
+                dataGridView.Columns["BookId"]!.HeaderText = "Id Ksiazki";
+                dataGridView.Columns["Title"]!.HeaderText = "Tytul";
+                dataGridView.Columns["Description"]!.HeaderText = "Opis";
+                dataGridView.Columns["AllTimeBookBorrowsCount"]!.HeaderText = "Wszystkie wypozyczenia";
+
+                dataGridView.BackgroundColor = Color.White;
+                dataGridView.RowHeadersVisible = false;
+                dataGridView.Visible = true;
+            }
+            
+
         }
 
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void SetData()
+        {
+            var queryAuthors = publisherAuthorService.getAuthorsNames();
+            var queryPublishers = publisherAuthorService.getPublishersNames();
+            foreach (string author in queryAuthors)
+            {
+                comboBoxAuthor.Items.Add(author);
+            }
+            foreach (string publisher in queryPublishers)
+            {
+                comboBoxPublisher.Items.Add(publisher);
+            }
+            comboBoxAvailibility.Items.Add("aktywne");
+            comboBoxAvailibility.Items.Add("nieaktywne");
+
+            comboBoxCategory.Items.Add(LibraryManagementStudio.Data.Models.Enums.CategoryType.Romance);
+            comboBoxCategory.Items.Add(LibraryManagementStudio.Data.Models.Enums.CategoryType.Fantasy);
+            comboBoxCategory.Items.Add(LibraryManagementStudio.Data.Models.Enums.CategoryType.Bibliography);
+            comboBoxCategory.Items.Add(LibraryManagementStudio.Data.Models.Enums.CategoryType.History);
+            comboBoxCategory.Items.Add(LibraryManagementStudio.Data.Models.Enums.CategoryType.Thriller);
 
         }
     }

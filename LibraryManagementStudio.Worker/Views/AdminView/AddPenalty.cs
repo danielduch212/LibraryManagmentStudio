@@ -41,7 +41,12 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             {
 
                 var bookBorrow = service.getBookBorrow(Int32.Parse(textBoxBookBorrowId.Text));
+                if(bookBorrow == null)
+                {
+                    MessageBox.Show("Nieprawidlowe ID!.", "Ostrzezenie");
 
+                    return;
+                }
                 Penalty newPenalty = new Penalty()
                 {
                     Description = textBoxDescription.Text,

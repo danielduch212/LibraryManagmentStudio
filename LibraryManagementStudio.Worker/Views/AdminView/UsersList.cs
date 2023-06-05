@@ -62,7 +62,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         private void button3_Click(object sender, EventArgs e)
         {
 
-            //search
+            
             users = service.searchUser(searchBooksTextBox.Text);
             LoadUsers();
         }
@@ -70,8 +70,11 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         private void cancelShowDataButton_Click(object sender, EventArgs e)
         {
             showUserPanel.Visible = false;
+            
             users = service.getUsers();
             LoadUsers();
+            panel1.Visible = true;
+            panel2.Visible = true;
         }
 
         private void ReturnBook_Click(object sender, EventArgs e)
@@ -79,6 +82,10 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             if(showUserDataGridView.SelectedRows.Count > 0)
             {
                 var bookData = showUserDataGridView.SelectedRows.ToString();
+                if(bookData == null)
+                {
+                    return;
+                }
                 bookService.returnBookBorrow(bookData);
 
                 SetUserDataView();
@@ -90,17 +97,21 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             if(usersDataGridView.SelectedRows.Count > 0)
             {
                 var stringData = usersDataGridView.SelectedRows.ToString();
+                if(stringData == null)
+                {
+                    return;
+                }
                 var user = service.findUserRow(stringData);
                 userBorrows = bookService.GetUsersBorrowedBooks(user);
                 labelUserName.Text = user.FirstName;
                 labelSurname.Text = user.LastName;
                 labelEmail.Text = user.EmailAddress;
                 labelCity.Text = user.City;
-                //var query = userBorrows
-                //    .Where(x => x.) sprawdzanie czy sa aktualne
                 labelAllBorrows.Text = userBorrows.Count.ToString();
 
-                //zrobic tutaj formatowanie tego tj. wyswietlanie wypozyczen uzytkownika
+                SetUserDataView();
+                panel1.Visible = false;
+                panel2.Visible = false;
                 showUserPanel.Visible = true;
             }
         }

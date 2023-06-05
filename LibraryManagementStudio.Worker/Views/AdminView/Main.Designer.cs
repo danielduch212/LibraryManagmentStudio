@@ -33,8 +33,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.AddPenaltyButton = new System.Windows.Forms.Button();
             this.PenaltiesButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.timeLabel = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.generateReportButton = new System.Windows.Forms.Button();
             this.AddUserButton = new System.Windows.Forms.Button();
@@ -51,8 +49,6 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.AddPenaltyButton);
             this.panel1.Controls.Add(this.PenaltiesButton);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.timeLabel);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.generateReportButton);
             this.panel1.Controls.Add(this.AddUserButton);
@@ -104,26 +100,6 @@
             this.PenaltiesButton.Text = "Kary";
             this.PenaltiesButton.UseVisualStyleBackColor = true;
             this.PenaltiesButton.Click += new System.EventHandler(this.PenaltiesButton_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(12, 557);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 15);
-            this.label2.TabIndex = 10;
-            this.label2.Text = ":Czas trwania sesji";
-            // 
-            // timeLabel
-            // 
-            this.timeLabel.AutoSize = true;
-            this.timeLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.timeLabel.Location = new System.Drawing.Point(138, 557);
-            this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(40, 15);
-            this.timeLabel.TabIndex = 9;
-            this.timeLabel.Text = "label3";
             // 
             // button7
             // 
@@ -213,8 +189,6 @@
         #endregion
 
         private Panel panel1;
-        private Label label2;
-        private Label timeLabel;
         private Button button7;
         private Button generateReportButton;
         private Button AddUserButton;

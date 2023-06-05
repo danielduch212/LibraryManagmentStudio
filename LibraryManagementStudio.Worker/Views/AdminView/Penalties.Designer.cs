@@ -49,7 +49,8 @@
             // 
             // panelTop
             // 
-            this.panelTop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelTop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelTop.Controls.Add(this.button5);
             this.panelTop.Controls.Add(this.searchBooksTextBox);
             this.panelTop.Controls.Add(this.button4);
@@ -63,8 +64,9 @@
             // 
             // button5
             // 
+            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button5.AutoSize = true;
-            this.button5.Location = new System.Drawing.Point(391, 21);
+            this.button5.Location = new System.Drawing.Point(413, 21);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(108, 25);
             this.button5.TabIndex = 18;
@@ -86,6 +88,7 @@
             // 
             // button4
             // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.AutoSize = true;
             this.button4.Location = new System.Drawing.Point(986, 18);
             this.button4.Name = "button4";
@@ -97,6 +100,7 @@
             // 
             // labelStatus
             // 
+            this.labelStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelStatus.AutoSize = true;
             this.labelStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelStatus.Location = new System.Drawing.Point(835, 23);
@@ -107,6 +111,7 @@
             // 
             // button3
             // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.AutoSize = true;
             this.button3.Location = new System.Drawing.Point(1116, 18);
             this.button3.Name = "button3";
@@ -118,6 +123,7 @@
             // 
             // button2
             // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.AutoSize = true;
             this.button2.Location = new System.Drawing.Point(570, 21);
             this.button2.Name = "button2";
@@ -129,9 +135,9 @@
             // 
             // panelDataGridView
             // 
-            this.panelDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.panelDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelDataGridView.Controls.Add(this.panelErasePenalty);
             this.panelDataGridView.Controls.Add(this.penaltyGridView);
             this.panelDataGridView.Location = new System.Drawing.Point(0, 62);
             this.panelDataGridView.Name = "panelDataGridView";
@@ -140,10 +146,13 @@
             // 
             // panelErasePenalty
             // 
+            this.panelErasePenalty.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelErasePenalty.Controls.Add(this.eraseYes);
             this.panelErasePenalty.Controls.Add(this.eraseNo);
             this.panelErasePenalty.Controls.Add(this.label1);
-            this.panelErasePenalty.Location = new System.Drawing.Point(443, 140);
+            this.panelErasePenalty.Location = new System.Drawing.Point(445, 135);
             this.panelErasePenalty.Name = "panelErasePenalty";
             this.panelErasePenalty.Size = new System.Drawing.Size(334, 203);
             this.panelErasePenalty.TabIndex = 19;
@@ -182,7 +191,8 @@
             // 
             // penaltyGridView
             // 
-            this.penaltyGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.penaltyGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.penaltyGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.penaltyGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -197,6 +207,7 @@
             // Penalties
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.panelErasePenalty);
             this.Controls.Add(this.panelDataGridView);
             this.Controls.Add(this.panelTop);
             this.Name = "Penalties";

@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LibraryManagementStudio.Worker.Views.AdminView
 {
@@ -83,8 +84,10 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                     Publisher = publisherAuthorService.GetPublisher(comboBoxPublisher.Text),
                     Worker = worker,
                     WorkerId = worker.WorkerId,
+                    BookCopies = bookCopies,
                 };
-                
+                bookService.AddBook(book);
+
                 for (int i = 0; i < copyCounts; i++)
                 {
                     BookCopy bookCopy = new BookCopy()
@@ -96,23 +99,35 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                         Book = book,
                         BookId = book.BookId,
                     };
-
+                    bookService.AddBookCopy(bookCopy);
                 }
-                book.BookCopies = bookCopies;
-                bookService.AddBook(book);
-            } 
+
+                comboBoxAuthor.SelectedIndex = -1;
+                comboBoxPublisher.SelectedIndex = -1;
+                textTitle.Text = "";
+
+                MessageBox.Show("Dodano ksiazke", "Informacja");
+            }
+            else
+            {
+                MessageBox.Show("Brakuje danych!", "Ostrzezenie");
+
+            }
         }
 
         private void anotherAuthorButton_Click(object sender, EventArgs e)
         {
             SetPanelLocation(panelAuthor);
+            panelNewPublisher.Visible= false;
             panelAuthor.Visible = true;
             
         }
 
         private void anotherPublisherButton_Click(object sender, EventArgs e)
         {
+            comboBoxPublisher.Items.Clear();
             SetPanelLocation(panelNewPublisher);
+            panelAuthor.Visible = false;
             panelNewPublisher.Visible = true;
             
         }
@@ -121,6 +136,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         {
             if(textBoxNewAuthor.Text != "")
             {
+                comboBoxAuthor.Items.Clear();
                 publisherAuthorService.AddAuthor(textBoxNewAuthor.Text);
                 panelAuthor.Visible = false;
                 SetData();

@@ -74,11 +74,16 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void borrowBook_Click(object sender, EventArgs e)
         {
-            if(bookDataGridView.SelectedRows.Count > 0)
+            panelAddCopies.Visible = false;
+            panelEraseCopy.Visible = false;
+
+            if (bookDataGridView.SelectedRows.Count > 0)
             {
-                int selectedRowIndex = bookDataGridView.SelectedCells[0].RowIndex; 
-                DataGridViewRow selectedRow = bookDataGridView.Rows[selectedRowIndex]; 
+                int selectedRowIndex = bookDataGridView.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = bookDataGridView.Rows[selectedRowIndex];
+
                 book = service.getBookFromString(selectedRow.Cells[0].Value.ToString());
+                if (book == null) { return; }
                 labelBookTitle.Text = book.Title;
                 SetPanelLocation(panelBorrowBook);
                 panelBorrowBook.Visible = true;
@@ -115,11 +120,14 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void AddBookCopies_Click(object sender, EventArgs e)
         {
+            panelBorrowBook.Visible = false;
+            panelEraseCopy.Visible = false;
             if (bookDataGridView.SelectedRows.Count > 0)
             {
                 int selectedRowIndex = bookDataGridView.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = bookDataGridView.Rows[selectedRowIndex];
                 book = service.getBookFromString(selectedRow.Cells[0].Value.ToString());
+                if(book == null) { return; }
                 AddCopiesBookTitle.Text = book.Title;
                 SetPanelLocation(panelAddCopies);
                 panelAddCopies.Visible = true;
@@ -145,7 +153,10 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void EraseCopy_Click(object sender, EventArgs e)
         {
+            panelBorrowBook.Visible = false;
+            panelAddCopies.Visible = false;
             SetPanelLocation(panelEraseCopy);
+
             panelEraseCopy.Visible = true;
 
         }
@@ -158,11 +169,29 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         private void eraseCopyButton_Click(object sender, EventArgs e)
         {
             var id = Int32.Parse(textBoxCopyIDToErase.Text);
+            service.EraseCopy(id);
+            books = service.GetBooks();
+            SetupBooksView();
+
+            panelEraseCopy.Visible = false;
+
 
         }
 
         private void EraseBook_Click(object sender, EventArgs e)
         {
+            if (bookDataGridView.SelectedRows.Count > 0)
+            {
+                int selectedRowIndex = bookDataGridView.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = bookDataGridView.Rows[selectedRowIndex];
+                book = service.getBookFromString(selectedRow.Cells[0].Value.ToString());
+                if(book == null) { return; }
+                service.EraseBook(book);
+                MessageBox.Show("Usunieto ksiazke", "Informacja");
+                books = service.GetBooks();
+                SetupBooksView();
+
+            }
 
         }
         private void SetPanelLocation(Panel panelToSetLocation)

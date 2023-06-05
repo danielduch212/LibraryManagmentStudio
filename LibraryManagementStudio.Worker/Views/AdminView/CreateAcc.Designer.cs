@@ -30,10 +30,6 @@
         {
             this.panelMain = new System.Windows.Forms.Panel();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.panelAutorize = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.alertLabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -52,12 +48,19 @@
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panelAutorize = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.panelMain.SuspendLayout();
             this.panelAutorize.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMain
             // 
+            this.panelMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelMain.Controls.Add(this.textBoxPassword);
             this.panelMain.Controls.Add(this.label10);
             this.panelMain.Controls.Add(this.alertLabel);
@@ -89,49 +92,6 @@
             this.textBoxPassword.Size = new System.Drawing.Size(200, 23);
             this.textBoxPassword.TabIndex = 34;
             // 
-            // panelAutorize
-            // 
-            this.panelAutorize.Controls.Add(this.button2);
-            this.panelAutorize.Controls.Add(this.button3);
-            this.panelAutorize.Controls.Add(this.label9);
-            this.panelAutorize.Location = new System.Drawing.Point(232, 124);
-            this.panelAutorize.Name = "panelAutorize";
-            this.panelAutorize.Size = new System.Drawing.Size(405, 213);
-            this.panelAutorize.TabIndex = 32;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(86, 142);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 34);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Wstecz";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(233, 145);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(96, 34);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Autoryzuj";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(33, 39);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(344, 25);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Sprawdź poprawność danych klienta!";
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -156,6 +116,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.Location = new System.Drawing.Point(365, 459);
             this.button1.Name = "button1";
@@ -293,6 +254,53 @@
             this.label1.Size = new System.Drawing.Size(235, 32);
             this.label1.TabIndex = 16;
             this.label1.Text = "Dodaj Użytkownika";
+            // 
+            // panelAutorize
+            // 
+            this.panelAutorize.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelAutorize.Controls.Add(this.button2);
+            this.panelAutorize.Controls.Add(this.button3);
+            this.panelAutorize.Controls.Add(this.label9);
+            this.panelAutorize.Location = new System.Drawing.Point(232, 124);
+            this.panelAutorize.Name = "panelAutorize";
+            this.panelAutorize.Size = new System.Drawing.Size(405, 213);
+            this.panelAutorize.TabIndex = 32;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.Location = new System.Drawing.Point(86, 142);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(84, 34);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Wstecz";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button3.Location = new System.Drawing.Point(233, 145);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(96, 34);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Autoryzuj";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(33, 39);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(344, 25);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Sprawdź poprawność danych klienta!";
             // 
             // CreateAcc
             // 
