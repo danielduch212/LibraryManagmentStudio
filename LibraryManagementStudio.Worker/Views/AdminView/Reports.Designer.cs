@@ -53,10 +53,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.buttonGenerate2 = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panelSelect1.SuspendLayout();
             this.panelSelect2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -137,9 +139,9 @@
             this.panelSelect1.Controls.Add(this.label5);
             this.panelSelect1.Controls.Add(this.textBoxUserId);
             this.panelSelect1.Controls.Add(this.label4);
-            this.panelSelect1.Location = new System.Drawing.Point(0, 132);
+            this.panelSelect1.Location = new System.Drawing.Point(3, 132);
             this.panelSelect1.Name = "panelSelect1";
-            this.panelSelect1.Size = new System.Drawing.Size(1250, 128);
+            this.panelSelect1.Size = new System.Drawing.Size(1244, 128);
             this.panelSelect1.TabIndex = 7;
             // 
             // buttonGenerate1
@@ -317,20 +319,29 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(0, 266);
+            this.dataGridView.Location = new System.Drawing.Point(3, 0);
             this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
             this.dataGridView.RowTemplate.Height = 25;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(1250, 450);
+            this.dataGridView.Size = new System.Drawing.Size(1241, 444);
             this.dataGridView.TabIndex = 8;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dataGridView);
+            this.panel2.Location = new System.Drawing.Point(3, 263);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1244, 450);
+            this.panel2.TabIndex = 9;
             // 
             // Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.panelSelect1);
             this.Controls.Add(this.panelSelect2);
             this.Name = "Reports";
@@ -342,6 +353,7 @@
             this.panelSelect2.ResumeLayout(false);
             this.panelSelect2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -373,5 +385,6 @@
         private Label label9;
         private ComboBox comboBoxAuthor;
         private Label label8;
+        private Panel panel2;
     }
 }

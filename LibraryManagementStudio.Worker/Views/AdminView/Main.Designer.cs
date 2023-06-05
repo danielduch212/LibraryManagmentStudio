@@ -49,6 +49,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.AddBook);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.AddPenaltyButton);
@@ -166,6 +167,7 @@
             // 
             // contentPanel
             // 
+            this.contentPanel.BackColor = System.Drawing.Color.White;
             this.contentPanel.Controls.Add(this.pictureBox1);
             this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentPanel.Location = new System.Drawing.Point(217, 0);

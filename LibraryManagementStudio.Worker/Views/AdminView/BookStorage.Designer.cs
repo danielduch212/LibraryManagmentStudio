@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.bookDataGridView = new System.Windows.Forms.DataGridView();
             this.panelEraseCopy = new System.Windows.Forms.Panel();
             this.cancelEraseCopyButton = new System.Windows.Forms.Button();
             this.eraseCopyButton = new System.Windows.Forms.Button();
             this.textBoxCopyIDToErase = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.bookDataGridView = new System.Windows.Forms.DataGridView();
             this.panelAddCopies = new System.Windows.Forms.Panel();
             this.cancelButtonCopies = new System.Windows.Forms.Button();
             this.okButtonCopies = new System.Windows.Forms.Button();
@@ -59,8 +59,8 @@
             this.searchBooksTextBox = new System.Windows.Forms.TextBox();
             this.searchBooksButton = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
-            this.panelEraseCopy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bookDataGridView)).BeginInit();
+            this.panelEraseCopy.SuspendLayout();
             this.panelAddCopies.SuspendLayout();
             this.panelBorrowBook.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -76,6 +76,26 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1098, 463);
             this.panel2.TabIndex = 2;
+            // 
+            // bookDataGridView
+            // 
+            this.bookDataGridView.AllowUserToAddRows = false;
+            this.bookDataGridView.AllowUserToDeleteRows = false;
+            this.bookDataGridView.AllowUserToResizeColumns = false;
+            this.bookDataGridView.AllowUserToResizeRows = false;
+            this.bookDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bookDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.bookDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.bookDataGridView.Location = new System.Drawing.Point(4, 3);
+            this.bookDataGridView.MultiSelect = false;
+            this.bookDataGridView.Name = "bookDataGridView";
+            this.bookDataGridView.ReadOnly = true;
+            this.bookDataGridView.RowTemplate.Height = 25;
+            this.bookDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.bookDataGridView.Size = new System.Drawing.Size(1091, 457);
+            this.bookDataGridView.TabIndex = 0;
             // 
             // panelEraseCopy
             // 
@@ -129,26 +149,6 @@
             this.label5.Size = new System.Drawing.Size(218, 21);
             this.label5.TabIndex = 0;
             this.label5.Text = "Podaj Id Kopii do usunięcia";
-            // 
-            // bookDataGridView
-            // 
-            this.bookDataGridView.AllowUserToAddRows = false;
-            this.bookDataGridView.AllowUserToDeleteRows = false;
-            this.bookDataGridView.AllowUserToResizeColumns = false;
-            this.bookDataGridView.AllowUserToResizeRows = false;
-            this.bookDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bookDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.bookDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bookDataGridView.Location = new System.Drawing.Point(4, 3);
-            this.bookDataGridView.MultiSelect = false;
-            this.bookDataGridView.Name = "bookDataGridView";
-            this.bookDataGridView.ReadOnly = true;
-            this.bookDataGridView.RowTemplate.Height = 25;
-            this.bookDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.bookDataGridView.Size = new System.Drawing.Size(1091, 457);
-            this.bookDataGridView.TabIndex = 0;
             // 
             // panelAddCopies
             // 
@@ -313,7 +313,7 @@
             // SearchButton
             // 
             this.SearchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SearchButton.Location = new System.Drawing.Point(405, 22);
+            this.SearchButton.Location = new System.Drawing.Point(490, 22);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(132, 23);
             this.SearchButton.TabIndex = 17;
@@ -324,7 +324,7 @@
             // EraseCopy
             // 
             this.EraseCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.EraseCopy.Location = new System.Drawing.Point(736, 37);
+            this.EraseCopy.Location = new System.Drawing.Point(811, 42);
             this.EraseCopy.Name = "EraseCopy";
             this.EraseCopy.Size = new System.Drawing.Size(132, 23);
             this.EraseCopy.TabIndex = 16;
@@ -335,7 +335,7 @@
             // EraseBook
             // 
             this.EraseBook.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.EraseBook.Location = new System.Drawing.Point(886, 19);
+            this.EraseBook.Location = new System.Drawing.Point(963, 22);
             this.EraseBook.Name = "EraseBook";
             this.EraseBook.Size = new System.Drawing.Size(132, 23);
             this.EraseBook.TabIndex = 15;
@@ -346,7 +346,7 @@
             // AddBookCopies
             // 
             this.AddBookCopies.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddBookCopies.Location = new System.Drawing.Point(736, 8);
+            this.AddBookCopies.Location = new System.Drawing.Point(811, 3);
             this.AddBookCopies.Name = "AddBookCopies";
             this.AddBookCopies.Size = new System.Drawing.Size(132, 23);
             this.AddBookCopies.TabIndex = 14;
@@ -357,7 +357,7 @@
             // borrowBook
             // 
             this.borrowBook.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.borrowBook.Location = new System.Drawing.Point(582, 22);
+            this.borrowBook.Location = new System.Drawing.Point(661, 21);
             this.borrowBook.Name = "borrowBook";
             this.borrowBook.Size = new System.Drawing.Size(132, 23);
             this.borrowBook.TabIndex = 13;
@@ -416,9 +416,9 @@
             this.Name = "BookStorage";
             this.Size = new System.Drawing.Size(1102, 537);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bookDataGridView)).EndInit();
             this.panelEraseCopy.ResumeLayout(false);
             this.panelEraseCopy.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bookDataGridView)).EndInit();
             this.panelAddCopies.ResumeLayout(false);
             this.panelAddCopies.PerformLayout();
             this.panelBorrowBook.ResumeLayout(false);

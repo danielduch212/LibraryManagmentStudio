@@ -27,20 +27,24 @@ namespace LibraryManagementStudio.Worker.Views.AdminLogView
                 var worker = service.checkLoginData(textboxLogin.Text, textboxHaslo.Text);
                 if(worker != null)
                 {
-                    var adminView = new Worker.Views.AdminView.Main(worker, dbContext);
-                    adminView.Show();
-                    this.Hide();
+                    if(worker.Type == Data.Models.Enums.WorkerType.bibliotekarz)
+                    {
+                        var adminView = new Worker.Views.AdminView.Main(worker, dbContext);
+                        adminView.Show();
+                        this.Hide();
+                    }
+                    if(worker.Type == Data.Models.Enums.WorkerType.obsługa)
+                    {
+                        var parcelView = new ParcelMaintenanceView.ParcelMaintenanceMainView();
+                        parcelView.Show();
+                        this.Hide();
+                    }
                 }
                 
 
             }
-            if (textboxLogin.Text == "parcel" && textboxHaslo.Text == "parcel")
-            {
-
-                var parcelView = new ParcelMaintenanceView.ParcelMaintenanceMainView();
-                parcelView.Show();
-                this.Hide();
-            }
+            
+            
             
 
         }

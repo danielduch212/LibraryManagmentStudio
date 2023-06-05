@@ -154,5 +154,10 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            searchBooksTextBox.Text = "";
+        }
     }
 }

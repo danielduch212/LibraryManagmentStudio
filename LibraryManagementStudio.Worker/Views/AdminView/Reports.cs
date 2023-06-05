@@ -37,12 +37,13 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             panelSelect1.Visible = false;
             panelSelect2.Visible = false;
             dataGridView.Visible = false;
+            panel2.Visible = false;
             SetData();
         }
 
         private void buttonRaport1_Click(object sender, EventArgs e)
         {
-            
+            panel2.Visible = false;
             panelSelect2.Visible = false;
             dataGridView.Visible = false;
             panelSelect1.Visible = true;
@@ -50,7 +51,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void buttonRaport2_Click(object sender, EventArgs e)
         {
-            
+            panel2.Visible = false;
             panelSelect1.Visible = false;
             dataGridView.Visible = false;
             panelSelect2.Visible = true;
@@ -58,31 +59,52 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void buttonGenerate1_Click(object sender, EventArgs e)
         {
-            if(textBoxUserId.Text = "" )
-            reportData1 = reportService.returnData(Int32.Parse(textBoxUserId.Text), dataTimePickerFrom.Value, dataTimePickerTo.Value);
-            if(reportData1 == null)
+            if(textBoxUserId.Text != "")
             {
-                return;
+
+                if (!int.TryParse(textBoxUserId.Text, out int number))
+                {
+                    MessageBox.Show("Podaj sensowne dane (liczba)", "Ostrzezenie");
+                    return;
+
+                }
+                reportData1 = reportService.returnData(Int32.Parse(textBoxUserId.Text), dataTimePickerFrom.Value, dataTimePickerTo.Value);
+                if (reportData1 == null)
+                {
+                    MessageBox.Show("Podaj sensowne dane", "Ostrzezenie");
+                    return;
+                }
+                var bindingList = new BindingList<ReportData1>(reportData1);
+                var bindingSource = new BindingSource(bindingList, null);
+
+                dataGridView.DataSource = bindingSource;
+
+                dataGridView.Columns["BookBorrowId"].HeaderText = "Id wypożyczenia";
+                dataGridView.Columns["Title"].HeaderText = "Tytuł";
+                dataGridView.Columns["Status"].HeaderText = "Status";
+                dataGridView.Columns["UserId"].HeaderText = "Id Użytkownika";
+
+                int totalCount = reportData1.Count;
+                string summaryText = "Ilość wszystkich wypożyczonych książek w podanym okresie: ";
+                string countText = totalCount.ToString();
+
+                DataGridViewRow summaryRow = new DataGridViewRow();
+                summaryRow.CreateCells(dataGridView);
+                summaryRow.Cells[0].Value = summaryText;
+                summaryRow.Cells[1].Value = countText;
+
+                dataGridView.Rows.Add(summaryRow);
+
+                dataGridView.BackgroundColor = Color.White;
+                dataGridView.RowHeadersVisible = false;
+                panel2.Visible = true;
+                dataGridView.Visible = true;
             }
-            var bindingList = new BindingList<ReportData1>(reportData1);
-            var bindingSource = new BindingSource(bindingList, null);
+            else
+            {
+                MessageBox.Show("Podaj sensowne dane (liczba)", "Ostrzezenie");
 
-            dataGridView.DataSource = bindingSource;
-
-            dataGridView.Columns["BookBorrowId"]!.HeaderText = "Id wypozyczenia";
-            dataGridView.Columns["Title"]!.HeaderText = "Tytul";
-            dataGridView.Columns["Status"]!.HeaderText = "Status";
-            dataGridView.Columns["UserId"]!.HeaderText = "Id Uzytkownika";
-            DataGridViewRow summaryRow = new DataGridViewRow();
-            summaryRow.CreateCells(dataGridView);
-            summaryRow.Cells[0].Value = "Ilosc wszystkich wypozyczonych ksiazek w podanym okresie: ";
-            summaryRow.Cells[1].Value = reportData1.Count.ToString();
-
-            dataGridView.Rows.Add(summaryRow);
-
-            dataGridView.BackgroundColor = Color.White;
-            dataGridView.RowHeadersVisible = false;
-            dataGridView.Visible = true;
+            }
         }
 
         private void buttonGenerate2_Click(object sender, EventArgs e)
@@ -133,9 +155,11 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
                 dataGridView.BackgroundColor = Color.White;
                 dataGridView.RowHeadersVisible = false;
+                panel2.Visible = true;
                 dataGridView.Visible = true;
             }
-            
+
+            MessageBox.Show("Podaj dokladnie dane", "Informacja");
 
         }
 

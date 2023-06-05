@@ -72,7 +72,7 @@
             // anotherAuthorButton
             // 
             anotherAuthorButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            anotherAuthorButton.Location = new System.Drawing.Point(702, 280);
+            anotherAuthorButton.Location = new System.Drawing.Point(719, 283);
             anotherAuthorButton.Name = "anotherAuthorButton";
             anotherAuthorButton.Size = new System.Drawing.Size(105, 23);
             anotherAuthorButton.TabIndex = 6;
@@ -84,7 +84,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(325, 16);
+            this.label1.Location = new System.Drawing.Point(439, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(134, 25);
             this.label1.TabIndex = 0;
@@ -129,7 +129,7 @@
             // textBoxCopies
             // 
             this.textBoxCopies.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxCopies.Location = new System.Drawing.Point(401, 367);
+            this.textBoxCopies.Location = new System.Drawing.Point(418, 370);
             this.textBoxCopies.Name = "textBoxCopies";
             this.textBoxCopies.Size = new System.Drawing.Size(39, 23);
             this.textBoxCopies.TabIndex = 23;
@@ -138,7 +138,7 @@
             // 
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(231, 367);
+            this.label12.Location = new System.Drawing.Point(248, 370);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(105, 21);
             this.label12.TabIndex = 22;
@@ -148,7 +148,7 @@
             // 
             this.btnAddBook.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddBook.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAddBook.Location = new System.Drawing.Point(299, 415);
+            this.btnAddBook.Location = new System.Drawing.Point(316, 418);
             this.btnAddBook.Name = "btnAddBook";
             this.btnAddBook.Size = new System.Drawing.Size(260, 36);
             this.btnAddBook.TabIndex = 6;
@@ -159,7 +159,7 @@
             // anotherPublisherButton
             // 
             this.anotherPublisherButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.anotherPublisherButton.Location = new System.Drawing.Point(702, 326);
+            this.anotherPublisherButton.Location = new System.Drawing.Point(719, 329);
             this.anotherPublisherButton.Name = "anotherPublisherButton";
             this.anotherPublisherButton.Size = new System.Drawing.Size(105, 23);
             this.anotherPublisherButton.TabIndex = 19;
@@ -172,7 +172,7 @@
             this.comboBoxPublisher.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxPublisher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPublisher.FormattingEnabled = true;
-            this.comboBoxPublisher.Location = new System.Drawing.Point(401, 324);
+            this.comboBoxPublisher.Location = new System.Drawing.Point(418, 327);
             this.comboBoxPublisher.Name = "comboBoxPublisher";
             this.comboBoxPublisher.Size = new System.Drawing.Size(272, 23);
             this.comboBoxPublisher.TabIndex = 18;
@@ -181,7 +181,7 @@
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(231, 328);
+            this.label9.Location = new System.Drawing.Point(248, 331);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(123, 21);
             this.label9.TabIndex = 17;
@@ -192,7 +192,7 @@
             this.comboBoxAuthor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxAuthor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAuthor.FormattingEnabled = true;
-            this.comboBoxAuthor.Location = new System.Drawing.Point(401, 280);
+            this.comboBoxAuthor.Location = new System.Drawing.Point(418, 283);
             this.comboBoxAuthor.Name = "comboBoxAuthor";
             this.comboBoxAuthor.Size = new System.Drawing.Size(272, 23);
             this.comboBoxAuthor.TabIndex = 16;
@@ -201,7 +201,7 @@
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(231, 280);
+            this.label8.Location = new System.Drawing.Point(248, 283);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 21);
             this.label8.TabIndex = 15;
@@ -212,7 +212,7 @@
             this.comboBoxCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCategory.FormattingEnabled = true;
-            this.comboBoxCategory.Location = new System.Drawing.Point(401, 234);
+            this.comboBoxCategory.Location = new System.Drawing.Point(418, 237);
             this.comboBoxCategory.Name = "comboBoxCategory";
             this.comboBoxCategory.Size = new System.Drawing.Size(272, 23);
             this.comboBoxCategory.TabIndex = 14;
@@ -221,7 +221,7 @@
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(231, 234);
+            this.label7.Location = new System.Drawing.Point(248, 237);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(88, 21);
             this.label7.TabIndex = 13;
@@ -230,7 +230,7 @@
             // dataTimePicker
             // 
             this.dataTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataTimePicker.Location = new System.Drawing.Point(401, 184);
+            this.dataTimePicker.Location = new System.Drawing.Point(418, 187);
             this.dataTimePicker.Name = "dataTimePicker";
             this.dataTimePicker.Size = new System.Drawing.Size(272, 23);
             this.dataTimePicker.TabIndex = 12;
@@ -240,7 +240,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(231, 186);
+            this.label6.Location = new System.Drawing.Point(248, 189);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(122, 21);
             this.label6.TabIndex = 11;
@@ -249,7 +249,7 @@
             // descriptionTextBox
             // 
             this.descriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.descriptionTextBox.Location = new System.Drawing.Point(406, 70);
+            this.descriptionTextBox.Location = new System.Drawing.Point(423, 73);
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(267, 96);
             this.descriptionTextBox.TabIndex = 10;
@@ -258,7 +258,7 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(231, 70);
+            this.label5.Location = new System.Drawing.Point(248, 73);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 21);
             this.label5.TabIndex = 8;
@@ -267,7 +267,7 @@
             // textTitle
             // 
             this.textTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textTitle.Location = new System.Drawing.Point(406, 36);
+            this.textTitle.Location = new System.Drawing.Point(423, 39);
             this.textTitle.Name = "textTitle";
             this.textTitle.Size = new System.Drawing.Size(267, 23);
             this.textTitle.TabIndex = 7;
@@ -275,7 +275,7 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(231, 36);
+            this.label4.Location = new System.Drawing.Point(248, 39);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 21);
             this.label4.TabIndex = 6;
@@ -310,7 +310,7 @@
             // alertLabelPublisher
             // 
             this.alertLabelPublisher.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.alertLabelPublisher.Location = new System.Drawing.Point(138, 55);
+            this.alertLabelPublisher.Location = new System.Drawing.Point(148, 49);
             this.alertLabelPublisher.Name = "alertLabelPublisher";
             this.alertLabelPublisher.Size = new System.Drawing.Size(52, 17);
             this.alertLabelPublisher.TabIndex = 4;
@@ -346,7 +346,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(84, 28);
+            this.label14.Location = new System.Drawing.Point(87, 23);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(181, 20);
             this.label14.TabIndex = 0;
@@ -381,7 +381,7 @@
             // alertLabelAuthor
             // 
             this.alertLabelAuthor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.alertLabelAuthor.Location = new System.Drawing.Point(138, 55);
+            this.alertLabelAuthor.Location = new System.Drawing.Point(148, 52);
             this.alertLabelAuthor.Name = "alertLabelAuthor";
             this.alertLabelAuthor.Size = new System.Drawing.Size(52, 17);
             this.alertLabelAuthor.TabIndex = 4;
@@ -417,7 +417,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(84, 28);
+            this.label10.Location = new System.Drawing.Point(94, 25);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(160, 20);
             this.label10.TabIndex = 0;

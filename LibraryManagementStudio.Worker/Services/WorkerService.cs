@@ -66,10 +66,7 @@ namespace LibraryManagementStudio.Worker.Services
                 {
                     return query;
                 }
-                else
-                {
-                    return null;
-                }
+                
 
             }
             return null;
