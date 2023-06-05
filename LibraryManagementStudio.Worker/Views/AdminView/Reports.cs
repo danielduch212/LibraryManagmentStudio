@@ -67,6 +67,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             summaryRow.Cells[0].Value = "Ilosc wszystkich wypozyczonych ksiazek w podanym okresie: ";
             summaryRow.Cells[1].Value = reportData1.Count.ToString();
 
+            dataGridView.Rows.Add(summaryRow);
 
             dataGridView.BackgroundColor = Color.White;
             dataGridView.RowHeadersVisible = false;
