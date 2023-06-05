@@ -50,5 +50,10 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         {
 
         }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

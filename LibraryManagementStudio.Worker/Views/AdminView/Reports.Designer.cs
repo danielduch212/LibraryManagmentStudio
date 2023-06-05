@@ -35,28 +35,28 @@
             this.buttonRaport2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelSelect1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxUserId = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dataTimePickerFrom = new System.Windows.Forms.DateTimePicker();
-            this.dataTimePickerTo = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.buttonGenerate1 = new System.Windows.Forms.Button();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.panelSelect2 = new System.Windows.Forms.Panel();
-            this.buttonGenerate2 = new System.Windows.Forms.Button();
+            this.comboBoxAvailibility = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBoxCategory = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBoxPublisher = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBoxAuthor = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBoxPublisher = new System.Windows.Forms.ComboBox();
-            this.comboBoxCategory = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBoxAvailibility = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.buttonGenerate2 = new System.Windows.Forms.Button();
+            this.buttonGenerate1 = new System.Windows.Forms.Button();
+            this.dataTimePickerTo = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dataTimePickerFrom = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxUserId = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panelSelect1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panelSelect2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -142,79 +142,6 @@
             this.panelSelect1.Size = new System.Drawing.Size(1250, 128);
             this.panelSelect1.TabIndex = 7;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(192, 47);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "ID Użytkownika:";
-            // 
-            // textBoxUserId
-            // 
-            this.textBoxUserId.Location = new System.Drawing.Point(333, 47);
-            this.textBoxUserId.Name = "textBoxUserId";
-            this.textBoxUserId.Size = new System.Drawing.Size(82, 23);
-            this.textBoxUserId.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(456, 46);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 20);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Data Od:";
-            // 
-            // dataTimePickerFrom
-            // 
-            this.dataTimePickerFrom.Location = new System.Drawing.Point(542, 47);
-            this.dataTimePickerFrom.Name = "dataTimePickerFrom";
-            this.dataTimePickerFrom.Size = new System.Drawing.Size(200, 23);
-            this.dataTimePickerFrom.TabIndex = 3;
-            // 
-            // dataTimePickerTo
-            // 
-            this.dataTimePickerTo.Location = new System.Drawing.Point(868, 47);
-            this.dataTimePickerTo.Name = "dataTimePickerTo";
-            this.dataTimePickerTo.Size = new System.Drawing.Size(200, 23);
-            this.dataTimePickerTo.TabIndex = 5;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(782, 46);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 20);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Data Do:";
-            // 
-            // buttonGenerate1
-            // 
-            this.buttonGenerate1.BackColor = System.Drawing.Color.White;
-            this.buttonGenerate1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonGenerate1.Location = new System.Drawing.Point(542, 90);
-            this.buttonGenerate1.Name = "buttonGenerate1";
-            this.buttonGenerate1.Size = new System.Drawing.Size(129, 23);
-            this.buttonGenerate1.TabIndex = 6;
-            this.buttonGenerate1.Text = "Generuj";
-            this.buttonGenerate1.UseVisualStyleBackColor = false;
-            this.buttonGenerate1.Click += new System.EventHandler(this.buttonGenerate1_Click);
-            // 
-            // dataGridView
-            // 
-            this.dataGridView.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(0, 266);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.RowTemplate.Height = 25;
-            this.dataGridView.Size = new System.Drawing.Size(1250, 450);
-            this.dataGridView.TabIndex = 8;
-            // 
             // panelSelect2
             // 
             this.panelSelect2.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -232,17 +159,49 @@
             this.panelSelect2.Size = new System.Drawing.Size(1250, 128);
             this.panelSelect2.TabIndex = 8;
             // 
-            // buttonGenerate2
+            // comboBoxAvailibility
             // 
-            this.buttonGenerate2.BackColor = System.Drawing.Color.White;
-            this.buttonGenerate2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonGenerate2.Location = new System.Drawing.Point(542, 90);
-            this.buttonGenerate2.Name = "buttonGenerate2";
-            this.buttonGenerate2.Size = new System.Drawing.Size(129, 23);
-            this.buttonGenerate2.TabIndex = 6;
-            this.buttonGenerate2.Text = "Generuj";
-            this.buttonGenerate2.UseVisualStyleBackColor = false;
-            this.buttonGenerate2.Click += new System.EventHandler(this.buttonGenerate2_Click);
+            this.comboBoxAvailibility.FormattingEnabled = true;
+            this.comboBoxAvailibility.Location = new System.Drawing.Point(536, 50);
+            this.comboBoxAvailibility.Name = "comboBoxAvailibility";
+            this.comboBoxAvailibility.Size = new System.Drawing.Size(170, 23);
+            this.comboBoxAvailibility.TabIndex = 26;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(421, 50);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(103, 21);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Dostępność:";
+            // 
+            // comboBoxCategory
+            // 
+            this.comboBoxCategory.FormattingEnabled = true;
+            this.comboBoxCategory.Location = new System.Drawing.Point(899, 18);
+            this.comboBoxCategory.Name = "comboBoxCategory";
+            this.comboBoxCategory.Size = new System.Drawing.Size(232, 23);
+            this.comboBoxCategory.TabIndex = 24;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(795, 20);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(88, 21);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Kategoria:";
+            // 
+            // comboBoxPublisher
+            // 
+            this.comboBoxPublisher.FormattingEnabled = true;
+            this.comboBoxPublisher.Location = new System.Drawing.Point(536, 20);
+            this.comboBoxPublisher.Name = "comboBoxPublisher";
+            this.comboBoxPublisher.Size = new System.Drawing.Size(232, 23);
+            this.comboBoxPublisher.TabIndex = 22;
             // 
             // label9
             // 
@@ -272,49 +231,93 @@
             this.label8.TabIndex = 19;
             this.label8.Text = "Autor:";
             // 
-            // comboBoxPublisher
+            // buttonGenerate2
             // 
-            this.comboBoxPublisher.FormattingEnabled = true;
-            this.comboBoxPublisher.Location = new System.Drawing.Point(536, 20);
-            this.comboBoxPublisher.Name = "comboBoxPublisher";
-            this.comboBoxPublisher.Size = new System.Drawing.Size(232, 23);
-            this.comboBoxPublisher.TabIndex = 22;
+            this.buttonGenerate2.BackColor = System.Drawing.Color.White;
+            this.buttonGenerate2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonGenerate2.Location = new System.Drawing.Point(542, 90);
+            this.buttonGenerate2.Name = "buttonGenerate2";
+            this.buttonGenerate2.Size = new System.Drawing.Size(129, 23);
+            this.buttonGenerate2.TabIndex = 6;
+            this.buttonGenerate2.Text = "Generuj";
+            this.buttonGenerate2.UseVisualStyleBackColor = false;
+            this.buttonGenerate2.Click += new System.EventHandler(this.buttonGenerate2_Click);
             // 
-            // comboBoxCategory
+            // buttonGenerate1
             // 
-            this.comboBoxCategory.FormattingEnabled = true;
-            this.comboBoxCategory.Location = new System.Drawing.Point(899, 18);
-            this.comboBoxCategory.Name = "comboBoxCategory";
-            this.comboBoxCategory.Size = new System.Drawing.Size(232, 23);
-            this.comboBoxCategory.TabIndex = 24;
+            this.buttonGenerate1.BackColor = System.Drawing.Color.White;
+            this.buttonGenerate1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonGenerate1.Location = new System.Drawing.Point(542, 90);
+            this.buttonGenerate1.Name = "buttonGenerate1";
+            this.buttonGenerate1.Size = new System.Drawing.Size(129, 23);
+            this.buttonGenerate1.TabIndex = 6;
+            this.buttonGenerate1.Text = "Generuj";
+            this.buttonGenerate1.UseVisualStyleBackColor = false;
+            this.buttonGenerate1.Click += new System.EventHandler(this.buttonGenerate1_Click);
             // 
-            // label7
+            // dataTimePickerTo
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(795, 20);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 21);
-            this.label7.TabIndex = 23;
-            this.label7.Text = "Kategoria:";
+            this.dataTimePickerTo.Location = new System.Drawing.Point(868, 47);
+            this.dataTimePickerTo.Name = "dataTimePickerTo";
+            this.dataTimePickerTo.Size = new System.Drawing.Size(200, 23);
+            this.dataTimePickerTo.TabIndex = 5;
             // 
-            // comboBoxAvailibility
+            // label6
             // 
-            this.comboBoxAvailibility.FormattingEnabled = true;
-            this.comboBoxAvailibility.Location = new System.Drawing.Point(536, 50);
-            this.comboBoxAvailibility.Name = "comboBoxAvailibility";
-            this.comboBoxAvailibility.Size = new System.Drawing.Size(170, 23);
-            this.comboBoxAvailibility.TabIndex = 26;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(782, 46);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 20);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Data Do:";
             // 
-            // label10
+            // dataTimePickerFrom
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(421, 50);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(103, 21);
-            this.label10.TabIndex = 25;
-            this.label10.Text = "Dostępność:";
+            this.dataTimePickerFrom.Location = new System.Drawing.Point(542, 47);
+            this.dataTimePickerFrom.Name = "dataTimePickerFrom";
+            this.dataTimePickerFrom.Size = new System.Drawing.Size(200, 23);
+            this.dataTimePickerFrom.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(456, 46);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 20);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Data Od:";
+            // 
+            // textBoxUserId
+            // 
+            this.textBoxUserId.Location = new System.Drawing.Point(333, 47);
+            this.textBoxUserId.Name = "textBoxUserId";
+            this.textBoxUserId.Size = new System.Drawing.Size(82, 23);
+            this.textBoxUserId.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(192, 47);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(123, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "ID Użytkownika:";
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(0, 266);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowTemplate.Height = 25;
+            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView.Size = new System.Drawing.Size(1250, 450);
+            this.dataGridView.TabIndex = 8;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // Reports
             // 
@@ -329,9 +332,9 @@
             this.panel1.PerformLayout();
             this.panelSelect1.ResumeLayout(false);
             this.panelSelect1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.panelSelect2.ResumeLayout(false);
             this.panelSelect2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
