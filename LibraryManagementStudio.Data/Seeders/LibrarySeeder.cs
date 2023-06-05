@@ -8,7 +8,7 @@ namespace LibraryManagementStudio.Data.Seeders;
 public class LibrarySeeder
 {
     private LibraryDbContext _dbContext;
-
+    DummyDataProvider dummyDataProvider = new DummyDataProvider();
     public LibrarySeeder()
     {
         _dbContext = new LibraryDbContext();
@@ -135,7 +135,7 @@ public class LibrarySeeder
 
     private void SeedBookBorrows()
     {
-        DummyDataProvider dummyDataProvider = new DummyDataProvider();
+        
         var bookBorrows = dummyDataProvider.GetDummyBookBorrows();
         _dbContext.BookBorrows.AddRange(bookBorrows);
         _dbContext.SaveChanges();
@@ -144,7 +144,7 @@ public class LibrarySeeder
 
     private void SeedPenalties()
     {
-        DummyDataProvider dummyDataProvider = new DummyDataProvider();
+        
         var penalties = dummyDataProvider.GetDummyPenalties();
         _dbContext.Penalties.AddRange(penalties);
         _dbContext.SaveChanges();
