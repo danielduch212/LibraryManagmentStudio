@@ -37,7 +37,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(textBoxBookBorrowId.Text.Length >0 && textBoxPrice.Text.Length >0 && textBoxDescription.Text.Length > 0)
+            if(textBoxBookBorrowId.Text.Length >0 || textBoxPrice.Text.Length >0 || textBoxDescription.Text.Length > 0)
             {
 
                 var bookBorrow = service.getBookBorrow(Int32.Parse(textBoxBookBorrowId.Text));

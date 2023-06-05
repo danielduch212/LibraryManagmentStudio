@@ -21,7 +21,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         AdminUserService service;
         LibraryManagementStudio.Data.Models.Worker worker;
         List<UserDto> users;
-        List<Worker.Dtos.BookBorrow.BookBorrowToShow> userBorrows;
+        List<Worker.Dtos.BookBorrow.BookBorrowToShow>? userBorrows;
         public UsersList(LibraryDbContext dbContext, Data.Models.Worker worker)
         {
             InitializeComponent();

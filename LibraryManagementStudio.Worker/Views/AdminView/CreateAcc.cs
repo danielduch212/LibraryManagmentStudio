@@ -33,7 +33,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         private void button1_Click(object sender, EventArgs e)
         {
             alertLabel.Visible = false;
-            if (textBoxName.Text != "" && textBoxSurname.Text != "" && textBoxEmail.Text != "" && textBoxCode.Text != "" && textBoxLocation.Text != "")
+            if (textBoxName.Text != "" || textBoxSurname.Text != "" || textBoxEmail.Text != "" || textBoxCode.Text != "" || textBoxLocation.Text != "")
                 panelAutorize.Visible = true;
             else
             {
@@ -49,7 +49,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if(textBoxName.Text != "" && textBoxSurname.Text != "" && textBoxEmail.Text != "" && textBoxCode.Text !="" && textBoxLocation.Text != "" )
+            if(textBoxName.Text != "" || textBoxSurname.Text != "" || textBoxEmail.Text != "" || textBoxCode.Text !="" || textBoxLocation.Text != "" )
             {
                 DateTime today = DateTime.Today;
                 user = new User()

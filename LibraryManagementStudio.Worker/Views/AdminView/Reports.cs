@@ -58,6 +58,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void buttonGenerate1_Click(object sender, EventArgs e)
         {
+            if(textBoxUserId.Text = "" )
             reportData1 = reportService.returnData(Int32.Parse(textBoxUserId.Text), dataTimePickerFrom.Value, dataTimePickerTo.Value);
             if(reportData1 == null)
             {
@@ -86,7 +87,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void buttonGenerate2_Click(object sender, EventArgs e)
         {
-            if(comboBoxAvailibility.SelectedIndex != -1 &&comboBoxCategory.SelectedIndex != -1 && comboBoxAuthor.SelectedIndex!= -1 && comboBoxPublisher.SelectedIndex != -1)
+            if(comboBoxAvailibility.SelectedIndex != -1 || comboBoxCategory.SelectedIndex != -1 || comboBoxAuthor.SelectedIndex!= -1 || comboBoxPublisher.SelectedIndex != -1)
             {
                 
                 Author author;

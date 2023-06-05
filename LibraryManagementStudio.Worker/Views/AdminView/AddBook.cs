@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LibraryManagementStudio.Worker.Views.AdminView
@@ -59,7 +60,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         }
         private void btnAddBook_Click(object sender, EventArgs e)
         {
-            if (textTitle.Text != "" && (comboBoxAuthor.SelectedIndex != -1) && (comboBoxAuthor.SelectedIndex != -1) && (comboBoxPublisher.SelectedIndex != -1))
+            if (textTitle.Text != "" || (comboBoxAuthor.SelectedIndex != -1) || (comboBoxAuthor.SelectedIndex != -1) || (comboBoxPublisher.SelectedIndex != -1))
             {
                 if (comboBoxCategory.Text == "Romance")
                     categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.Romance;
@@ -71,7 +72,18 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                     categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.History;
                 if (comboBoxCategory.Text == "Thriller")
                     categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.Thriller;
+
+
+                //sprawdzacz cyfer
+              
+                if (!int.TryParse(textBoxCopies.Text, out int number))
+                {
+                    MessageBox.Show("Podaj dobra wartosc liczby kopii!", "Ostrzezenie");
+                    return;
+
+                }
                 
+
                 int copyCounts = Int32.Parse(textBoxCopies.Text);
                 ICollection<BookCopy> bookCopies= new List<BookCopy>();
                 

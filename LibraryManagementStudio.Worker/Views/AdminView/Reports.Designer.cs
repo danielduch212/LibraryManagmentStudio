@@ -329,10 +329,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panelSelect2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.panelSelect1);
+            this.Controls.Add(this.panelSelect2);
             this.Name = "Reports";
             this.Size = new System.Drawing.Size(1250, 716);
             this.panel1.ResumeLayout(false);

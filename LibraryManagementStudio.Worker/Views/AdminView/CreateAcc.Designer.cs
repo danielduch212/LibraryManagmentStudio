@@ -61,7 +61,6 @@
             this.panelMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelMain.Controls.Add(this.panelAutorize);
             this.panelMain.Controls.Add(this.textBoxPassword);
             this.panelMain.Controls.Add(this.label10);
             this.panelMain.Controls.Add(this.alertLabel);
@@ -299,6 +298,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panelAutorize);
             this.Controls.Add(this.panelMain);
             this.Name = "CreateAcc";
             this.Size = new System.Drawing.Size(859, 529);
