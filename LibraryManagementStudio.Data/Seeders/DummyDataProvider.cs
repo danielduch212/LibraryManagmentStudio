@@ -1,15 +1,58 @@
 using LibraryManagementStudio.Data.Models;
 using LibraryManagementStudio.Data.Models.Enums;
+using LibraryManagementStudio.Data;
+
 using System.Diagnostics.Metrics;
 using System.IO;
+using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
 namespace LibraryManagementStudio.Data.Seeders;
 
-public static class DummyDataProvider
+
+
+
+
+public class DummyDataProvider
 {
+
+    
+    private User findUser(int id)
+    {
+        LibraryDbContext db = new LibraryDbContext();
+        var query = db.Users
+                .FirstOrDefault(x => x.UserId.Equals(id));
+        return query;
+    }
+
+    private BookCopy findBookCopy(int id)
+    {
+        LibraryDbContext db = new LibraryDbContext();
+        var query = db.BookCopies
+                .FirstOrDefault(x => x.BookCopyId.Equals(id));
+        return query;
+    }
+    private BookBorrow findBookBorrow(int id)
+    {
+        LibraryDbContext db = new LibraryDbContext();
+        var query = db.BookBorrows
+                .FirstOrDefault(x => x.BookBorrowId.Equals(id));
+        return query;
+    }
+
+    private Worker findWorker(int id)
+    {
+        LibraryDbContext db = new LibraryDbContext();
+        var query = db.Workers
+                .FirstOrDefault(x => x.WorkerId.Equals(id));
+        return query;
+
+    }
 
     public static IEnumerable<User> GetDummyUsers()
     {
+
+       
         var users = new List<User>
         {
             new()
@@ -87,7 +130,7 @@ public static class DummyDataProvider
     {
         var authors = new List<Author>
         {
-            new()
+            new ()
             {
                 AuthorId = 1,
                 Name = "Jack Weatherford"
@@ -320,7 +363,76 @@ public static class DummyDataProvider
 
         return publishers;
     }
-    
+
+
+    public IEnumerable<BookBorrow> GetDummyBookBorrows()
+    {
+        var bookBorrows = new List<BookBorrow>()
+        {
+            new()
+            {
+                BookBorrowId = 1,
+                StartDate = DateTime.Today,
+                EndDate = DateTime.Today.AddDays(7),
+                IsActive = true,
+                Status = BorrowedBookStatus.Received,
+                UserId = 2,
+                User = findUser(2),
+                BookCopyId = 1,
+                BookCopy = findBookCopy(1),
+
+            },
+            new()
+            {
+
+            },
+
+
+
+
+        };
+
+        return bookBorrows;
+    }
+
+    public IEnumerable<Penalty> GetDummyPenalties()
+    {
+        var bookBorrows = new List<Penalty>()
+        {
+            new()
+            {
+                PenaltyId = 1,
+                Description = "Przekroczenie terminu",
+                Price = 10.0,
+                ImpositionDate = DateTime.Today.AddDays(7),
+                IsPaid = false,
+                BookBorrowId = 1,
+                BookBorrow = findBookBorrow(1),
+                WorkerId = 1,
+                Worker = findWorker(1),
+
+            },
+            new()
+            {
+
+            },
+
+
+
+
+        };
+
+        return bookBorrows;
+    }
+
+
+
+
+
+
+
+
+
     public static IEnumerable<Book> GetDummyBooks()
     {
         var books = new List<Book>()
@@ -1073,4 +1185,6 @@ public static class DummyDataProvider
 
         return bookCopies;
     }
+
+    
 }

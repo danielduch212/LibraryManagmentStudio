@@ -25,4 +25,11 @@ public class IdentityInsertCommands
     //Users
     public const string UsersIdentityInsertEnabled = "SET IDENTITY_INSERT dbo.Users ON";
     public const string UsersIdentityInsertDisabled = "SET IDENTITY_INSERT dbo.Users OFF";
+
+    //bookBorrows
+    public const string BookBorrowsIdentityInsertEnabled = "SET IDENTITY_INSERT dbo.BookBorrows ON";
+    public const string BookBorrowsIdentityInsertDisabled = "SET IDENTITY_INSERT dbo.BookBorrows OFF";
+    //penalties
+    public const string PenaltiesIdentityInsertEnabled = "SET IDENTITY_INSERT dbo.Penalties ON";
+    public const string PenaltiesIdentityInsertDisabled = "SET IDENTITY_INSERT dbo.Penalties OFF";
 }

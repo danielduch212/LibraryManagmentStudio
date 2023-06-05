@@ -63,6 +63,16 @@ public class LibrarySeeder
             _dbContext.Database.ExecuteSqlRaw(IdentityInsertCommands.UsersIdentityInsertEnabled);
             SeedUsers();
             _dbContext.Database.ExecuteSqlRaw(IdentityInsertCommands.UsersIdentityInsertDisabled);
+
+            _dbContext.Database.ExecuteSqlRaw(IdentityInsertCommands.BookBorrowsIdentityInsertEnabled);
+            SeedBookBorrows();
+            _dbContext.Database.ExecuteSqlRaw(IdentityInsertCommands.BookBorrowsIdentityInsertDisabled);
+
+            _dbContext.Database.ExecuteSqlRaw(IdentityInsertCommands.PenaltiesIdentityInsertEnabled);
+            SeedPenalties();
+            _dbContext.Database.ExecuteSqlRaw(IdentityInsertCommands.PenaltiesIdentityInsertDisabled);
+
+
         }
         finally
         {
@@ -121,5 +131,23 @@ public class LibrarySeeder
 
         _dbContext.Users.AddRange(users);
         _dbContext.SaveChanges();
+    }
+
+    private void SeedBookBorrows()
+    {
+        DummyDataProvider dummyDataProvider = new DummyDataProvider();
+        var bookBorrows = dummyDataProvider.GetDummyBookBorrows();
+        _dbContext.BookBorrows.AddRange(bookBorrows);
+        _dbContext.SaveChanges();
+
+    }
+
+    private void SeedPenalties()
+    {
+        DummyDataProvider dummyDataProvider = new DummyDataProvider();
+        var penalties = dummyDataProvider.GetDummyPenalties();
+        _dbContext.Penalties.AddRange(penalties);
+        _dbContext.SaveChanges();
+
     }
 }
