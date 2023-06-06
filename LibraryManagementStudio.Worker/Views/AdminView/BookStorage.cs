@@ -120,6 +120,17 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 MessageBox.Show("Podaj Email", "Ostrzezenie");
                 return;
             }
+            if(userService.getUserByEmail(textBoxUserEmail.Text) == null)
+            {
+                MessageBox.Show("Zly email", "Ostrzezenie");
+                return;
+
+            }
+            if (service.getAvailibleCopy(book.Title) == null)
+            {
+                MessageBox.Show("Brak dostepnych kopii do wypozyczenia!", "Ostrzezenie");
+                return;
+            }
             BookBorrow bookBorrow = new BookBorrow()
             {
                 StartDate = DateTime.Today,
@@ -128,9 +139,12 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 Status = Data.Models.Enums.BorrowedBookStatus.Received,
                 Worker = worker,
                 User = userService.getUserByEmail(textBoxUserEmail.Text),
+                
                 BookCopy = service.getAvailibleCopy(book.Title),
 
             };
+            MessageBox.Show("Wypozyczono ksiazke", "Informacja");
+            textBoxUserEmail.Text = "";
             service.CreateNewBookBorrow(bookBorrow);
             books = service.GetBooks();
             SetupBooksView();
