@@ -104,6 +104,8 @@
             // 
             this.panelContent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelContent.Controls.Add(this.panelAuthor);
+            this.panelContent.Controls.Add(this.panelNewPublisher);
             this.panelContent.Controls.Add(this.textBoxCopies);
             this.panelContent.Controls.Add(this.label12);
             this.panelContent.Controls.Add(this.btnAddBook);
@@ -292,9 +294,9 @@
             this.panelNewPublisher.Controls.Add(this.textBoxNewPublisher);
             this.panelNewPublisher.Controls.Add(this.label13);
             this.panelNewPublisher.Controls.Add(this.label14);
-            this.panelNewPublisher.Location = new System.Drawing.Point(88, 94);
+            this.panelNewPublisher.Location = new System.Drawing.Point(45, 490);
             this.panelNewPublisher.Name = "panelNewPublisher";
-            this.panelNewPublisher.Size = new System.Drawing.Size(352, 235);
+            this.panelNewPublisher.Size = new System.Drawing.Size(344, 191);
             this.panelNewPublisher.TabIndex = 22;
             // 
             // cancelNewPublisher
@@ -363,9 +365,9 @@
             this.panelAuthor.Controls.Add(this.textBoxNewAuthor);
             this.panelAuthor.Controls.Add(this.label11);
             this.panelAuthor.Controls.Add(this.label10);
-            this.panelAuthor.Location = new System.Drawing.Point(613, 355);
+            this.panelAuthor.Location = new System.Drawing.Point(633, 392);
             this.panelAuthor.Name = "panelAuthor";
-            this.panelAuthor.Size = new System.Drawing.Size(355, 235);
+            this.panelAuthor.Size = new System.Drawing.Size(341, 226);
             this.panelAuthor.TabIndex = 21;
             // 
             // cancelNewAuthor
@@ -427,8 +429,6 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
-            this.Controls.Add(this.panelNewPublisher);
-            this.Controls.Add(this.panelAuthor);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panel1);
             this.Name = "AddBook";
