@@ -96,12 +96,12 @@ namespace LibraryManagementStudio.Worker.Services
         }
 
 
-        public LibraryManagementStudio.Data.Models.User findUserRow(string idFromCell)
+        public LibraryManagementStudio.Data.Models.User findUserRow(int idFromCell)
         {
 
 
             var query = _dbContext.Users
-                .FirstOrDefault(x => x.UserId == Int32.Parse(idFromCell));
+                .FirstOrDefault(x => x.UserId == idFromCell);
             return query;
 
 

@@ -165,12 +165,11 @@ public class WorkerBookService : IWorkerBookService
         return query.ToList();
     }
 
-    public void returnBookBorrow(string data)
+    public void returnBookBorrow(int id)
     {
-        string[] parts = data.Split("/t");
-        var id = parts[0];
+        
         var query = _dbContext.BookBorrows
-            .FirstOrDefault(x => x.BookBorrowId.Equals(id));
+            .FirstOrDefault(x => x.BookBorrowId == id);
         query.IsActive = false;
         // data oddania ksiazki
         

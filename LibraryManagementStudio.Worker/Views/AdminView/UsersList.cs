@@ -46,14 +46,29 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             usersDataGridView.DataSource = bindingSource;
 
             usersDataGridView.Columns["UserId"]!.HeaderText = "Id";
-            
+            usersDataGridView.Columns["UserId"].DisplayIndex = 0; // Przesuń kolumnę "BookId" na pierwszą pozycję
+
+
             usersDataGridView.Columns["FirstName"]!.HeaderText = "Imie";
+            usersDataGridView.Columns["FirstName"].DisplayIndex = 1;
             usersDataGridView.Columns["LastName"]!.HeaderText = "Nazwisko";
+            usersDataGridView.Columns["FirstName"].DisplayIndex = 2;
+
             usersDataGridView.Columns["EmailAddress"]!.HeaderText = "Email";
-            usersDataGridView.Columns["City"]!.HeaderText = "20";
+            usersDataGridView.Columns["EmailAddress"].DisplayIndex = 3;
+
+            usersDataGridView.Columns["City"]!.HeaderText = "City";
+            usersDataGridView.Columns["City"].DisplayIndex = 4;
+
             usersDataGridView.Columns["Street"]!.HeaderText = "Ulica";
+            usersDataGridView.Columns["Street"].DisplayIndex = 5;
+
             usersDataGridView.Columns["PostalCode"]!.HeaderText = "Kod Pocztowy";
+            usersDataGridView.Columns["PostalCode"].DisplayIndex = 6;
+
             usersDataGridView.Columns["BookBorrowsCount"]!.HeaderText = "Liczba Ksiazek";
+            usersDataGridView.Columns["BookBorrowsCount"].DisplayIndex = 7;
+
             usersDataGridView.Columns["BookBorrows"]!.Visible = false;
             usersDataGridView.BackgroundColor = Color.White;
             usersDataGridView.RowHeadersVisible = false;
@@ -82,12 +97,14 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         {
             if(showUserDataGridView.SelectedRows.Count > 0)
             {
-                var bookData = showUserDataGridView.SelectedRows.ToString();
-                if(bookData == null)
-                {
-                    return;
-                }
-                bookService.returnBookBorrow(bookData);
+                int selectedRowIndex = showUserDataGridView.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = showUserDataGridView.Rows[selectedRowIndex];
+
+                int bookId = Convert.ToInt32(selectedRow.Cells["BookBorrowId"].Value);
+
+                
+               
+                bookService.returnBookBorrow(bookId);
 
                 SetUserDataView();
             }
@@ -97,10 +114,13 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         {
             if(usersDataGridView.SelectedRows.Count > 0)
             {
-                var stringData = usersDataGridView.SelectedRows.ToString();
                 int selectedRowIndex = usersDataGridView.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = usersDataGridView.Rows[selectedRowIndex];
-                var user = service.findUserRow(selectedRow.Cells[0].Value.ToString());
+
+                int userId = Convert.ToInt32(selectedRow.Cells["UserId"].Value);
+
+                
+                var user = service.findUserRow(userId);
                 if (user == null)
                 {
                     return;
@@ -133,18 +153,37 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             showUserDataGridView.DataSource = bindingSource;
 
             showUserDataGridView.Columns["BookBorrowId"]!.HeaderText = "Id";
+            showUserDataGridView.Columns["BookBorrowId"].DisplayIndex = 0;
+
             showUserDataGridView.Columns["bookTitle"]!.HeaderText = "Tytul";
+            showUserDataGridView.Columns["bookTitle"].DisplayIndex = 1;
+
+
             showUserDataGridView.Columns["StartDate"]!.HeaderText = "Data wypozyczenie";
+            showUserDataGridView.Columns["StartDate"].DisplayIndex = 2;
+
 
             showUserDataGridView.Columns["EndDate"]!.HeaderText = "Data konca wypozyczenia";
+            showUserDataGridView.Columns["EndDate"].DisplayIndex = 3;
+
             showUserDataGridView.Columns["Status"]!.HeaderText = "Status";
+            showUserDataGridView.Columns["Status"].DisplayIndex = 4;
+
             showUserDataGridView.Columns["WorkerId"]!.HeaderText = "Id pracownika";
-            
+            showUserDataGridView.Columns["WorkerId"].DisplayIndex = 4;
+
+
 
             showUserDataGridView.Columns["UserId"]!.HeaderText = "Id";
-            
+            showUserDataGridView.Columns["UserId"].DisplayIndex = 5;
+
+
             showUserDataGridView.Columns["BookCopyId"]!.HeaderText = "BookCopyID";
+            showUserDataGridView.Columns["BookCopyId"].DisplayIndex = 6;
+
             showUserDataGridView.Columns["PostalCode"]!.HeaderText = "Kod Pocztowy";
+            showUserDataGridView.Columns["PostalCode"].DisplayIndex = 7;
+
             showUserDataGridView.BackgroundColor = Color.White;
             showUserDataGridView.RowHeadersVisible = false;
 

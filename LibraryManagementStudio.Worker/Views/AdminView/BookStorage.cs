@@ -231,5 +231,10 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             panelToSetLocation.Location = new Point((formWidth - panelWidth) / 2, (formHeight - panelHeight) / 2);
 
         }
+
+        private void bookDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
