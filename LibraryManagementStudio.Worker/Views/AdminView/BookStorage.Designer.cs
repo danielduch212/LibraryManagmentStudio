@@ -410,9 +410,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelEraseCopy);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panelBorrowBook);
             this.Controls.Add(this.panelAddCopies);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelBorrowBook);
             this.Name = "BookStorage";
             this.Size = new System.Drawing.Size(1102, 537);
             this.panel2.ResumeLayout(false);

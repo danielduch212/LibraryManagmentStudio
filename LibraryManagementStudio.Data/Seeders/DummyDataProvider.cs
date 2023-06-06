@@ -21,7 +21,7 @@ public class DummyDataProvider
     {
         LibraryDbContext db = new LibraryDbContext();
         var query = db.Users
-                .FirstOrDefault(x => x.UserId.Equals(id));
+                .FirstOrDefault(x => x.UserId == id);
         return query;
     }
 
@@ -29,14 +29,14 @@ public class DummyDataProvider
     {
         LibraryDbContext db = new LibraryDbContext();
         var query = db.BookCopies
-                .FirstOrDefault(x => x.BookCopyId.Equals(id));
+                .FirstOrDefault(x => x.BookCopyId==id);
         return query;
     }
     private BookBorrow findBookBorrow(int id)
     {
         LibraryDbContext db = new LibraryDbContext();
         var query = db.BookBorrows
-                .FirstOrDefault(x => x.BookBorrowId.Equals(id));
+                .FirstOrDefault(x => x.BookBorrowId == id);
         return query;
     }
 
@@ -44,7 +44,7 @@ public class DummyDataProvider
     {
         LibraryDbContext db = new LibraryDbContext();
         var query = db.Workers
-                .FirstOrDefault(x => x.WorkerId.Equals(id));
+                .FirstOrDefault(x => x.WorkerId==id);
         return query;
 
     }
@@ -683,7 +683,7 @@ public class DummyDataProvider
 
     public IEnumerable<BookBorrow> GetDummyBookBorrows()
     {
-        var bookBorrows = new List<BookBorrow>()
+        var bookBorrows = new List<BookBorrow>
         {    
             // Wypożyczenie 1 Daniel copy 10
             new()
@@ -976,7 +976,7 @@ public class DummyDataProvider
 
     public IEnumerable<Penalty> GetDummyPenalties()
     {
-        var bookBorrows = new List<Penalty>()
+        var bookBorrows = new List<Penalty>
         {
 
             // Kara 1 dla wypożyczenia 1
@@ -986,7 +986,7 @@ public class DummyDataProvider
                 PenaltyId = 1,
                 Description = "Przekroczenie terminu",
                 Price = 10.0,
-                ImpositionDate = DateTime.Today.AddDays(7),
+                ImpositionDate = DateTime.Today,
                 IsPaid = false,
                 BookBorrowId = 1,
                 BookBorrow = findBookBorrow(1),

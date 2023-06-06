@@ -96,12 +96,12 @@ public class WorkerBookService : IWorkerBookService
 
         
     }
-    public Book getBookFromString(string idFromCell)
+    public Book getBookFromId(int idFromCell)
     {
         
         
         var query = _dbContext.Books
-            .FirstOrDefault(x => x.BookId == Int32.Parse(idFromCell) && x.IsActive ==true);
+            .FirstOrDefault(x => x.BookId== idFromCell && x.IsActive ==true);
         return query;
 
 

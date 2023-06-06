@@ -42,24 +42,22 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
             bookDataGridView.DataSource = bindingSource;
 
-            bookDataGridView.Columns["BookId"]!.HeaderText = "Id";
-            
-            bookDataGridView.Columns["Title"]!.HeaderText = "Tytul";
-            
-            bookDataGridView.Columns["AuthorName"]!.HeaderText = "Autor";
-            
-            bookDataGridView.Columns["PublisherName"]!.HeaderText = "Wydawnictwo";
-            
+
+
+            bookDataGridView.Columns["AvailibleBookCopiesCount"]!.HeaderText = "Dostepne kopie";
+            bookDataGridView.Columns["BookCopiesCount"]!.HeaderText = "Liczba kopii";
+            bookDataGridView.Columns["PublishDate"]!.HeaderText = "Data wydania";
+
+            bookDataGridView.Columns["Category"]!.HeaderText = "Kategoria";
+
             bookDataGridView.Columns["Description"]!.HeaderText = "Opis";
             
-            bookDataGridView.Columns["Category"]!.HeaderText = "Kategoria";
-            
-            bookDataGridView.Columns["PublishDate"]!.HeaderText = "Data wydania";
-            
-            bookDataGridView.Columns["BookCopiesCount"]!.HeaderText = "Liczba kopii";
-            
-            bookDataGridView.Columns["AvailibleBookCopiesCount"]!.HeaderText = "Dostepne kopie";
-            
+
+            bookDataGridView.Columns["PublisherName"]!.HeaderText = "Wydawnictwo";
+
+            bookDataGridView.Columns["AuthorName"]!.HeaderText = "Autor";
+            bookDataGridView.Columns["Title"]!.HeaderText = "Tytul";
+            bookDataGridView.Columns["BookId"]!.HeaderText = "Id";
             bookDataGridView.BackgroundColor = Color.White;
             bookDataGridView.RowHeadersVisible = false;
 
@@ -82,7 +80,9 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 int selectedRowIndex = bookDataGridView.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = bookDataGridView.Rows[selectedRowIndex];
 
-                book = service.getBookFromString(selectedRow.Cells[0].Value.ToString());
+                int bookId = Convert.ToInt32(selectedRow.Cells["BookId"].Value);
+                
+                book = service.getBookFromId(bookId);
                 if (book == null) { return; }
                 labelBookTitle.Text = book.Title;
                 SetPanelLocation(panelBorrowBook);
@@ -130,8 +130,11 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             {
                 int selectedRowIndex = bookDataGridView.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = bookDataGridView.Rows[selectedRowIndex];
-                book = service.getBookFromString(selectedRow.Cells[0].Value.ToString());
-                if(book == null) { return; }
+
+                int bookId = Convert.ToInt32(selectedRow.Cells["BookId"].Value);
+
+                book = service.getBookFromId(bookId);
+                if (book == null) { return; }
                 AddCopiesBookTitle.Text = book.Title;
                 SetPanelLocation(panelAddCopies);
                 panelAddCopies.Visible = true;
@@ -188,8 +191,11 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             {
                 int selectedRowIndex = bookDataGridView.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = bookDataGridView.Rows[selectedRowIndex];
-                book = service.getBookFromString(selectedRow.Cells[0].Value.ToString());
-                if(book == null) { return; }
+
+                int bookId = Convert.ToInt32(selectedRow.Cells["BookId"].Value);
+
+                book = service.getBookFromId(bookId);
+                if (book == null) { return; }
                 service.EraseBook(book);
                 MessageBox.Show("Usunieto ksiazke", "Informacja");
                 books = service.GetBooks();
