@@ -116,8 +116,9 @@ public class WorkerBookService : IWorkerBookService
 
 
     }
-    public void CreateNewBookBorrow(BookBorrow bookBorrow)
+    public void CreateNewBookBorrow(BookBorrow bookBorrow, BookCopy bookCopy)
     {
+        bookCopy.IsAvailable = false;
         _dbContext.BookBorrows.Add(bookBorrow);
         _dbContext.SaveChanges();
 

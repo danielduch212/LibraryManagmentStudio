@@ -145,7 +145,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             };
             MessageBox.Show("Wypozyczono ksiazke", "Informacja");
             textBoxUserEmail.Text = "";
-            service.CreateNewBookBorrow(bookBorrow);
+            service.CreateNewBookBorrow(bookBorrow, service.getAvailibleCopy(book.Title));
             books = service.GetBooks();
             SetupBooksView();
             panelBorrowBook.Visible = false;

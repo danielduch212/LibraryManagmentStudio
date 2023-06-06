@@ -181,8 +181,6 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             showUserDataGridView.Columns["BookCopyId"]!.HeaderText = "BookCopyID";
             showUserDataGridView.Columns["BookCopyId"].DisplayIndex = 6;
 
-            showUserDataGridView.Columns["PostalCode"]!.HeaderText = "Kod Pocztowy";
-            showUserDataGridView.Columns["PostalCode"].DisplayIndex = 7;
 
             showUserDataGridView.BackgroundColor = Color.White;
             showUserDataGridView.RowHeadersVisible = false;
