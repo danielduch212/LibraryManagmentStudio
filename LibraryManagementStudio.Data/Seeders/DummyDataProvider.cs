@@ -73,7 +73,7 @@ public class DummyDataProvider
             {
                 UserId = 2,
                 EmailAddress = "daniel@gmail.com",
-                Password = PasswordHelper.HashPassword("1234"),
+                Password = PasswordHelper.HashPassword("daniel"),
                 FirstName = "Daniel",
                 LastName = "Cebulowy",
                 DateOfBirth = new DateTime(2004, 1, 1),
@@ -83,6 +83,258 @@ public class DummyDataProvider
                 Country = "Polska",
                 CreationDate = DateTime.Now,
 
+            },
+            new()
+            {
+                UserId = 3,
+                EmailAddress = "kamil@gmail.com",
+                Password = PasswordHelper.HashPassword("qwerty"),
+                FirstName = "Kamil",
+                LastName = "Kowalski",
+                DateOfBirth = new DateTime(1995, 5, 10),
+                Street = "Główna",
+                PostalCode = "12-345",
+                City = "Warszawa",
+                Country = "Polska",
+                CreationDate = DateTime.Now,
+            },
+            new()
+            {
+                UserId = 4,
+                EmailAddress = "magda@gmail.com",
+                Password = PasswordHelper.HashPassword("password123"),
+                FirstName = "Magdalena",
+                LastName = "Nowak",
+                DateOfBirth = new DateTime(1990, 3, 15),
+                Street = "Kwiatowa",
+                PostalCode = "54-321",
+                City = "Kraków",
+                Country = "Polska",
+                CreationDate = DateTime.Now,
+            },
+            new()
+            {
+                UserId = 5,
+                EmailAddress = "adam@gmail.com",
+                Password = PasswordHelper.HashPassword("pass123"),
+                FirstName = "Adam",
+                LastName = "Adamowski",
+                DateOfBirth = new DateTime(1988, 12, 1),
+                Street = "Słoneczna",
+                PostalCode = "67-890",
+                City = "Gdańsk",
+                Country = "Polska",
+                CreationDate = DateTime.Now,
+            },
+            new()
+            {
+                UserId = 6,
+                EmailAddress = "ewa@gmail.com",
+                Password = PasswordHelper.HashPassword("password"),
+                FirstName = "Ewa",
+                LastName = "Ewowska",
+                DateOfBirth = new DateTime(1992, 8, 20),
+                Street = "Brzozowa",
+                PostalCode = "87-654",
+                City = "Poznań",
+                Country = "Polska",
+                CreationDate = DateTime.Now,
+            },
+            new()
+            {
+                UserId = 7,
+                EmailAddress = "marek@gmail.com",
+                Password = PasswordHelper.HashPassword("test123"),
+                FirstName = "Marek",
+                LastName = "Marecki",
+                DateOfBirth = new DateTime(1985, 6, 5),
+                Street = "Kościelna",
+                PostalCode = "32-100",
+                City = "Kielce",
+                Country = "Polska",
+                CreationDate = DateTime.Now,
+            },
+            new()
+            {
+                UserId = 8,
+                EmailAddress = "Ola@gmail.com",
+                Password = PasswordHelper.HashPassword("Ola"),
+                FirstName = "Ola",
+                LastName = "Barczyk",
+                DateOfBirth = new DateTime(1997, 9, 25),
+                Street = "Lipowa",
+                PostalCode = "58-900",
+                City = "Wrocław",
+                Country = "Polska",
+                CreationDate = DateTime.Now,
+            },
+            new()
+            {
+                UserId = 9,
+                EmailAddress = "KryNap@gmail.com",
+                Password = PasswordHelper.HashPassword("KryNap"),
+                FirstName = "Krystian",
+                LastName = "Napierła",
+                DateOfBirth = new DateTime(1993, 4, 12),
+                Street = "Akacjowa",
+                PostalCode = "09-876",
+                City = "Łódź",
+                Country = "Polska",
+                CreationDate = DateTime.Now,
+            },
+            new()
+            {
+                UserId = 10,
+                EmailAddress = "anna@gmail.com",
+                Password = PasswordHelper.HashPassword("anna123"),
+                FirstName = "Anna",
+                LastName = "Annowska",
+                DateOfBirth = new DateTime(1998, 11, 8),
+                Street = "Świerkowa",
+                PostalCode = "23-456",
+                City = "Szczecin",
+                Country = "Polska",
+                CreationDate = DateTime.Now,
+            },
+            new()
+            {
+                UserId = 11,
+                EmailAddress = "marcin@gmail.com",
+                Password = PasswordHelper.HashPassword("marcinpass"),
+                FirstName = "Marcin",
+                LastName = "Kowalski",
+                DateOfBirth = new DateTime(1990, 5, 20),
+                Street = "Krótka",
+                PostalCode = "12-345",
+                City = "Warszawa",
+                Country = "Polska",
+                CreationDate = DateTime.Now,
+            },
+            new()
+            {
+                UserId = 12,
+                EmailAddress = "anna@gmail.com",
+                Password = PasswordHelper.HashPassword("annapass"),
+                FirstName = "Anna",
+                LastName = "Nowak",
+                DateOfBirth = new DateTime(1995, 8, 15),
+                Street = "Długa",
+                PostalCode = "54-321",
+                City = "Kraków",
+                Country = "Polska",
+                CreationDate = DateTime.Now,
+            },
+            new()
+            {
+                UserId = 13,
+                EmailAddress = "piotr@gmail.com",
+                Password = PasswordHelper.HashPassword("piotr123"),
+                FirstName = "Piotr",
+                LastName = "Kowalczyk",
+                DateOfBirth = new DateTime(1988, 12, 1),
+                Street = "Słoneczna",
+                PostalCode = "67-890",
+                City = "Gdańsk",
+                Country = "Polska",
+                CreationDate = DateTime.Now,
+            },
+            new()
+            {
+                UserId = 14,
+                EmailAddress = "agata@gmail.com",
+                Password = PasswordHelper.HashPassword("agatapass"),
+                FirstName = "Agata",
+                LastName = "Wójcik",
+                DateOfBirth = new DateTime(1992, 6, 25),
+                Street = "Kwiatowa",
+                PostalCode = "87-654",
+                City = "Poznań",
+                Country = "Polska",
+                CreationDate = DateTime.Now,
+            },
+            new()
+            {
+                UserId = 15,
+                EmailAddress = "michał@gmail.com",
+                Password = PasswordHelper.HashPassword("michalpass"),
+                FirstName = "Michał",
+                LastName = "Marecki",
+                DateOfBirth = new DateTime(1985, 3, 5),
+                Street = "Kościelna",
+                PostalCode = "32-100",
+                City = "Kielce",
+                Country = "Polska",
+                CreationDate = DateTime.Now,
+            },
+            new()
+            {
+                UserId = 16,
+                EmailAddress = "elżbieta@gmail.com",
+                Password = PasswordHelper.HashPassword("elzbietapass"),
+                FirstName = "Elżbieta",
+                LastName = "Zielińska",
+                DateOfBirth = new DateTime(1997, 9, 10),
+                Street = "Lipowa",
+                PostalCode = "58-900",
+                City = "Wrocław",
+                Country = "Polska",
+                CreationDate = DateTime.Now,
+            },
+            new()
+            {
+                UserId = 17,
+                EmailAddress = "adam@gmail.com",
+                Password = PasswordHelper.HashPassword("adampass"),
+                FirstName = "Adam",
+                LastName = "Piotrowski",
+                DateOfBirth = new DateTime(1993, 4, 12),
+                Street = "Akacjowa",
+                PostalCode = "09-876",
+                City = "Łódź",
+                Country = "Polska",
+                CreationDate = DateTime.Now,
+            },
+            new()
+            {
+                UserId = 18,
+                EmailAddress = "karolina@gmail.com",
+                Password = PasswordHelper.HashPassword("karolinapass"),
+                FirstName = "Karolina",
+                LastName = "Dąbrowska",
+                DateOfBirth = new DateTime(1989, 11, 8),
+                Street = "Świerkowa",
+                PostalCode = "23-456",
+                City = "Szczecin",
+                Country = "Polska",
+                CreationDate = DateTime.Now,
+            },
+            new()
+            {
+                UserId = 19,
+                EmailAddress = "robert@gmail.com",
+                Password = PasswordHelper.HashPassword("robertpass"),
+                FirstName = "Robert",
+                LastName = "Jankowski",
+                DateOfBirth = new DateTime(1994, 2, 18),
+                Street = "Akademicka",
+                PostalCode = "55-444",
+                City = "Opole",
+                Country = "Polska",
+                CreationDate = DateTime.Now,
+            },
+            new()
+            {
+                UserId = 20,
+                EmailAddress = "natalia@gmail.com",
+                Password = PasswordHelper.HashPassword("nataliapass"),
+                FirstName = "Natalia",
+                LastName = "Kaczmarek",
+                DateOfBirth = new DateTime(1991, 7, 22),
+                Street = "Szkolna",
+                PostalCode = "12-678",
+                City = "Gdynia",
+                Country = "Polska",
+                CreationDate = DateTime.Now,
             },
         };
 
@@ -120,7 +372,71 @@ public class DummyDataProvider
                 EmailAddress = "admin",
                 Password = "admin",
                 Type = WorkerType.bibliotekarz
-            }
+            },
+            new()
+            {
+                WorkerId = 4,
+                FirstName = "Katarzyna",
+                LastName = "Nowak",
+                EmailAddress = "kasia@gmail.com",
+                Password = "hasło123",
+                Type = WorkerType.bibliotekarz
+            },
+            new()
+            {
+                WorkerId = 5,
+                FirstName = "Michał",
+                LastName = "Kowalski",
+                EmailAddress = "michal@gmail.com",
+                Password = "pass123",
+                Type = WorkerType.obsługa
+            },
+            new()
+            {
+                WorkerId = 6,
+                FirstName = "Robert",
+                LastName = "Makłowicz",
+                EmailAddress = "Robert@gmail.com",
+                Password = "Robert",
+                Type = WorkerType.obsługa
+            },
+            new()
+            {
+                WorkerId = 7,
+                FirstName = "Jakub",
+                LastName = "Wójcik",
+                EmailAddress = "jakub@gmail.com",
+                Password = "jakubpass",
+                Type = WorkerType.bibliotekarz
+            },
+            new()
+            {
+                WorkerId = 8,
+                FirstName = "Iga",
+                LastName = "Świątek",
+                EmailAddress = "Paletka@gmail.com",
+                Password = "Paletka",
+                Type = WorkerType.bibliotekarz
+            },
+            new()
+            {
+                WorkerId = 9,
+                FirstName = "Robert",
+                LastName = "Lewandowski",
+                EmailAddress = "RobertRL9@gmail.com",
+                Password = "RobertRL9",
+                Type = WorkerType.bibliotekarz
+            },
+            new()
+            {
+                WorkerId = 10,
+                FirstName = "Oliwia",
+                LastName = "Szymańska",
+                EmailAddress = "oliwia@gmail.com",
+                Password = "oliwia123",
+                Type = WorkerType.obsługa
+            },
+
         };
 
         return workers;
@@ -368,7 +684,8 @@ public class DummyDataProvider
     public IEnumerable<BookBorrow> GetDummyBookBorrows()
     {
         var bookBorrows = new List<BookBorrow>()
-        {
+        {    
+            // Wypożyczenie 1 Daniel copy 10
             new()
             {
                 BookBorrowId = 1,
@@ -378,13 +695,13 @@ public class DummyDataProvider
                 Status = BorrowedBookStatus.Received,
                 UserId = 2,
                 User = findUser(2),
-                BookCopyId = 1,
-                BookCopy = findBookCopy(1),
+                BookCopyId = 10,
+                BookCopy = findBookCopy(10),
 
             },
+            // Wypożyczenie 2 Daniel copy 11
             new()
             {
-
 
                 BookBorrowId = 2,
                 StartDate = DateTime.Today,
@@ -393,13 +710,263 @@ public class DummyDataProvider
                 Status = BorrowedBookStatus.Received,
                 UserId = 2,
                 User = findUser(2),
-                BookCopyId = 30,
-                BookCopy = findBookCopy(1),
-
+                BookCopyId = 11,
+                BookCopy = findBookCopy(11),
 
             },
 
+            // Wypożyczenie 3 Daniel copy 12
+            new()
+            {
+                BookBorrowId = 3,
+                StartDate = DateTime.Today,
+                EndDate = DateTime.Today.AddDays(7),
+                IsActive = true,
+                Status = BorrowedBookStatus.Received,
+                UserId = 2,
+                User = findUser(2),
+                BookCopyId = 12,
+                BookCopy = findBookCopy(12),
 
+            },
+            // Wypożyczenie 4 Daniel copy 21
+            new()
+            {
+                BookBorrowId = 4,
+                StartDate = DateTime.Today,
+                EndDate = DateTime.Today.AddDays(7),
+                IsActive = true,
+                Status = BorrowedBookStatus.Received,
+                UserId = 2,
+                User = findUser(2),
+                BookCopyId = 21,
+                BookCopy = findBookCopy(21),
+
+            },
+            // Wypożyczenie 5 Daniel copy 25
+            new()
+            {
+                BookBorrowId = 5,
+                StartDate = DateTime.Today,
+                EndDate = DateTime.Today.AddDays(7),
+                IsActive = true,
+                Status = BorrowedBookStatus.Received,
+                UserId = 2,
+                User = findUser(2),
+                BookCopyId = 25,
+                BookCopy = findBookCopy(25),
+
+            },
+            // Wypożyczenie 6 Ola copy 26
+            new()
+            {
+                BookBorrowId = 6,
+                StartDate = DateTime.Today,
+                EndDate = DateTime.Today.AddDays(7),
+                IsActive = true,
+                Status = BorrowedBookStatus.Received,
+                UserId = 8,
+                User = findUser(8),
+                BookCopyId = 26,
+                BookCopy = findBookCopy(26),
+
+            },
+            // Wypożyczenie 7 Ola copy 11
+            new()
+            {
+                BookBorrowId = 7,
+                StartDate = DateTime.Today,
+                EndDate = DateTime.Today.AddDays(7),
+                IsActive = true,
+                Status = BorrowedBookStatus.Requested,
+                UserId = 8,
+                User = findUser(8),
+                BookCopyId = 11,
+                BookCopy = findBookCopy(11),
+
+            },
+            // Wypożyczenie 8 Ola copy 8
+            new()
+            {
+                BookBorrowId = 8,
+                StartDate = DateTime.Today,
+                EndDate = DateTime.Today.AddDays(7),
+                IsActive = true,
+                Status = BorrowedBookStatus.ReadyForPickup,
+                UserId = 8,
+                User = findUser(8),
+                BookCopyId = 8,
+                BookCopy = findBookCopy(8),
+
+            },
+            // Wypożyczenie 9 Ola copy 19
+            new()
+            {
+                BookBorrowId = 9,
+                StartDate = DateTime.Today,
+                EndDate = DateTime.Today.AddDays(7),
+                IsActive = true,
+                Status = BorrowedBookStatus.Returned,
+                UserId = 8,
+                User = findUser(8),
+                BookCopyId = 19,
+                BookCopy = findBookCopy(19),
+
+            },
+            // Wypożyczenie 10 KryNap copy 55
+            new()
+            {
+                BookBorrowId = 10,
+                StartDate = DateTime.Today,
+                EndDate = DateTime.Today.AddDays(7),
+                IsActive = true,
+                Status = BorrowedBookStatus.ReadyForReturn,
+                UserId = 9,
+                User = findUser(9),
+                BookCopyId = 55,
+                BookCopy = findBookCopy(55),
+
+            },
+            // Wypożyczenie 11 KryNap copy 33
+            new()
+            {
+                BookBorrowId = 11,
+                StartDate = DateTime.Today,
+                EndDate = DateTime.Today.AddDays(7),
+                IsActive = true,
+                Status = BorrowedBookStatus.Requested,
+                UserId = 9,
+                User = findUser(9),
+                BookCopyId = 33,
+                BookCopy = findBookCopy(33),
+
+            },
+            // Wypożyczenie 12 KryNap copy 22
+            new()
+            {
+                BookBorrowId = 12,
+                StartDate = DateTime.Today,
+                EndDate = DateTime.Today.AddDays(7),
+                IsActive = true,
+                Status = BorrowedBookStatus.Returned,
+                UserId = 9,
+                User = findUser(9),
+                BookCopyId = 22,
+                BookCopy = findBookCopy(22),
+
+            },
+            // Wypożyczenie 13 KryNap copy 16
+            new()
+            {
+                BookBorrowId = 13,
+                StartDate = DateTime.Today,
+                EndDate = DateTime.Today.AddDays(7),
+                IsActive = true,
+                Status = BorrowedBookStatus.ReadyForReturn,
+                UserId = 9,
+                User = findUser(9),
+                BookCopyId = 16,
+                BookCopy = findBookCopy(16),
+
+            },
+            // Wypożyczenie 14 KryNap copy 27
+            new()
+            {
+                BookBorrowId = 14,
+                StartDate = DateTime.Today,
+                EndDate = DateTime.Today.AddDays(7),
+                IsActive = true,
+                Status = BorrowedBookStatus.Received,
+                UserId = 9,
+                User = findUser(9),
+                BookCopyId = 27,
+                BookCopy = findBookCopy(27),
+
+            },
+            // Wypożyczenie 15 KryNap copy 49
+            new()
+            {
+                BookBorrowId = 15,
+                StartDate = DateTime.Today,
+                EndDate = DateTime.Today.AddDays(7),
+                IsActive = true,
+                Status = BorrowedBookStatus.Received,
+                UserId = 9,
+                User = findUser(9),
+                BookCopyId = 49,
+                BookCopy = findBookCopy(49),
+
+            },
+            // Wypożyczenie 16 KryNap copy 39 obsługuje RL9
+            new()
+            {
+                BookBorrowId = 16,
+                StartDate = DateTime.Today,
+                EndDate = DateTime.Today.AddDays(7),
+                IsActive = true,
+                Status = BorrowedBookStatus.Received,
+                UserId = 9,
+                User = findUser(9),
+                BookCopyId = 39,
+                BookCopy = findBookCopy(39),
+
+            },
+            // Wypożyczenie 17 KryNap copy 46 obsługuje RL9
+            new()
+            {
+                BookBorrowId = 17,
+                StartDate = DateTime.Today,
+                EndDate = DateTime.Today.AddDays(7),
+                IsActive = true,
+                Status = BorrowedBookStatus.Received,
+                UserId = 29,
+                User = findUser(9),
+                BookCopyId = 46,
+                BookCopy = findBookCopy(46),
+
+            },
+            // Wypożyczenie 18 KryNap copy 48 obsługuje RL9
+            new()
+            {
+                BookBorrowId = 18,
+                StartDate = DateTime.Today,
+                EndDate = DateTime.Today.AddDays(7),
+                IsActive = true,
+                Status = BorrowedBookStatus.Received,
+                UserId = 9,
+                User = findUser(9),
+                BookCopyId = 48,
+                BookCopy = findBookCopy(48),
+
+            },
+            // Wypożyczenie 19 KryNap copy 50 obsługuje RL9
+            new()
+            {
+                BookBorrowId = 19,
+                StartDate = DateTime.Today,
+                EndDate = DateTime.Today.AddDays(7),
+                IsActive = true,
+                Status = BorrowedBookStatus.Received,
+                UserId = 9,
+                User = findUser(9),
+                BookCopyId = 50,
+                BookCopy = findBookCopy(50),
+
+            },
+            // Wypożyczenie 20 KryNap copy 34 obsługuje RL9
+            new()
+            {
+                BookBorrowId = 20,
+                StartDate = DateTime.Today,
+                EndDate = DateTime.Today.AddDays(7),
+                IsActive = true,
+                Status = BorrowedBookStatus.Received,
+                UserId = 9,
+                User = findUser(9),
+                BookCopyId = 34,
+                BookCopy = findBookCopy(34),
+
+            },
 
 
         };
@@ -411,8 +978,11 @@ public class DummyDataProvider
     {
         var bookBorrows = new List<Penalty>()
         {
+
+            // Kara 1 dla wypożyczenia 1
             new()
             {
+
                 PenaltyId = 1,
                 Description = "Przekroczenie terminu",
                 Price = 10.0,
@@ -424,22 +994,142 @@ public class DummyDataProvider
                 Worker = findWorker(1),
 
             },
+
+            // Kara 2 dla wypożyczenia 9 Makłowicz
             new()
             {
 
                 PenaltyId = 2,
                 Description = "Uszkodzenie okładki",
-                Price = 10.0,
+                Price = 15.0,
                 ImpositionDate = DateTime.Today.AddDays(7),
                 IsPaid = false,
-                BookBorrowId = 2,
-                BookBorrow = findBookBorrow(1),
-                WorkerId = 1,
-                Worker = findWorker(1),
+                BookBorrowId = 9,
+                BookBorrow = findBookBorrow(9),
+                WorkerId = 6,
+                Worker = findWorker(6),
 
             },
+            // Kara 3 dla wypożyczenia 10 Makłowicz
+            new()
+            {
 
+                PenaltyId = 3,
+                Description = "Porysowana okładka",
+                Price = 19.0,
+                ImpositionDate = DateTime.Today.AddDays(7),
+                IsPaid = false,
+                BookBorrowId = 10,
+                BookBorrow = findBookBorrow(10),
+                WorkerId = 6,
+                Worker = findWorker(6),
 
+            },
+            // Kara 4 dla wypożyczenia 11 Paletka
+            new()
+            {
+
+                PenaltyId = 4,
+                Description = "Plamy na stronach, oraz wgnieciona okładka",
+                Price = 32.0,
+                ImpositionDate = DateTime.Today.AddDays(7),
+                IsPaid = false,
+                BookBorrowId = 11,
+                BookBorrow = findBookBorrow(11),
+                WorkerId = 8,
+                Worker = findWorker(8),
+
+            },
+            // Kara 5 dla wypożyczenia 12 Paletka
+            new()
+            {
+
+                PenaltyId = 5,
+                Description = "Zagięte strony i przecięte strony",
+                Price = 50.0,
+                ImpositionDate = DateTime.Today.AddDays(7),
+                IsPaid = false,
+                BookBorrowId = 12,
+                BookBorrow = findBookBorrow(12),
+                WorkerId = 8,
+                Worker = findWorker(8),
+
+            },
+            // Kara 6 dla wypożyczenia 16 RL9
+            new()
+            {
+
+                PenaltyId = 6,
+                Description = "Wyszczerbione krawędzie stron",
+                Price = 23.0,
+                ImpositionDate = DateTime.Today.AddDays(7),
+                IsPaid = false,
+                BookBorrowId = 16,
+                BookBorrow = findBookBorrow(16),
+                WorkerId = 9,
+                Worker = findWorker(9),
+
+            },
+            // Kara 7 dla wypożyczenia 17 RL9
+            new()
+            {
+
+                PenaltyId = 7,
+                Description = "Zniszczone boki książki oraz zaginione strony",
+                Price = 78.0,
+                ImpositionDate = DateTime.Today.AddDays(7),
+                IsPaid = false,
+                BookBorrowId = 17,
+                BookBorrow = findBookBorrow(17),
+                WorkerId = 9,
+                Worker = findWorker(9),
+
+            },
+            // Kara 8 dla wypożyczenia 18 RL9
+            new()
+            {
+
+                PenaltyId = 8,
+                Description = "Rozlane płyny na okładce i plamy na stronach",
+                Price = 34.0,
+                ImpositionDate = DateTime.Today.AddDays(7),
+                IsPaid = false,
+                BookBorrowId = 18,
+                BookBorrow = findBookBorrow(18),
+                WorkerId = 9,
+                Worker = findWorker(9),
+
+            },
+            // Kara 9 dla wypożyczenia 19 RL9
+            new()
+            {
+
+                PenaltyId = 9,
+                Description = "Zaginione strony oraz rozdarta okładka",
+                Price = 54.0,
+                ImpositionDate = DateTime.Today.AddDays(7),
+                IsPaid = false,
+                BookBorrowId = 19,
+                BookBorrow = findBookBorrow(19),
+                WorkerId = 9,
+                Worker = findWorker(9),
+
+            },
+            // Kara 10 dla wypożyczenia 20 RL9
+            new()
+            {
+
+                PenaltyId = 10,
+                Description = "Pogniecione strony oraz poplamione strony",
+                Price = 37.0,
+                ImpositionDate = DateTime.Today.AddDays(7),
+                IsPaid = false,
+                BookBorrowId = 20,
+                BookBorrow = findBookBorrow(20),
+                WorkerId = 9,
+                Worker = findWorker(9),
+
+            },
 
 
         };
