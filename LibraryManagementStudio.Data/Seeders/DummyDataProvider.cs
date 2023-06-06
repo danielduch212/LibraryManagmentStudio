@@ -385,6 +385,18 @@ public class DummyDataProvider
             new()
             {
 
+
+                BookBorrowId = 2,
+                StartDate = DateTime.Today,
+                EndDate = DateTime.Today.AddDays(7),
+                IsActive = true,
+                Status = BorrowedBookStatus.Received,
+                UserId = 2,
+                User = findUser(2),
+                BookCopyId = 30,
+                BookCopy = findBookCopy(1),
+
+
             },
 
 
@@ -414,6 +426,16 @@ public class DummyDataProvider
             },
             new()
             {
+
+                PenaltyId = 2,
+                Description = "Uszkodzenie okładki",
+                Price = 10.0,
+                ImpositionDate = DateTime.Today.AddDays(7),
+                IsPaid = false,
+                BookBorrowId = 2,
+                BookBorrow = findBookBorrow(1),
+                WorkerId = 1,
+                Worker = findWorker(1),
 
             },
 
