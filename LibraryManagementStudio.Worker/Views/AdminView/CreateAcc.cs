@@ -52,6 +52,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             if(textBoxName.Text != "" || textBoxSurname.Text != "" || textBoxEmail.Text != "" || textBoxCode.Text !="" || textBoxLocation.Text != "" )
             {
                 DateTime today = DateTime.Today;
+                
                 user = new User()
                 {
                     FirstName = textBoxName.Text,
@@ -71,6 +72,14 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
                 };
                 service.CreateUser(user);
+                MessageBox.Show("Dodano nowego uzytkownika", "Informacja");
+                textBoxName.Text = "";
+                textBoxSurname.Text = "";
+                textBoxEmail.Text = "";
+                textBoxCity.Text = "";
+                textBoxPassword.Text = "";
+                textBoxCode.Text = "";
+                textBoxLocation.Text = "";
                 panelAutorize.Visible = false;
             }
             

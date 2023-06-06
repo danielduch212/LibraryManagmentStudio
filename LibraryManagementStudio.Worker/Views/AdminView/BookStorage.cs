@@ -181,6 +181,12 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void okButtonCopies_Click(object sender, EventArgs e)
         {
+            int selectedRowIndex = bookDataGridView.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = bookDataGridView.Rows[selectedRowIndex];
+
+            int bookId = Convert.ToInt32(selectedRow.Cells["BookId"].Value);
+
+            book = service.getBookFromId(bookId);
             var howManyCopies = Int32.Parse(textBoxCopiesAdd.Text);
             service.AddBookCopies(book,howManyCopies);
             books = service.GetBooks();
@@ -206,7 +212,14 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         private void eraseCopyButton_Click(object sender, EventArgs e)
         {
             var id = Int32.Parse(textBoxCopyIDToErase.Text);
+            if (service.findBookCopy(id) == null)
+            {
+                MessageBox.Show("Podana kopia nie istnieje", "Ostrzezenie");
+                return;
+            }
             service.EraseCopy(id);
+            textBoxCopyIDToErase.Text = "";
+            
             books = service.GetBooks();
             SetupBooksView();
 
@@ -249,6 +262,11 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         private void bookDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void clearSearchButton_Click(object sender, EventArgs e)
+        {
+            searchBooksTextBox.Text = "";
         }
     }
 }

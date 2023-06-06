@@ -42,9 +42,9 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             penaltyGridView.DataSource = bindingSource;
 
             penaltyGridView.Columns["PenaltyId"]!.HeaderText = "Id";
-            //penaltyGridView.Columns["PenaltyId"]!.Width = 10;
+            
             penaltyGridView.Columns["WorkerId"]!.HeaderText = "Id Pracownika";
-            //penaltyGridView.Columns["WorkerId"]!.Width = 15;
+
             penaltyGridView.Columns["UserId"]!.HeaderText = "Id Użytkownika";
             //penaltyGridView.Columns["UserId"]!.Width = 15;
             penaltyGridView.Columns["UserFirstName"]!.HeaderText = "Imie";
@@ -108,12 +108,20 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         {
             if(penaltyGridView.SelectedRows.Count > 0)
             {
-                var stringData = penaltyGridView.SelectedRows.ToString();
+                
                 int selectedRowIndex = penaltyGridView.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = penaltyGridView.Rows[selectedRowIndex];
-                var penalty = service.getPenaltyFromId(selectedRow.Cells[0].Value.ToString());
+
+                int penaltyId = Convert.ToInt32(selectedRow.Cells["PenaltyId"].Value);
+                var penalty = service.getPenaltyFromId(penaltyId);
+                
                 if(penalty == null)
                 {
+                    return;
+                }
+                if(penalty.IsPaid == true)
+                {
+                    MessageBox.Show("Nie mozna oplacac oplaconych kar!", "Ostrzezenie");
                     return;
                 }
                 service.ErasePenalty(penalty);

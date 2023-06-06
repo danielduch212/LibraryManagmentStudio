@@ -3,6 +3,7 @@ using LibraryManagementStudio.Data.Models;
 using LibraryManagementStudio.Worker.Dtos.Book;
 using LibraryManagementStudio.Worker.Services.Intrefaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace LibraryManagementStudio.Worker.Services;
 
@@ -66,7 +67,7 @@ public class WorkerBookService : IWorkerBookService
             PublishDate = x.PublishDate,
             Category = x.Category,
             BookCopiesCount = x.BookCopies.Count(),
-            AvailibleBookCopiesCount = x.BookCopies.Count(y => y.IsAvailable)
+            AvailibleBookCopiesCount = x.BookCopies.Count(y => y.IsAvailable==true && y.IsActive==true)
 
         });
         
@@ -166,6 +167,12 @@ public class WorkerBookService : IWorkerBookService
         return query.ToList();
     }
 
+    public BookCopy findBookCopy(int id)
+    {
+        var query = _dbContext.BookCopies
+            .FirstOrDefault(x => x.BookCopyId==id && x.IsActive == true);
+        return query; 
+    }
     public void returnBookBorrow(int id)
     {
         
@@ -178,7 +185,7 @@ public class WorkerBookService : IWorkerBookService
         query.BookCopy.IsAvailable = true;
         
     }
-    public List<Worker.Dtos.BookBorrow.BookBorrowToShow> GetUsersBorrowedBooks(User user)
+    public List<Worker.Dtos.BookBorrow.BookBorrowToShow> GetUsersBorrowedBooks(LibraryManagementStudio.Data.Models.User user)
     {
         var query = _dbContext.BookBorrows
            .Where(x => x.User == user && x.IsActive == true)
@@ -200,7 +207,7 @@ public class WorkerBookService : IWorkerBookService
     public BookBorrow getBookBorrow(int id)
     {
         var query = _dbContext.BookBorrows
-            .FirstOrDefault(x => x.BookBorrowId.Equals(id));
+            .FirstOrDefault(x => x.BookBorrowId==id);
         return query;
          
 

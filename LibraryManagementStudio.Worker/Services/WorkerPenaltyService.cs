@@ -107,10 +107,10 @@ namespace LibraryManagementStudio.Worker.Services
             bookBorrow.Penalty = penalty;
         }
         
-        public Penalty getPenaltyFromId(string id)
+        public Penalty getPenaltyFromId(int id)
         {
             var query = _dbContext.Penalties
-                .FirstOrDefault(x => x.PenaltyId == Int32.Parse(id));
+                .FirstOrDefault(x => x.PenaltyId == id);
             return query;
         }
 
