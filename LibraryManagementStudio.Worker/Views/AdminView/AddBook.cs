@@ -27,8 +27,8 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             ViewStyleHelper.MaximizeUserControl(this);
             bookService = new WorkerBookService(dbContext);
             publisherAuthorService = new PublisherAuthorService(dbContext);
-            this.worker= worker;
-            
+            this.worker = worker;
+
             panelNewPublisher.Visible = false;
             panelAuthor.Visible = false;
             SetData();
@@ -75,18 +75,18 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
 
                 //sprawdzacz cyfer
-              
+
                 if (!int.TryParse(textBoxCopies.Text, out int number))
                 {
                     MessageBox.Show("Podaj dobra wartosc liczby kopii!", "Ostrzezenie");
                     return;
 
                 }
-                
+
 
                 int copyCounts = Int32.Parse(textBoxCopies.Text);
-                ICollection<BookCopy> bookCopies= new List<BookCopy>();
-                
+                ICollection<BookCopy> bookCopies = new List<BookCopy>();
+
                 Book book = new Book()
                 {
                     IsActive = true,
@@ -135,9 +135,9 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         private void anotherAuthorButton_Click(object sender, EventArgs e)
         {
             SetPanelLocation(panelAuthor);
-            panelNewPublisher.Visible= false;
+            panelNewPublisher.Visible = false;
             panelAuthor.Visible = true;
-            
+
         }
 
         private void anotherPublisherButton_Click(object sender, EventArgs e)
@@ -146,12 +146,12 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             SetPanelLocation(panelNewPublisher);
             panelAuthor.Visible = false;
             panelNewPublisher.Visible = true;
-            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(textBoxNewAuthor.Text != "")
+            if (textBoxNewAuthor.Text != "")
             {
                 comboBoxAuthor.Items.Clear();
                 publisherAuthorService.AddAuthor(textBoxNewAuthor.Text);
@@ -173,7 +173,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void cancelNewPublisher_Click(object sender, EventArgs e)
         {
-            panelNewPublisher.Visible=false;
+            panelNewPublisher.Visible = false;
         }
 
         private void cancelNewAuthor_Click(object sender, EventArgs e)

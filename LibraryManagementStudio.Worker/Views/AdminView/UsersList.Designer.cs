@@ -28,377 +28,351 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.usersDataGridView = new System.Windows.Forms.DataGridView();
-            this.showUserPanel = new System.Windows.Forms.Panel();
-            this.labelAllBorrows = new System.Windows.Forms.Label();
-            this.labelCUrrentBorrwedBooks = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.labelCity = new System.Windows.Forms.Label();
-            this.labelEmail = new System.Windows.Forms.Label();
-            this.labelSurname = new System.Windows.Forms.Label();
-            this.labelUserName = new System.Windows.Forms.Label();
-            this.ReturnBook = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cancelShowDataButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.showUserDataGridView = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.clearSearchButton = new System.Windows.Forms.Button();
-            this.searchBooksTextBox = new System.Windows.Forms.TextBox();
-            this.searchBooksButton = new System.Windows.Forms.Button();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).BeginInit();
-            this.showUserPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.showUserDataGridView)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
+            panel2 = new Panel();
+            usersDataGridView = new DataGridView();
+            showUserPanel = new Panel();
+            ReturnBook = new Button();
+            cancelShowDataButton = new Button();
+            showUserDataGridView = new DataGridView();
+            panel1 = new Panel();
+            button4 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            clearSearchButton = new Button();
+            searchBooksTextBox = new TextBox();
+            searchBooksButton = new Button();
+            panel3 = new Panel();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            labelUserName = new Label();
+            labelSurname = new Label();
+            labelEmail = new Label();
+            labelCity = new Label();
+            labelCUrrentBorrwedBooks = new Label();
+            label11 = new Label();
+            labelAllBorrows = new Label();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)usersDataGridView).BeginInit();
+            showUserPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)showUserDataGridView).BeginInit();
+            panel1.SuspendLayout();
+            panel3.SuspendLayout();
+            SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.usersDataGridView);
-            this.panel2.Location = new System.Drawing.Point(0, 72);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1410, 581);
-            this.panel2.TabIndex = 6;
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel2.Controls.Add(usersDataGridView);
+            panel2.Location = new Point(0, 96);
+            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1611, 775);
+            panel2.TabIndex = 6;
             // 
             // usersDataGridView
             // 
-            this.usersDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.usersDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.usersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.usersDataGridView.Location = new System.Drawing.Point(3, 0);
-            this.usersDataGridView.Name = "usersDataGridView";
-            this.usersDataGridView.ReadOnly = true;
-            this.usersDataGridView.RowHeadersWidth = 51;
-            this.usersDataGridView.RowTemplate.Height = 25;
-            this.usersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.usersDataGridView.Size = new System.Drawing.Size(1405, 581);
-            this.usersDataGridView.TabIndex = 0;
+            usersDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            usersDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            usersDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            usersDataGridView.Location = new Point(3, 0);
+            usersDataGridView.Margin = new Padding(3, 4, 3, 4);
+            usersDataGridView.Name = "usersDataGridView";
+            usersDataGridView.ReadOnly = true;
+            usersDataGridView.RowHeadersWidth = 51;
+            usersDataGridView.RowTemplate.Height = 25;
+            usersDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            usersDataGridView.Size = new Size(1606, 775);
+            usersDataGridView.TabIndex = 0;
             // 
             // showUserPanel
             // 
-            this.showUserPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.showUserPanel.Controls.Add(this.labelAllBorrows);
-            this.showUserPanel.Controls.Add(this.labelCUrrentBorrwedBooks);
-            this.showUserPanel.Controls.Add(this.label11);
-            this.showUserPanel.Controls.Add(this.label10);
-            this.showUserPanel.Controls.Add(this.labelCity);
-            this.showUserPanel.Controls.Add(this.labelEmail);
-            this.showUserPanel.Controls.Add(this.labelSurname);
-            this.showUserPanel.Controls.Add(this.labelUserName);
-            this.showUserPanel.Controls.Add(this.ReturnBook);
-            this.showUserPanel.Controls.Add(this.label5);
-            this.showUserPanel.Controls.Add(this.label4);
-            this.showUserPanel.Controls.Add(this.label3);
-            this.showUserPanel.Controls.Add(this.label2);
-            this.showUserPanel.Controls.Add(this.cancelShowDataButton);
-            this.showUserPanel.Controls.Add(this.label1);
-            this.showUserPanel.Controls.Add(this.showUserDataGridView);
-            this.showUserPanel.Location = new System.Drawing.Point(0, 0);
-            this.showUserPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.showUserPanel.Name = "showUserPanel";
-            this.showUserPanel.Size = new System.Drawing.Size(1408, 670);
-            this.showUserPanel.TabIndex = 17;
-            // 
-            // labelAllBorrows
-            // 
-            this.labelAllBorrows.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelAllBorrows.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelAllBorrows.Location = new System.Drawing.Point(757, 238);
-            this.labelAllBorrows.Name = "labelAllBorrows";
-            this.labelAllBorrows.Size = new System.Drawing.Size(177, 25);
-            this.labelAllBorrows.TabIndex = 20;
-            this.labelAllBorrows.Text = "Dane uzytkownika";
-            // 
-            // labelCUrrentBorrwedBooks
-            // 
-            this.labelCUrrentBorrwedBooks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelCUrrentBorrwedBooks.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelCUrrentBorrwedBooks.Location = new System.Drawing.Point(757, 208);
-            this.labelCUrrentBorrwedBooks.Name = "labelCUrrentBorrwedBooks";
-            this.labelCUrrentBorrwedBooks.Size = new System.Drawing.Size(177, 25);
-            this.labelCUrrentBorrwedBooks.TabIndex = 19;
-            this.labelCUrrentBorrwedBooks.Text = "Dane uzytkownika";
-            // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(395, 238);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(297, 25);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "Lacznie wypozyczonych ksiazek:";
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(395, 208);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(291, 25);
-            this.label10.TabIndex = 17;
-            this.label10.Text = "Aktualnie wypozyczone ksiazki:";
-            // 
-            // labelCity
-            // 
-            this.labelCity.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelCity.Location = new System.Drawing.Point(757, 178);
-            this.labelCity.Name = "labelCity";
-            this.labelCity.Size = new System.Drawing.Size(177, 25);
-            this.labelCity.TabIndex = 16;
-            this.labelCity.Text = "Dane uzytkownika";
-            // 
-            // labelEmail
-            // 
-            this.labelEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelEmail.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelEmail.Location = new System.Drawing.Point(757, 146);
-            this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(177, 25);
-            this.labelEmail.TabIndex = 15;
-            this.labelEmail.Text = "Dane uzytkownika";
-            // 
-            // labelSurname
-            // 
-            this.labelSurname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelSurname.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelSurname.Location = new System.Drawing.Point(757, 110);
-            this.labelSurname.Name = "labelSurname";
-            this.labelSurname.Size = new System.Drawing.Size(177, 25);
-            this.labelSurname.TabIndex = 14;
-            this.labelSurname.Text = "Dane uzytkownika";
-            // 
-            // labelUserName
-            // 
-            this.labelUserName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelUserName.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelUserName.Location = new System.Drawing.Point(757, 75);
-            this.labelUserName.Name = "labelUserName";
-            this.labelUserName.Size = new System.Drawing.Size(177, 25);
-            this.labelUserName.TabIndex = 13;
-            this.labelUserName.Text = "Dane uzytkownika";
+            showUserPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            showUserPanel.Controls.Add(panel3);
+            showUserPanel.Controls.Add(ReturnBook);
+            showUserPanel.Controls.Add(cancelShowDataButton);
+            showUserPanel.Controls.Add(showUserDataGridView);
+            showUserPanel.Location = new Point(0, 0);
+            showUserPanel.Name = "showUserPanel";
+            showUserPanel.Size = new Size(1609, 893);
+            showUserPanel.TabIndex = 17;
             // 
             // ReturnBook
             // 
-            this.ReturnBook.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.ReturnBook.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ReturnBook.Location = new System.Drawing.Point(838, 593);
-            this.ReturnBook.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ReturnBook.Name = "ReturnBook";
-            this.ReturnBook.Size = new System.Drawing.Size(81, 31);
-            this.ReturnBook.TabIndex = 12;
-            this.ReturnBook.Text = "Zwroc Ksiazke";
-            this.ReturnBook.UseVisualStyleBackColor = true;
-            this.ReturnBook.Click += new System.EventHandler(this.ReturnBook_Click);
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(395, 178);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 25);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Miasto:";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(395, 146);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 25);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Email:";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(395, 110);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 25);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Nazwisko:";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(395, 75);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 25);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Imie:";
+            ReturnBook.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            ReturnBook.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            ReturnBook.Location = new Point(926, 799);
+            ReturnBook.Name = "ReturnBook";
+            ReturnBook.Size = new Size(93, 41);
+            ReturnBook.TabIndex = 12;
+            ReturnBook.Text = "Zwroc Ksiazke";
+            ReturnBook.UseVisualStyleBackColor = true;
+            ReturnBook.Click += ReturnBook_Click;
             // 
             // cancelShowDataButton
             // 
-            this.cancelShowDataButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelShowDataButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cancelShowDataButton.Location = new System.Drawing.Point(468, 593);
-            this.cancelShowDataButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cancelShowDataButton.Name = "cancelShowDataButton";
-            this.cancelShowDataButton.Size = new System.Drawing.Size(88, 31);
-            this.cancelShowDataButton.TabIndex = 7;
-            this.cancelShowDataButton.Text = "Cofnij";
-            this.cancelShowDataButton.UseVisualStyleBackColor = true;
-            this.cancelShowDataButton.Click += new System.EventHandler(this.cancelShowDataButton_Click);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(634, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 25);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Dane uzytkownika";
+            cancelShowDataButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            cancelShowDataButton.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            cancelShowDataButton.Location = new Point(503, 799);
+            cancelShowDataButton.Name = "cancelShowDataButton";
+            cancelShowDataButton.Size = new Size(101, 41);
+            cancelShowDataButton.TabIndex = 7;
+            cancelShowDataButton.Text = "Cofnij";
+            cancelShowDataButton.UseVisualStyleBackColor = true;
+            cancelShowDataButton.Click += cancelShowDataButton_Click;
             // 
             // showUserDataGridView
             // 
-            this.showUserDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.showUserDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.showUserDataGridView.Location = new System.Drawing.Point(0, 276);
-            this.showUserDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.showUserDataGridView.MultiSelect = false;
-            this.showUserDataGridView.Name = "showUserDataGridView";
-            this.showUserDataGridView.RowHeadersWidth = 51;
-            this.showUserDataGridView.RowTemplate.Height = 29;
-            this.showUserDataGridView.Size = new System.Drawing.Size(1408, 304);
-            this.showUserDataGridView.TabIndex = 5;
+            showUserDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            showUserDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            showUserDataGridView.Location = new Point(160, 503);
+            showUserDataGridView.MultiSelect = false;
+            showUserDataGridView.Name = "showUserDataGridView";
+            showUserDataGridView.RowHeadersWidth = 51;
+            showUserDataGridView.RowTemplate.Height = 29;
+            showUserDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            showUserDataGridView.Size = new Size(1333, 243);
+            showUserDataGridView.TabIndex = 5;
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.clearSearchButton);
-            this.panel1.Controls.Add(this.searchBooksTextBox);
-            this.panel1.Controls.Add(this.searchBooksButton);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1410, 66);
-            this.panel1.TabIndex = 4;
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.Controls.Add(button4);
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(button3);
+            panel1.Controls.Add(clearSearchButton);
+            panel1.Controls.Add(searchBooksTextBox);
+            panel1.Controls.Add(searchBooksButton);
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1611, 88);
+            panel1.TabIndex = 4;
             // 
             // button4
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(1042, 23);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(155, 23);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "Pokaz";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            button4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button4.Location = new Point(1191, 31);
+            button4.Margin = new Padding(3, 4, 3, 4);
+            button4.Name = "button4";
+            button4.Size = new Size(177, 31);
+            button4.TabIndex = 16;
+            button4.Text = "Pokaz";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button2
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(880, 17);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(28, 37);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "x";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button2.BackColor = Color.Red;
+            button2.Cursor = Cursors.Hand;
+            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(1006, 23);
+            button2.Name = "button2";
+            button2.Size = new Size(32, 49);
+            button2.TabIndex = 15;
+            button2.Text = "x";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(757, 23);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(117, 24);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "Szukaj";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            button3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button3.Cursor = Cursors.Hand;
+            button3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.Location = new Point(865, 31);
+            button3.Name = "button3";
+            button3.Size = new Size(134, 32);
+            button3.TabIndex = 14;
+            button3.Text = "Szukaj";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // clearSearchButton
             // 
-            this.clearSearchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.clearSearchButton.BackColor = System.Drawing.Color.Red;
-            this.clearSearchButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.clearSearchButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.clearSearchButton.ForeColor = System.Drawing.Color.White;
-            this.clearSearchButton.Location = new System.Drawing.Point(1726, 25);
-            this.clearSearchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.clearSearchButton.Name = "clearSearchButton";
-            this.clearSearchButton.Size = new System.Drawing.Size(25, 22);
-            this.clearSearchButton.TabIndex = 10;
-            this.clearSearchButton.Text = "x";
-            this.clearSearchButton.UseVisualStyleBackColor = false;
+            clearSearchButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            clearSearchButton.BackColor = Color.Red;
+            clearSearchButton.Cursor = Cursors.Hand;
+            clearSearchButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            clearSearchButton.ForeColor = Color.White;
+            clearSearchButton.Location = new Point(1973, 33);
+            clearSearchButton.Name = "clearSearchButton";
+            clearSearchButton.Size = new Size(29, 29);
+            clearSearchButton.TabIndex = 10;
+            clearSearchButton.Text = "x";
+            clearSearchButton.UseVisualStyleBackColor = false;
             // 
             // searchBooksTextBox
             // 
-            this.searchBooksTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchBooksTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.searchBooksTextBox.Location = new System.Drawing.Point(17, 24);
-            this.searchBooksTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.searchBooksTextBox.MaximumSize = new System.Drawing.Size(376, 23);
-            this.searchBooksTextBox.Name = "searchBooksTextBox";
-            this.searchBooksTextBox.Size = new System.Drawing.Size(376, 23);
-            this.searchBooksTextBox.TabIndex = 8;
+            searchBooksTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            searchBooksTextBox.Cursor = Cursors.IBeam;
+            searchBooksTextBox.Location = new Point(19, 32);
+            searchBooksTextBox.MaximumSize = new Size(429, 23);
+            searchBooksTextBox.Name = "searchBooksTextBox";
+            searchBooksTextBox.Size = new Size(429, 23);
+            searchBooksTextBox.TabIndex = 8;
             // 
             // searchBooksButton
             // 
-            this.searchBooksButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchBooksButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.searchBooksButton.Location = new System.Drawing.Point(1639, 25);
-            this.searchBooksButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.searchBooksButton.Name = "searchBooksButton";
-            this.searchBooksButton.Size = new System.Drawing.Size(82, 22);
-            this.searchBooksButton.TabIndex = 9;
-            this.searchBooksButton.Text = "Szukaj";
-            this.searchBooksButton.UseVisualStyleBackColor = true;
+            searchBooksButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            searchBooksButton.Cursor = Cursors.Hand;
+            searchBooksButton.Location = new Point(1873, 33);
+            searchBooksButton.Name = "searchBooksButton";
+            searchBooksButton.Size = new Size(94, 29);
+            searchBooksButton.TabIndex = 9;
+            searchBooksButton.Text = "Szukaj";
+            searchBooksButton.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(labelAllBorrows);
+            panel3.Controls.Add(label11);
+            panel3.Controls.Add(labelCUrrentBorrwedBooks);
+            panel3.Controls.Add(labelCity);
+            panel3.Controls.Add(labelEmail);
+            panel3.Controls.Add(labelSurname);
+            panel3.Controls.Add(labelUserName);
+            panel3.Controls.Add(label5);
+            panel3.Controls.Add(label4);
+            panel3.Controls.Add(label3);
+            panel3.Controls.Add(label2);
+            panel3.Controls.Add(label1);
+            panel3.Location = new Point(160, 32);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(629, 408);
+            panel3.TabIndex = 21;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(29, 36);
+            label1.Name = "label1";
+            label1.Size = new Size(38, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Imię";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(29, 69);
+            label2.Name = "label2";
+            label2.Size = new Size(72, 20);
+            label2.TabIndex = 1;
+            label2.Text = "Nazwisko";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(29, 103);
+            label3.Name = "label3";
+            label3.Size = new Size(46, 20);
+            label3.TabIndex = 2;
+            label3.Text = "Email";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(29, 135);
+            label4.Name = "label4";
+            label4.Size = new Size(54, 20);
+            label4.TabIndex = 3;
+            label4.Text = "Miasto";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(29, 164);
+            label5.Name = "label5";
+            label5.Size = new Size(163, 20);
+            label5.TabIndex = 4;
+            label5.Text = "Aktualne wypożyczenia";
+            // 
+            // labelUserName
+            // 
+            labelUserName.AutoSize = true;
+            labelUserName.Location = new Point(269, 36);
+            labelUserName.Name = "labelUserName";
+            labelUserName.Size = new Size(50, 20);
+            labelUserName.TabIndex = 5;
+            labelUserName.Text = "label6";
+            // 
+            // labelSurname
+            // 
+            labelSurname.AutoSize = true;
+            labelSurname.Location = new Point(269, 69);
+            labelSurname.Name = "labelSurname";
+            labelSurname.Size = new Size(50, 20);
+            labelSurname.TabIndex = 6;
+            labelSurname.Text = "label7";
+            // 
+            // labelEmail
+            // 
+            labelEmail.AutoSize = true;
+            labelEmail.Location = new Point(269, 103);
+            labelEmail.Name = "labelEmail";
+            labelEmail.Size = new Size(50, 20);
+            labelEmail.TabIndex = 7;
+            labelEmail.Text = "label8";
+            // 
+            // labelCity
+            // 
+            labelCity.AutoSize = true;
+            labelCity.Location = new Point(269, 135);
+            labelCity.Name = "labelCity";
+            labelCity.Size = new Size(50, 20);
+            labelCity.TabIndex = 8;
+            labelCity.Text = "label9";
+            // 
+            // labelCUrrentBorrwedBooks
+            // 
+            labelCUrrentBorrwedBooks.AutoSize = true;
+            labelCUrrentBorrwedBooks.Location = new Point(269, 164);
+            labelCUrrentBorrwedBooks.Name = "labelCUrrentBorrwedBooks";
+            labelCUrrentBorrwedBooks.Size = new Size(58, 20);
+            labelCUrrentBorrwedBooks.TabIndex = 9;
+            labelCUrrentBorrwedBooks.Text = "label10";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(29, 193);
+            label11.Name = "label11";
+            label11.Size = new Size(169, 20);
+            label11.TabIndex = 10;
+            label11.Text = "Wszystkie wypożyczenia";
+            // 
+            // labelAllBorrows
+            // 
+            labelAllBorrows.AutoSize = true;
+            labelAllBorrows.Location = new Point(269, 193);
+            labelAllBorrows.Name = "labelAllBorrows";
+            labelAllBorrows.Size = new Size(58, 20);
+            labelAllBorrows.TabIndex = 11;
+            labelAllBorrows.Text = "label12";
             // 
             // UsersList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.showUserPanel);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
-            this.Name = "UsersList";
-            this.Size = new System.Drawing.Size(1410, 672);
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).EndInit();
-            this.showUserPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.showUserDataGridView)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(showUserPanel);
+            Controls.Add(panel1);
+            Controls.Add(panel2);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "UsersList";
+            Size = new Size(1611, 896);
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)usersDataGridView).EndInit();
+            showUserPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)showUserDataGridView).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -413,21 +387,21 @@
         private DataGridView usersDataGridView;
         private Button button4;
         private Panel showUserPanel;
+        private Button ReturnBook;
+        private Button cancelShowDataButton;
+        private DataGridView showUserDataGridView;
+        private Panel panel3;
         private Label labelAllBorrows;
-        private Label labelCUrrentBorrwedBooks;
         private Label label11;
-        private Label label10;
+        private Label labelCUrrentBorrwedBooks;
         private Label labelCity;
         private Label labelEmail;
         private Label labelSurname;
         private Label labelUserName;
-        private Button ReturnBook;
         private Label label5;
         private Label label4;
         private Label label3;
         private Label label2;
-        private Button cancelShowDataButton;
         private Label label1;
-        private DataGridView showUserDataGridView;
     }
 }

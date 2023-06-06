@@ -31,12 +31,14 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             ViewStyleHelper.MaximizeUserControl(this);
             this.publisherAuthorService = new PublisherAuthorService(dbContext);
             reportService = new ReportService(dbContext);
-            
+
             this.dbContext = dbContext;
             this.worker = worker;
             panelSelect1.Visible = false;
             panelSelect2.Visible = false;
             dataGridView.Visible = false;
+            countTB.Visible = false;
+            label11.Visible = false;
             panel2.Visible = false;
             SetData();
         }
@@ -44,6 +46,8 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         private void buttonRaport1_Click(object sender, EventArgs e)
         {
             panel2.Visible = false;
+            label11.Visible = false;
+            countTB.Visible = false;
             panelSelect2.Visible = false;
             dataGridView.Visible = false;
             panelSelect1.Visible = true;
@@ -59,7 +63,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void buttonGenerate1_Click(object sender, EventArgs e)
         {
-            if(textBoxUserId.Text != "")
+            if (textBoxUserId.Text != "")
             {
 
                 if (!int.TryParse(textBoxUserId.Text, out int number))
@@ -84,16 +88,13 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 dataGridView.Columns["Status"].HeaderText = "Status";
                 dataGridView.Columns["UserId"].HeaderText = "Id Użytkownika";
 
-                int totalCount = reportData1.Count;
-                string summaryText = "Ilość wszystkich wypożyczonych książek w podanym okresie: ";
-                string countText = totalCount.ToString();
+                countTB.Visible = true;
+                label11.Visible = true;
+                countTB.Text = reportData1.Count.ToString();
 
-                DataGridViewRow summaryRow = new DataGridViewRow();
-                summaryRow.CreateCells(dataGridView);
-                summaryRow.Cells[0].Value = summaryText;
-                summaryRow.Cells[1].Value = countText;
 
-                dataGridView.Rows.Add(summaryRow);
+
+
 
                 dataGridView.BackgroundColor = Color.White;
                 dataGridView.RowHeadersVisible = false;
@@ -109,9 +110,9 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void buttonGenerate2_Click(object sender, EventArgs e)
         {
-            if(comboBoxAvailibility.SelectedIndex != -1 || comboBoxCategory.SelectedIndex != -1 || comboBoxAuthor.SelectedIndex!= -1 || comboBoxPublisher.SelectedIndex != -1)
+            if (comboBoxAvailibility.SelectedIndex != -1 || comboBoxCategory.SelectedIndex != -1 || comboBoxAuthor.SelectedIndex != -1 || comboBoxPublisher.SelectedIndex != -1)
             {
-                
+
                 Author author;
                 Publisher publisher;
                 if (comboBoxCategory.Text == "Romance")
@@ -132,7 +133,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 {
                     availibility = false;
                 }
-                
+
                 author = reportService.findAuthor(comboBoxAuthor.Text);
                 if (author == null)
                 {
@@ -142,7 +143,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 publisher = reportService.findPublisher(comboBoxPublisher.Text);
                 if (publisher == null) { return; }
                 reportData2 = reportService.returnData(author, publisher, availibility, categoryType);
-                if(reportData2 == null) { return; }
+                if (reportData2 == null) { return; }
                 var bindingList = new BindingList<ReportData2>(reportData2);
                 var bindingSource = new BindingSource(bindingList, null);
 

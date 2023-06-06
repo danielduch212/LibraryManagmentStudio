@@ -28,418 +28,415 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button anotherAuthorButton;
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panelContent = new System.Windows.Forms.Panel();
-            this.panelAuthor = new System.Windows.Forms.Panel();
-            this.cancelNewAuthor = new System.Windows.Forms.Button();
-            this.alertLabelAuthor = new System.Windows.Forms.Label();
-            this.buttonNewAuthor = new System.Windows.Forms.Button();
-            this.textBoxNewAuthor = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.panelNewPublisher = new System.Windows.Forms.Panel();
-            this.cancelNewPublisher = new System.Windows.Forms.Button();
-            this.alertLabelPublisher = new System.Windows.Forms.Label();
-            this.buttonNewPublisher = new System.Windows.Forms.Button();
-            this.textBoxNewPublisher = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBoxCopies = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.btnAddBook = new System.Windows.Forms.Button();
-            this.anotherPublisherButton = new System.Windows.Forms.Button();
-            this.comboBoxPublisher = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.comboBoxAuthor = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBoxCategory = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dataTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.descriptionTextBox = new System.Windows.Forms.RichTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textTitle = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            anotherAuthorButton = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            this.panelContent.SuspendLayout();
-            this.panelAuthor.SuspendLayout();
-            this.panelNewPublisher.SuspendLayout();
-            this.SuspendLayout();
+            Button anotherAuthorButton;
+            label1 = new Label();
+            panel1 = new Panel();
+            panelContent = new Panel();
+            panelAuthor = new Panel();
+            cancelNewAuthor = new Button();
+            alertLabelAuthor = new Label();
+            buttonNewAuthor = new Button();
+            textBoxNewAuthor = new TextBox();
+            label11 = new Label();
+            label10 = new Label();
+            panelNewPublisher = new Panel();
+            cancelNewPublisher = new Button();
+            alertLabelPublisher = new Label();
+            buttonNewPublisher = new Button();
+            textBoxNewPublisher = new TextBox();
+            label13 = new Label();
+            label14 = new Label();
+            textBoxCopies = new TextBox();
+            label12 = new Label();
+            btnAddBook = new Button();
+            anotherPublisherButton = new Button();
+            comboBoxPublisher = new ComboBox();
+            label9 = new Label();
+            comboBoxAuthor = new ComboBox();
+            label8 = new Label();
+            comboBoxCategory = new ComboBox();
+            label7 = new Label();
+            dataTimePicker = new DateTimePicker();
+            label6 = new Label();
+            descriptionTextBox = new RichTextBox();
+            label5 = new Label();
+            textTitle = new TextBox();
+            label4 = new Label();
+            anotherAuthorButton = new Button();
+            panel1.SuspendLayout();
+            panelContent.SuspendLayout();
+            panelAuthor.SuspendLayout();
+            panelNewPublisher.SuspendLayout();
+            SuspendLayout();
             // 
             // anotherAuthorButton
             // 
-            anotherAuthorButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            anotherAuthorButton.Location = new System.Drawing.Point(768, 283);
+            anotherAuthorButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            anotherAuthorButton.Location = new Point(768, 283);
             anotherAuthorButton.Name = "anotherAuthorButton";
-            anotherAuthorButton.Size = new System.Drawing.Size(105, 23);
+            anotherAuthorButton.Size = new Size(143, 40);
             anotherAuthorButton.TabIndex = 6;
             anotherAuthorButton.Text = "Inne";
             anotherAuthorButton.UseVisualStyleBackColor = true;
-            anotherAuthorButton.Click += new System.EventHandler(this.anotherAuthorButton_Click);
+            anotherAuthorButton.Click += anotherAuthorButton_Click;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(439, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Dodaj ksiazke";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(439, 30);
+            label1.Name = "label1";
+            label1.Size = new Size(171, 32);
+            label1.TabIndex = 0;
+            label1.Text = "Dodaj ksiazke";
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(3, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1053, 92);
-            this.panel1.TabIndex = 1;
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(3, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1053, 92);
+            panel1.TabIndex = 1;
             // 
             // panelContent
             // 
-            this.panelContent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelContent.Controls.Add(this.panelAuthor);
-            this.panelContent.Controls.Add(this.panelNewPublisher);
-            this.panelContent.Controls.Add(this.textBoxCopies);
-            this.panelContent.Controls.Add(this.label12);
-            this.panelContent.Controls.Add(this.btnAddBook);
-            this.panelContent.Controls.Add(this.anotherPublisherButton);
-            this.panelContent.Controls.Add(this.comboBoxPublisher);
-            this.panelContent.Controls.Add(this.label9);
-            this.panelContent.Controls.Add(anotherAuthorButton);
-            this.panelContent.Controls.Add(this.comboBoxAuthor);
-            this.panelContent.Controls.Add(this.label8);
-            this.panelContent.Controls.Add(this.comboBoxCategory);
-            this.panelContent.Controls.Add(this.label7);
-            this.panelContent.Controls.Add(this.dataTimePicker);
-            this.panelContent.Controls.Add(this.label6);
-            this.panelContent.Controls.Add(this.descriptionTextBox);
-            this.panelContent.Controls.Add(this.label5);
-            this.panelContent.Controls.Add(this.textTitle);
-            this.panelContent.Controls.Add(this.label4);
-            this.panelContent.Location = new System.Drawing.Point(3, 98);
-            this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1053, 625);
-            this.panelContent.TabIndex = 2;
+            panelContent.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panelContent.Controls.Add(panelAuthor);
+            panelContent.Controls.Add(panelNewPublisher);
+            panelContent.Controls.Add(textBoxCopies);
+            panelContent.Controls.Add(label12);
+            panelContent.Controls.Add(btnAddBook);
+            panelContent.Controls.Add(anotherPublisherButton);
+            panelContent.Controls.Add(comboBoxPublisher);
+            panelContent.Controls.Add(label9);
+            panelContent.Controls.Add(anotherAuthorButton);
+            panelContent.Controls.Add(comboBoxAuthor);
+            panelContent.Controls.Add(label8);
+            panelContent.Controls.Add(comboBoxCategory);
+            panelContent.Controls.Add(label7);
+            panelContent.Controls.Add(dataTimePicker);
+            panelContent.Controls.Add(label6);
+            panelContent.Controls.Add(descriptionTextBox);
+            panelContent.Controls.Add(label5);
+            panelContent.Controls.Add(textTitle);
+            panelContent.Controls.Add(label4);
+            panelContent.Location = new Point(3, 98);
+            panelContent.Name = "panelContent";
+            panelContent.Size = new Size(1053, 625);
+            panelContent.TabIndex = 2;
             // 
             // panelAuthor
             // 
-            this.panelAuthor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelAuthor.Controls.Add(this.cancelNewAuthor);
-            this.panelAuthor.Controls.Add(this.alertLabelAuthor);
-            this.panelAuthor.Controls.Add(this.buttonNewAuthor);
-            this.panelAuthor.Controls.Add(this.textBoxNewAuthor);
-            this.panelAuthor.Controls.Add(this.label11);
-            this.panelAuthor.Controls.Add(this.label10);
-            this.panelAuthor.Location = new System.Drawing.Point(667, 389);
-            this.panelAuthor.Name = "panelAuthor";
-            this.panelAuthor.Size = new System.Drawing.Size(341, 214);
-            this.panelAuthor.TabIndex = 21;
+            panelAuthor.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panelAuthor.Controls.Add(cancelNewAuthor);
+            panelAuthor.Controls.Add(alertLabelAuthor);
+            panelAuthor.Controls.Add(buttonNewAuthor);
+            panelAuthor.Controls.Add(textBoxNewAuthor);
+            panelAuthor.Controls.Add(label11);
+            panelAuthor.Controls.Add(label10);
+            panelAuthor.Location = new Point(667, 389);
+            panelAuthor.Name = "panelAuthor";
+            panelAuthor.Size = new Size(341, 214);
+            panelAuthor.TabIndex = 21;
             // 
             // cancelNewAuthor
             // 
-            this.cancelNewAuthor.Location = new System.Drawing.Point(89, 130);
-            this.cancelNewAuthor.Name = "cancelNewAuthor";
-            this.cancelNewAuthor.Size = new System.Drawing.Size(75, 23);
-            this.cancelNewAuthor.TabIndex = 23;
-            this.cancelNewAuthor.Text = "Anuluj";
-            this.cancelNewAuthor.UseVisualStyleBackColor = true;
-            this.cancelNewAuthor.Click += new System.EventHandler(this.cancelNewAuthor_Click);
+            cancelNewAuthor.Location = new Point(89, 130);
+            cancelNewAuthor.Name = "cancelNewAuthor";
+            cancelNewAuthor.Size = new Size(75, 23);
+            cancelNewAuthor.TabIndex = 23;
+            cancelNewAuthor.Text = "Anuluj";
+            cancelNewAuthor.UseVisualStyleBackColor = true;
+            cancelNewAuthor.Click += cancelNewAuthor_Click;
             // 
             // alertLabelAuthor
             // 
-            this.alertLabelAuthor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.alertLabelAuthor.Location = new System.Drawing.Point(148, 52);
-            this.alertLabelAuthor.Name = "alertLabelAuthor";
-            this.alertLabelAuthor.Size = new System.Drawing.Size(52, 17);
-            this.alertLabelAuthor.TabIndex = 4;
-            this.alertLabelAuthor.Text = "Nazwa:";
+            alertLabelAuthor.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            alertLabelAuthor.Location = new Point(148, 52);
+            alertLabelAuthor.Name = "alertLabelAuthor";
+            alertLabelAuthor.Size = new Size(52, 17);
+            alertLabelAuthor.TabIndex = 4;
+            alertLabelAuthor.Text = "Nazwa:";
             // 
             // buttonNewAuthor
             // 
-            this.buttonNewAuthor.Location = new System.Drawing.Point(185, 130);
-            this.buttonNewAuthor.Name = "buttonNewAuthor";
-            this.buttonNewAuthor.Size = new System.Drawing.Size(75, 23);
-            this.buttonNewAuthor.TabIndex = 3;
-            this.buttonNewAuthor.Text = "Zatwierdz";
-            this.buttonNewAuthor.UseVisualStyleBackColor = true;
-            this.buttonNewAuthor.Click += new System.EventHandler(this.button2_Click);
+            buttonNewAuthor.Location = new Point(185, 130);
+            buttonNewAuthor.Name = "buttonNewAuthor";
+            buttonNewAuthor.Size = new Size(75, 23);
+            buttonNewAuthor.TabIndex = 3;
+            buttonNewAuthor.Text = "Zatwierdz";
+            buttonNewAuthor.UseVisualStyleBackColor = true;
+            buttonNewAuthor.Click += button2_Click;
             // 
             // textBoxNewAuthor
             // 
-            this.textBoxNewAuthor.Location = new System.Drawing.Point(67, 79);
-            this.textBoxNewAuthor.Name = "textBoxNewAuthor";
-            this.textBoxNewAuthor.Size = new System.Drawing.Size(251, 23);
-            this.textBoxNewAuthor.TabIndex = 2;
+            textBoxNewAuthor.Location = new Point(67, 79);
+            textBoxNewAuthor.Name = "textBoxNewAuthor";
+            textBoxNewAuthor.Size = new Size(251, 27);
+            textBoxNewAuthor.TabIndex = 2;
             // 
             // label11
             // 
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(9, 78);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(52, 17);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Nazwa:";
+            label11.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.Location = new Point(9, 78);
+            label11.Name = "label11";
+            label11.Size = new Size(52, 17);
+            label11.TabIndex = 1;
+            label11.Text = "Nazwa:";
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(94, 25);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(160, 20);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Dodaj nowego autora";
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.Location = new Point(94, 25);
+            label10.Name = "label10";
+            label10.Size = new Size(207, 25);
+            label10.TabIndex = 0;
+            label10.Text = "Dodaj nowego autora";
             // 
             // panelNewPublisher
             // 
-            this.panelNewPublisher.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelNewPublisher.Controls.Add(this.cancelNewPublisher);
-            this.panelNewPublisher.Controls.Add(this.alertLabelPublisher);
-            this.panelNewPublisher.Controls.Add(this.buttonNewPublisher);
-            this.panelNewPublisher.Controls.Add(this.textBoxNewPublisher);
-            this.panelNewPublisher.Controls.Add(this.label13);
-            this.panelNewPublisher.Controls.Add(this.label14);
-            this.panelNewPublisher.Location = new System.Drawing.Point(10, 394);
-            this.panelNewPublisher.Name = "panelNewPublisher";
-            this.panelNewPublisher.Size = new System.Drawing.Size(349, 223);
-            this.panelNewPublisher.TabIndex = 22;
+            panelNewPublisher.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panelNewPublisher.Controls.Add(cancelNewPublisher);
+            panelNewPublisher.Controls.Add(alertLabelPublisher);
+            panelNewPublisher.Controls.Add(buttonNewPublisher);
+            panelNewPublisher.Controls.Add(textBoxNewPublisher);
+            panelNewPublisher.Controls.Add(label13);
+            panelNewPublisher.Controls.Add(label14);
+            panelNewPublisher.Location = new Point(10, 394);
+            panelNewPublisher.Name = "panelNewPublisher";
+            panelNewPublisher.Size = new Size(349, 223);
+            panelNewPublisher.TabIndex = 22;
             // 
             // cancelNewPublisher
             // 
-            this.cancelNewPublisher.Location = new System.Drawing.Point(69, 130);
-            this.cancelNewPublisher.Name = "cancelNewPublisher";
-            this.cancelNewPublisher.Size = new System.Drawing.Size(75, 23);
-            this.cancelNewPublisher.TabIndex = 5;
-            this.cancelNewPublisher.Text = "Anuluj";
-            this.cancelNewPublisher.UseVisualStyleBackColor = true;
-            this.cancelNewPublisher.Click += new System.EventHandler(this.cancelNewPublisher_Click);
+            cancelNewPublisher.Location = new Point(69, 130);
+            cancelNewPublisher.Name = "cancelNewPublisher";
+            cancelNewPublisher.Size = new Size(75, 23);
+            cancelNewPublisher.TabIndex = 5;
+            cancelNewPublisher.Text = "Anuluj";
+            cancelNewPublisher.UseVisualStyleBackColor = true;
+            cancelNewPublisher.Click += cancelNewPublisher_Click;
             // 
             // alertLabelPublisher
             // 
-            this.alertLabelPublisher.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.alertLabelPublisher.Location = new System.Drawing.Point(148, 49);
-            this.alertLabelPublisher.Name = "alertLabelPublisher";
-            this.alertLabelPublisher.Size = new System.Drawing.Size(52, 17);
-            this.alertLabelPublisher.TabIndex = 4;
-            this.alertLabelPublisher.Text = "Nazwa:";
+            alertLabelPublisher.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            alertLabelPublisher.Location = new Point(148, 49);
+            alertLabelPublisher.Name = "alertLabelPublisher";
+            alertLabelPublisher.Size = new Size(52, 17);
+            alertLabelPublisher.TabIndex = 4;
+            alertLabelPublisher.Text = "Nazwa:";
             // 
             // buttonNewPublisher
             // 
-            this.buttonNewPublisher.Location = new System.Drawing.Point(182, 130);
-            this.buttonNewPublisher.Name = "buttonNewPublisher";
-            this.buttonNewPublisher.Size = new System.Drawing.Size(75, 23);
-            this.buttonNewPublisher.TabIndex = 3;
-            this.buttonNewPublisher.Text = "Zatwierdz";
-            this.buttonNewPublisher.UseVisualStyleBackColor = true;
-            this.buttonNewPublisher.Click += new System.EventHandler(this.buttonNewPublisher_Click);
+            buttonNewPublisher.Location = new Point(182, 130);
+            buttonNewPublisher.Name = "buttonNewPublisher";
+            buttonNewPublisher.Size = new Size(75, 23);
+            buttonNewPublisher.TabIndex = 3;
+            buttonNewPublisher.Text = "Zatwierdz";
+            buttonNewPublisher.UseVisualStyleBackColor = true;
+            buttonNewPublisher.Click += buttonNewPublisher_Click;
             // 
             // textBoxNewPublisher
             // 
-            this.textBoxNewPublisher.Location = new System.Drawing.Point(67, 79);
-            this.textBoxNewPublisher.Name = "textBoxNewPublisher";
-            this.textBoxNewPublisher.Size = new System.Drawing.Size(251, 23);
-            this.textBoxNewPublisher.TabIndex = 2;
+            textBoxNewPublisher.Location = new Point(67, 79);
+            textBoxNewPublisher.Name = "textBoxNewPublisher";
+            textBoxNewPublisher.Size = new Size(251, 27);
+            textBoxNewPublisher.TabIndex = 2;
             // 
             // label13
             // 
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(9, 78);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(52, 17);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "Nazwa:";
+            label13.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label13.Location = new Point(9, 78);
+            label13.Name = "label13";
+            label13.Size = new Size(52, 17);
+            label13.TabIndex = 1;
+            label13.Text = "Nazwa:";
             // 
             // label14
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(97, 18);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(181, 20);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Dodaj nowego Wydawce";
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label14.Location = new Point(97, 18);
+            label14.Name = "label14";
+            label14.Size = new Size(233, 25);
+            label14.TabIndex = 0;
+            label14.Text = "Dodaj nowego Wydawce";
             // 
             // textBoxCopies
             // 
-            this.textBoxCopies.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxCopies.Location = new System.Drawing.Point(467, 370);
-            this.textBoxCopies.Name = "textBoxCopies";
-            this.textBoxCopies.Size = new System.Drawing.Size(39, 23);
-            this.textBoxCopies.TabIndex = 23;
+            textBoxCopies.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            textBoxCopies.Location = new Point(467, 370);
+            textBoxCopies.Name = "textBoxCopies";
+            textBoxCopies.Size = new Size(39, 27);
+            textBoxCopies.TabIndex = 23;
             // 
             // label12
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(297, 370);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(105, 21);
-            this.label12.TabIndex = 22;
-            this.label12.Text = "Liczba kopii:";
+            label12.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label12.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label12.Location = new Point(240, 370);
+            label12.Name = "label12";
+            label12.Size = new Size(136, 42);
+            label12.TabIndex = 22;
+            label12.Text = "Liczba kopii:";
             // 
             // btnAddBook
             // 
-            this.btnAddBook.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddBook.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAddBook.Location = new System.Drawing.Point(365, 418);
-            this.btnAddBook.Name = "btnAddBook";
-            this.btnAddBook.Size = new System.Drawing.Size(260, 36);
-            this.btnAddBook.TabIndex = 6;
-            this.btnAddBook.Text = "Dodaj ksiazke";
-            this.btnAddBook.UseVisualStyleBackColor = true;
-            this.btnAddBook.Click += new System.EventHandler(this.btnAddBook_Click);
+            btnAddBook.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnAddBook.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAddBook.Location = new Point(365, 418);
+            btnAddBook.Name = "btnAddBook";
+            btnAddBook.Size = new Size(260, 36);
+            btnAddBook.TabIndex = 6;
+            btnAddBook.Text = "Dodaj ksiazke";
+            btnAddBook.UseVisualStyleBackColor = true;
+            btnAddBook.Click += btnAddBook_Click;
             // 
             // anotherPublisherButton
             // 
-            this.anotherPublisherButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.anotherPublisherButton.Location = new System.Drawing.Point(768, 329);
-            this.anotherPublisherButton.Name = "anotherPublisherButton";
-            this.anotherPublisherButton.Size = new System.Drawing.Size(105, 23);
-            this.anotherPublisherButton.TabIndex = 19;
-            this.anotherPublisherButton.Text = "Inne";
-            this.anotherPublisherButton.UseVisualStyleBackColor = true;
-            this.anotherPublisherButton.Click += new System.EventHandler(this.anotherPublisherButton_Click);
+            anotherPublisherButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            anotherPublisherButton.Location = new Point(768, 329);
+            anotherPublisherButton.Name = "anotherPublisherButton";
+            anotherPublisherButton.Size = new Size(143, 41);
+            anotherPublisherButton.TabIndex = 19;
+            anotherPublisherButton.Text = "Inne";
+            anotherPublisherButton.UseVisualStyleBackColor = true;
+            anotherPublisherButton.Click += anotherPublisherButton_Click;
             // 
             // comboBoxPublisher
             // 
-            this.comboBoxPublisher.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxPublisher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxPublisher.FormattingEnabled = true;
-            this.comboBoxPublisher.Location = new System.Drawing.Point(467, 327);
-            this.comboBoxPublisher.Name = "comboBoxPublisher";
-            this.comboBoxPublisher.Size = new System.Drawing.Size(272, 23);
-            this.comboBoxPublisher.TabIndex = 18;
+            comboBoxPublisher.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            comboBoxPublisher.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxPublisher.FormattingEnabled = true;
+            comboBoxPublisher.Location = new Point(467, 327);
+            comboBoxPublisher.Name = "comboBoxPublisher";
+            comboBoxPublisher.Size = new Size(272, 28);
+            comboBoxPublisher.TabIndex = 18;
             // 
             // label9
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(297, 331);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(123, 21);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Wydawnictwo:";
+            label9.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label9.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Location = new Point(240, 331);
+            label9.Name = "label9";
+            label9.Size = new Size(162, 39);
+            label9.TabIndex = 17;
+            label9.Text = "Wydawnictwo:";
             // 
             // comboBoxAuthor
             // 
-            this.comboBoxAuthor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxAuthor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxAuthor.FormattingEnabled = true;
-            this.comboBoxAuthor.Location = new System.Drawing.Point(467, 283);
-            this.comboBoxAuthor.Name = "comboBoxAuthor";
-            this.comboBoxAuthor.Size = new System.Drawing.Size(272, 23);
-            this.comboBoxAuthor.TabIndex = 16;
+            comboBoxAuthor.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            comboBoxAuthor.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxAuthor.FormattingEnabled = true;
+            comboBoxAuthor.Location = new Point(467, 283);
+            comboBoxAuthor.Name = "comboBoxAuthor";
+            comboBoxAuthor.Size = new Size(272, 28);
+            comboBoxAuthor.TabIndex = 16;
             // 
             // label8
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(297, 283);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(58, 21);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Autor:";
+            label8.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(240, 285);
+            label8.Name = "label8";
+            label8.Size = new Size(115, 46);
+            label8.TabIndex = 15;
+            label8.Text = "Autor:";
             // 
             // comboBoxCategory
             // 
-            this.comboBoxCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCategory.FormattingEnabled = true;
-            this.comboBoxCategory.Location = new System.Drawing.Point(467, 237);
-            this.comboBoxCategory.Name = "comboBoxCategory";
-            this.comboBoxCategory.Size = new System.Drawing.Size(272, 23);
-            this.comboBoxCategory.TabIndex = 14;
+            comboBoxCategory.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            comboBoxCategory.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxCategory.FormattingEnabled = true;
+            comboBoxCategory.Location = new Point(467, 237);
+            comboBoxCategory.Name = "comboBoxCategory";
+            comboBoxCategory.Size = new Size(272, 28);
+            comboBoxCategory.TabIndex = 14;
             // 
             // label7
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(297, 237);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 21);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Kategoria:";
+            label7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(240, 237);
+            label7.Name = "label7";
+            label7.Size = new Size(146, 46);
+            label7.TabIndex = 13;
+            label7.Text = "Kategoria:";
             // 
             // dataTimePicker
             // 
-            this.dataTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataTimePicker.Location = new System.Drawing.Point(467, 187);
-            this.dataTimePicker.Name = "dataTimePicker";
-            this.dataTimePicker.Size = new System.Drawing.Size(272, 23);
-            this.dataTimePicker.TabIndex = 12;
+            dataTimePicker.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            dataTimePicker.Location = new Point(467, 187);
+            dataTimePicker.Name = "dataTimePicker";
+            dataTimePicker.Size = new Size(272, 27);
+            dataTimePicker.TabIndex = 12;
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(297, 189);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(122, 21);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Data Wydania:";
+            label6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(237, 193);
+            label6.Name = "label6";
+            label6.Size = new Size(165, 33);
+            label6.TabIndex = 11;
+            label6.Text = "Data Wydania:";
             // 
             // descriptionTextBox
             // 
-            this.descriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.descriptionTextBox.Location = new System.Drawing.Point(472, 73);
-            this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(267, 96);
-            this.descriptionTextBox.TabIndex = 10;
-            this.descriptionTextBox.Text = "";
+            descriptionTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            descriptionTextBox.Location = new Point(472, 73);
+            descriptionTextBox.Name = "descriptionTextBox";
+            descriptionTextBox.Size = new Size(267, 96);
+            descriptionTextBox.TabIndex = 10;
+            descriptionTextBox.Text = "";
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(297, 73);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 21);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Opis:";
+            label5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(233, 73);
+            label5.Name = "label5";
+            label5.Size = new Size(95, 38);
+            label5.TabIndex = 8;
+            label5.Text = "Opis:";
             // 
             // textTitle
             // 
-            this.textTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textTitle.Location = new System.Drawing.Point(472, 39);
-            this.textTitle.Name = "textTitle";
-            this.textTitle.Size = new System.Drawing.Size(267, 23);
-            this.textTitle.TabIndex = 7;
+            textTitle.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            textTitle.Location = new Point(472, 39);
+            textTitle.Name = "textTitle";
+            textTitle.Size = new Size(267, 27);
+            textTitle.TabIndex = 7;
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(297, 39);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 21);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Tytul:";
+            label4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(233, 45);
+            label4.Name = "label4";
+            label4.Size = new Size(122, 28);
+            label4.TabIndex = 6;
+            label4.Text = "Tytul:";
             // 
             // AddBook
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.AutoSize = true;
-            this.Controls.Add(this.panelContent);
-            this.Controls.Add(this.panel1);
-            this.Name = "AddBook";
-            this.Size = new System.Drawing.Size(1059, 726);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panelContent.ResumeLayout(false);
-            this.panelContent.PerformLayout();
-            this.panelAuthor.ResumeLayout(false);
-            this.panelAuthor.PerformLayout();
-            this.panelNewPublisher.ResumeLayout(false);
-            this.panelNewPublisher.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleMode = AutoScaleMode.None;
+            AutoSize = true;
+            Controls.Add(panelContent);
+            Controls.Add(panel1);
+            Name = "AddBook";
+            Size = new Size(1059, 726);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panelContent.ResumeLayout(false);
+            panelContent.PerformLayout();
+            panelAuthor.ResumeLayout(false);
+            panelAuthor.PerformLayout();
+            panelNewPublisher.ResumeLayout(false);
+            panelNewPublisher.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

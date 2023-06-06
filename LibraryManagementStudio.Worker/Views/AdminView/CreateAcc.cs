@@ -26,7 +26,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             this.dbContext = dbContext;
             this.worker = worker;
             this.service = new AdminUserService(dbContext);
-            panelAutorize.Visible = false;
+            
             alertLabel.Visible = false;
         }
 
@@ -34,31 +34,15 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         {
             alertLabel.Visible = false;
             if (textBoxName.Text != "" || textBoxSurname.Text != "" || textBoxEmail.Text != "" || textBoxCode.Text != "" || textBoxLocation.Text != "")
-                panelAutorize.Visible = true;
-            else
-            {
-                alertLabel.Text = "Podane dane sa bledne!";
-                alertLabel.Visible = true;
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            panelAutorize.Visible = false;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if(textBoxName.Text != "" || textBoxSurname.Text != "" || textBoxEmail.Text != "" || textBoxCode.Text !="" || textBoxLocation.Text != "" )
             {
                 DateTime today = DateTime.Today;
-                
+
                 user = new User()
                 {
                     FirstName = textBoxName.Text,
                     LastName = textBoxSurname.Text,
-                    EmailAddress= textBoxEmail.Text,
-                    Password= textBoxPassword.Text,
+                    EmailAddress = textBoxEmail.Text,
+                    Password = textBoxPassword.Text,
                     DateOfBirth = dateTimePicker.Value,
                     Street = textBoxLocation.Text,
                     City = textBoxCity.Text,
@@ -80,9 +64,29 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 textBoxPassword.Text = "";
                 textBoxCode.Text = "";
                 textBoxLocation.Text = "";
-                panelAutorize.Visible = false;
             }
+                
+            else
+            {
+                alertLabel.Text = "Podane dane sa bledne!";
+                alertLabel.Visible = true;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
             
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void panelAutorize_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

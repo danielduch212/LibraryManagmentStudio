@@ -38,25 +38,16 @@ public class ReportService
     {
         var query = _dbContext.Books
             .Where(x => x.Author == author && x.Publisher == publisher && x.IsActive == isActive && x.Category == category);
+
         var data = query.Select(x => new ReportData2()
         {
             BookId = x.BookId,
             Title = x.Title,
             Description = x.Description,
-            AllTimeBookBorrowsCount = CountAllBorrows(x.BookId),
-
-
-
+            AllTimeBookBorrowsCount = x.BookCopies.Select(x => x.BookBorrows.Count).Sum()
         });
+        
         return data.ToList();
-    }
-
-    public int CountAllBorrows(int bookId)
-    {
-        var query = _dbContext.BookBorrows
-            .Where(x => x.BookCopy.BookId.Equals(bookId));
-        return query.Count();
-
     }
 
     public Author findAuthor(string author)

@@ -70,7 +70,7 @@
             emailTextBox.Name = "emailTextBox";
             emailTextBox.Size = new Size(216, 27);
             emailTextBox.TabIndex = 2;
-            emailTextBox.Text = "abc@gmail.com";
+            emailTextBox.Text = "andziaks@gmail.com";
             // 
             // passwordTextBox
             // 
@@ -80,7 +80,7 @@
             passwordTextBox.PasswordChar = '*';
             passwordTextBox.Size = new Size(216, 27);
             passwordTextBox.TabIndex = 3;
-            passwordTextBox.Text = "abc";
+            passwordTextBox.Text = "1234";
             // 
             // label1
             // 

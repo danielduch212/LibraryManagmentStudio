@@ -38,10 +38,10 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void LoadUsers()
         {
-            
+
             var bindingList = new BindingList<UserDto>(users);
             var bindingSource = new BindingSource(bindingList, null);
-            
+
 
             usersDataGridView.DataSource = bindingSource;
 
@@ -78,7 +78,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         private void button3_Click(object sender, EventArgs e)
         {
 
-            
+
             users = service.searchUser(searchBooksTextBox.Text);
             LoadUsers();
         }
@@ -86,7 +86,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         private void cancelShowDataButton_Click(object sender, EventArgs e)
         {
             showUserPanel.Visible = false;
-            
+
             users = service.getUsers();
             LoadUsers();
             panel1.Visible = true;
@@ -95,15 +95,15 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void ReturnBook_Click(object sender, EventArgs e)
         {
-            if(showUserDataGridView.SelectedRows.Count > 0)
+            if (showUserDataGridView.SelectedRows.Count > 0)
             {
                 int selectedRowIndex = showUserDataGridView.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = showUserDataGridView.Rows[selectedRowIndex];
 
                 int bookId = Convert.ToInt32(selectedRow.Cells["BookBorrowId"].Value);
 
-                
-               
+
+
                 bookService.returnBookBorrow(bookId);
 
                 SetUserDataView();
@@ -112,20 +112,20 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if(usersDataGridView.SelectedRows.Count > 0)
+            if (usersDataGridView.SelectedRows.Count > 0)
             {
                 int selectedRowIndex = usersDataGridView.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = usersDataGridView.Rows[selectedRowIndex];
 
                 int userId = Convert.ToInt32(selectedRow.Cells["UserId"].Value);
 
-                
+
                 var user = service.findUserRow(userId);
                 if (user == null)
                 {
                     return;
                 }
-                
+
                 userBorrows = bookService.GetUsersBorrowedBooks(user);
                 if (userBorrows == null)
                 {
