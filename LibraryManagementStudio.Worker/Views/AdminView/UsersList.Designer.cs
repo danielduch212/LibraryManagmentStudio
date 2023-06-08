@@ -94,9 +94,9 @@
             this.showUserPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.showUserPanel.Controls.Add(this.panel3);
             this.showUserPanel.Controls.Add(this.ReturnBook);
             this.showUserPanel.Controls.Add(this.cancelShowDataButton);
+            this.showUserPanel.Controls.Add(this.panel3);
             this.showUserPanel.Controls.Add(this.showUserDataGridView);
             this.showUserPanel.Location = new System.Drawing.Point(0, 0);
             this.showUserPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -106,6 +106,7 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.Controls.Add(this.labelAllBorrows);
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.labelCUrrentBorrwedBooks);
@@ -258,7 +259,7 @@
             // 
             // ReturnBook
             // 
-            this.ReturnBook.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.ReturnBook.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ReturnBook.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ReturnBook.Location = new System.Drawing.Point(827, 598);
             this.ReturnBook.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -271,7 +272,7 @@
             // 
             // cancelShowDataButton
             // 
-            this.cancelShowDataButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cancelShowDataButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cancelShowDataButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cancelShowDataButton.Location = new System.Drawing.Point(457, 598);
             this.cancelShowDataButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -322,6 +323,7 @@
             this.button4.TabIndex = 16;
             this.button4.Text = "Pokaz";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // button2
             // 

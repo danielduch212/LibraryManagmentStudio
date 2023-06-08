@@ -197,7 +197,14 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         {
             if (textBoxNewPublisher.Text != "")
             {
+                var publisher = publisherAuthorService.GetPublisher(textBoxNewPublisher.Text);
+                if (publisher != null)
+                {
+                    MessageBox.Show("Podany wydawca już istnieje!", "Ostrzezenie");
+                    return;
+                }
                 publisherAuthorService.AddPublisher(textBoxNewPublisher.Text);
+                MessageBox.Show("Dodano nowego wydawce", "Informacja");
                 panelNewPublisher.Visible = false;
                 SetData();
             }
@@ -207,8 +214,15 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         {
             if (textBoxNewAuthor.Text != "")
             {
+                var author = publisherAuthorService.GetAuthor(textBoxNewAuthor.Text);
+                if (author != null)
+                {
+                    MessageBox.Show("Podany autor już istnieje!", "Ostrzezenie");
+                    return;
+                }
                 comboBoxAuthor.Items.Clear();
                 publisherAuthorService.AddAuthor(textBoxNewAuthor.Text);
+                MessageBox.Show("Dodano nowego autora", "Informacja");
                 panelAuthor.Visible = false;
                 SetData();
             }

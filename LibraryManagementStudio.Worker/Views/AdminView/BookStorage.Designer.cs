@@ -306,7 +306,7 @@
             // 
             // SearchButton
             // 
-            this.SearchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SearchButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.SearchButton.Location = new System.Drawing.Point(498, 21);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(132, 23);
@@ -361,7 +361,7 @@
             // 
             // clearSearchButton
             // 
-            this.clearSearchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.clearSearchButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.clearSearchButton.BackColor = System.Drawing.Color.Red;
             this.clearSearchButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.clearSearchButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);

@@ -188,7 +188,7 @@ public class WorkerBookService : IWorkerBookService
     public List<Worker.Dtos.BookBorrow.BookBorrowToShow> GetUsersBorrowedBooks(LibraryManagementStudio.Data.Models.User user)
     {
         var query = _dbContext.BookBorrows
-           .Where(x => x.User == user && x.IsActive == true)
+           .Where(x => x.User == user)
            .Select(x => new Worker.Dtos.BookBorrow.BookBorrowToShow()
             {
                 BookBorrowId = x.BookBorrowId,
@@ -201,6 +201,14 @@ public class WorkerBookService : IWorkerBookService
                 BookCopyId = x.BookCopyId,
             });
         return query.ToList();
+
+    }
+    public int GetUsersCurrentBorrowedBooks(LibraryManagementStudio.Data.Models.User user)
+    {
+        var query = _dbContext.BookBorrows
+           .Where(x => x.User == user);
+
+        return query.Count();
 
     }
 

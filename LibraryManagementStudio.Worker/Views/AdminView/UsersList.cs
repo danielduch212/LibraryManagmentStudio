@@ -102,36 +102,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (usersDataGridView.SelectedRows.Count > 0)
-            {
-                int selectedRowIndex = usersDataGridView.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = usersDataGridView.Rows[selectedRowIndex];
-
-                int userId = Convert.ToInt32(selectedRow.Cells["UserId"].Value);
-
-
-                user = service.findUserRow(userId);
-                if (user == null)
-                {
-                    return;
-                }
-
-                userBorrows = bookService.GetUsersBorrowedBooks(user);
-                if (userBorrows == null)
-                {
-                    return;
-                }
-                labelUserName.Text = user.FirstName;
-                labelSurname.Text = user.LastName;
-                labelEmail.Text = user.EmailAddress;
-                labelCity.Text = user.City;
-                labelAllBorrows.Text = userBorrows.Count.ToString();
-
-                SetUserDataView();
-                panel1.Visible = false;
-                panel2.Visible = false;
-                showUserPanel.Visible = true;
-            }
+            
         }
 
         private void SetUserDataView()
@@ -198,6 +169,40 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 bookService.returnBookBorrow(bookId);
                 userBorrows = bookService.GetUsersBorrowedBooks(user);
                 SetUserDataView();
+            }
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            if (usersDataGridView.SelectedRows.Count > 0)
+            {
+                int selectedRowIndex = usersDataGridView.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = usersDataGridView.Rows[selectedRowIndex];
+
+                int userId = Convert.ToInt32(selectedRow.Cells["UserId"].Value);
+
+
+                user = service.findUserRow(userId);
+                if (user == null)
+                {
+                    return;
+                }
+
+                userBorrows = bookService.GetUsersBorrowedBooks(user);
+                if (userBorrows == null)
+                {
+                    return;
+                }
+                labelUserName.Text = user.FirstName;
+                labelSurname.Text = user.LastName;
+                labelEmail.Text = user.EmailAddress;
+                labelCity.Text = user.City;
+                labelAllBorrows.Text = userBorrows.Count.ToString();
+
+                SetUserDataView();
+                panel1.Visible = false;
+                panel2.Visible = false;
+                showUserPanel.Visible = true;
             }
         }
     }

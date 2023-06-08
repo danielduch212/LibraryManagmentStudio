@@ -46,7 +46,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                     return;
 
                 }
-                if (!int.TryParse(textBoxBookBorrowId.Text, out int number))
+                if (!int.TryParse(textBoxBookBorrowId.Text, out int number1))
                 {
                     MessageBox.Show("ID musi byc liczba", "Ostrzezenie");
                     return;

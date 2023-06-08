@@ -36,14 +36,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panelAuthor = new System.Windows.Forms.Panel();
             this.cancelNewAuthor = new System.Windows.Forms.Button();
-            this.alertLabelAuthor = new System.Windows.Forms.Label();
             this.buttonNewAuthor = new System.Windows.Forms.Button();
             this.textBoxNewAuthor = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panelNewPublisher = new System.Windows.Forms.Panel();
             this.cancelNewPublisher = new System.Windows.Forms.Button();
-            this.alertLabelPublisher = new System.Windows.Forms.Label();
             this.buttonNewPublisher = new System.Windows.Forms.Button();
             this.textBoxNewPublisher = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -155,7 +153,6 @@
             // 
             this.panelAuthor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelAuthor.Controls.Add(this.cancelNewAuthor);
-            this.panelAuthor.Controls.Add(this.alertLabelAuthor);
             this.panelAuthor.Controls.Add(this.buttonNewAuthor);
             this.panelAuthor.Controls.Add(this.textBoxNewAuthor);
             this.panelAuthor.Controls.Add(this.label11);
@@ -174,17 +171,6 @@
             this.cancelNewAuthor.Text = "Anuluj";
             this.cancelNewAuthor.UseVisualStyleBackColor = true;
             this.cancelNewAuthor.Click += new System.EventHandler(this.cancelNewAuthor_Click_1);
-            // 
-            // alertLabelAuthor
-            // 
-            this.alertLabelAuthor.AutoSize = true;
-            this.alertLabelAuthor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.alertLabelAuthor.Location = new System.Drawing.Point(148, 52);
-            this.alertLabelAuthor.Name = "alertLabelAuthor";
-            this.alertLabelAuthor.Size = new System.Drawing.Size(52, 17);
-            this.alertLabelAuthor.TabIndex = 4;
-            this.alertLabelAuthor.Text = "Nazwa:";
-            this.alertLabelAuthor.Click += new System.EventHandler(this.alertLabelAuthor_Click);
             // 
             // buttonNewAuthor
             // 
@@ -227,7 +213,6 @@
             // 
             this.panelNewPublisher.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelNewPublisher.Controls.Add(this.cancelNewPublisher);
-            this.panelNewPublisher.Controls.Add(this.alertLabelPublisher);
             this.panelNewPublisher.Controls.Add(this.buttonNewPublisher);
             this.panelNewPublisher.Controls.Add(this.textBoxNewPublisher);
             this.panelNewPublisher.Controls.Add(this.label13);
@@ -245,16 +230,6 @@
             this.cancelNewPublisher.TabIndex = 5;
             this.cancelNewPublisher.Text = "Anuluj";
             this.cancelNewPublisher.UseVisualStyleBackColor = true;
-            // 
-            // alertLabelPublisher
-            // 
-            this.alertLabelPublisher.AutoSize = true;
-            this.alertLabelPublisher.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.alertLabelPublisher.Location = new System.Drawing.Point(148, 49);
-            this.alertLabelPublisher.Name = "alertLabelPublisher";
-            this.alertLabelPublisher.Size = new System.Drawing.Size(52, 17);
-            this.alertLabelPublisher.TabIndex = 4;
-            this.alertLabelPublisher.Text = "Nazwa:";
             // 
             // buttonNewPublisher
             // 
@@ -314,7 +289,7 @@
             // 
             // btnAddBook
             // 
-            this.btnAddBook.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnAddBook.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAddBook.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAddBook.Location = new System.Drawing.Point(365, 418);
             this.btnAddBook.Name = "btnAddBook";
@@ -472,13 +447,11 @@
         private ComboBox comboBoxPublisher;
         private Button btnAddBook;
         private Panel panelAuthor;
-        private Label alertLabelAuthor;
         private Button buttonNewAuthor;
         private TextBox textBoxNewAuthor;
         private Label label11;
         private Label label10;
         private Panel panelNewPublisher;
-        private Label alertLabelPublisher;
         private Button buttonNewPublisher;
         private TextBox textBoxNewPublisher;
         private Label label13;
