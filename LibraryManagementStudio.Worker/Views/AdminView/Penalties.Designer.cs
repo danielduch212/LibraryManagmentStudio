@@ -75,8 +75,7 @@
             // 
             // searchBooksTextBox
             // 
-            this.searchBooksTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchBooksTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.searchBooksTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.searchBooksTextBox.Location = new System.Drawing.Point(45, 21);
             this.searchBooksTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -99,8 +98,7 @@
             // 
             // labelStatus
             // 
-            this.labelStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelStatus.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelStatus.Location = new System.Drawing.Point(835, 23);
             this.labelStatus.Name = "labelStatus";
@@ -122,8 +120,7 @@
             // 
             // button2
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button2.Location = new System.Drawing.Point(661, 19);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(108, 25);
@@ -161,9 +158,7 @@
             // 
             // panelErasePenalty
             // 
-            this.panelErasePenalty.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelErasePenalty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panelErasePenalty.Controls.Add(this.eraseYes);
             this.panelErasePenalty.Controls.Add(this.eraseNo);
             this.panelErasePenalty.Controls.Add(this.label1);

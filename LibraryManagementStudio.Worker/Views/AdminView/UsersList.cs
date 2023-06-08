@@ -3,6 +3,7 @@ using LibraryManagementStudio.Data;
 using LibraryManagementStudio.Data.Models;
 using LibraryManagementStudio.Worker.Dtos.User;
 using LibraryManagementStudio.Worker.Services;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         LibraryManagementStudio.Data.Models.Worker worker;
         List<UserDto> users;
         List<Worker.Dtos.BookBorrow.BookBorrowToShow>? userBorrows;
+        LibraryManagementStudio.Data.Models.User? user;
         public UsersList(LibraryDbContext dbContext, Data.Models.Worker worker)
         {
             InitializeComponent();
@@ -95,19 +97,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void ReturnBook_Click(object sender, EventArgs e)
         {
-            if (showUserDataGridView.SelectedRows.Count > 0)
-            {
-                int selectedRowIndex = showUserDataGridView.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = showUserDataGridView.Rows[selectedRowIndex];
-
-                int bookId = Convert.ToInt32(selectedRow.Cells["BookBorrowId"].Value);
-
-
-
-                bookService.returnBookBorrow(bookId);
-
-                SetUserDataView();
-            }
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -120,7 +110,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 int userId = Convert.ToInt32(selectedRow.Cells["UserId"].Value);
 
 
-                var user = service.findUserRow(userId);
+                user = service.findUserRow(userId);
                 if (user == null)
                 {
                     return;
@@ -195,6 +185,20 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         private void button2_Click(object sender, EventArgs e)
         {
             searchBooksTextBox.Text = "";
+        }
+
+        private void ReturnBook_Click_1(object sender, EventArgs e)
+        {
+            if (showUserDataGridView.SelectedRows.Count > 0)
+            {
+                int selectedRowIndex = showUserDataGridView.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = showUserDataGridView.Rows[selectedRowIndex];
+
+                int bookId = Convert.ToInt32(selectedRow.Cells["BookBorrowId"].Value);
+                bookService.returnBookBorrow(bookId);
+                userBorrows = bookService.GetUsersBorrowedBooks(user);
+                SetUserDataView();
+            }
         }
     }
 }

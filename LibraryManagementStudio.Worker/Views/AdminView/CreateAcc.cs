@@ -88,5 +88,54 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            alertLabel.Visible = false;
+            if (textBoxName.Text != "" || textBoxSurname.Text != "" || textBoxEmail.Text != "" || textBoxCode.Text != "" || textBoxLocation.Text != "")
+            {
+                var emailToCheck = service.getUserByEmail(textBoxEmail.Text);
+
+                if(emailToCheck != null)
+                {
+                    MessageBox.Show("Uzytkownik o podanym adresie email juz istnieje");
+                    return;
+                }
+                DateTime today = DateTime.Today;
+
+                user = new User()
+                {
+                    FirstName = textBoxName.Text,
+                    LastName = textBoxSurname.Text,
+                    EmailAddress = textBoxEmail.Text,
+                    Password = textBoxPassword.Text,
+                    DateOfBirth = dateTimePicker.Value,
+                    Street = textBoxLocation.Text,
+                    City = textBoxCity.Text,
+                    PostalCode = textBoxCode.Text,
+                    Country = "Polska",
+                    CreationDate = today,
+                    WorkerId = worker.WorkerId,
+                    Worker = worker,
+
+
+
+                };
+                service.CreateUser(user);
+                MessageBox.Show("Dodano nowego uzytkownika", "Informacja");
+                textBoxName.Text = "";
+                textBoxSurname.Text = "";
+                textBoxEmail.Text = "";
+                textBoxCity.Text = "";
+                textBoxPassword.Text = "";
+                textBoxCode.Text = "";
+                textBoxLocation.Text = "";
+            }
+
+            else
+            {
+                MessageBox.Show("Podane dane sa bledne", "Ostrzezenie");
+            }
+        }
     }
 }

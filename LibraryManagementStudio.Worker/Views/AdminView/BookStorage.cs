@@ -115,14 +115,21 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void buttonOk_Click(object sender, EventArgs e)
         {
-            if(textBoxUserEmail.Text == "" || textBoxUserEmail.Text == null)
+            if(textBoxUserID.Text == "" )
             {
-                MessageBox.Show("Podaj Email", "Ostrzezenie");
+                MessageBox.Show("Podaj ID", "Ostrzezenie");
                 return;
             }
-            if(userService.getUserByEmail(textBoxUserEmail.Text) == null)
+            if (!int.TryParse(textBoxUserID.Text, out int number))
             {
-                MessageBox.Show("Zly email", "Ostrzezenie");
+                MessageBox.Show("Podaj sensowne dane (liczba)", "Ostrzezenie");
+                return;
+
+            }
+            
+            if (userService.findUser(Convert.ToInt32(textBoxUserID.Text)) == null)
+            {
+                MessageBox.Show("Zle ID - User nie istnieje", "Ostrzezenie");
                 return;
 
             }
@@ -138,13 +145,13 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 IsActive = true,
                 Status = Data.Models.Enums.BorrowedBookStatus.Received,
                 Worker = worker,
-                User = userService.getUserByEmail(textBoxUserEmail.Text),
+                User = userService.findUser(Convert.ToInt32(textBoxUserID.Text)),
                 
                 BookCopy = service.getAvailibleCopy(book.Title),
 
             };
             MessageBox.Show("Wypozyczono ksiazke", "Informacja");
-            textBoxUserEmail.Text = "";
+            textBoxUserID.Text = "";
             service.CreateNewBookBorrow(bookBorrow, service.getAvailibleCopy(book.Title));
             books = service.GetBooks();
             SetupBooksView();

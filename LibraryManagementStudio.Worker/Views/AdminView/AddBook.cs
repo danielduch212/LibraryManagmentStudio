@@ -134,40 +134,24 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void anotherAuthorButton_Click(object sender, EventArgs e)
         {
-            SetPanelLocation(panelAuthor);
-            panelNewPublisher.Visible = false;
-            panelAuthor.Visible = true;
+            
 
         }
 
         private void anotherPublisherButton_Click(object sender, EventArgs e)
         {
-            comboBoxPublisher.Items.Clear();
-            SetPanelLocation(panelNewPublisher);
-            panelAuthor.Visible = false;
-            panelNewPublisher.Visible = true;
+            
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (textBoxNewAuthor.Text != "")
-            {
-                comboBoxAuthor.Items.Clear();
-                publisherAuthorService.AddAuthor(textBoxNewAuthor.Text);
-                panelAuthor.Visible = false;
-                SetData();
-            }
+            
         }
 
         private void buttonNewPublisher_Click(object sender, EventArgs e)
         {
-            if (textBoxNewPublisher.Text != "")
-            {
-                publisherAuthorService.AddPublisher(textBoxNewPublisher.Text);
-                panelNewPublisher.Visible = false;
-                SetData();
-            }
+            
 
         }
 
@@ -178,7 +162,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void cancelNewAuthor_Click(object sender, EventArgs e)
         {
-            panelAuthor.Visible = false;
+            
         }
         private void SetPanelLocation(Panel panelToSetLocation)
         {
@@ -190,6 +174,52 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             // Ustaw położenie panelu na środku formularza
             panelToSetLocation.Location = new Point((formWidth - panelWidth) / 2, (formHeight - panelHeight) / 2);
 
+        }
+
+        private void alertLabelAuthor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void anotherAuthorButton_Click_1(object sender, EventArgs e)
+        {
+            SetPanelLocation(panelAuthor);
+            panelNewPublisher.Visible = false;
+            panelAuthor.Visible = true;
+        }
+
+        private void cancelNewAuthor_Click_1(object sender, EventArgs e)
+        {
+            panelAuthor.Visible = false;
+        }
+
+        private void buttonNewPublisher_Click_1(object sender, EventArgs e)
+        {
+            if (textBoxNewPublisher.Text != "")
+            {
+                publisherAuthorService.AddPublisher(textBoxNewPublisher.Text);
+                panelNewPublisher.Visible = false;
+                SetData();
+            }
+        }
+
+        private void buttonNewAuthor_Click(object sender, EventArgs e)
+        {
+            if (textBoxNewAuthor.Text != "")
+            {
+                comboBoxAuthor.Items.Clear();
+                publisherAuthorService.AddAuthor(textBoxNewAuthor.Text);
+                panelAuthor.Visible = false;
+                SetData();
+            }
+        }
+
+        private void anotherPublisherButton_Click_1(object sender, EventArgs e)
+        {
+            comboBoxPublisher.Items.Clear();
+            SetPanelLocation(panelNewPublisher);
+            panelAuthor.Visible = false;
+            panelNewPublisher.Visible = true;
         }
     }
 }

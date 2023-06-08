@@ -215,6 +215,8 @@ public class WorkerBookService : IWorkerBookService
 
     public void EraseBook(Book book)
     {
+
         book.IsActive = false;
+
     }
 }

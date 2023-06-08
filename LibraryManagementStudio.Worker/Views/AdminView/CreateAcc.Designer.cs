@@ -28,254 +28,255 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panelMain = new Panel();
-            textBoxPassword = new TextBox();
-            label10 = new Label();
-            alertLabel = new Label();
-            button1 = new Button();
-            textBoxLocation = new TextBox();
-            textBoxCode = new TextBox();
-            label8 = new Label();
-            label7 = new Label();
-            textBoxCity = new TextBox();
-            label6 = new Label();
-            dateTimePicker = new DateTimePicker();
-            label5 = new Label();
-            textBoxEmail = new TextBox();
-            label4 = new Label();
-            textBoxSurname = new TextBox();
-            label3 = new Label();
-            textBoxName = new TextBox();
-            label2 = new Label();
-            label1 = new Label();
-            panelMain.SuspendLayout();
-            SuspendLayout();
+            this.panelMain = new System.Windows.Forms.Panel();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.alertLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBoxLocation = new System.Windows.Forms.TextBox();
+            this.textBoxCode = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxCity = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxSurname = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelMain.SuspendLayout();
+            this.SuspendLayout();
             // 
             // panelMain
             // 
-            panelMain.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panelMain.Controls.Add(textBoxPassword);
-            panelMain.Controls.Add(label10);
-            panelMain.Controls.Add(alertLabel);
-            panelMain.Controls.Add(button1);
-            panelMain.Controls.Add(textBoxLocation);
-            panelMain.Controls.Add(textBoxCode);
-            panelMain.Controls.Add(label8);
-            panelMain.Controls.Add(label7);
-            panelMain.Controls.Add(textBoxCity);
-            panelMain.Controls.Add(label6);
-            panelMain.Controls.Add(dateTimePicker);
-            panelMain.Controls.Add(label5);
-            panelMain.Controls.Add(textBoxEmail);
-            panelMain.Controls.Add(label4);
-            panelMain.Controls.Add(textBoxSurname);
-            panelMain.Controls.Add(label3);
-            panelMain.Controls.Add(textBoxName);
-            panelMain.Controls.Add(label2);
-            panelMain.Controls.Add(label1);
-            panelMain.Location = new Point(3, 0);
-            panelMain.Margin = new Padding(3, 4, 3, 4);
-            panelMain.Name = "panelMain";
-            panelMain.Size = new Size(978, 705);
-            panelMain.TabIndex = 0;
+            this.panelMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelMain.Controls.Add(this.textBoxPassword);
+            this.panelMain.Controls.Add(this.label10);
+            this.panelMain.Controls.Add(this.alertLabel);
+            this.panelMain.Controls.Add(this.button1);
+            this.panelMain.Controls.Add(this.textBoxLocation);
+            this.panelMain.Controls.Add(this.textBoxCode);
+            this.panelMain.Controls.Add(this.label8);
+            this.panelMain.Controls.Add(this.label7);
+            this.panelMain.Controls.Add(this.textBoxCity);
+            this.panelMain.Controls.Add(this.label6);
+            this.panelMain.Controls.Add(this.dateTimePicker);
+            this.panelMain.Controls.Add(this.label5);
+            this.panelMain.Controls.Add(this.textBoxEmail);
+            this.panelMain.Controls.Add(this.label4);
+            this.panelMain.Controls.Add(this.textBoxSurname);
+            this.panelMain.Controls.Add(this.label3);
+            this.panelMain.Controls.Add(this.textBoxName);
+            this.panelMain.Controls.Add(this.label2);
+            this.panelMain.Controls.Add(this.label1);
+            this.panelMain.Location = new System.Drawing.Point(3, 0);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(856, 529);
+            this.panelMain.TabIndex = 0;
             // 
             // textBoxPassword
             // 
-            textBoxPassword.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBoxPassword.Location = new Point(485, 563);
-            textBoxPassword.Margin = new Padding(3, 4, 3, 4);
-            textBoxPassword.Name = "textBoxPassword";
-            textBoxPassword.Size = new Size(228, 27);
-            textBoxPassword.TabIndex = 34;
+            this.textBoxPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.textBoxPassword.Location = new System.Drawing.Point(424, 422);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(200, 23);
+            this.textBoxPassword.TabIndex = 34;
             // 
             // label10
             // 
-            label10.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label10.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.Location = new Point(265, 556);
-            label10.Name = "label10";
-            label10.Size = new Size(147, 33);
-            label10.TabIndex = 33;
-            label10.Text = "Hasło:";
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(232, 417);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(63, 25);
+            this.label10.TabIndex = 33;
+            this.label10.Text = "Hasło";
             // 
             // alertLabel
             // 
-            alertLabel.BackColor = Color.Red;
-            alertLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            alertLabel.ForeColor = Color.Black;
-            alertLabel.Location = new Point(293, 115);
-            alertLabel.Name = "alertLabel";
-            alertLabel.Size = new Size(393, 33);
-            alertLabel.TabIndex = 32;
-            alertLabel.Text = "Sprawdź poprawność danych klienta!";
+            this.alertLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.alertLabel.BackColor = System.Drawing.Color.Red;
+            this.alertLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.alertLabel.ForeColor = System.Drawing.Color.Black;
+            this.alertLabel.Location = new System.Drawing.Point(256, 86);
+            this.alertLabel.Name = "alertLabel";
+            this.alertLabel.Size = new System.Drawing.Size(344, 25);
+            this.alertLabel.TabIndex = 32;
+            this.alertLabel.Text = "Sprawdź poprawność danych klienta!";
             // 
             // button1
             // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(417, 612);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(122, 52);
-            button1.TabIndex = 31;
-            button1.Text = "Dodaj";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(365, 459);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 39);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "Dodaj";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // textBoxLocation
             // 
-            textBoxLocation.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBoxLocation.Location = new Point(485, 511);
-            textBoxLocation.Margin = new Padding(3, 4, 3, 4);
-            textBoxLocation.Name = "textBoxLocation";
-            textBoxLocation.Size = new Size(228, 27);
-            textBoxLocation.TabIndex = 30;
+            this.textBoxLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.textBoxLocation.Location = new System.Drawing.Point(424, 383);
+            this.textBoxLocation.Name = "textBoxLocation";
+            this.textBoxLocation.Size = new System.Drawing.Size(200, 23);
+            this.textBoxLocation.TabIndex = 30;
             // 
             // textBoxCode
             // 
-            textBoxCode.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBoxCode.Location = new Point(485, 456);
-            textBoxCode.Margin = new Padding(3, 4, 3, 4);
-            textBoxCode.Name = "textBoxCode";
-            textBoxCode.Size = new Size(228, 27);
-            textBoxCode.TabIndex = 29;
+            this.textBoxCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.textBoxCode.Location = new System.Drawing.Point(424, 342);
+            this.textBoxCode.Name = "textBoxCode";
+            this.textBoxCode.Size = new System.Drawing.Size(200, 23);
+            this.textBoxCode.TabIndex = 29;
             // 
             // label8
             // 
-            label8.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label8.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(265, 449);
-            label8.Name = "label8";
-            label8.Size = new Size(214, 33);
-            label8.TabIndex = 28;
-            label8.Text = "Kod Pocztowy:";
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(232, 337);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(138, 25);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Kod Pocztowy";
             // 
             // label7
             // 
-            label7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(265, 504);
-            label7.Name = "label7";
-            label7.Size = new Size(177, 33);
-            label7.TabIndex = 27;
-            label7.Text = "Adres:";
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(232, 378);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(63, 25);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Adres";
             // 
             // textBoxCity
             // 
-            textBoxCity.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBoxCity.Location = new Point(485, 403);
-            textBoxCity.Margin = new Padding(3, 4, 3, 4);
-            textBoxCity.Name = "textBoxCity";
-            textBoxCity.Size = new Size(228, 27);
-            textBoxCity.TabIndex = 26;
+            this.textBoxCity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.textBoxCity.Location = new System.Drawing.Point(424, 302);
+            this.textBoxCity.Name = "textBoxCity";
+            this.textBoxCity.Size = new System.Drawing.Size(200, 23);
+            this.textBoxCity.TabIndex = 26;
             // 
             // label6
             // 
-            label6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(265, 396);
-            label6.Name = "label6";
-            label6.Size = new Size(147, 33);
-            label6.TabIndex = 25;
-            label6.Text = "Miasto:";
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(232, 297);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(72, 25);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Miasto";
             // 
             // dateTimePicker
             // 
-            dateTimePicker.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            dateTimePicker.Location = new Point(485, 345);
-            dateTimePicker.Margin = new Padding(3, 4, 3, 4);
-            dateTimePicker.Name = "dateTimePicker";
-            dateTimePicker.Size = new Size(228, 27);
-            dateTimePicker.TabIndex = 24;
+            this.dateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.dateTimePicker.Location = new System.Drawing.Point(424, 259);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(200, 23);
+            this.dateTimePicker.TabIndex = 24;
             // 
             // label5
             // 
-            label5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(265, 343);
-            label5.Name = "label5";
-            label5.Size = new Size(214, 33);
-            label5.TabIndex = 23;
-            label5.Text = "Data Urodzenia:";
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(232, 257);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(150, 25);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Data Urodzenia";
             // 
             // textBoxEmail
             // 
-            textBoxEmail.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBoxEmail.Location = new Point(485, 287);
-            textBoxEmail.Margin = new Padding(3, 4, 3, 4);
-            textBoxEmail.Name = "textBoxEmail";
-            textBoxEmail.Size = new Size(228, 27);
-            textBoxEmail.TabIndex = 22;
+            this.textBoxEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.textBoxEmail.Location = new System.Drawing.Point(424, 215);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(200, 23);
+            this.textBoxEmail.TabIndex = 22;
             // 
             // label4
             // 
-            label4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(265, 284);
-            label4.Name = "label4";
-            label4.Size = new Size(177, 33);
-            label4.TabIndex = 21;
-            label4.Text = "Adres Email:";
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(232, 213);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(115, 25);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Adres Email";
             // 
             // textBoxSurname
             // 
-            textBoxSurname.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBoxSurname.Location = new Point(485, 227);
-            textBoxSurname.Margin = new Padding(3, 4, 3, 4);
-            textBoxSurname.Name = "textBoxSurname";
-            textBoxSurname.Size = new Size(228, 27);
-            textBoxSurname.TabIndex = 20;
+            this.textBoxSurname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.textBoxSurname.Location = new System.Drawing.Point(424, 170);
+            this.textBoxSurname.Name = "textBoxSurname";
+            this.textBoxSurname.Size = new System.Drawing.Size(200, 23);
+            this.textBoxSurname.TabIndex = 20;
             // 
             // label3
             // 
-            label3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(265, 224);
-            label3.Name = "label3";
-            label3.Size = new Size(177, 33);
-            label3.TabIndex = 19;
-            label3.Text = "Nazwisko:";
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(232, 168);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(97, 25);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Nazwisko";
             // 
             // textBoxName
             // 
-            textBoxName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBoxName.Location = new Point(485, 165);
-            textBoxName.Margin = new Padding(3, 4, 3, 4);
-            textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(228, 27);
-            textBoxName.TabIndex = 18;
+            this.textBoxName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.textBoxName.Location = new System.Drawing.Point(424, 124);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(200, 23);
+            this.textBoxName.TabIndex = 18;
             // 
             // label2
             // 
-            label2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(265, 165);
-            label2.Name = "label2";
-            label2.Size = new Size(117, 33);
-            label2.TabIndex = 17;
-            label2.Text = "Imie:";
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(232, 124);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 25);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Imie";
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(333, 60);
-            label1.Name = "label1";
-            label1.Size = new Size(269, 43);
-            label1.TabIndex = 16;
-            label1.Text = "Dodaj Użytkownika";
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(291, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(235, 32);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Dodaj Użytkownika";
             // 
             // CreateAcc
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(panelMain);
-            Margin = new Padding(3, 4, 3, 4);
-            Name = "CreateAcc";
-            Size = new Size(982, 705);
-            panelMain.ResumeLayout(false);
-            panelMain.PerformLayout();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panelMain);
+            this.Name = "CreateAcc";
+            this.Size = new System.Drawing.Size(859, 529);
+            this.panelMain.ResumeLayout(false);
+            this.panelMain.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion

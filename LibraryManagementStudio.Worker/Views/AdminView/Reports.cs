@@ -63,6 +63,68 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void buttonGenerate1_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void buttonGenerate2_Click(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void SetData()
+        {
+            var queryAuthors = publisherAuthorService.getAuthorsNames();
+            var queryPublishers = publisherAuthorService.getPublishersNames();
+            foreach (string author in queryAuthors)
+            {
+                comboBoxAuthor.Items.Add(author);
+            }
+            foreach (string publisher in queryPublishers)
+            {
+                comboBoxPublisher.Items.Add(publisher);
+            }
+            comboBoxAvailibility.Items.Add("aktywne");
+            comboBoxAvailibility.Items.Add("nieaktywne");
+
+            comboBoxCategory.Items.Add(LibraryManagementStudio.Data.Models.Enums.CategoryType.Romance);
+            comboBoxCategory.Items.Add(LibraryManagementStudio.Data.Models.Enums.CategoryType.Fantasy);
+            comboBoxCategory.Items.Add(LibraryManagementStudio.Data.Models.Enums.CategoryType.Bibliography);
+            comboBoxCategory.Items.Add(LibraryManagementStudio.Data.Models.Enums.CategoryType.History);
+            comboBoxCategory.Items.Add(LibraryManagementStudio.Data.Models.Enums.CategoryType.Thriller);
+
+        }
+
+        private void buttonRaport1_Click_1(object sender, EventArgs e)
+        {
+            panel2.Visible = false;
+            label11.Visible = false;
+            countTB.Visible = false;
+            panelSelect2.Visible = false;
+            dataGridView.Visible = false;
+            panelSelect1.Visible = true;
+        }
+
+        private void buttonRaport2_Click_1(object sender, EventArgs e)
+        {
+            panel2.Visible = false;
+            panelSelect1.Visible = false;
+            dataGridView.Visible = false;
+            panelSelect2.Visible = true;
+        }
+
+        private void textBoxUserId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonGenerate1_Click_1(object sender, EventArgs e)
+        {
             if (textBoxUserId.Text != "")
             {
 
@@ -108,7 +170,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             }
         }
 
-        private void buttonGenerate2_Click(object sender, EventArgs e)
+        private void buttonGenerate2_Click_1(object sender, EventArgs e)
         {
             if (comboBoxAvailibility.SelectedIndex != -1 || comboBoxCategory.SelectedIndex != -1 || comboBoxAuthor.SelectedIndex != -1 || comboBoxPublisher.SelectedIndex != -1)
             {
@@ -161,35 +223,6 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             }
 
             MessageBox.Show("Podaj dokladnie dane", "Informacja");
-
-        }
-
-        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void SetData()
-        {
-            var queryAuthors = publisherAuthorService.getAuthorsNames();
-            var queryPublishers = publisherAuthorService.getPublishersNames();
-            foreach (string author in queryAuthors)
-            {
-                comboBoxAuthor.Items.Add(author);
-            }
-            foreach (string publisher in queryPublishers)
-            {
-                comboBoxPublisher.Items.Add(publisher);
-            }
-            comboBoxAvailibility.Items.Add("aktywne");
-            comboBoxAvailibility.Items.Add("nieaktywne");
-
-            comboBoxCategory.Items.Add(LibraryManagementStudio.Data.Models.Enums.CategoryType.Romance);
-            comboBoxCategory.Items.Add(LibraryManagementStudio.Data.Models.Enums.CategoryType.Fantasy);
-            comboBoxCategory.Items.Add(LibraryManagementStudio.Data.Models.Enums.CategoryType.Bibliography);
-            comboBoxCategory.Items.Add(LibraryManagementStudio.Data.Models.Enums.CategoryType.History);
-            comboBoxCategory.Items.Add(LibraryManagementStudio.Data.Models.Enums.CategoryType.Thriller);
-
         }
     }
 }

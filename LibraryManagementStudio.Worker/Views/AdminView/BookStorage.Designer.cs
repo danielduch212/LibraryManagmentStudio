@@ -33,7 +33,7 @@
             this.panelBorrowBook = new System.Windows.Forms.Panel();
             this.buttonCancelBorrow = new System.Windows.Forms.Button();
             this.buttonOk = new System.Windows.Forms.Button();
-            this.textBoxUserEmail = new System.Windows.Forms.TextBox();
+            this.textBoxUserID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.labelBookTitle = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -103,7 +103,7 @@
             this.panelBorrowBook.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelBorrowBook.Controls.Add(this.buttonCancelBorrow);
             this.panelBorrowBook.Controls.Add(this.buttonOk);
-            this.panelBorrowBook.Controls.Add(this.textBoxUserEmail);
+            this.panelBorrowBook.Controls.Add(this.textBoxUserID);
             this.panelBorrowBook.Controls.Add(this.label2);
             this.panelBorrowBook.Controls.Add(this.labelBookTitle);
             this.panelBorrowBook.Controls.Add(this.label1);
@@ -132,12 +132,12 @@
             this.buttonOk.UseVisualStyleBackColor = true;
             this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
             // 
-            // textBoxUserEmail
+            // textBoxUserID
             // 
-            this.textBoxUserEmail.Location = new System.Drawing.Point(50, 136);
-            this.textBoxUserEmail.Name = "textBoxUserEmail";
-            this.textBoxUserEmail.Size = new System.Drawing.Size(309, 23);
-            this.textBoxUserEmail.TabIndex = 3;
+            this.textBoxUserID.Location = new System.Drawing.Point(50, 136);
+            this.textBoxUserID.Name = "textBoxUserID";
+            this.textBoxUserID.Size = new System.Drawing.Size(309, 23);
+            this.textBoxUserID.TabIndex = 3;
             // 
             // label2
             // 
@@ -147,7 +147,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(188, 20);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Podaj email Uzytkownika:";
+            this.label2.Text = "Podaj ID Użytkownika";
             // 
             // labelBookTitle
             // 
@@ -165,7 +165,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Ksiazka:";
+            this.label1.Text = "Książka";
             // 
             // panelEraseCopy
             // 
@@ -265,9 +265,9 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(12, 89);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(154, 21);
+            this.label4.Size = new System.Drawing.Size(150, 21);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Podaj Liczbe Kopii:";
+            this.label4.Text = "Podaj Liczbe Kopii";
             // 
             // AddCopiesBookTitle
             // 
@@ -285,7 +285,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 21);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Ksiazka:";
+            this.label3.Text = "Ksiazka";
             // 
             // panel1
             // 
@@ -403,9 +403,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panelEraseCopy);
             this.Controls.Add(this.panelBorrowBook);
             this.Controls.Add(this.panelAddCopies);
-            this.Controls.Add(this.panelEraseCopy);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "BookStorage";
@@ -438,7 +438,7 @@
         private Button EraseCopy;
         private Button SearchButton;
         private Panel panelBorrowBook;
-        private TextBox textBoxUserEmail;
+        private TextBox textBoxUserID;
         private Label label2;
         private Label labelBookTitle;
         private Label label1;

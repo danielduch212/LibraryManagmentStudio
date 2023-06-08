@@ -72,7 +72,7 @@
             // 
             // button4
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button4.Location = new System.Drawing.Point(525, 24);
             this.button4.Name = "button4";
@@ -126,8 +126,7 @@
             // 
             // searchBooksTextBox
             // 
-            this.searchBooksTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchBooksTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.searchBooksTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.searchBooksTextBox.Location = new System.Drawing.Point(17, 24);
             this.searchBooksTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

@@ -13,6 +13,8 @@ namespace LibraryManagementStudio.Worker.Views.AdminLogView
             
             InitializeComponent();
             service = new WorkerService(dbContext);
+            textboxLogin.Text = "admin";
+            textboxHaslo.Text = "admin";
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -39,6 +41,11 @@ namespace LibraryManagementStudio.Worker.Views.AdminLogView
                         parcelView.Show();
                         this.Hide();
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Użytkownik o podanym hasle i loginie nie istnieje", "Ostrzezenie");
+                    return;
                 }
                 
 

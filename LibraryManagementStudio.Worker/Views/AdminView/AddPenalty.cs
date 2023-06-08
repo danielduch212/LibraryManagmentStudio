@@ -40,6 +40,18 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             if(textBoxBookBorrowId.Text.Length >0 || textBoxPrice.Text.Length >0 || textBoxDescription.Text.Length > 0)
             {
 
+                if (!int.TryParse(textBoxPrice.Text, out int number))
+                {
+                    MessageBox.Show("Cena musi byc liczba", "Ostrzezenie");
+                    return;
+
+                }
+                if (!int.TryParse(textBoxBookBorrowId.Text, out int number))
+                {
+                    MessageBox.Show("ID musi byc liczba", "Ostrzezenie");
+                    return;
+
+                }
                 var bookBorrow = service.getBookBorrow(Int32.Parse(textBoxBookBorrowId.Text));
                 if(bookBorrow == null)
                 {
@@ -62,6 +74,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 };
                 penaltyService.AddPenalty(newPenalty);
                 penaltyService.AddPenaltyToBookBorrow(newPenalty, bookBorrow);
+                MessageBox.Show("Dodano nowa kare", "Informacja");
                 textBoxDescription.Text = "";
                 textBoxPrice.Text = "";
                 textBoxBookBorrowId.Text = "";
