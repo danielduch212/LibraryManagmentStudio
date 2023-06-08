@@ -221,8 +221,11 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 panel2.Visible = true;
                 dataGridView.Visible = true;
             }
-
-            MessageBox.Show("Podaj dokladnie dane", "Informacja");
+            else
+            {
+                MessageBox.Show("Podaj dokladnie dane", "Informacja");
+            }
+            
         }
     }
 }

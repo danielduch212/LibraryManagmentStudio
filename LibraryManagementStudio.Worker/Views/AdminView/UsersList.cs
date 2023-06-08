@@ -198,6 +198,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 labelEmail.Text = user.EmailAddress;
                 labelCity.Text = user.City;
                 labelAllBorrows.Text = userBorrows.Count.ToString();
+                labelCUrrentBorrwedBooks.Text = bookService.GetUsersCurrentBorrowedBooks(user).ToString();
 
                 SetUserDataView();
                 panel1.Visible = false;

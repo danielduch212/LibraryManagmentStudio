@@ -34,22 +34,22 @@ public class ReportService
         return bookBorrows.ToList();
     }
 
+    
     public List<ReportData2> returnData(Author author, Publisher publisher, bool isActive, CategoryType category)
     {
-        var query = _dbContext.Books
-            .Where(x => x.Author == author && x.Publisher == publisher && x.IsActive == isActive && x.Category == category);
+        var query = _dbContext.BookBorrows
+            .Where(x => x.BookCopy.Book.Author == author && x.BookCopy.Book.Publisher == publisher && x.BookCopy.Book.IsActive == isActive && x.BookCopy.Book.Category == category);
 
         var data = query.Select(x => new ReportData2()
         {
-            BookId = x.BookId,
-            Title = x.Title,
-            Description = x.Description,
-            AllTimeBookBorrowsCount = x.BookCopies.Select(x => x.BookBorrows.Count).Sum()
+            BookId = x.BookCopy.Book.BookId,
+            Title = x.BookCopy.Book.Title,
+            Description = x.BookCopy.Book.Description,
+            AllTimeBookBorrowsCount = query.Count(),
         });
-        
+
         return data.ToList();
     }
-
     public Author findAuthor(string author)
     {
 
