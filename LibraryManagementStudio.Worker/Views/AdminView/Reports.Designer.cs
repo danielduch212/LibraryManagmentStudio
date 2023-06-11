@@ -235,7 +235,7 @@
             this.panelSelect2.Controls.Add(this.label8);
             this.panelSelect2.Location = new System.Drawing.Point(0, 152);
             this.panelSelect2.Name = "panelSelect2";
-            this.panelSelect2.Size = new System.Drawing.Size(1250, 128);
+            this.panelSelect2.Size = new System.Drawing.Size(1250, 110);
             this.panelSelect2.TabIndex = 8;
             // 
             // buttonGenerate2
@@ -385,8 +385,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panelSelect2);
             this.Controls.Add(this.panelSelect1);
+            this.Controls.Add(this.panelSelect2);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.countTB);
             this.Controls.Add(this.panel2);

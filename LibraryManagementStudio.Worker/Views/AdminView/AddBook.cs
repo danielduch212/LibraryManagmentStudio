@@ -60,76 +60,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         }
         private void btnAddBook_Click(object sender, EventArgs e)
         {
-            if (textTitle.Text != "" || (comboBoxAuthor.SelectedIndex != -1) || (comboBoxAuthor.SelectedIndex != -1) || (comboBoxPublisher.SelectedIndex != -1))
-            {
-                if (comboBoxCategory.Text == "Romance")
-                    categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.Romance;
-                if (comboBoxCategory.Text == "Fantasy")
-                    categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.Fantasy;
-                if (comboBoxCategory.Text == "Bibliography")
-                    categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.Bibliography;
-                if (comboBoxCategory.Text == "History")
-                    categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.History;
-                if (comboBoxCategory.Text == "Thriller")
-                    categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.Thriller;
-
-
-                //sprawdzacz cyfer
-
-                if (!int.TryParse(textBoxCopies.Text, out int number))
-                {
-                    MessageBox.Show("Podaj dobra wartosc liczby kopii!", "Ostrzezenie");
-                    return;
-
-                }
-
-
-                int copyCounts = Int32.Parse(textBoxCopies.Text);
-                ICollection<BookCopy> bookCopies = new List<BookCopy>();
-
-                Book book = new Book()
-                {
-                    IsActive = true,
-                    Title = textTitle.Text,
-                    Description = descriptionTextBox.Text,
-                    PublishDate = dataTimePicker.Value,
-                    Category = categoryType,
-                    Author = publisherAuthorService.GetAuthor(comboBoxAuthor.Text),
-                    Publisher = publisherAuthorService.GetPublisher(comboBoxPublisher.Text),
-                    Worker = worker,
-                    WorkerId = worker.WorkerId,
-                    BookCopies = bookCopies,
-                };
-                bookService.AddBook(book);
-
-                for (int i = 0; i < copyCounts; i++)
-                {
-                    BookCopy bookCopy = new BookCopy()
-                    {
-                        IsAvailable = true,
-                        IsActive = true,
-                        Status = Data.Models.Enums.BookCopyStatus.dobry,
-                        BookBorrows = new List<BookBorrow>(),
-                        Book = book,
-                        BookId = book.BookId,
-                    };
-                    bookService.AddBookCopy(bookCopy);
-                }
-
-                comboBoxAuthor.SelectedIndex = -1;
-                comboBoxPublisher.SelectedIndex = -1;
-                textTitle.Text = "";
-                textBoxCopies.Text = "";
-                descriptionTextBox.Text = "";
-                comboBoxCategory.SelectedIndex = -1;
-
-                MessageBox.Show("Dodano ksiazke", "Informacja");
-            }
-            else
-            {
-                MessageBox.Show("Brakuje danych!", "Ostrzezenie");
-
-            }
+            
         }
 
         private void anotherAuthorButton_Click(object sender, EventArgs e)
@@ -234,6 +165,80 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             SetPanelLocation(panelNewPublisher);
             panelAuthor.Visible = false;
             panelNewPublisher.Visible = true;
+        }
+
+        private void btnAddBook_Click_1(object sender, EventArgs e)
+        {
+            if (textTitle.Text != "" || (comboBoxAuthor.SelectedIndex != -1) || (comboBoxAuthor.SelectedIndex != -1) || (comboBoxPublisher.SelectedIndex != -1))
+            {
+                if (comboBoxCategory.Text == "Romance")
+                    categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.Romance;
+                if (comboBoxCategory.Text == "Fantasy")
+                    categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.Fantasy;
+                if (comboBoxCategory.Text == "Bibliography")
+                    categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.Bibliography;
+                if (comboBoxCategory.Text == "History")
+                    categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.History;
+                if (comboBoxCategory.Text == "Thriller")
+                    categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.Thriller;
+
+
+                //sprawdzacz cyfer
+
+                if (!int.TryParse(textBoxCopies.Text, out int number))
+                {
+                    MessageBox.Show("Podaj dobra wartosc liczby kopii!", "Ostrzezenie");
+                    return;
+
+                }
+
+
+                int copyCounts = Int32.Parse(textBoxCopies.Text);
+                ICollection<BookCopy> bookCopies = new List<BookCopy>();
+
+                Book book = new Book()
+                {
+                    IsActive = true,
+                    Title = textTitle.Text,
+                    Description = descriptionTextBox.Text,
+                    PublishDate = dataTimePicker.Value,
+                    Category = categoryType,
+                    Author = publisherAuthorService.GetAuthor(comboBoxAuthor.Text),
+                    Publisher = publisherAuthorService.GetPublisher(comboBoxPublisher.Text),
+                    Worker = worker,
+                    WorkerId = worker.WorkerId,
+                    BookCopies = bookCopies,
+                };
+                bookService.AddBook(book);
+
+                for (int i = 0; i < copyCounts; i++)
+                {
+                    BookCopy bookCopy = new BookCopy()
+                    {
+                        IsAvailable = true,
+                        IsActive = true,
+                        Status = Data.Models.Enums.BookCopyStatus.dobry,
+                        BookBorrows = new List<BookBorrow>(),
+                        Book = book,
+                        BookId = book.BookId,
+                    };
+                    bookService.AddBookCopy(bookCopy);
+                }
+
+                comboBoxAuthor.SelectedIndex = -1;
+                comboBoxPublisher.SelectedIndex = -1;
+                textTitle.Text = "";
+                textBoxCopies.Text = "";
+                descriptionTextBox.Text = "";
+                comboBoxCategory.SelectedIndex = -1;
+
+                MessageBox.Show("Dodano ksiazke", "Informacja");
+            }
+            else
+            {
+                MessageBox.Show("Brakuje danych!", "Ostrzezenie");
+
+            }
         }
     }
 }

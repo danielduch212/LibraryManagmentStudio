@@ -297,6 +297,7 @@
             this.btnAddBook.TabIndex = 6;
             this.btnAddBook.Text = "Dodaj ksiazke";
             this.btnAddBook.UseVisualStyleBackColor = true;
+            this.btnAddBook.Click += new System.EventHandler(this.btnAddBook_Click_1);
             // 
             // anotherPublisherButton
             // 

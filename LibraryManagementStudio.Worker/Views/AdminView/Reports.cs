@@ -55,6 +55,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void buttonRaport2_Click(object sender, EventArgs e)
         {
+
             panel2.Visible = false;
             panelSelect1.Visible = false;
             dataGridView.Visible = false;
@@ -205,6 +206,9 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 publisher = reportService.findPublisher(comboBoxPublisher.Text);
                 if (publisher == null) { return; }
                 reportData2 = reportService.returnData(author, publisher, availibility, categoryType);
+                reportData2 = reportService.returnData2(reportData2);
+                var list = reportService.returnData3();
+                reportData2 = reportService.returnData4(list, reportData2);
                 if (reportData2 == null) { return; }
                 var bindingList = new BindingList<ReportData2>(reportData2);
                 var bindingSource = new BindingSource(bindingList, null);

@@ -11,6 +11,6 @@ namespace LibraryManagementStudio.Worker.Dtos.ReportData
         public int BookId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public int AllTimeBookBorrowsCount { get; set; }
+        public int? AllTimeBookBorrowsCount { get; set; }
     }
 }
