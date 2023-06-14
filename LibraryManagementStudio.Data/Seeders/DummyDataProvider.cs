@@ -1,22 +1,10 @@
 using LibraryManagementStudio.Data.Models;
 using LibraryManagementStudio.Data.Models.Enums;
-using LibraryManagementStudio.Data;
-
-using System.Diagnostics.Metrics;
-using System.IO;
-using Microsoft.EntityFrameworkCore;
-using System.Diagnostics;
 
 namespace LibraryManagementStudio.Data.Seeders;
 
-
-
-
-
 public class DummyDataProvider
 {
-
-    
     private User findUser(int id)
     {
         LibraryDbContext db = new LibraryDbContext();
@@ -32,6 +20,7 @@ public class DummyDataProvider
                 .FirstOrDefault(x => x.BookCopyId==id);
         return query;
     }
+    
     private BookBorrow findBookBorrow(int id)
     {
         LibraryDbContext db = new LibraryDbContext();
@@ -46,13 +35,10 @@ public class DummyDataProvider
         var query = db.Workers
                 .FirstOrDefault(x => x.WorkerId==id);
         return query;
-
     }
 
     public static IEnumerable<User> GetDummyUsers()
     {
-
-       
         var users = new List<User>
         {
             new()
@@ -340,8 +326,7 @@ public class DummyDataProvider
 
         return users;
     }
-
-
+    
     public static IEnumerable<Worker> GetDummyWorkers()
     {
         var workers = new List<Worker>
@@ -352,7 +337,7 @@ public class DummyDataProvider
                 FirstName = "Adam",
                 LastName = "Nelson",
                 EmailAddress = "bibliotekarz@gmail.com",
-                Password = "1234",
+                Password = PasswordHelper.HashPassword("1234"),
                 Type = WorkerType.bibliotekarz
             },
             new()
@@ -361,7 +346,7 @@ public class DummyDataProvider
                 FirstName = "John",
                 LastName = "Nelson",
                 EmailAddress = "obsluga@gmail.com",
-                Password = "1234",
+                Password = PasswordHelper.HashPassword("1234"),
                 Type = WorkerType.obsługa
             },
             new()
@@ -370,7 +355,7 @@ public class DummyDataProvider
                 FirstName = "admin",
                 LastName = "admin",
                 EmailAddress = "admin",
-                Password = "admin",
+                Password = PasswordHelper.HashPassword("1234"),
                 Type = WorkerType.bibliotekarz
             },
             new()
@@ -379,7 +364,7 @@ public class DummyDataProvider
                 FirstName = "Katarzyna",
                 LastName = "Nowak",
                 EmailAddress = "kasia@gmail.com",
-                Password = "hasło123",
+                Password = PasswordHelper.HashPassword("1234"),
                 Type = WorkerType.bibliotekarz
             },
             new()
@@ -388,7 +373,7 @@ public class DummyDataProvider
                 FirstName = "Michał",
                 LastName = "Kowalski",
                 EmailAddress = "michal@gmail.com",
-                Password = "pass123",
+                Password = PasswordHelper.HashPassword("1234"),
                 Type = WorkerType.obsługa
             },
             new()
@@ -397,7 +382,7 @@ public class DummyDataProvider
                 FirstName = "Robert",
                 LastName = "Makłowicz",
                 EmailAddress = "Robert@gmail.com",
-                Password = "Robert",
+                Password = PasswordHelper.HashPassword("1234"),
                 Type = WorkerType.obsługa
             },
             new()
@@ -406,7 +391,7 @@ public class DummyDataProvider
                 FirstName = "Jakub",
                 LastName = "Wójcik",
                 EmailAddress = "jakub@gmail.com",
-                Password = "jakubpass",
+                Password = PasswordHelper.HashPassword("1234"),
                 Type = WorkerType.bibliotekarz
             },
             new()
@@ -415,7 +400,7 @@ public class DummyDataProvider
                 FirstName = "Iga",
                 LastName = "Świątek",
                 EmailAddress = "Paletka@gmail.com",
-                Password = "Paletka",
+                Password = PasswordHelper.HashPassword("1234"),
                 Type = WorkerType.bibliotekarz
             },
             new()
@@ -424,7 +409,7 @@ public class DummyDataProvider
                 FirstName = "Robert",
                 LastName = "Lewandowski",
                 EmailAddress = "RobertRL9@gmail.com",
-                Password = "RobertRL9",
+                Password = PasswordHelper.HashPassword("1234"),
                 Type = WorkerType.bibliotekarz
             },
             new()
@@ -433,10 +418,9 @@ public class DummyDataProvider
                 FirstName = "Oliwia",
                 LastName = "Szymańska",
                 EmailAddress = "oliwia@gmail.com",
-                Password = "oliwia123",
+                Password = PasswordHelper.HashPassword("1234"),
                 Type = WorkerType.obsługa
             },
-
         };
 
         return workers;
@@ -1136,14 +1120,6 @@ public class DummyDataProvider
 
         return bookBorrows;
     }
-
-
-
-
-
-
-
-
 
     public static IEnumerable<Book> GetDummyBooks()
     {

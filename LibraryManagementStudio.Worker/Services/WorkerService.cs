@@ -55,23 +55,19 @@ namespace LibraryManagementStudio.Worker.Services
 
         }
 
-        public LibraryManagementStudio.Data.Models.Worker checkLoginData(string login, string password)
+        public Data.Models.Worker? CheckLoginData(string login, string password)
         {
-
             var query = _dbContext.Workers
                .FirstOrDefault(x => x.EmailAddress == login);
-            if(query != null)
-            {
-                if (query.Password == password)
-                {
-                    return query;
-                }
-                
 
-            }
-            return null;
+            if (query == null) 
+                return null;
             
+            var verifyPassword = PasswordHelper.VerifyPassword(password, query.Password);
+
+            return !verifyPassword ? null : query;
         }
+        
         public List<LibraryManagementStudio.Data.Models.Worker> searchWorkers(string email)
         {
             var query = _dbContext.Workers

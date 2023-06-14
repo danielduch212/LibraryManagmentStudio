@@ -26,7 +26,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminLogView
         {
             if(textboxLogin.Text != "" && textboxHaslo.Text != "")
             {
-                var worker = service.checkLoginData(textboxLogin.Text, textboxHaslo.Text);
+                var worker = service.CheckLoginData(textboxLogin.Text, textboxHaslo.Text);
                 if(worker != null)
                 {
                     if(worker.Type == Data.Models.Enums.WorkerType.bibliotekarz)
