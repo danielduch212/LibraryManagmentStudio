@@ -175,44 +175,43 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         {
             if (comboBoxAvailibility.SelectedIndex != -1 || comboBoxCategory.SelectedIndex != -1 || comboBoxAuthor.SelectedIndex != -1 || comboBoxPublisher.SelectedIndex != -1)
             {
-
-                Author author;
-                Publisher publisher;
-                if (comboBoxCategory.Text == "Romance")
-                    categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.Romance;
-                if (comboBoxCategory.Text == "Fantasy")
-                    categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.Fantasy;
-                if (comboBoxCategory.Text == "Bibliography")
-                    categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.Bibliography;
-                if (comboBoxCategory.Text == "History")
-                    categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.History;
-                if (comboBoxCategory.Text == "Thriller")
-                    categoryType = LibraryManagementStudio.Data.Models.Enums.CategoryType.Thriller;
-                if (comboBoxAvailibility.Text == "aktywne")
+                categoryType = comboBoxCategory.Text switch
                 {
-                    availibility = true;
-                }
-                if (comboBoxAvailibility.Text == "nieaktywne")
-                {
-                    availibility = false;
-                }
+                    "Romance" => CategoryType.Romance,
+                    "Fantasy" => CategoryType.Fantasy,
+                    "Bibliography" => CategoryType.Bibliography,
+                    "History" => CategoryType.History,
+                    "Thriller" => CategoryType.Thriller,
+                    _ => categoryType
+                };
 
-                author = reportService.findAuthor(comboBoxAuthor.Text);
+                availibility = comboBoxAvailibility.Text switch
+                {
+                    "aktywne" => true,
+                    "nieaktywne" => false,
+                    _ => availibility
+                };
+
+                var author = reportService.findAuthor(comboBoxAuthor.Text);
+                
                 if (author == null)
-                {
                     return;
-                }
-
-                publisher = reportService.findPublisher(comboBoxPublisher.Text);
-                if (publisher == null) { return; }
+                
+                var publisher = reportService.findPublisher(comboBoxPublisher.Text);
+                
+                if (publisher == null) 
+                    return;
+                
                 reportData2 = reportService.returnData(author, publisher, availibility, categoryType);
                 reportData2 = reportService.returnData2(reportData2);
                 var list = reportService.returnData3();
                 reportData2 = reportService.returnData4(list, reportData2);
-                if (reportData2 == null) { return; }
+                
+                if (reportData2 == null)
+                    return;
+                
                 var bindingList = new BindingList<ReportData2>(reportData2);
                 var bindingSource = new BindingSource(bindingList, null);
-
                 dataGridView.DataSource = bindingSource;
 
                 dataGridView.Columns["BookId"]!.HeaderText = "Id Ksiazki";

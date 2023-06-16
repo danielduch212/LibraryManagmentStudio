@@ -40,14 +40,14 @@ public class ReportService
 
     public List<ReportData2> returnData(Author author, LibraryManagementStudio.Data.Models.Publisher publisher, bool isActive, CategoryType category)
     {
-        var query = _dbContext.BookBorrows
-            .Where(x => x.BookCopy.Book.Author == author && x.BookCopy.Book.Publisher == publisher && x.BookCopy.Book.IsActive == isActive && x.BookCopy.Book.Category == category);
+        var query = _dbContext.BookCopies
+            .Where(x => x.Book.Author == author && x.Book.Publisher == publisher && x.Book.IsActive == isActive && x.Book.Category == category);
 
         var data = query.Select(x => new ReportData2()
         {
-            BookId = x.BookCopy.Book.BookId,
-            Title = x.BookCopy.Book.Title,
-            Description = x.BookCopy.Book.Description,
+            BookId = x.Book.BookId,
+            Title = x.Book.Title,
+            Description = x.Book.Description,
 
         });
         _dbContext.Database.CloseConnection();
@@ -57,7 +57,7 @@ public class ReportService
                      .ToList();
 
         
-        return data.ToList();
+        return uniqueData.ToList();
     }
     public List<ReportData2> returnData2(List<ReportData2> list)
     {
