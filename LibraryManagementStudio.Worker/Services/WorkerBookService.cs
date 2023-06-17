@@ -173,18 +173,23 @@ public class WorkerBookService : IWorkerBookService
             .FirstOrDefault(x => x.BookCopyId==id && x.IsActive == true);
         return query; 
     }
-    public void returnBookBorrow(int id)
+    
+    public void returnBookBorrow(int bookBorrowId)
     {
+        var bookBorrow = _dbContext.BookBorrows
+            .Include(x => x.BookCopy)
+            .FirstOrDefault(x => x.BookBorrowId == bookBorrowId);
+
+        if (bookBorrow == null) 
+            return;
         
-        var query = _dbContext.BookBorrows
-            .FirstOrDefault(x => x.BookBorrowId == id);
-        query.IsActive = false;
-        // data oddania ksiazki
-        
-        query.Status = Data.Models.Enums.BorrowedBookStatus.Returned;
-        query.BookCopy.IsAvailable = true;
-        
+        bookBorrow.IsActive = false;
+        bookBorrow.Status = Data.Models.Enums.BorrowedBookStatus.Returned;
+        bookBorrow.BookCopy.IsAvailable = true;
+
+        _dbContext.SaveChanges();
     }
+    
     public List<Worker.Dtos.BookBorrow.BookBorrowToShow> GetUsersBorrowedBooks(LibraryManagementStudio.Data.Models.User user)
     {
         var query = _dbContext.BookBorrows
@@ -203,6 +208,7 @@ public class WorkerBookService : IWorkerBookService
         return query.ToList();
 
     }
+    
     public int GetUsersCurrentBorrowedBooks(LibraryManagementStudio.Data.Models.User user)
     {
         var query = _dbContext.BookBorrows
