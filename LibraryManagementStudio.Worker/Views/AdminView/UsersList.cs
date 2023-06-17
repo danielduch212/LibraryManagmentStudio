@@ -167,6 +167,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
                 int bookId = Convert.ToInt32(selectedRow.Cells["BookBorrowId"].Value);
                 bookService.returnBookBorrow(bookId);
+                MessageBox.Show("Zwrocono ksiazke", "Informacja");
                 userBorrows = bookService.GetUsersBorrowedBooks(user);
                 SetUserDataView();
             }
@@ -197,8 +198,8 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 labelSurname.Text = user.LastName;
                 labelEmail.Text = user.EmailAddress;
                 labelCity.Text = user.City;
-                labelAllBorrows.Text = userBorrows.Count.ToString();
-                labelCUrrentBorrwedBooks.Text = bookService.GetUsersCurrentBorrowedBooks(user).ToString();
+                labelAllBorrows.Text = user.BookBorrows.Count.ToString();
+                labelCUrrentBorrwedBooks.Text = userBorrows.Count.ToString();
 
                 SetUserDataView();
                 panel1.Visible = false;

@@ -31,6 +31,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.usersDataGridView = new System.Windows.Forms.DataGridView();
             this.showUserPanel = new System.Windows.Forms.Panel();
+            this.ReturnBook = new System.Windows.Forms.Button();
+            this.cancelShowDataButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.labelAllBorrows = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -44,8 +46,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ReturnBook = new System.Windows.Forms.Button();
-            this.cancelShowDataButton = new System.Windows.Forms.Button();
             this.showUserDataGridView = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
@@ -103,6 +103,31 @@
             this.showUserPanel.Name = "showUserPanel";
             this.showUserPanel.Size = new System.Drawing.Size(1408, 670);
             this.showUserPanel.TabIndex = 17;
+            // 
+            // ReturnBook
+            // 
+            this.ReturnBook.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ReturnBook.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ReturnBook.Location = new System.Drawing.Point(815, 587);
+            this.ReturnBook.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ReturnBook.Name = "ReturnBook";
+            this.ReturnBook.Size = new System.Drawing.Size(81, 31);
+            this.ReturnBook.TabIndex = 12;
+            this.ReturnBook.Text = "Zwroc Ksiazke";
+            this.ReturnBook.UseVisualStyleBackColor = true;
+            this.ReturnBook.Click += new System.EventHandler(this.ReturnBook_Click_1);
+            // 
+            // cancelShowDataButton
+            // 
+            this.cancelShowDataButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cancelShowDataButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cancelShowDataButton.Location = new System.Drawing.Point(457, 598);
+            this.cancelShowDataButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cancelShowDataButton.Name = "cancelShowDataButton";
+            this.cancelShowDataButton.Size = new System.Drawing.Size(88, 31);
+            this.cancelShowDataButton.TabIndex = 7;
+            this.cancelShowDataButton.Text = "Cofnij";
+            this.cancelShowDataButton.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -256,31 +281,6 @@
             this.label1.Size = new System.Drawing.Size(56, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Imię";
-            // 
-            // ReturnBook
-            // 
-            this.ReturnBook.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ReturnBook.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ReturnBook.Location = new System.Drawing.Point(827, 598);
-            this.ReturnBook.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ReturnBook.Name = "ReturnBook";
-            this.ReturnBook.Size = new System.Drawing.Size(81, 31);
-            this.ReturnBook.TabIndex = 12;
-            this.ReturnBook.Text = "Zwroc Ksiazke";
-            this.ReturnBook.UseVisualStyleBackColor = true;
-            this.ReturnBook.Click += new System.EventHandler(this.ReturnBook_Click_1);
-            // 
-            // cancelShowDataButton
-            // 
-            this.cancelShowDataButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cancelShowDataButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cancelShowDataButton.Location = new System.Drawing.Point(457, 598);
-            this.cancelShowDataButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cancelShowDataButton.Name = "cancelShowDataButton";
-            this.cancelShowDataButton.Size = new System.Drawing.Size(88, 31);
-            this.cancelShowDataButton.TabIndex = 7;
-            this.cancelShowDataButton.Text = "Cofnij";
-            this.cancelShowDataButton.UseVisualStyleBackColor = true;
             // 
             // showUserDataGridView
             // 

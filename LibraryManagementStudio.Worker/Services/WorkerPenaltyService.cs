@@ -51,6 +51,7 @@ namespace LibraryManagementStudio.Worker.Services
         public void ErasePenalty(Penalty penalty)
         {
             penalty.IsPaid = true;
+            _dbContext.SaveChanges();
         }
 
         public void CreatePenalty(CreatePenaltyDto penaltyDto)

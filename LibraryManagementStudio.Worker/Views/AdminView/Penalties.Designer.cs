@@ -99,6 +99,7 @@
             // labelStatus
             // 
             this.labelStatus.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelStatus.AutoSize = true;
             this.labelStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelStatus.Location = new System.Drawing.Point(835, 23);
             this.labelStatus.Name = "labelStatus";
@@ -169,6 +170,7 @@
             // 
             // eraseYes
             // 
+            this.eraseYes.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.eraseYes.BackColor = System.Drawing.Color.Silver;
             this.eraseYes.Location = new System.Drawing.Point(194, 114);
             this.eraseYes.Name = "eraseYes";
@@ -180,6 +182,7 @@
             // 
             // eraseNo
             // 
+            this.eraseNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.eraseNo.BackColor = System.Drawing.Color.Lime;
             this.eraseNo.Location = new System.Drawing.Point(56, 114);
             this.eraseNo.Name = "eraseNo";
@@ -191,6 +194,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(70, 27);
             this.label1.Name = "label1";

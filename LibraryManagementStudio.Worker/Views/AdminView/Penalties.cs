@@ -72,6 +72,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         {
             statusOfPayment = false;
             labelStatus.Text = "Aktualne";
+            penalties = service.GetPenalties(statusOfPayment);
             LoadView();
         }
 
@@ -79,6 +80,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         {
             statusOfPayment = true;
             labelStatus.Text = "Zaplacone";
+            penalties = service.GetPenalties(statusOfPayment);
             LoadView();
         }
 

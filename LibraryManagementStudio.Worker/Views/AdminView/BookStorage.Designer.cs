@@ -151,10 +151,11 @@
             // 
             // labelBookTitle
             // 
-            this.labelBookTitle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelBookTitle.AutoSize = true;
+            this.labelBookTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelBookTitle.Location = new System.Drawing.Point(146, 18);
             this.labelBookTitle.Name = "labelBookTitle";
-            this.labelBookTitle.Size = new System.Drawing.Size(82, 25);
+            this.labelBookTitle.Size = new System.Drawing.Size(71, 21);
             this.labelBookTitle.TabIndex = 1;
             this.labelBookTitle.Text = "Ksiazka:";
             // 
@@ -403,8 +404,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panelEraseCopy);
             this.Controls.Add(this.panelBorrowBook);
+            this.Controls.Add(this.panelEraseCopy);
             this.Controls.Add(this.panelAddCopies);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);

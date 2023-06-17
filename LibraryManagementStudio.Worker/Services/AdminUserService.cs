@@ -39,7 +39,7 @@ namespace LibraryManagementStudio.Worker.Services
                PostalCode = x.PostalCode,
                City = x.City,
                BookBorrows = x.BookBorrows,
-               BookBorrowsCount = x.BookBorrows.Count
+               BookBorrowsCount = x.BookBorrows.Count(y => y.IsActive == true)
 
 
            }) ;
@@ -87,7 +87,7 @@ namespace LibraryManagementStudio.Worker.Services
                 PostalCode = x.PostalCode,
                 City = x.City,
                 BookBorrows = x.BookBorrows,
-                BookBorrowsCount = x.BookBorrows.Count,
+                BookBorrowsCount = x.BookBorrows.Count(y => y.IsActive == true),
 
             });
 

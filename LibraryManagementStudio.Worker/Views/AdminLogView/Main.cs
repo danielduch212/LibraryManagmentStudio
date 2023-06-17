@@ -14,7 +14,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminLogView
             InitializeComponent();
             service = new WorkerService(dbContext);
             textboxLogin.Text = "admin";
-            textboxHaslo.Text = "admin";
+            textboxHaslo.Text = "1234";
         }
 
         private void Main_Load(object sender, EventArgs e)

@@ -137,7 +137,7 @@
             // 
             // panelSelect1
             // 
-            this.panelSelect1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panelSelect1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelSelect1.Controls.Add(this.buttonGenerate1);
             this.panelSelect1.Controls.Add(this.dataTimePickerTo);
             this.panelSelect1.Controls.Add(this.label6);
