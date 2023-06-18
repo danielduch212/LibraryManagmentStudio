@@ -1,5 +1,6 @@
 using LibraryManagementStudio.Data;
 using LibraryManagementStudio.Data.Models;
+using LibraryManagementStudio.Data.Models.Enums;
 using LibraryManagementStudio.Worker.Dtos.Book;
 using LibraryManagementStudio.Worker.Services.Intrefaces;
 using Microsoft.EntityFrameworkCore;
@@ -227,10 +228,25 @@ public class WorkerBookService : IWorkerBookService
 
     }
 
+    public string ProvideUniqueBookStoreCode()
+    {
+        while (true)
+        {
+            var code = Guid.NewGuid().ToString().Substring(0, 8);
+            var exisitingCode = _dbContext.BookStoreCodes.FirstOrDefault(x => x.Code == code);
+
+            if (exisitingCode == null)
+            {
+                return code;
+            }
+        }
+    }
+
+    
     public void EraseBook(Book book)
     {
 
         book.IsActive = false;
-
+        _dbContext.SaveChanges();
     }
 }

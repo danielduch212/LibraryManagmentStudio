@@ -78,7 +78,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(6, 323);
+            this.button1.Location = new System.Drawing.Point(3, 323);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(214, 30);
             this.button1.TabIndex = 13;
@@ -88,7 +88,7 @@
             // 
             // AddPenaltyButton
             // 
-            this.AddPenaltyButton.Location = new System.Drawing.Point(6, 251);
+            this.AddPenaltyButton.Location = new System.Drawing.Point(3, 251);
             this.AddPenaltyButton.Name = "AddPenaltyButton";
             this.AddPenaltyButton.Size = new System.Drawing.Size(214, 30);
             this.AddPenaltyButton.TabIndex = 12;
@@ -178,13 +178,13 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(118, 72);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(513, 449);
+            this.pictureBox1.Size = new System.Drawing.Size(725, 581);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 

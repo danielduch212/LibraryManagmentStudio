@@ -1,5 +1,6 @@
 ﻿using LibraryManagementStudio.Data;
 using LibraryManagementStudio.Data.Models;
+using LibraryManagementStudio.Data.Models.Enums;
 using LibraryManagementStudio.Worker.Dtos.Book;
 using LibraryManagementStudio.Worker.Services;
 using System;
@@ -138,6 +139,8 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 MessageBox.Show("Brak dostepnych kopii do wypozyczenia!", "Ostrzezenie");
                 return;
             }
+
+            var returnCode = service.ProvideUniqueBookStoreCode();
             BookBorrow bookBorrow = new BookBorrow()
             {
                 StartDate = DateTime.Today,
@@ -148,7 +151,14 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 User = userService.findUser(Convert.ToInt32(textBoxUserID.Text)),
                 
                 BookCopy = service.getAvailibleCopy(book.Title),
-
+                BookStoreCodes = new List<BookStoreCode>()
+                {
+                    new()
+                    {
+                        Code = returnCode,
+                        CodeType = CodeType.zwrot
+                    }
+                }
             };
             MessageBox.Show("Wypozyczono ksiazke", "Informacja");
             textBoxUserID.Text = "";

@@ -207,5 +207,65 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 showUserPanel.Visible = true;
             }
         }
+
+        private void cancelShowDataButton_Click_1(object sender, EventArgs e)
+        {
+            showUserPanel.Visible = false;
+
+            users = service.getUsers();
+            LoadUsers();
+            panel1.Visible = true;
+            panel2.Visible = true;
+        }
+
+        private void ReturnBook_Click_2(object sender, EventArgs e)
+        {
+            if (showUserDataGridView.SelectedRows.Count > 0)
+            {
+                int selectedRowIndex = showUserDataGridView.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = showUserDataGridView.Rows[selectedRowIndex];
+
+                int bookId = Convert.ToInt32(selectedRow.Cells["BookBorrowId"].Value);
+                bookService.returnBookBorrow(bookId);
+                MessageBox.Show("Zwrocono ksiazke", "Informacja");
+                userBorrows = bookService.GetUsersBorrowedBooks(user);
+                SetUserDataView();
+            }
+        }
+
+        private void button4_Click_2(object sender, EventArgs e)
+        {
+            if (usersDataGridView.SelectedRows.Count > 0)
+            {
+                int selectedRowIndex = usersDataGridView.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = usersDataGridView.Rows[selectedRowIndex];
+
+                int userId = Convert.ToInt32(selectedRow.Cells["UserId"].Value);
+
+
+                user = service.findUserRow(userId);
+                if (user == null)
+                {
+                    return;
+                }
+
+                userBorrows = bookService.GetUsersBorrowedBooks(user);
+                if (userBorrows == null)
+                {
+                    return;
+                }
+                labelUserName.Text = user.FirstName;
+                labelSurname.Text = user.LastName;
+                labelEmail.Text = user.EmailAddress;
+                labelCity.Text = user.City;
+                labelAllBorrows.Text = user.BookBorrows != null ? user.BookBorrows.Count.ToString() : 0.ToString();
+                labelCUrrentBorrwedBooks.Text = userBorrows != null ? userBorrows.Count.ToString() : 0.ToString();
+
+                SetUserDataView();
+                panel1.Visible = false;
+                panel2.Visible = false;
+                showUserPanel.Visible = true;
+            }
+        }
     }
 }
