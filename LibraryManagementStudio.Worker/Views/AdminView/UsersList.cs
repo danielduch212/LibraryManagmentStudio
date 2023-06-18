@@ -97,12 +97,12 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void ReturnBook_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void SetUserDataView()
@@ -198,8 +198,8 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 labelSurname.Text = user.LastName;
                 labelEmail.Text = user.EmailAddress;
                 labelCity.Text = user.City;
-                labelAllBorrows.Text = user.BookBorrows.Count.ToString();
-                labelCUrrentBorrwedBooks.Text = userBorrows.Count.ToString();
+                labelAllBorrows.Text = user.BookBorrows != null ? user.BookBorrows.Count.ToString() : 0.ToString();
+                labelCUrrentBorrwedBooks.Text = userBorrows != null ? userBorrows.Count.ToString() : 0.ToString();
 
                 SetUserDataView();
                 panel1.Visible = false;

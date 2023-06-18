@@ -64,12 +64,12 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void buttonGenerate1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void buttonGenerate2_Click(object sender, EventArgs e)
         {
-            
+
 
         }
 
@@ -193,23 +193,23 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 };
 
                 var author = reportService.findAuthor(comboBoxAuthor.Text);
-                
+
                 if (author == null)
                     return;
-                
+
                 var publisher = reportService.findPublisher(comboBoxPublisher.Text);
-                
-                if (publisher == null) 
+
+                if (publisher == null)
                     return;
-                
+
                 reportData2 = reportService.returnData(author, publisher, availibility, categoryType);
                 reportData2 = reportService.returnData2(reportData2);
                 var list = reportService.returnData3();
                 reportData2 = reportService.returnData4(list, reportData2);
-                
+
                 if (reportData2 == null)
                     return;
-                
+
                 var bindingList = new BindingList<ReportData2>(reportData2);
                 var bindingSource = new BindingSource(bindingList, null);
                 dataGridView.DataSource = bindingSource;
@@ -228,7 +228,12 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             {
                 MessageBox.Show("Podaj dokladnie dane", "Informacja");
             }
-            
+
+        }
+
+        private void comboBoxPublisher_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
