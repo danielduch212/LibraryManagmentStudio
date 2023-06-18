@@ -80,5 +80,12 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             ViewStyleHelper.AddControlToPanel(control, contentPanel);
 
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            var startupView = new AdminLogView.Main();
+            startupView.Show();
+            this.Hide();
+        }
     }
 }
