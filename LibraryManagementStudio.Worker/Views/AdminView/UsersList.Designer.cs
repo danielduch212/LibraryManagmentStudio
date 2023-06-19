@@ -397,9 +397,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.showUserPanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.showUserPanel);
             this.Name = "UsersList";
             this.Size = new System.Drawing.Size(1416, 712);
             this.panel2.ResumeLayout(false);

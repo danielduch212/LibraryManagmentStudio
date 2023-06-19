@@ -381,8 +381,7 @@
             // 
             // searchBooksTextBox
             // 
-            this.searchBooksTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchBooksTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.searchBooksTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.searchBooksTextBox.Location = new System.Drawing.Point(13, 22);
             this.searchBooksTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -410,9 +409,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelEraseCopy);
             this.Controls.Add(this.panelBorrowBook);
-            this.Controls.Add(this.panelAddCopies);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelAddCopies);
             this.Name = "BookStorage";
             this.Size = new System.Drawing.Size(1102, 537);
             this.panel2.ResumeLayout(false);

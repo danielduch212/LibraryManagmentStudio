@@ -68,67 +68,80 @@
             // 
             // AddBook
             // 
+            this.AddBook.BackColor = System.Drawing.Color.White;
+            this.AddBook.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.AddBook.Location = new System.Drawing.Point(3, 179);
             this.AddBook.Name = "AddBook";
             this.AddBook.Size = new System.Drawing.Size(214, 30);
             this.AddBook.TabIndex = 14;
             this.AddBook.Text = "Dodaj Ksiazke";
-            this.AddBook.UseVisualStyleBackColor = true;
+            this.AddBook.UseVisualStyleBackColor = false;
             this.AddBook.Click += new System.EventHandler(this.AddBook_Click);
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.Location = new System.Drawing.Point(3, 323);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(214, 30);
             this.button1.TabIndex = 13;
             this.button1.Text = "Pracownicy";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // AddPenaltyButton
             // 
+            this.AddPenaltyButton.BackColor = System.Drawing.Color.White;
+            this.AddPenaltyButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.AddPenaltyButton.Location = new System.Drawing.Point(3, 251);
             this.AddPenaltyButton.Name = "AddPenaltyButton";
             this.AddPenaltyButton.Size = new System.Drawing.Size(214, 30);
             this.AddPenaltyButton.TabIndex = 12;
             this.AddPenaltyButton.Text = "Nałóż karę";
-            this.AddPenaltyButton.UseVisualStyleBackColor = true;
+            this.AddPenaltyButton.UseVisualStyleBackColor = false;
             this.AddPenaltyButton.Click += new System.EventHandler(this.AddPenaltyButton_Click);
             // 
             // PenaltiesButton
             // 
+            this.PenaltiesButton.BackColor = System.Drawing.Color.White;
+            this.PenaltiesButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.PenaltiesButton.Location = new System.Drawing.Point(3, 215);
             this.PenaltiesButton.Name = "PenaltiesButton";
             this.PenaltiesButton.Size = new System.Drawing.Size(214, 30);
             this.PenaltiesButton.TabIndex = 11;
             this.PenaltiesButton.Text = "Kary";
-            this.PenaltiesButton.UseVisualStyleBackColor = true;
+            this.PenaltiesButton.UseVisualStyleBackColor = false;
             this.PenaltiesButton.Click += new System.EventHandler(this.PenaltiesButton_Click);
             // 
             // button7
             // 
+            this.button7.BackColor = System.Drawing.Color.White;
+            this.button7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button7.Location = new System.Drawing.Point(3, 511);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(214, 30);
             this.button7.TabIndex = 7;
             this.button7.Text = "Wyloguj";
-            this.button7.UseVisualStyleBackColor = true;
+            this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // generateReportButton
             // 
+            this.generateReportButton.BackColor = System.Drawing.Color.White;
+            this.generateReportButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.generateReportButton.Location = new System.Drawing.Point(3, 287);
             this.generateReportButton.Name = "generateReportButton";
             this.generateReportButton.Size = new System.Drawing.Size(214, 30);
             this.generateReportButton.TabIndex = 4;
             this.generateReportButton.Text = "Generowanie Raportów";
-            this.generateReportButton.UseVisualStyleBackColor = true;
+            this.generateReportButton.UseVisualStyleBackColor = false;
             this.generateReportButton.Click += new System.EventHandler(this.generateReportButton_Click);
             // 
             // AddUserButton
             // 
-            this.AddUserButton.BackColor = System.Drawing.Color.GhostWhite;
+            this.AddUserButton.BackColor = System.Drawing.Color.White;
+            this.AddUserButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.AddUserButton.Location = new System.Drawing.Point(3, 143);
             this.AddUserButton.Name = "AddUserButton";
             this.AddUserButton.Size = new System.Drawing.Size(214, 30);

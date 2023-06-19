@@ -237,5 +237,129 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         {
 
         }
+
+        private void buttonRaport1_Click_2(object sender, EventArgs e)
+        {
+            panel2.Visible = false;
+            label11.Visible = false;
+            countTB.Visible = false;
+            panelSelect2.Visible = false;
+            dataGridView.Visible = false;
+            panelSelect1.Visible = true;
+        }
+
+        private void buttonRaport2_Click_2(object sender, EventArgs e)
+        {
+            panel2.Visible = false;
+            panelSelect1.Visible = false;
+            dataGridView.Visible = false;
+            panelSelect2.Visible = true;
+        }
+
+        private void buttonGenerate2_Click_2(object sender, EventArgs e)
+        {
+            if (comboBoxAvailibility.SelectedIndex != -1 || comboBoxCategory.SelectedIndex != -1 || comboBoxAuthor.SelectedIndex != -1 || comboBoxPublisher.SelectedIndex != -1)
+            {
+                categoryType = comboBoxCategory.Text switch
+                {
+                    "Romance" => CategoryType.Romance,
+                    "Fantasy" => CategoryType.Fantasy,
+                    "Bibliography" => CategoryType.Bibliography,
+                    "History" => CategoryType.History,
+                    "Thriller" => CategoryType.Thriller,
+                    _ => categoryType
+                };
+
+                availibility = comboBoxAvailibility.Text switch
+                {
+                    "aktywne" => true,
+                    "nieaktywne" => false,
+                    _ => availibility
+                };
+
+                var author = reportService.findAuthor(comboBoxAuthor.Text);
+
+                if (author == null)
+                    return;
+
+                var publisher = reportService.findPublisher(comboBoxPublisher.Text);
+
+                if (publisher == null)
+                    return;
+
+                reportData2 = reportService.returnData(author, publisher, availibility, categoryType);
+                reportData2 = reportService.returnData2(reportData2);
+                var list = reportService.returnData3();
+                reportData2 = reportService.returnData4(list, reportData2);
+
+                if (reportData2 == null)
+                    return;
+
+                var bindingList = new BindingList<ReportData2>(reportData2);
+                var bindingSource = new BindingSource(bindingList, null);
+                dataGridView.DataSource = bindingSource;
+
+                dataGridView.Columns["BookId"]!.HeaderText = "Id Ksiazki";
+                dataGridView.Columns["Title"]!.HeaderText = "Tytul";
+                dataGridView.Columns["Description"]!.HeaderText = "Opis";
+                dataGridView.Columns["AllTimeBookBorrowsCount"]!.HeaderText = "Wszystkie wypozyczenia";
+
+                dataGridView.BackgroundColor = Color.White;
+                dataGridView.RowHeadersVisible = false;
+                panel2.Visible = true;
+                dataGridView.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Podaj dokladnie dane", "Informacja");
+            }
+        }
+
+        private void buttonGenerate1_Click_2(object sender, EventArgs e)
+        {
+            if (textBoxUserId.Text != "")
+            {
+
+                if (!int.TryParse(textBoxUserId.Text, out int number))
+                {
+                    MessageBox.Show("Podaj sensowne dane (liczba)", "Ostrzezenie");
+                    return;
+
+                }
+                reportData1 = reportService.returnData(Int32.Parse(textBoxUserId.Text), dataTimePickerFrom.Value, dataTimePickerTo.Value);
+                if (reportData1 == null)
+                {
+                    MessageBox.Show("Podaj sensowne dane", "Ostrzezenie");
+                    return;
+                }
+                var bindingList = new BindingList<ReportData1>(reportData1);
+                var bindingSource = new BindingSource(bindingList, null);
+
+                dataGridView.DataSource = bindingSource;
+
+                dataGridView.Columns["BookBorrowId"].HeaderText = "Id wypożyczenia";
+                dataGridView.Columns["Title"].HeaderText = "Tytuł";
+                dataGridView.Columns["Status"].HeaderText = "Status";
+                dataGridView.Columns["UserId"].HeaderText = "Id Użytkownika";
+
+                countTB.Visible = true;
+                label11.Visible = true;
+                countTB.Text = reportData1.Count.ToString();
+
+
+
+
+
+                dataGridView.BackgroundColor = Color.White;
+                dataGridView.RowHeadersVisible = false;
+                panel2.Visible = true;
+                dataGridView.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Podaj sensowne dane (liczba)", "Ostrzezenie");
+
+            }
+        }
     }
 }

@@ -188,6 +188,7 @@
             this.textBoxNewAuthor.Name = "textBoxNewAuthor";
             this.textBoxNewAuthor.Size = new System.Drawing.Size(251, 23);
             this.textBoxNewAuthor.TabIndex = 2;
+            this.textBoxNewAuthor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label11
             // 
@@ -247,6 +248,7 @@
             this.textBoxNewPublisher.Name = "textBoxNewPublisher";
             this.textBoxNewPublisher.Size = new System.Drawing.Size(251, 23);
             this.textBoxNewPublisher.TabIndex = 2;
+            this.textBoxNewPublisher.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label13
             // 

@@ -85,6 +85,7 @@
             this.buttonRaport1.TabIndex = 2;
             this.buttonRaport1.Text = "1 - RAPORT";
             this.buttonRaport1.UseVisualStyleBackColor = false;
+            this.buttonRaport1.Click += new System.EventHandler(this.buttonRaport1_Click_2);
             // 
             // label3
             // 
@@ -119,6 +120,7 @@
             this.buttonRaport2.TabIndex = 4;
             this.buttonRaport2.Text = "2 - RAPORT";
             this.buttonRaport2.UseVisualStyleBackColor = false;
+            this.buttonRaport2.Click += new System.EventHandler(this.buttonRaport2_Click_2);
             // 
             // panel1
             // 
@@ -159,6 +161,7 @@
             this.buttonGenerate1.TabIndex = 6;
             this.buttonGenerate1.Text = "Generuj";
             this.buttonGenerate1.UseVisualStyleBackColor = false;
+            this.buttonGenerate1.Click += new System.EventHandler(this.buttonGenerate1_Click_2);
             // 
             // dataTimePickerTo
             // 
@@ -246,6 +249,7 @@
             this.buttonGenerate2.TabIndex = 6;
             this.buttonGenerate2.Text = "Generuj";
             this.buttonGenerate2.UseVisualStyleBackColor = false;
+            this.buttonGenerate2.Click += new System.EventHandler(this.buttonGenerate2_Click_2);
             // 
             // comboBoxAvailibility
             // 
@@ -374,20 +378,20 @@
             this.label11.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label11.Location = new System.Drawing.Point(5, 720);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(120, 20);
+            this.label11.Size = new System.Drawing.Size(116, 20);
             this.label11.TabIndex = 11;
-            this.label11.Text = "Podsumowanie:";
+            this.label11.Text = "Podsumowanie";
             // 
             // Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panelSelect1);
-            this.Controls.Add(this.panelSelect2);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.countTB);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelSelect1);
+            this.Controls.Add(this.panelSelect2);
             this.Name = "Reports";
             this.Size = new System.Drawing.Size(1250, 762);
             this.panel1.ResumeLayout(false);
