@@ -95,9 +95,14 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             alertLabel.Visible = false;
             if (textBoxName.Text != "" || textBoxSurname.Text != "" || textBoxEmail.Text != "" || textBoxCode.Text != "" || textBoxLocation.Text != "")
             {
+                if(IsPostalCode(textBoxCode.Text) == false)
+                {
+                    MessageBox.Show("Nieprawidlowy kod pocztowy", "Ostrzezenie");
+                    return;
+                }
                 if(IsEmail(textBoxEmail.Text) == false)
                 {
-                    MessageBox.Show("Nieprawidlowy email", "Informacja");
+                    MessageBox.Show("Nieprawidlowy email", "Ostrzezenie");
                     return;
                 }
 
@@ -161,6 +166,18 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         {
             // Wzorzec wyrażenia regularnego dla sprawdzania adresu e-mail
             string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+
+            // Użycie klasy Regex do dopasowania wzorca
+            Regex regex = new Regex(pattern);
+
+            // Sprawdzenie, czy podany ciąg znaków pasuje do wzorca
+            return regex.IsMatch(input);
+        }
+
+        static bool IsPostalCode(string input)
+        {
+            // Wzorzec wyrażenia regularnego dla sprawdzania adresu pocztowego
+            string pattern = @"^\d{2}-\d{3}$";
 
             // Użycie klasy Regex do dopasowania wzorca
             Regex regex = new Regex(pattern);
