@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelTop = new System.Windows.Forms.Panel();
+            this.clearSearchButton = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.searchBooksTextBox = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -51,6 +52,7 @@
             // 
             this.panelTop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelTop.Controls.Add(this.clearSearchButton);
             this.panelTop.Controls.Add(this.button5);
             this.panelTop.Controls.Add(this.searchBooksTextBox);
             this.panelTop.Controls.Add(this.button4);
@@ -62,9 +64,26 @@
             this.panelTop.Size = new System.Drawing.Size(1250, 66);
             this.panelTop.TabIndex = 2;
             // 
+            // clearSearchButton
+            // 
+            this.clearSearchButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.clearSearchButton.BackColor = System.Drawing.Color.Red;
+            this.clearSearchButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.clearSearchButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.clearSearchButton.ForeColor = System.Drawing.Color.White;
+            this.clearSearchButton.Location = new System.Drawing.Point(401, 21);
+            this.clearSearchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.clearSearchButton.Name = "clearSearchButton";
+            this.clearSearchButton.Size = new System.Drawing.Size(25, 22);
+            this.clearSearchButton.TabIndex = 8;
+            this.clearSearchButton.Text = "x";
+            this.clearSearchButton.UseVisualStyleBackColor = false;
+            this.clearSearchButton.Click += new System.EventHandler(this.clearSearchButton_Click);
+            // 
             // button5
             // 
             this.button5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button5.Location = new System.Drawing.Point(504, 19);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(108, 25);
@@ -83,11 +102,13 @@
             this.searchBooksTextBox.Name = "searchBooksTextBox";
             this.searchBooksTextBox.Size = new System.Drawing.Size(331, 23);
             this.searchBooksTextBox.TabIndex = 6;
+            this.searchBooksTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // button4
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.AutoSize = true;
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button4.Location = new System.Drawing.Point(986, 18);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(108, 25);
@@ -111,6 +132,7 @@
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.AutoSize = true;
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button3.Location = new System.Drawing.Point(1116, 18);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(108, 25);
@@ -122,6 +144,7 @@
             // button2
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.Location = new System.Drawing.Point(661, 19);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(108, 25);
@@ -159,7 +182,7 @@
             // 
             // panelErasePenalty
             // 
-            this.panelErasePenalty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panelErasePenalty.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelErasePenalty.Controls.Add(this.eraseYes);
             this.panelErasePenalty.Controls.Add(this.eraseNo);
             this.panelErasePenalty.Controls.Add(this.label1);
@@ -172,7 +195,7 @@
             // 
             this.eraseYes.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.eraseYes.BackColor = System.Drawing.Color.Silver;
-            this.eraseYes.Location = new System.Drawing.Point(194, 114);
+            this.eraseYes.Location = new System.Drawing.Point(216, 114);
             this.eraseYes.Name = "eraseYes";
             this.eraseYes.Size = new System.Drawing.Size(75, 23);
             this.eraseYes.TabIndex = 2;
@@ -184,7 +207,7 @@
             // 
             this.eraseNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.eraseNo.BackColor = System.Drawing.Color.Lime;
-            this.eraseNo.Location = new System.Drawing.Point(56, 114);
+            this.eraseNo.Location = new System.Drawing.Point(78, 114);
             this.eraseNo.Name = "eraseNo";
             this.eraseNo.Size = new System.Drawing.Size(75, 23);
             this.eraseNo.TabIndex = 1;
@@ -234,5 +257,6 @@
         private Button eraseYes;
         private Button eraseNo;
         private Label label1;
+        private Button clearSearchButton;
     }
 }

@@ -138,6 +138,7 @@
             this.textBoxUserID.Name = "textBoxUserID";
             this.textBoxUserID.Size = new System.Drawing.Size(309, 23);
             this.textBoxUserID.TabIndex = 3;
+            this.textBoxUserID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
             // 
@@ -208,6 +209,7 @@
             this.textBoxCopyIDToErase.Name = "textBoxCopyIDToErase";
             this.textBoxCopyIDToErase.Size = new System.Drawing.Size(100, 23);
             this.textBoxCopyIDToErase.TabIndex = 1;
+            this.textBoxCopyIDToErase.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label5
             // 
@@ -259,6 +261,7 @@
             this.textBoxCopiesAdd.Name = "textBoxCopiesAdd";
             this.textBoxCopiesAdd.Size = new System.Drawing.Size(100, 23);
             this.textBoxCopiesAdd.TabIndex = 3;
+            this.textBoxCopiesAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label4
             // 
@@ -387,6 +390,7 @@
             this.searchBooksTextBox.Name = "searchBooksTextBox";
             this.searchBooksTextBox.Size = new System.Drawing.Size(361, 23);
             this.searchBooksTextBox.TabIndex = 5;
+            this.searchBooksTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // searchBooksButton
             // 
@@ -404,8 +408,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panelBorrowBook);
             this.Controls.Add(this.panelEraseCopy);
+            this.Controls.Add(this.panelBorrowBook);
             this.Controls.Add(this.panelAddCopies);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);

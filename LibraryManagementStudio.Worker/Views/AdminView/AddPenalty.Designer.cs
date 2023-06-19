@@ -68,6 +68,7 @@
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(658, 23);
             this.textBoxPrice.TabIndex = 33;
+            this.textBoxPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label4
             // 
@@ -151,6 +152,7 @@
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.Size = new System.Drawing.Size(658, 72);
             this.textBoxDescription.TabIndex = 28;
+            this.textBoxDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxBookBorrowId
             // 
@@ -160,6 +162,7 @@
             this.textBoxBookBorrowId.Name = "textBoxBookBorrowId";
             this.textBoxBookBorrowId.Size = new System.Drawing.Size(170, 23);
             this.textBoxBookBorrowId.TabIndex = 27;
+            this.textBoxBookBorrowId.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxBookBorrowId.TextChanged += new System.EventHandler(this.bookCodeTB_TextChanged);
             // 
             // AddPenalty

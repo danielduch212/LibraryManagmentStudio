@@ -267,5 +267,11 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 showUserPanel.Visible = true;
             }
         }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            users = service.searchUser(searchBooksTextBox.Text);
+            LoadUsers();
+        }
     }
 }

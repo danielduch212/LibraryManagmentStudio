@@ -128,22 +128,25 @@
             // 
             // AddUserButton
             // 
+            this.AddUserButton.BackColor = System.Drawing.Color.GhostWhite;
             this.AddUserButton.Location = new System.Drawing.Point(3, 143);
             this.AddUserButton.Name = "AddUserButton";
             this.AddUserButton.Size = new System.Drawing.Size(214, 30);
             this.AddUserButton.TabIndex = 3;
             this.AddUserButton.Text = "Dodaj Użytkownika";
-            this.AddUserButton.UseVisualStyleBackColor = true;
+            this.AddUserButton.UseVisualStyleBackColor = false;
             this.AddUserButton.Click += new System.EventHandler(this.AddUserButton_Click);
             // 
             // bookStorageButton
             // 
+            this.bookStorageButton.BackColor = System.Drawing.Color.White;
+            this.bookStorageButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.bookStorageButton.Location = new System.Drawing.Point(3, 107);
             this.bookStorageButton.Name = "bookStorageButton";
             this.bookStorageButton.Size = new System.Drawing.Size(214, 30);
             this.bookStorageButton.TabIndex = 2;
             this.bookStorageButton.Text = "Magazyn książek";
-            this.bookStorageButton.UseVisualStyleBackColor = true;
+            this.bookStorageButton.UseVisualStyleBackColor = false;
             this.bookStorageButton.Click += new System.EventHandler(this.bookStorageButton_Click);
             // 
             // label1
@@ -158,12 +161,14 @@
             // 
             // usersButton
             // 
+            this.usersButton.BackColor = System.Drawing.Color.White;
+            this.usersButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.usersButton.Location = new System.Drawing.Point(3, 72);
             this.usersButton.Name = "usersButton";
             this.usersButton.Size = new System.Drawing.Size(214, 30);
             this.usersButton.TabIndex = 0;
             this.usersButton.Text = "Użytkownicy";
-            this.usersButton.UseVisualStyleBackColor = true;
+            this.usersButton.UseVisualStyleBackColor = false;
             this.usersButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // contentPanel

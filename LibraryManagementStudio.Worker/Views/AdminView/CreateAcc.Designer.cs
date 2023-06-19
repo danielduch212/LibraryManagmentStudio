@@ -87,6 +87,7 @@
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(200, 23);
             this.textBoxPassword.TabIndex = 34;
+            this.textBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label10
             // 
@@ -130,6 +131,7 @@
             this.textBoxLocation.Name = "textBoxLocation";
             this.textBoxLocation.Size = new System.Drawing.Size(200, 23);
             this.textBoxLocation.TabIndex = 30;
+            this.textBoxLocation.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxCode
             // 
@@ -138,6 +140,7 @@
             this.textBoxCode.Name = "textBoxCode";
             this.textBoxCode.Size = new System.Drawing.Size(200, 23);
             this.textBoxCode.TabIndex = 29;
+            this.textBoxCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label8
             // 
@@ -168,6 +171,7 @@
             this.textBoxCity.Name = "textBoxCity";
             this.textBoxCity.Size = new System.Drawing.Size(200, 23);
             this.textBoxCity.TabIndex = 26;
+            this.textBoxCity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label6
             // 
@@ -206,6 +210,7 @@
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(200, 23);
             this.textBoxEmail.TabIndex = 22;
+            this.textBoxEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label4
             // 
@@ -225,6 +230,7 @@
             this.textBoxSurname.Name = "textBoxSurname";
             this.textBoxSurname.Size = new System.Drawing.Size(200, 23);
             this.textBoxSurname.TabIndex = 20;
+            this.textBoxSurname.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label3
             // 
@@ -244,6 +250,7 @@
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(200, 23);
             this.textBoxName.TabIndex = 18;
+            this.textBoxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
             // 

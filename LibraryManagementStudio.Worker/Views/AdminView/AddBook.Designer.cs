@@ -275,6 +275,7 @@
             this.textBoxCopies.Name = "textBoxCopies";
             this.textBoxCopies.Size = new System.Drawing.Size(39, 23);
             this.textBoxCopies.TabIndex = 23;
+            this.textBoxCopies.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label12
             // 
@@ -386,6 +387,7 @@
             this.descriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.descriptionTextBox.Location = new System.Drawing.Point(472, 73);
             this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.descriptionTextBox.Size = new System.Drawing.Size(267, 96);
             this.descriptionTextBox.TabIndex = 10;
             this.descriptionTextBox.Text = "";
@@ -397,6 +399,7 @@
             this.textTitle.Name = "textTitle";
             this.textTitle.Size = new System.Drawing.Size(267, 23);
             this.textTitle.TabIndex = 7;
+            this.textTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label4
             // 

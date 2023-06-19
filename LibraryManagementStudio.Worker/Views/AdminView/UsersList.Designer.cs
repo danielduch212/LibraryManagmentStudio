@@ -70,7 +70,7 @@
             this.panel2.Controls.Add(this.usersDataGridView);
             this.panel2.Location = new System.Drawing.Point(0, 72);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1410, 581);
+            this.panel2.Size = new System.Drawing.Size(1416, 621);
             this.panel2.TabIndex = 6;
             // 
             // usersDataGridView
@@ -86,7 +86,7 @@
             this.usersDataGridView.RowHeadersWidth = 51;
             this.usersDataGridView.RowTemplate.Height = 25;
             this.usersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.usersDataGridView.Size = new System.Drawing.Size(1405, 581);
+            this.usersDataGridView.Size = new System.Drawing.Size(1414, 634);
             this.usersDataGridView.TabIndex = 0;
             // 
             // showUserPanel
@@ -101,14 +101,14 @@
             this.showUserPanel.Location = new System.Drawing.Point(0, 0);
             this.showUserPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.showUserPanel.Name = "showUserPanel";
-            this.showUserPanel.Size = new System.Drawing.Size(1408, 670);
+            this.showUserPanel.Size = new System.Drawing.Size(1417, 712);
             this.showUserPanel.TabIndex = 17;
             // 
             // ReturnBook
             // 
             this.ReturnBook.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.ReturnBook.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ReturnBook.Location = new System.Drawing.Point(827, 637);
+            this.ReturnBook.Location = new System.Drawing.Point(833, 675);
             this.ReturnBook.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ReturnBook.Name = "ReturnBook";
             this.ReturnBook.Size = new System.Drawing.Size(81, 31);
@@ -121,7 +121,7 @@
             // 
             this.cancelShowDataButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.cancelShowDataButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cancelShowDataButton.Location = new System.Drawing.Point(469, 637);
+            this.cancelShowDataButton.Location = new System.Drawing.Point(476, 675);
             this.cancelShowDataButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cancelShowDataButton.Name = "cancelShowDataButton";
             this.cancelShowDataButton.Size = new System.Drawing.Size(88, 31);
@@ -145,7 +145,7 @@
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(140, 24);
+            this.panel3.Location = new System.Drawing.Point(146, 24);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1166, 298);
@@ -296,7 +296,7 @@
             this.showUserDataGridView.RowHeadersWidth = 51;
             this.showUserDataGridView.RowTemplate.Height = 29;
             this.showUserDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.showUserDataGridView.Size = new System.Drawing.Size(1166, 224);
+            this.showUserDataGridView.Size = new System.Drawing.Size(1178, 279);
             this.showUserDataGridView.TabIndex = 5;
             // 
             // panel1
@@ -311,14 +311,14 @@
             this.panel1.Controls.Add(this.searchBooksButton);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1410, 66);
+            this.panel1.Size = new System.Drawing.Size(1416, 66);
             this.panel1.TabIndex = 4;
             // 
             // button4
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(1042, 23);
+            this.button4.Location = new System.Drawing.Point(1051, 23);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(155, 23);
             this.button4.TabIndex = 16;
@@ -333,7 +333,7 @@
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(411, 18);
+            this.button2.Location = new System.Drawing.Point(416, 18);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(28, 37);
@@ -343,16 +343,17 @@
             // 
             // button3
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(757, 23);
+            this.button3.Location = new System.Drawing.Point(476, 22);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(117, 24);
             this.button3.TabIndex = 14;
             this.button3.Text = "Szukaj";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // clearSearchButton
             // 
@@ -361,7 +362,7 @@
             this.clearSearchButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.clearSearchButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.clearSearchButton.ForeColor = System.Drawing.Color.White;
-            this.clearSearchButton.Location = new System.Drawing.Point(1726, 25);
+            this.clearSearchButton.Location = new System.Drawing.Point(1735, 25);
             this.clearSearchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.clearSearchButton.Name = "clearSearchButton";
             this.clearSearchButton.Size = new System.Drawing.Size(25, 22);
@@ -371,10 +372,9 @@
             // 
             // searchBooksTextBox
             // 
-            this.searchBooksTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchBooksTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.searchBooksTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.searchBooksTextBox.Location = new System.Drawing.Point(17, 24);
+            this.searchBooksTextBox.Location = new System.Drawing.Point(20, 24);
             this.searchBooksTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchBooksTextBox.MaximumSize = new System.Drawing.Size(376, 23);
             this.searchBooksTextBox.Name = "searchBooksTextBox";
@@ -385,7 +385,7 @@
             // 
             this.searchBooksButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.searchBooksButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.searchBooksButton.Location = new System.Drawing.Point(1639, 25);
+            this.searchBooksButton.Location = new System.Drawing.Point(1648, 25);
             this.searchBooksButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchBooksButton.Name = "searchBooksButton";
             this.searchBooksButton.Size = new System.Drawing.Size(82, 22);
@@ -401,7 +401,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "UsersList";
-            this.Size = new System.Drawing.Size(1410, 672);
+            this.Size = new System.Drawing.Size(1416, 712);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).EndInit();
             this.showUserPanel.ResumeLayout(false);

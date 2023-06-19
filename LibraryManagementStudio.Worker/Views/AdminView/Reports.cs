@@ -117,6 +117,8 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             panelSelect1.Visible = false;
             dataGridView.Visible = false;
             panelSelect2.Visible = true;
+            countTB.Visible = false;
+            label11.Visible = false;
         }
 
         private void textBoxUserId_TextChanged(object sender, EventArgs e)

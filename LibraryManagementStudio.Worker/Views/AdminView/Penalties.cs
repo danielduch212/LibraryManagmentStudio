@@ -145,5 +145,10 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             panelToSetLocation.Location = new Point((formWidth - panelWidth) / 2, (formHeight - panelHeight) / 2);
 
         }
+
+        private void clearSearchButton_Click(object sender, EventArgs e)
+        {
+            searchBooksTextBox.Text = "";
+        }
     }
 }

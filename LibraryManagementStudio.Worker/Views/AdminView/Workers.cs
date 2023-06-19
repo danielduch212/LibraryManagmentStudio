@@ -70,5 +70,10 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             var worker = service.findWorkerRow(selectedRow.Cells[0].Value.ToString());
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            searchBooksTextBox.Text = "";
+        }
     }
 }

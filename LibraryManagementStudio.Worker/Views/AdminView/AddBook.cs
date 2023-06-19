@@ -27,6 +27,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             ViewStyleHelper.MaximizeUserControl(this);
             bookService = new WorkerBookService(dbContext);
             publisherAuthorService = new PublisherAuthorService(dbContext);
+            descriptionTextBox.SelectionAlignment = HorizontalAlignment.Left;
             this.worker = worker;
 
             panelNewPublisher.Visible = false;
