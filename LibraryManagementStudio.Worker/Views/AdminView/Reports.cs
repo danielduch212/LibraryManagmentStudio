@@ -23,7 +23,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         LibraryDbContext dbContext;
         List<ReportData1>? reportData1;
         List<ReportData2>? reportData2;
-        LibraryManagementStudio.Data.Models.Enums.CategoryType categoryType;
+        LibraryManagementStudio.Data.Models.Enums.CategoryType? categoryType;
         bool availibility;
         public Reports(Data.Models.Worker worker, LibraryDbContext dbContext)
         {
@@ -80,12 +80,19 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void SetData()
         {
+            comboBoxCategory.Items.Clear();
+            comboBoxPublisher.Items.Clear();
+            comboBoxAuthor.Items.Clear();
             var queryAuthors = publisherAuthorService.getAuthorsNames();
             var queryPublishers = publisherAuthorService.getPublishersNames();
+            comboBoxAuthor.Items.Add("Wszyscy autorzy");
+            comboBoxPublisher.Items.Add("Wszyscy wydawcy");
+            comboBoxCategory.Items.Add("Wszystkie kategorie");
             foreach (string author in queryAuthors)
             {
                 comboBoxAuthor.Items.Add(author);
             }
+            
             foreach (string publisher in queryPublishers)
             {
                 comboBoxPublisher.Items.Add(publisher);
@@ -177,6 +184,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
         {
             if (comboBoxAvailibility.SelectedIndex != -1 || comboBoxCategory.SelectedIndex != -1 || comboBoxAuthor.SelectedIndex != -1 || comboBoxPublisher.SelectedIndex != -1)
             {
+                
                 categoryType = comboBoxCategory.Text switch
                 {
                     "Romance" => CategoryType.Romance,
@@ -184,6 +192,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                     "Bibliography" => CategoryType.Bibliography,
                     "History" => CategoryType.History,
                     "Thriller" => CategoryType.Thriller,
+                    "Wszyscy" => null,
                     _ => categoryType
                 };
 
@@ -196,13 +205,8 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
                 var author = reportService.findAuthor(comboBoxAuthor.Text);
 
-                if (author == null)
-                    return;
-
                 var publisher = reportService.findPublisher(comboBoxPublisher.Text);
-
-                if (publisher == null)
-                    return;
+                
 
                 reportData2 = reportService.returnData(author, publisher, availibility, categoryType);
                 reportData2 = reportService.returnData2(reportData2);
@@ -256,10 +260,19 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             panelSelect2.Visible = true;
         }
 
+        
+        //aktywny
         private void buttonGenerate2_Click_2(object sender, EventArgs e)
         {
             if (comboBoxAvailibility.SelectedIndex != -1 || comboBoxCategory.SelectedIndex != -1 || comboBoxAuthor.SelectedIndex != -1 || comboBoxPublisher.SelectedIndex != -1)
             {
+                /*
+                comboBoxCategory.Items.Add("Wszystkie kategorie");
+                comboBoxPublisher.Items.Add("Wszyscy wydawcy");
+                comboBoxAuthor.Items.Add("Wszyscy autorzy");
+                 */
+                
+                
                 categoryType = comboBoxCategory.Text switch
                 {
                     "Romance" => CategoryType.Romance,
@@ -267,6 +280,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                     "Bibliography" => CategoryType.Bibliography,
                     "History" => CategoryType.History,
                     "Thriller" => CategoryType.Thriller,
+                    "Wszystkie kategorie" => null,
                     _ => categoryType
                 };
 
@@ -277,15 +291,27 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                     _ => availibility
                 };
 
-                var author = reportService.findAuthor(comboBoxAuthor.Text);
+                Author? author;
+                Publisher? publisher;
 
-                if (author == null)
-                    return;
-
-                var publisher = reportService.findPublisher(comboBoxPublisher.Text);
-
-                if (publisher == null)
-                    return;
+                if(comboBoxAuthor.SelectedItem.ToString() == "Wszyscy autorzy")
+                {
+                    author = null;
+                }
+                else
+                {
+                    author = reportService.findAuthor(comboBoxAuthor.Text);
+                }
+                
+                
+                if(comboBoxPublisher.SelectedItem.ToString() == "Wszyscy wydawcy")
+                {
+                    publisher = null;
+                }
+                else
+                {
+                    publisher = reportService.findPublisher(comboBoxPublisher.Text);
+                }
 
                 reportData2 = reportService.returnData(author, publisher, availibility, categoryType);
                 reportData2 = reportService.returnData2(reportData2);

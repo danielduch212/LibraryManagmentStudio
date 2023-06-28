@@ -49,7 +49,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             bookDataGridView.Columns["BookCopiesCount"].DisplayIndex = 8;
 
             bookDataGridView.Columns["BookCopiesCount"]!.HeaderText = "Liczba kopii";
-            bookDataGridView.Columns["BookCopiesCount"].DisplayIndex =7;
+            bookDataGridView.Columns["BookCopiesCount"].DisplayIndex = 7;
 
             bookDataGridView.Columns["PublishDate"]!.HeaderText = "Data wydania";
             bookDataGridView.Columns["PublishDate"].DisplayIndex = 6;
@@ -74,7 +74,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             bookDataGridView.Columns["Title"].DisplayIndex = 1;
 
             bookDataGridView.Columns["BookId"]!.HeaderText = "Id";
-            bookDataGridView.Columns["BookId"].DisplayIndex = 0; 
+            bookDataGridView.Columns["BookId"].DisplayIndex = 0;
             bookDataGridView.BackgroundColor = Color.White;
             bookDataGridView.RowHeadersVisible = false;
 
@@ -82,7 +82,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            
+
             books = service.GetBookByTitle(searchBooksTextBox.Text).ToList();
             SetupBooksView();
         }
@@ -98,7 +98,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 DataGridViewRow selectedRow = bookDataGridView.Rows[selectedRowIndex];
 
                 int bookId = Convert.ToInt32(selectedRow.Cells["BookId"].Value);
-                
+
                 book = service.getBookFromId(bookId);
                 if (book == null) { return; }
                 labelBookTitle.Text = book.Title;
@@ -106,7 +106,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 panelBorrowBook.Visible = true;
 
             }
-            
+
         }
 
         private void buttonCancelBorrow_Click(object sender, EventArgs e)
@@ -116,7 +116,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
         private void buttonOk_Click(object sender, EventArgs e)
         {
-            if(textBoxUserID.Text == "" )
+            if (textBoxUserID.Text == "")
             {
                 MessageBox.Show("Podaj ID", "Ostrzezenie");
                 return;
@@ -127,7 +127,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 return;
 
             }
-            
+
             if (userService.findUser(Convert.ToInt32(textBoxUserID.Text)) == null)
             {
                 MessageBox.Show("Zle ID - User nie istnieje", "Ostrzezenie");
@@ -149,7 +149,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 Status = Data.Models.Enums.BorrowedBookStatus.Received,
                 Worker = worker,
                 User = userService.findUser(Convert.ToInt32(textBoxUserID.Text)),
-                
+
                 BookCopy = service.getAvailibleCopy(book.Title),
                 BookStoreCodes = new List<BookStoreCode>()
                 {
@@ -186,8 +186,8 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
                 SetPanelLocation(panelAddCopies);
                 panelAddCopies.Visible = true;
             }
-            
-            
+
+
         }
 
         private void cancelButtonCopies_Click(object sender, EventArgs e)
@@ -205,7 +205,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
 
             book = service.getBookFromId(bookId);
             var howManyCopies = Int32.Parse(textBoxCopiesAdd.Text);
-            service.AddBookCopies(book,howManyCopies);
+            service.AddBookCopies(book, howManyCopies);
             books = service.GetBooks();
             SetupBooksView();
             panelAddCopies.Visible = false;
@@ -236,7 +236,7 @@ namespace LibraryManagementStudio.Worker.Views.AdminView
             }
             service.EraseCopy(id);
             textBoxCopyIDToErase.Text = "";
-            
+
             books = service.GetBooks();
             SetupBooksView();
 

@@ -5,6 +5,7 @@ using LibraryManagementStudio.Worker.Dtos.ReportData;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Net;
+using System.Reflection.Metadata.Ecma335;
 using System.Security.Policy;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -37,12 +38,21 @@ public class ReportService
         return bookBorrows.ToList();
     }
 
+    
+    //wszyscy autorzy
+    //wszyscy publisherzy
+    //wszsytkie kategorie
 
-    public List<ReportData2> returnData(Author author, LibraryManagementStudio.Data.Models.Publisher publisher, bool isActive, CategoryType category)
+
+
+    public List<ReportData2> returnData(Author? author, Data.Models.Publisher? publisher, bool isActive, CategoryType? category)
     {
         var query = _dbContext.BookCopies
-            .Where(x => x.Book.Author == author && x.Book.Publisher == publisher && x.Book.IsActive == isActive && x.Book.Category == category);
-
+            .Where(x => (author == null || x.Book.Author == author) &&
+                        (publisher == null || x.Book.Publisher == publisher) &&
+                        x.Book.IsActive == isActive  &&
+                        (category == null || x.Book.Category == category));
+            
         var data = query.Select(x => new ReportData2()
         {
             BookId = x.Book.BookId,
